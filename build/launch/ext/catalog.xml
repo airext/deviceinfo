@@ -1,0 +1,30 @@
+<?xml version="1.0" ?>
+<swc xmlns="http://www.adobe.com/flash/swccatalog/9">
+    <versions>
+        <swc version="1.2"/>
+        <compiler name="ActionScript Compiler" version="2.0.0" build="353448"/>
+    </versions>
+    <features>
+        <feature-script-deps/>
+    </features>
+    <libraries>
+        <library path="library.swf">
+            <script name="com/github/rozd/ane/DeviceInfo" mod="1380813116000">
+                <def id="com.github.rozd.ane:DeviceInfo"/>
+                <dep id="Boolean" type="s"/>
+                <dep id="Function" type="s"/>
+                <dep id="Object" type="i"/>
+                <dep id="String" type="s"/>
+                <dep id="com.github.rozd.ane.core:device_info" type="n"/>
+                <dep id="flash.events:StatusEvent" type="s"/>
+                <dep id="flash.external:ExtensionContext" type="s"/>
+            </script>
+            <script name="com/github/rozd/ane/core/device_info" mod="1380812978000">
+                <def id="com.github.rozd.ane.core:device_info"/>
+            </script>
+            <digests>
+                <digest type="SHA-256" signed="false" value="a3fd9b9f8087b64130ec8250fc99d40ea21ac0a7ee2346899cf9868e1f0d2301"/>
+            </digests>
+        </library>
+    </libraries>
+</swc>

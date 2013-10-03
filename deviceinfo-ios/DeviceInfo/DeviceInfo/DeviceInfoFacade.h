@@ -6,10 +6,11 @@
 //  Copyright (c) 2013 Max Rozdobudko. All rights reserved.
 //
 
-#include "FlashRuntimeExtensions.h"
+#import "FlashRuntimeExtensions.h"
 
-#ifndef DeviceInfo_DeviceInfoFacade_h
-#define DeviceInfo_DeviceInfoFacade_h
+#import "FRETypeConversion.h"
+
+#import "DeviceInfo.h"
 
 #pragma mark API
 
@@ -26,5 +27,3 @@ void ContextFinalizer(FREContext ctx);
 void Initializer(void** extDataToSet, FREContextInitializer* ctxInitializerToSet, FREContextFinalizer* ctxFinalizerToSet);
 
 void Finalizer(void* extData);
-
-#endif

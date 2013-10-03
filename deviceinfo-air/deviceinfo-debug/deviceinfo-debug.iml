@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module type="Flex" version="4">
+  <component name="FlexBuildConfigurationManager" active="deviceinfo-debug">
+    <configurations>
+      <configuration name="deviceinfo-debug" target-platform="Mobile" pure-as="true" main-class="DeviceInfoDebug" output-file="DeviceInfoDebug.swf" output-folder="$MODULE_DIR$/../../../mobitile/client/mobitile/out/production/deviceinfo-debug">
+        <dependencies target-player="11.6">
+          <entries>
+            <entry library-id="c31ee848-4372-498b-b644-a67e612b0d60">
+              <dependency linkage="Merged" />
+            </entry>
+          </entries>
+          <sdk name="3.6.0" />
+        </dependencies>
+        <compiler-options />
+        <packaging-air-desktop />
+        <packaging-android enabled="true" package-file-name="DeviceInfoDebug" />
+        <packaging-ios enabled="true" package-file-name="DeviceInfoDebug">
+          <AirSigningOptions keystore-path="$USER_HOME$/ios/certificate/ios_air_development.p12" provisioning-profile-path="$USER_HOME$/ios/provisioning/Mobitile_Development.mobileprovision" />
+        </packaging-ios>
+      </configuration>
+    </configurations>
+    <compiler-options />
+  </component>
+  <component name="NewModuleRootManager" inherit-compiler-output="true">
+    <exclude-output />
+    <content url="file://$MODULE_DIR$">
+      <sourceFolder url="file://$MODULE_DIR$/src" isTestSource="false" />
+    </content>
+    <orderEntry type="jdk" jdkName="3.6.0" jdkType="Flex SDK Type (new)" />
+    <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="module-library" exported="">
+      <library type="flex">
+        <properties id="c31ee848-4372-498b-b644-a67e612b0d60" />
+        <CLASSES>
+          <root url="file://$MODULE_DIR$/ane" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+        <jarDirectory url="file://$MODULE_DIR$/ane" recursive="false" />
+      </library>
+    </orderEntry>
+  </component>
+</module>
+
