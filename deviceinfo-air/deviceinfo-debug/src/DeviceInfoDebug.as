@@ -18,6 +18,19 @@ public class DeviceInfoDebug extends Sprite
                 trace(DeviceInfo.getInstance().getIMEI());
             }
         );
+
+        new PlainButton(this, "getDeviceInfo", 0xFF0000, 0xFFFF00, {x: 100, y: 80, width : 200, height : 60},
+            function clickHandler(event:MouseEvent):void
+            {
+                var info:Object = DeviceInfo.getInstance().getDeviceInfo();
+
+                trace("name:", info.name);
+                trace("model:", info.model);
+                trace("manufacturer:", info.manufacturer);
+                trace("systemName:", info.systemName);
+                trace("systemVersion:", info.systemVersion);
+            }
+        );
     }
 }
 }

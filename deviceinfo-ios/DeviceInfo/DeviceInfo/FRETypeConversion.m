@@ -14,7 +14,7 @@
 
 @implementation FRETypeConversion
 
-+(FREResult) convertFREStringToNSString:(FREObject) string asString:(NSString**) toString
++ (FREResult) convertFREStringToNSString:(FREObject) string asString:(NSString**) toString
 {
     FREResult result;
     
@@ -30,7 +30,7 @@
     return FRE_OK;
 }
 
-+(FREResult) convertNSStringToFREString:(NSString*) string asString:(FREObject*) toString
++ (FREResult) convertNSStringToFREString:(NSString*) string asString:(FREObject*) toString
 {
     if (string == nil) return FRE_INVALID_ARGUMENT;
     
@@ -38,10 +38,12 @@
     
     unsigned long length = strlen( utf8String );
     
+    NSLog(@"%@", string);
+    
     return FRENewObjectFromUTF8(length + 1, (const uint8_t*) utf8String, toString);
 }
 
-+(FREResult) convertFREDateToNSDate:(FREObject) date asDate:(NSDate*) toDate
++ (FREResult) convertFREDateToNSDate:(FREObject) date asDate:(NSDate*) toDate
 {
     FREResult result;
     
@@ -60,7 +62,7 @@
     return result;
 }
 
-+(FREResult) convertNSDateToFREDate:(NSDate*) date asDate:(FREObject*) toDate
++ (FREResult) convertNSDateToFREDate:(NSDate*) date asDate:(FREObject*) toDate
 {
     NSTimeInterval timestamp = date.timeIntervalSince1970 * 1000;
     
@@ -77,7 +79,44 @@
     return FRE_OK;
 }
 
-+(FREResult) convertNSDataToFREBitmapData:(NSData*) data asBitmapData:(FREObject*) toData
++ (FREResult) convertNSDictionaryToFREObject:(NSDictionary*) dictionary asObject:(FREObject*) toObject
+{
+    FREResult result;
+    
+    NSLog(@"convertNSDictionaryToFREObject");
+    
+    result = FRENewObject((const uint8_t*) "Object", 0, NULL, toObject, NULL);
+    if (result != FRE_OK) return result;
+    
+    NSArray* keys = [dictionary allKeys];
+    NSArray* vals = [dictionary allValues];
+    
+    NSUInteger n = [keys count];
+    
+    NSLog(@"total %i", n);
+    
+    for (NSUInteger i = 0; i < n; i++)
+    {
+        NSLog(@"%@:%@", [keys objectAtIndex:i], [vals objectAtIndex:i]);
+        
+        FREObject propertyKey;
+        result = [self convertNSStringToFREString:[keys objectAtIndex:i] asString:&propertyKey];
+        if (result != FRE_OK) return result;
+        
+        FREObject propertyValue;
+        result = [self convertNSStringToFREString:[vals objectAtIndex:i] asString:&propertyValue];
+        if (result != FRE_OK) return result;
+        
+        result = FRESetObjectProperty(*toObject, propertyKey, propertyValue, NULL);
+        if (result != FRE_OK) return result;
+    }
+    
+    NSLog(@"OK");
+    
+    return result;
+}
+
++ (FREResult) convertNSDataToFREBitmapData:(NSData*) data asBitmapData:(FREObject*) toData
 {
     FREResult result;
     

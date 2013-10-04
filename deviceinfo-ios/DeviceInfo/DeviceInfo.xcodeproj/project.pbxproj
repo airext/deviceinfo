@@ -25,7 +25,7 @@
 		0E22C80D17FDB4E300A828A8 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E22C80C17FDB4E300A828A8 /* CoreTelephony.framework */; };
 		0E22C81117FDBA3D00A828A8 /* FRETypeConversion.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E22C81017FDBA3D00A828A8 /* FRETypeConversion.m */; };
 		0E22C81A17FDC3F800A828A8 /* DeviceInfoFacade.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E22C81917FDC3F800A828A8 /* DeviceInfoFacade.m */; };
-		0E22C81C17FDC5AE00A828A8 /* libDeviceInfo.a in CopyFiles */ = {isa = PBXBuildFile; fileRef = 0E22C7AD17FD891D00A828A8 /* libDeviceInfo.a */; };
+		0E22C81E17FEB28100A828A8 /* libDeviceInfo.a in CopyFiles */ = {isa = PBXBuildFile; fileRef = 0E22C7AD17FD891D00A828A8 /* libDeviceInfo.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,13 +49,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		0E22C81B17FDC58C00A828A8 /* CopyFiles */ = {
+		0E22C81D17FEB27100A828A8 /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "${PROJECT_DIR}/../../build";
 			dstSubfolderSpec = 0;
 			files = (
-				0E22C81C17FDC5AE00A828A8 /* libDeviceInfo.a in CopyFiles */,
+				0E22C81E17FEB28100A828A8 /* libDeviceInfo.a in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -149,14 +149,14 @@
 		0E22C7B217FD891D00A828A8 /* DeviceInfo */ = {
 			isa = PBXGroup;
 			children = (
+				0E22C81917FDC3F800A828A8 /* DeviceInfoFacade.m */,
+				0E22C81817FDC30900A828A8 /* DeviceInfoFacade.h */,
 				0E22C7B517FD891D00A828A8 /* DeviceInfo.h */,
 				0E22C7B717FD891D00A828A8 /* DeviceInfo.m */,
 				0E22C80F17FDBA3D00A828A8 /* FRETypeConversion.h */,
 				0E22C81017FDBA3D00A828A8 /* FRETypeConversion.m */,
 				0E22C80917FDB3F600A828A8 /* CoreTelephony.h */,
 				0E22C7B317FD891D00A828A8 /* Supporting Files */,
-				0E22C81917FDC3F800A828A8 /* DeviceInfoFacade.m */,
-				0E22C81817FDC30900A828A8 /* DeviceInfoFacade.h */,
 			);
 			path = DeviceInfo;
 			sourceTree = "<group>";
@@ -206,6 +206,7 @@
 				0E22C7A917FD891D00A828A8 /* Sources */,
 				0E22C7AA17FD891D00A828A8 /* Frameworks */,
 				0E22C7AB17FD891D00A828A8 /* CopyFiles */,
+				0E22C81D17FEB27100A828A8 /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -223,7 +224,6 @@
 				0E22C7DE17FD918E00A828A8 /* Sources */,
 				0E22C7DF17FD918E00A828A8 /* Frameworks */,
 				0E22C7E017FD918E00A828A8 /* Resources */,
-				0E22C81B17FDC58C00A828A8 /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -387,6 +387,7 @@
 				DSTROOT = /tmp/DeviceInfo.dst;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "DeviceInfo/DeviceInfo-Prefix.pch";
+				ONLY_ACTIVE_ARCH = NO;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -399,6 +400,7 @@
 				DSTROOT = /tmp/DeviceInfo.dst;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "DeviceInfo/DeviceInfo-Prefix.pch";
+				ONLY_ACTIVE_ARCH = NO;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;

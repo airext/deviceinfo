@@ -30,4 +30,11 @@
 {
     NSLog(@"IMEI: %@", [[DeviceInfo sharedInstance] getIMEI]);
 }
+
+- (IBAction)getDeviceInfoAction:(id)sender
+{
+    NSDictionary* info = [[DeviceInfo sharedInstance] getDeviceInfo];
+    
+    NSLog(@"%@", info);
+}
 @end

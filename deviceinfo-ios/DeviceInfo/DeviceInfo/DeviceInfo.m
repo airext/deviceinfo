@@ -18,7 +18,7 @@
 
 static DeviceInfo* _sharedInstance = nil;
 
-+(DeviceInfo*) sharedInstance
++ (DeviceInfo*) sharedInstance
 {
     if (_sharedInstance == nil)
     {
@@ -35,7 +35,7 @@ void ConnectionCallback(CTServerConnectionRef connection, CFStringRef string, CF
 	CFShow(dictionary);
 }
 
--(NSString*) getIMEI
+- (NSString*) getIMEI
 {
     struct CTResult it;
 
@@ -51,6 +51,22 @@ void ConnectionCallback(CTServerConnectionRef connection, CFStringRef string, CF
     NSLog (@ "mobileId is %@", mobileId);
     
     return CFBridgingRelease(mobileId);
+}
+
+- (NSDictionary*) getDeviceInfo 
+{
+    NSMutableDictionary* info = [NSMutableDictionary dictionary];
+    
+    UIDevice* device = [UIDevice currentDevice];
+    
+    [info setObject:device.name forKey:@"name"];
+    [info setObject:device.model forKey:@"model"];
+    [info setObject:device.systemName forKey:@"systemName"];
+    [info setObject:device.systemVersion forKey:@"systemVersion"];
+    
+    [info setObject:@"Apple" forKey:@"manufacturer"];
+    
+    return info;
 }
 
 @end

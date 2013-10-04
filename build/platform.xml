@@ -1,8 +1,9 @@
 <platform xmlns="http://ns.adobe.com/air/extension/3.6">
-    <description>Includes CoreTelephony framework</description> 
+    <description>Includes CoreTelephony,UIKit frameworks</description> 
     <sdkVersion>6.1</sdkVersion> 
     <linkerOptions>
         <option>-framework CoreTelephony</option>
+        <option>-framework UIKIt</option>
     </linkerOptions> 
     <!-- <packagedDependencies> 
         <packagedDependency></packagedDependency> 

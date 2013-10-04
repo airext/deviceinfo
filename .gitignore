@@ -6,5 +6,8 @@ bin-release/
 # Other files and folders
 .settings/
 
+#build artifacts
+build/launch/
+
 #IOS
 DerivedData/

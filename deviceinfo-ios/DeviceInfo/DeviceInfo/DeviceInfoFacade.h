@@ -14,7 +14,11 @@
 
 #pragma mark API
 
+FREObject isSupported(FREContext context, void* functionData, uint32_t argc, FREObject argv[]);
+
 FREObject getIMEI(FREContext context, void* functionData, uint32_t argc, FREObject argv[]);
+
+FREObject getDeviceInfo(FREContext context, void* functionData, uint32_t argc, FREObject argv[]);
 
 #pragma mark ContextInitialize/ContextFinalizer
 

@@ -14,8 +14,10 @@
 
 @interface DeviceInfo : NSObject
 
-+(DeviceInfo*) sharedInstance;
++ (DeviceInfo*) sharedInstance;
 
 - (NSString*) getIMEI;
+
+- (NSDictionary*) getDeviceInfo;
 
 @end

@@ -12,12 +12,14 @@
 
 @interface FRETypeConversion : NSObject
 
-+(FREResult) convertFREStringToNSString:(FREObject) string asString:(NSString**) toString;
-+(FREResult) convertNSStringToFREString:(NSString*) string asString:(FREObject*) toString;
++ (FREResult) convertFREStringToNSString:(FREObject) string asString:(NSString**) toString;
++ (FREResult) convertNSStringToFREString:(NSString*) string asString:(FREObject*) toString;
 
-+(FREResult) convertFREDateToNSDate:(FREObject) date asDate:(NSDate*) toDate;
-+(FREResult) convertNSDateToFREDate:(NSDate*) date asDate:(FREObject*) toDate;
++ (FREResult) convertFREDateToNSDate:(FREObject) date asDate:(NSDate*) toDate;
++ (FREResult) convertNSDateToFREDate:(NSDate*) date asDate:(FREObject*) toDate;
 
-+(FREResult) convertNSDataToFREBitmapData:(NSData*) data asBitmapData:(FREObject*) toData;
++ (FREResult) convertNSDictionaryToFREObject:(NSDictionary*) dictionary asObject:(FREObject*) toObject;
+
++ (FREResult) convertNSDataToFREBitmapData:(NSData*) data asBitmapData:(FREObject*) toData;
 
 @end

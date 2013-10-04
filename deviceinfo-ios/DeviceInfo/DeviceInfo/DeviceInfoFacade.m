@@ -28,11 +28,46 @@ FREObject getIMEI(FREContext context, void* functionData, uint32_t argc, FREObje
     return result;
 }
 
+FREObject getDeviceInfo(FREContext context, void* functionData, uint32_t argc, FREObject argv[])
+{
+    FREObject result;
+    
+    NSLog(@"getDeviceInfo");
+    
+    NSDictionary* info = [[DeviceInfo sharedInstance] getDeviceInfo];
+    
+    FRENewObject((const uint8_t*) "Object", 0, NULL, &result, NULL);
+    
+    FREObject name;
+    [FRETypeConversion convertNSStringToFREString:[info objectForKey:@"name"] asString:&name];
+    FRESetObjectProperty(result, (const uint8_t*) "name", name, NULL);
+    
+    FREObject model;
+    [FRETypeConversion convertNSStringToFREString:[info objectForKey:@"model"] asString:&model];
+    FRESetObjectProperty(result, (const uint8_t*) "model", model, NULL);
+    
+    FREObject manufacturer;
+    [FRETypeConversion convertNSStringToFREString:[info objectForKey:@"manufacturer"] asString:&manufacturer];
+    FRESetObjectProperty(result, (const uint8_t*) "manufacturer", manufacturer, NULL);
+    
+    FREObject systemName;
+    [FRETypeConversion convertNSStringToFREString:[info objectForKey:@"systemName"] asString:&systemName];
+    FRESetObjectProperty(result, (const uint8_t*) "systemName", systemName, NULL);
+    
+    FREObject systemVersion;
+    [FRETypeConversion convertNSStringToFREString:[info objectForKey:@"systemVersion"] asString:&systemVersion];
+    FRESetObjectProperty(result, (const uint8_t*) "systemVersion", systemVersion, NULL);
+    
+//    [FRETypeConversion convertNSDictionaryToFREObject:[[DeviceInfo sharedInstance] getDeviceInfo] asObject:&result];
+    
+    return result;
+}
+
 #pragma mark ContextInitialize/ContextFinalizer
 
 void ContextInitializer(void* extData, const uint8_t* ctxType, FREContext ctx, uint32_t* numFunctionsToTest, const FRENamedFunction** functionsToSet)
 {
-    *numFunctionsToTest = 2;
+    *numFunctionsToTest = 3;
     
     FRENamedFunction* func = (FRENamedFunction*) malloc(sizeof(FRENamedFunction) * (*numFunctionsToTest));
     
@@ -43,6 +78,10 @@ void ContextInitializer(void* extData, const uint8_t* ctxType, FREContext ctx, u
     func[1].name = (const uint8_t*) "getIMEI";
     func[1].functionData = NULL;
     func[1].function = &getIMEI;
+    
+    func[2].name = (const uint8_t*) "getDeviceInfo";
+    func[2].functionData = NULL;
+    func[2].function = &getDeviceInfo;
     
     *functionsToSet = func;
 }

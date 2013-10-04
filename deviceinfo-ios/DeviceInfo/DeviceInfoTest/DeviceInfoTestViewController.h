@@ -13,5 +13,6 @@
 @interface DeviceInfoTestViewController : UIViewController
 
 - (IBAction)getIMEIAction:(id)sender;
+- (IBAction)getDeviceInfoAction:(id)sender;
 
 @end
