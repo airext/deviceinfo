@@ -10,7 +10,7 @@
 
 #import "FlashRuntimeExtensions.h"
 
-#import "FRETypeConversion.h"
+#import "DeviceInfo_FRETypeConversion.h"
 
 @interface DeviceInfo : NSObject
 

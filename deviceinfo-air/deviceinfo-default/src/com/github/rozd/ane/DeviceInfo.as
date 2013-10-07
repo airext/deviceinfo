@@ -58,6 +58,13 @@ public class DeviceInfo
         return null;
     }
 
+    public function getPlatform():String
+    {
+        trace("DeviceInfo is not supported for " + Capabilities.os);
+
+        return null;
+    }
+
     public function getDeviceInfo():Object
     {
         trace("DeviceInfo is not supported for " + Capabilities.os);

@@ -90,6 +90,11 @@ public class DeviceInfo
         return context.call("getIMEI") as String;
     }
 
+    public function getPlatform():String
+    {
+        return context.call("getPlatform") as String;
+    }
+
     public function getDeviceInfo():Object
     {
         return context.call("getDeviceInfo");

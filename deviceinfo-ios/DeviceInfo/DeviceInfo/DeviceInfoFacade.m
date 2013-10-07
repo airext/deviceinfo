@@ -23,7 +23,16 @@ FREObject getIMEI(FREContext context, void* functionData, uint32_t argc, FREObje
 {
     FREObject result;
     
-    [FRETypeConversion convertNSStringToFREString:[[DeviceInfo sharedInstance] getIMEI] asString:&result];
+    [DeviceInfo_FRETypeConversion convertNSStringToFREString:[[DeviceInfo sharedInstance] getIMEI] asString:&result];
+    
+    return result;
+}
+
+FREObject getPlatform(FREContext context, void* functionData, uint32_t argc, FREObject argv[])
+{
+    FREObject result;
+    
+    FRENewObjectFromUTF8(4, (const uint8_t*) "ios", &result);
     
     return result;
 }
@@ -39,23 +48,23 @@ FREObject getDeviceInfo(FREContext context, void* functionData, uint32_t argc, F
     FRENewObject((const uint8_t*) "Object", 0, NULL, &result, NULL);
     
     FREObject name;
-    [FRETypeConversion convertNSStringToFREString:[info objectForKey:@"name"] asString:&name];
+    [DeviceInfo_FRETypeConversion convertNSStringToFREString:[info objectForKey:@"name"] asString:&name];
     FRESetObjectProperty(result, (const uint8_t*) "name", name, NULL);
     
     FREObject model;
-    [FRETypeConversion convertNSStringToFREString:[info objectForKey:@"model"] asString:&model];
+    [DeviceInfo_FRETypeConversion convertNSStringToFREString:[info objectForKey:@"model"] asString:&model];
     FRESetObjectProperty(result, (const uint8_t*) "model", model, NULL);
     
     FREObject manufacturer;
-    [FRETypeConversion convertNSStringToFREString:[info objectForKey:@"manufacturer"] asString:&manufacturer];
+    [DeviceInfo_FRETypeConversion convertNSStringToFREString:[info objectForKey:@"manufacturer"] asString:&manufacturer];
     FRESetObjectProperty(result, (const uint8_t*) "manufacturer", manufacturer, NULL);
     
     FREObject systemName;
-    [FRETypeConversion convertNSStringToFREString:[info objectForKey:@"systemName"] asString:&systemName];
+    [DeviceInfo_FRETypeConversion convertNSStringToFREString:[info objectForKey:@"systemName"] asString:&systemName];
     FRESetObjectProperty(result, (const uint8_t*) "systemName", systemName, NULL);
     
     FREObject systemVersion;
-    [FRETypeConversion convertNSStringToFREString:[info objectForKey:@"systemVersion"] asString:&systemVersion];
+    [DeviceInfo_FRETypeConversion convertNSStringToFREString:[info objectForKey:@"systemVersion"] asString:&systemVersion];
     FRESetObjectProperty(result, (const uint8_t*) "systemVersion", systemVersion, NULL);
     
 //    [FRETypeConversion convertNSDictionaryToFREObject:[[DeviceInfo sharedInstance] getDeviceInfo] asObject:&result];

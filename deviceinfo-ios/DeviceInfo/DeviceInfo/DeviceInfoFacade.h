@@ -8,7 +8,7 @@
 
 #import "FlashRuntimeExtensions.h"
 
-#import "FRETypeConversion.h"
+#import "DeviceInfo_FRETypeConversion.h"
 
 #import "DeviceInfo.h"
 
@@ -17,6 +17,8 @@
 FREObject isSupported(FREContext context, void* functionData, uint32_t argc, FREObject argv[]);
 
 FREObject getIMEI(FREContext context, void* functionData, uint32_t argc, FREObject argv[]);
+
+FREObject getPlatform(FREContext context, void* functionData, uint32_t argc, FREObject argv[]);
 
 FREObject getDeviceInfo(FREContext context, void* functionData, uint32_t argc, FREObject argv[]);
 

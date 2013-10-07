@@ -23,7 +23,7 @@
 		0E22C7FD17FD918E00A828A8 /* DeviceInfoTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E22C7FC17FD918E00A828A8 /* DeviceInfoTestViewController.m */; };
 		0E22C80317FD92A600A828A8 /* libDeviceInfo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E22C7AD17FD891D00A828A8 /* libDeviceInfo.a */; };
 		0E22C80D17FDB4E300A828A8 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E22C80C17FDB4E300A828A8 /* CoreTelephony.framework */; };
-		0E22C81117FDBA3D00A828A8 /* FRETypeConversion.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E22C81017FDBA3D00A828A8 /* FRETypeConversion.m */; };
+		0E22C81117FDBA3D00A828A8 /* DeviceInfo_FRETypeConversion.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E22C81017FDBA3D00A828A8 /* DeviceInfo_FRETypeConversion.m */; };
 		0E22C81A17FDC3F800A828A8 /* DeviceInfoFacade.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E22C81917FDC3F800A828A8 /* DeviceInfoFacade.m */; };
 		0E22C81E17FEB28100A828A8 /* libDeviceInfo.a in CopyFiles */ = {isa = PBXBuildFile; fileRef = 0E22C7AD17FD891D00A828A8 /* libDeviceInfo.a */; };
 /* End PBXBuildFile section */
@@ -85,8 +85,8 @@
 		0E22C80917FDB3F600A828A8 /* CoreTelephony.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreTelephony.h; sourceTree = "<group>"; };
 		0E22C80C17FDB4E300A828A8 /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
 		0E22C80E17FDB9C500A828A8 /* FlashRuntimeExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FlashRuntimeExtensions.h; path = ../../../../sdks/air/3.6.0/include/FlashRuntimeExtensions.h; sourceTree = "<group>"; };
-		0E22C80F17FDBA3D00A828A8 /* FRETypeConversion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FRETypeConversion.h; sourceTree = "<group>"; };
-		0E22C81017FDBA3D00A828A8 /* FRETypeConversion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FRETypeConversion.m; sourceTree = "<group>"; };
+		0E22C80F17FDBA3D00A828A8 /* DeviceInfo_FRETypeConversion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DeviceInfo_FRETypeConversion.h; sourceTree = "<group>"; };
+		0E22C81017FDBA3D00A828A8 /* DeviceInfo_FRETypeConversion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DeviceInfo_FRETypeConversion.m; sourceTree = "<group>"; };
 		0E22C81817FDC30900A828A8 /* DeviceInfoFacade.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DeviceInfoFacade.h; sourceTree = "<group>"; };
 		0E22C81917FDC3F800A828A8 /* DeviceInfoFacade.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DeviceInfoFacade.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -149,13 +149,13 @@
 		0E22C7B217FD891D00A828A8 /* DeviceInfo */ = {
 			isa = PBXGroup;
 			children = (
+				0E22C80917FDB3F600A828A8 /* CoreTelephony.h */,
 				0E22C81917FDC3F800A828A8 /* DeviceInfoFacade.m */,
 				0E22C81817FDC30900A828A8 /* DeviceInfoFacade.h */,
 				0E22C7B517FD891D00A828A8 /* DeviceInfo.h */,
 				0E22C7B717FD891D00A828A8 /* DeviceInfo.m */,
-				0E22C80F17FDBA3D00A828A8 /* FRETypeConversion.h */,
-				0E22C81017FDBA3D00A828A8 /* FRETypeConversion.m */,
-				0E22C80917FDB3F600A828A8 /* CoreTelephony.h */,
+				0E22C80F17FDBA3D00A828A8 /* DeviceInfo_FRETypeConversion.h */,
+				0E22C81017FDBA3D00A828A8 /* DeviceInfo_FRETypeConversion.m */,
 				0E22C7B317FD891D00A828A8 /* Supporting Files */,
 			);
 			path = DeviceInfo;
@@ -283,7 +283,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0E22C7B817FD891D00A828A8 /* DeviceInfo.m in Sources */,
-				0E22C81117FDBA3D00A828A8 /* FRETypeConversion.m in Sources */,
+				0E22C81117FDBA3D00A828A8 /* DeviceInfo_FRETypeConversion.m in Sources */,
 				0E22C81A17FDC3F800A828A8 /* DeviceInfoFacade.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

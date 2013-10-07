@@ -10,9 +10,9 @@
 
 #import "FlashRuntimeExtensions.h"
 
-#import "FRETypeConversion.h"
+#import "DeviceInfo_FRETypeConversion.h"
 
-@implementation FRETypeConversion
+@implementation DeviceInfo_FRETypeConversion
 
 + (FREResult) convertFREStringToNSString:(FREObject) string asString:(NSString**) toString
 {
