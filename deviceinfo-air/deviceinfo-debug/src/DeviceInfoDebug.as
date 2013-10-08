@@ -3,6 +3,9 @@ package {
 import com.github.rozd.ane.DeviceInfo;
 
 import flash.display.Sprite;
+import flash.display.StageAlign;
+import flash.display.StageScaleMode;
+import flash.events.Event;
 import flash.events.MouseEvent;
 import flash.text.TextField;
 
@@ -12,23 +15,54 @@ public class DeviceInfoDebug extends Sprite
     {
         super();
 
-        new PlainButton(this, "getIMEI", 0xFF0000, 0xFFFF00, {x: 100, y: 0, width : 200, height : 60},
-            function clickHandler(event:MouseEvent):void
+        new PlainButton(this, "getIMEI", 0xFF0000, 0xFFFF00, {x: 100, y: 80, width : 200, height : 60},
+            function clickHandler(event:Event):void
             {
+                tf.text += "getting imei... \n";
+
+                tf.text += "imei: " + DeviceInfo.getInstance().getIMEI() + "\n";
                 trace(DeviceInfo.getInstance().getIMEI());
             }
         );
 
-        new PlainButton(this, "getDeviceInfo", 0xFF0000, 0xFFFF00, {x: 100, y: 80, width : 200, height : 60},
-            function clickHandler(event:MouseEvent):void
+        new PlainButton(this, "getDeviceInfo", 0xFF0000, 0xFFFF00, {x: 100, y: 160, width : 200, height : 60},
+            function clickHandler(event:Event):void
             {
-                var info:Object = DeviceInfo.getInstance().getDeviceInfo();
+                tf.text += "getting info... \n";
+
+                var info:Object = DeviceInfo.getInstance().getDeviceInfo() || {};
+
+                tf.text += "name: " + info.name + "\n";
+                tf.text += "model: " + info.model + "\n";
+                tf.text += "manufacturer: " + info.manufacturer + "\n";
+                tf.text += "systemName: " + info.systemName + "\n";
+                tf.text += "systemVersion: " + info.systemVersion + "\n";
 
                 trace("name:", info.name);
                 trace("model:", info.model);
                 trace("manufacturer:", info.manufacturer);
                 trace("systemName:", info.systemName);
                 trace("systemVersion:", info.systemVersion);
+            }
+        );
+
+        var tf:TextField = new TextField();
+        tf.border = true;
+        tf.width = 600;
+        tf.x = 20;
+        tf.text = "Initializing...";
+        tf.y = 240;
+        addChild(tf);
+
+        tf.text += "isSupported: " + DeviceInfo.isSupported() + "\n";
+
+        stage.mouseChildren = stage.mouseEnabled = true;
+
+        addEventListener(Event.ADDED_TO_STAGE,
+            function addedToStageHandler(event:Event):void
+            {
+                stage.scaleMode = StageScaleMode.NO_SCALE;
+                stage.align = StageAlign.TOP_LEFT;
             }
         );
     }
@@ -39,6 +73,7 @@ import flash.display.DisplayObjectContainer;
 import flash.display.Sprite;
 import flash.events.Event;
 import flash.events.MouseEvent;
+import flash.events.TouchEvent;
 import flash.text.TextField;
 import flash.text.TextFormat;
 import flash.text.TextFormatAlign;

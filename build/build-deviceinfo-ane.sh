@@ -4,7 +4,7 @@ unzip -o deviceinfo.swc
 
 unzip -o default/deviceinfo-default.swc -d default
 
-adt -package -storetype pkcs12 -keystore ~/certs/rozd.p12 -storepass vopli -target ane deviceinfo.ane extension.xml -swc deviceinfo.swc -platform iPhone-ARM library.swf libDeviceInfo.a -platformoptions platform.xml -platform default -C default library.swf
+adt -package -storetype pkcs12 -keystore ~/certs/rozd.p12 -storepass vopli -target ane deviceinfo.ane extension.xml -swc deviceinfo.swc -platform iPhone-ARM libDeviceInfo.a library.swf -platformoptions platform.xml -platform Android-ARM libDeviceInfo.jar library.swf -platform default -C default library.swf
 
 cp -R deviceinfo.ane ../deviceinfo-air/deviceinfo-debug/ane/deviceinfo.ane
 

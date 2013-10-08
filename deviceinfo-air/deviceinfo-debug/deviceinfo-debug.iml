@@ -2,7 +2,7 @@
 <module type="Flex" version="4">
   <component name="FlexBuildConfigurationManager" active="deviceinfo-debug">
     <configurations>
-      <configuration name="deviceinfo-debug" target-platform="Mobile" pure-as="true" main-class="DeviceInfoDebug" output-file="DeviceInfoDebug.swf" output-folder="$MODULE_DIR$/../../../mobitile/client/mobitile/out/production/deviceinfo-debug">
+      <configuration name="deviceinfo-debug" target-platform="Mobile" pure-as="true" main-class="DeviceInfoDebug" output-file="DeviceInfoDebug.swf" output-folder="$MODULE_DIR$/bin-debug">
         <dependencies target-player="11.6">
           <entries>
             <entry library-id="c31ee848-4372-498b-b644-a67e612b0d60">
@@ -13,7 +13,7 @@
         </dependencies>
         <compiler-options />
         <packaging-air-desktop />
-        <packaging-android enabled="true" package-file-name="DeviceInfoDebug" />
+        <packaging-android enabled="true" use-generated-descriptor="false" custom-descriptor-path="$MODULE_DIR$/DeviceInfoDebug-app.xml" package-file-name="DeviceInfoDebug" />
         <packaging-ios enabled="true" package-file-name="DeviceInfoDebug">
           <AirSigningOptions keystore-path="$USER_HOME$/ios/certificate/ios_air_development.p12" provisioning-profile-path="$USER_HOME$/ios/provisioning/Mobitile_Development.mobileprovision" />
         </packaging-ios>

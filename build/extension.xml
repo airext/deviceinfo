@@ -10,6 +10,13 @@
         <finalizer>Finalizer</finalizer>
       </applicationDeployment>
     </platform>
+    <platform name="Android-ARM">
+      <applicationDeployment>
+        <nativeLibrary>libDeviceInfo.jar</nativeLibrary>
+        <initializer>com.github.rozd.ane.DeviceInfo</initializer>
+        <finalizer>com.github.rozd.ane.DeviceInfo</finalizer>
+      </applicationDeployment>
+    </platform>
     <platform name="default">
       <applicationDeployment />
     </platform>

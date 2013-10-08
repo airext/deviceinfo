@@ -76,7 +76,7 @@ FREObject getDeviceInfo(FREContext context, void* functionData, uint32_t argc, F
 
 void ContextInitializer(void* extData, const uint8_t* ctxType, FREContext ctx, uint32_t* numFunctionsToTest, const FRENamedFunction** functionsToSet)
 {
-    *numFunctionsToTest = 3;
+    *numFunctionsToTest = 4;
     
     FRENamedFunction* func = (FRENamedFunction*) malloc(sizeof(FRENamedFunction) * (*numFunctionsToTest));
     
@@ -91,6 +91,10 @@ void ContextInitializer(void* extData, const uint8_t* ctxType, FREContext ctx, u
     func[2].name = (const uint8_t*) "getDeviceInfo";
     func[2].functionData = NULL;
     func[2].function = &getDeviceInfo;
+    
+    func[3].name = (const uint8_t*) "getPlatform";
+    func[3].functionData = NULL;
+    func[3].function = &getPlatform;
     
     *functionsToSet = func;
 }
