@@ -31,42 +31,74 @@ static DeviceInfo* _sharedInstance = nil;
 CTServerConnectionRef conn;
 void ConnectionCallback(CTServerConnectionRef connection, CFStringRef string, CFDictionaryRef dictionary, void *data)
 {
-	NSLog(@"ConnectionCallback");
+	NSLog(@"DeviceInfo.ConnectionCallback");
 	CFShow(dictionary);
 }
 
 - (NSString*) getIMEI
 {
-    struct CTResult it;
-
-    CFMutableDictionaryRef dict;
-    conn = _CTServerConnectionCreate(kCFAllocatorDefault, ConnectionCallback,NULL);
+    NSLog(@"DeviceInfo.getIMEI");
     
-    _CTServerConnectionCopyMobileEquipmentInfo(&it, conn, &dict);
+    NSString* result = nil;
     
-    NSLog (@ "dict is %@", dict);
-    CFStringRef meid = CFDictionaryGetValue(dict, CFSTR("kCTMobileEquipmentInfoMEID"));
-    NSLog (@ "meid is %@", meid);
-    CFStringRef mobileId = CFDictionaryGetValue(dict, CFSTR("kCTMobileEquipmentInfoCurrentMobileId"));
-    NSLog (@ "mobileId is %@", mobileId);
+    @try
+    {
+        struct CTResult it;
+        
+        CFMutableDictionaryRef dict;
+        conn = _CTServerConnectionCreate(kCFAllocatorDefault, ConnectionCallback,NULL);
+        
+        _CTServerConnectionCopyMobileEquipmentInfo(&it, conn, &dict);
+        
+        NSLog (@ "dict is %@", dict);
+        CFStringRef meid = CFDictionaryGetValue(dict, CFSTR("kCTMobileEquipmentInfoMEID"));
+        NSLog (@ "meid is %@", meid);
+        CFStringRef mobileId = CFDictionaryGetValue(dict, CFSTR("kCTMobileEquipmentInfoCurrentMobileId"));
+        NSLog (@ "mobileId is %@", mobileId);
+        
+        result = CFBridgingRelease(mobileId);
+    }
+    @catch (NSException *exception)
+    {
+        NSLog(@"DeviceInfo.getIMEI: %@", exception);
+    }
+    @finally
+    {
+        // does nothing
+    }
     
-    return CFBridgingRelease(mobileId);
+    return result;
 }
 
 - (NSDictionary*) getDeviceInfo 
 {
-    NSMutableDictionary* info = [NSMutableDictionary dictionary];
+    NSLog(@"DeviceInfo.getDeviceInfo");
     
-    UIDevice* device = [UIDevice currentDevice];
+    NSMutableDictionary* result;
     
-    [info setObject:device.name forKey:@"name"];
-    [info setObject:device.model forKey:@"model"];
-    [info setObject:device.systemName forKey:@"systemName"];
-    [info setObject:device.systemVersion forKey:@"systemVersion"];
+    @try
+    {
+        result = [NSMutableDictionary dictionary];
+        
+        UIDevice* device = [UIDevice currentDevice];
+        
+        [result setObject:device.name forKey:@"name"];
+        [result setObject:device.model forKey:@"model"];
+        [result setObject:device.systemName forKey:@"systemName"];
+        [result setObject:device.systemVersion forKey:@"systemVersion"];
+        
+        [result setObject:@"Apple" forKey:@"manufacturer"];
+    }
+    @catch (NSException *exception)
+    {
+        NSLog(@"DeviceInfo.getDeviceInfo: %@", exception);
+    }
+    @finally
+    {
+        // does nothing
+    }
     
-    [info setObject:@"Apple" forKey:@"manufacturer"];
-    
-    return info;
+    return result;
 }
 
 @end
