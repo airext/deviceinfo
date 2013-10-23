@@ -100,6 +100,11 @@ public class DeviceInfo
         return context.call("getDeviceInfo");
     }
 
+    public function getDeviceIdentifier():String
+    {
+        return context.call("getDeviceIdentifier") as String;
+    }
+
     //--------------------------------------------------------------------------
     //
     //  Handlers

@@ -22,6 +22,8 @@ FREObject getPlatform(FREContext context, void* functionData, uint32_t argc, FRE
 
 FREObject getDeviceInfo(FREContext context, void* functionData, uint32_t argc, FREObject argv[]);
 
+FREObject getDeviceIdentifier(FREContext context, void* functionData, uint32_t argc, FREObject argv[]);
+
 #pragma mark ContextInitialize/ContextFinalizer
 
 void ContextInitializer(void* extData, const uint8_t* ctxType, FREContext ctx, uint32_t* numFunctionsToTest, const FRENamedFunction** functionsToSet);

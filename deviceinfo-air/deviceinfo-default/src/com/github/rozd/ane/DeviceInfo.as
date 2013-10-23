@@ -71,5 +71,12 @@ public class DeviceInfo
 
         return null;
     }
+
+    public function getDeviceIdentifier():String
+    {
+        trace("DeviceInfo is not supported for " + Capabilities.os);
+
+        return null;
+    }
 }
 }

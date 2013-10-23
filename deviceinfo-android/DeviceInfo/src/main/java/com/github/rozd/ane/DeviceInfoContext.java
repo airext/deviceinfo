@@ -2,6 +2,7 @@ package com.github.rozd.ane;
 
 import com.adobe.fre.FREContext;
 import com.adobe.fre.FREFunction;
+import com.github.rozd.ane.functions.GetDeviceIdentifierFunction;
 import com.github.rozd.ane.functions.GetDeviceInfoFnciton;
 import com.github.rozd.ane.functions.GetIMEIFunction;
 import com.github.rozd.ane.functions.GetPlatformFunction;
@@ -24,6 +25,7 @@ public class DeviceInfoContext extends FREContext
         functions.put("getIMEI", new GetIMEIFunction());
         functions.put("getDeviceInfo", new GetDeviceInfoFnciton());
         functions.put("getPlatform", new GetPlatformFunction());
+        functions.put("getIdentifier", new GetDeviceIdentifierFunction());
 
         return functions;
     }

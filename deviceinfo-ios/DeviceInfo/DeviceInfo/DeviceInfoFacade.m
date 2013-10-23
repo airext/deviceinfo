@@ -14,7 +14,7 @@ FREObject isSupported(FREContext context, void* functionData, uint32_t argc, FRE
 {
     FREObject result;
     
-    FRENewObjectFromBool(YES, &result);
+    FRENewObjectFromBool(TRUE, &result);
     
     return result;
 }
@@ -72,11 +72,20 @@ FREObject getDeviceInfo(FREContext context, void* functionData, uint32_t argc, F
     return result;
 }
 
+FREObject getDeviceIdentifier(FREContext context, void* functionData, uint32_t argc, FREObject argv[])
+{
+    FREObject result;
+    
+    [DeviceInfo_FRETypeConversion convertNSStringToFREString:[[DeviceInfo sharedInstance] getDeviceIdentifier] asString:&result];
+    
+    return result;
+}
+
 #pragma mark ContextInitialize/ContextFinalizer
 
 void ContextInitializer(void* extData, const uint8_t* ctxType, FREContext ctx, uint32_t* numFunctionsToTest, const FRENamedFunction** functionsToSet)
 {
-    *numFunctionsToTest = 4;
+    *numFunctionsToTest = 5;
     
     FRENamedFunction* func = (FRENamedFunction*) malloc(sizeof(FRENamedFunction) * (*numFunctionsToTest));
     
@@ -95,6 +104,10 @@ void ContextInitializer(void* extData, const uint8_t* ctxType, FREContext ctx, u
     func[3].name = (const uint8_t*) "getPlatform";
     func[3].functionData = NULL;
     func[3].function = &getPlatform;
+    
+    func[4].name = (const uint8_t*) "getDeviceIdentifier";
+    func[4].functionData = NULL;
+    func[4].function = &getDeviceIdentifier;
     
     *functionsToSet = func;
 }

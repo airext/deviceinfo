@@ -8,6 +8,8 @@
 
 #import <Foundation/Foundation.h>
 
+#import <UIKit/UIKit.h>
+
 #import "FlashRuntimeExtensions.h"
 
 #import "DeviceInfo_FRETypeConversion.h"
@@ -19,5 +21,7 @@
 - (NSString*) getIMEI;
 
 - (NSDictionary*) getDeviceInfo;
+
+- (NSString*) getDeviceIdentifier;
 
 @end

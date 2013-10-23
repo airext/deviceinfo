@@ -6,6 +6,8 @@
 //  Copyright (c) 2013 Max Rozdobudko. All rights reserved.
 //
 
+#import <Foundation/Foundation.h>
+
 #import <UIKit/UIKit.h>
 
 #import "CoreTelephony.h"
@@ -35,7 +37,7 @@ void ConnectionCallback(CTServerConnectionRef connection, CFStringRef string, CF
 	CFShow(dictionary);
 }
 
-- (NSString*) getIMEI
+- (NSString*) getIMEI 
 {
     NSLog(@"DeviceInfo.getIMEI");
     
@@ -45,18 +47,29 @@ void ConnectionCallback(CTServerConnectionRef connection, CFStringRef string, CF
     {
         struct CTResult it;
         
-        CFMutableDictionaryRef dict;
-        conn = _CTServerConnectionCreate(kCFAllocatorDefault, ConnectionCallback,NULL);
-        
-        _CTServerConnectionCopyMobileEquipmentInfo(&it, conn, &dict);
-        
-        NSLog (@ "dict is %@", dict);
-        CFStringRef meid = CFDictionaryGetValue(dict, CFSTR("kCTMobileEquipmentInfoMEID"));
-        NSLog (@ "meid is %@", meid);
-        CFStringRef mobileId = CFDictionaryGetValue(dict, CFSTR("kCTMobileEquipmentInfoCurrentMobileId"));
-        NSLog (@ "mobileId is %@", mobileId);
-        
-        result = CFBridgingRelease(mobileId);
+        if (_CTServerConnectionCreate && _CTServerConnectionCopyMobileEquipmentInfo)
+        {
+            conn = _CTServerConnectionCreate(kCFAllocatorDefault, ConnectionCallback,NULL);
+            
+            if (conn)
+            {
+                CFMutableDictionaryRef dict;
+                _CTServerConnectionCopyMobileEquipmentInfo(&it, conn, &dict);
+                
+                if (dict)
+                {
+                    if (CFDictionaryContainsKey(dict, CFSTR("kCTMobileEquipmentInfoCurrentMobileId")))
+                    {
+                        CFStringRef mobileId = CFDictionaryGetValue(dict, CFSTR("kCTMobileEquipmentInfoCurrentMobileId"));
+                        
+                        result = CFBridgingRelease(mobileId);
+                    }
+                    
+                    //                CFStringRef meid = CFDictionaryGetValue(dict, CFSTR("kCTMobileEquipmentInfoMEID"));
+                    //                CFRelease(meid);
+                }
+            }
+        }
     }
     @catch (NSException *exception)
     {
@@ -70,7 +83,7 @@ void ConnectionCallback(CTServerConnectionRef connection, CFStringRef string, CF
     return result;
 }
 
-- (NSDictionary*) getDeviceInfo 
+- (NSDictionary*) getDeviceInfo
 {
     NSLog(@"DeviceInfo.getDeviceInfo");
     
@@ -99,6 +112,16 @@ void ConnectionCallback(CTServerConnectionRef connection, CFStringRef string, CF
     }
     
     return result;
+}
+
+- (NSString*) getDeviceIdentifier
+{
+    NSUUID* id = [[UIDevice currentDevice] identifierForVendor];
+    
+    if (id != nil)
+        return [id UUIDString];
+    else
+        return nil;
 }
 
 @end

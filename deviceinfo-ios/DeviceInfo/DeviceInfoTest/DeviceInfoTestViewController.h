@@ -14,5 +14,6 @@
 
 - (IBAction)getIMEIAction:(id)sender;
 - (IBAction)getDeviceInfoAction:(id)sender;
+- (IBAction)getDeviceIdentifierAction:(id)sender;
 
 @end

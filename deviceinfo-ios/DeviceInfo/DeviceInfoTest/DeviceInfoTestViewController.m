@@ -37,4 +37,11 @@
     
     NSLog(@"%@", info);
 }
+
+- (IBAction)getDeviceIdentifierAction:(id)sender
+{
+    NSString* id = [[DeviceInfo sharedInstance] getDeviceIdentifier];
+    
+    NSLog(@"%@", id);
+}
 @end

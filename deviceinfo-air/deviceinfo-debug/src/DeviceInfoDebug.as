@@ -25,7 +25,17 @@ public class DeviceInfoDebug extends Sprite
             }
         );
 
-        new PlainButton(this, "getDeviceInfo", 0xFF0000, 0xFFFF00, {x: 100, y: 160, width : 200, height : 60},
+        new PlainButton(this, "getDeviceIdentifier", 0xFF0000, 0xFFFF00, {x: 100, y: 160, width : 200, height : 60},
+            function clickHandler(event:Event):void
+            {
+                tf.text += "getting identifier... \n";
+
+                tf.text += "deviceIdentifier: " + DeviceInfo.getInstance().getDeviceIdentifier() + "\n";
+                trace(DeviceInfo.getInstance().getDeviceIdentifier());
+            }
+        );
+
+        new PlainButton(this, "getDeviceInfo", 0xFF0000, 0xFFFF00, {x: 100, y: 220, width : 200, height : 60},
             function clickHandler(event:Event):void
             {
                 tf.text += "getting info... \n";
@@ -55,8 +65,6 @@ public class DeviceInfoDebug extends Sprite
         addChild(tf);
 
         tf.text += "isSupported: " + DeviceInfo.isSupported() + "\n";
-
-        stage.mouseChildren = stage.mouseEnabled = true;
 
         addEventListener(Event.ADDED_TO_STAGE,
             function addedToStageHandler(event:Event):void
