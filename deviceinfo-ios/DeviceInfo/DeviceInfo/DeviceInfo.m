@@ -6,12 +6,6 @@
 //  Copyright (c) 2013 Max Rozdobudko. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
-
-#import <UIKit/UIKit.h>
-
-#import "CoreTelephony.h"
-
 #import "DeviceInfo.h"
 
 @implementation DeviceInfo
@@ -37,10 +31,10 @@ void ConnectionCallback(CTServerConnectionRef connection, CFStringRef string, CF
 	CFShow(dictionary);
 }
 
+
 - (NSString*) getIMEI 
 {
     NSLog(@"DeviceInfo.getIMEI");
-    
     NSString* result = nil;
     
     @try
@@ -68,6 +62,8 @@ void ConnectionCallback(CTServerConnectionRef connection, CFStringRef string, CF
                     //                CFStringRef meid = CFDictionaryGetValue(dict, CFSTR("kCTMobileEquipmentInfoMEID"));
                     //                CFRelease(meid);
                 }
+                
+                CFRelease(conn);
             }
         }
     }

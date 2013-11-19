@@ -10,7 +10,7 @@
 
 #pragma mark API
 
-FREObject isSupported(FREContext context, void* functionData, uint32_t argc, FREObject argv[])
+FREObject DeviceInfo_isSupported(FREContext context, void* functionData, uint32_t argc, FREObject argv[])
 {
     FREObject result;
     
@@ -19,7 +19,7 @@ FREObject isSupported(FREContext context, void* functionData, uint32_t argc, FRE
     return result;
 }
 
-FREObject getIMEI(FREContext context, void* functionData, uint32_t argc, FREObject argv[])
+FREObject DeviceInfo_getIMEI(FREContext context, void* functionData, uint32_t argc, FREObject argv[])
 {
     FREObject result;
     
@@ -28,7 +28,7 @@ FREObject getIMEI(FREContext context, void* functionData, uint32_t argc, FREObje
     return result;
 }
 
-FREObject getPlatform(FREContext context, void* functionData, uint32_t argc, FREObject argv[])
+FREObject DeviceInfo_getPlatform(FREContext context, void* functionData, uint32_t argc, FREObject argv[])
 {
     FREObject result;
     
@@ -37,7 +37,7 @@ FREObject getPlatform(FREContext context, void* functionData, uint32_t argc, FRE
     return result;
 }
 
-FREObject getDeviceInfo(FREContext context, void* functionData, uint32_t argc, FREObject argv[])
+FREObject DeviceInfo_getDeviceInfo(FREContext context, void* functionData, uint32_t argc, FREObject argv[])
 {
     FREObject result;
     
@@ -72,7 +72,7 @@ FREObject getDeviceInfo(FREContext context, void* functionData, uint32_t argc, F
     return result;
 }
 
-FREObject getDeviceIdentifier(FREContext context, void* functionData, uint32_t argc, FREObject argv[])
+FREObject DeviceInfo_getDeviceIdentifier(FREContext context, void* functionData, uint32_t argc, FREObject argv[])
 {
     FREObject result;
     
@@ -83,7 +83,7 @@ FREObject getDeviceIdentifier(FREContext context, void* functionData, uint32_t a
 
 #pragma mark ContextInitialize/ContextFinalizer
 
-void ContextInitializer(void* extData, const uint8_t* ctxType, FREContext ctx, uint32_t* numFunctionsToTest, const FRENamedFunction** functionsToSet)
+void DeviceInfoContextInitializer(void* extData, const uint8_t* ctxType, FREContext ctx, uint32_t* numFunctionsToTest, const FRENamedFunction** functionsToSet)
 {
     *numFunctionsToTest = 5;
     
@@ -91,43 +91,43 @@ void ContextInitializer(void* extData, const uint8_t* ctxType, FREContext ctx, u
     
     func[0].name = (const uint8_t*) "isSupported";
     func[0].functionData = NULL;
-    func[0].function = &isSupported;
+    func[0].function = &DeviceInfo_isSupported;
     
     func[1].name = (const uint8_t*) "getIMEI";
     func[1].functionData = NULL;
-    func[1].function = &getIMEI;
+    func[1].function = &DeviceInfo_getIMEI;
     
     func[2].name = (const uint8_t*) "getDeviceInfo";
     func[2].functionData = NULL;
-    func[2].function = &getDeviceInfo;
+    func[2].function = &DeviceInfo_getDeviceInfo;
     
     func[3].name = (const uint8_t*) "getPlatform";
     func[3].functionData = NULL;
-    func[3].function = &getPlatform;
+    func[3].function = &DeviceInfo_getPlatform;
     
     func[4].name = (const uint8_t*) "getDeviceIdentifier";
     func[4].functionData = NULL;
-    func[4].function = &getDeviceIdentifier;
+    func[4].function = &DeviceInfo_getDeviceIdentifier;
     
     *functionsToSet = func;
 }
 
-void ContextFinalizer(FREContext ctx)
+void DeviceInfoContextFinalizer(FREContext ctx)
 {
     
 }
 
 #pragma mark Initializer/Finalizer
 
-void Initializer(void** extDataToSet, FREContextInitializer* ctxInitializerToSet, FREContextFinalizer* ctxFinalizerToSet)
+void DeviceInfoInitializer(void** extDataToSet, FREContextInitializer* ctxInitializerToSet, FREContextFinalizer* ctxFinalizerToSet)
 {
     *extDataToSet = NULL;
     
-    *ctxInitializerToSet = &ContextInitializer;
-	*ctxFinalizerToSet = &ContextFinalizer;
+    *ctxInitializerToSet = &DeviceInfoContextInitializer;
+	*ctxFinalizerToSet = &DeviceInfoContextFinalizer;
 }
 
-void Finalizer(void* extData)
+void DeviceInfoFinalizer(void* extData)
 {
     
 }

@@ -1,7 +1,15 @@
+//
+//  CoreTelephony.h
+//  DeviceInfo
+//
+//  Created by Maxim on 10/24/13.
+//  Copyright (c) 2013 Max Rozdobudko. All rights reserved.
+//
+
 #ifndef CORETELEPHONY_H_
 #define CORETELEPHONY_H_
 
-#include <CoreFoundation/CoreFoundation.h>
+//#include <CoreFoundation/CoreFoundation.h>
 
 struct CTResult
 {

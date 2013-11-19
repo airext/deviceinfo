@@ -10,6 +10,8 @@
 
 #import <UIKit/UIKit.h>
 
+#import "CoreTelephony.h"
+
 #import "FlashRuntimeExtensions.h"
 
 #import "DeviceInfo_FRETypeConversion.h"
