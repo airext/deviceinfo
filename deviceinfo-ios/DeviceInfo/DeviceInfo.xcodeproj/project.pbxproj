@@ -24,7 +24,6 @@
 		0E22C81A17FDC3F800A828A8 /* DeviceInfoFacade.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E22C81917FDC3F800A828A8 /* DeviceInfoFacade.m */; };
 		0E22C81E17FEB28100A828A8 /* libDeviceInfo.a in CopyFiles */ = {isa = PBXBuildFile; fileRef = 0E22C7AD17FD891D00A828A8 /* libDeviceInfo.a */; };
 		0EDD1CF718191BAC00B1FF6F /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0EDD1CF618191BAC00B1FF6F /* CoreTelephony.framework */; };
-		0EE1B55018190DD100EC6DDC /* CoreTelephony.h in Headers */ = {isa = PBXBuildFile; fileRef = 0EE1B54F18190DD100EC6DDC /* CoreTelephony.h */; settings = {ATTRIBUTES = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,13 +70,12 @@
 		0E22C7F917FD918E00A828A8 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
 		0E22C7FB17FD918E00A828A8 /* DeviceInfoTestViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DeviceInfoTestViewController.h; sourceTree = "<group>"; };
 		0E22C7FC17FD918E00A828A8 /* DeviceInfoTestViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DeviceInfoTestViewController.m; sourceTree = "<group>"; };
-		0E22C80E17FDB9C500A828A8 /* FlashRuntimeExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FlashRuntimeExtensions.h; path = ../../../../sdks/air/3.6.0/include/FlashRuntimeExtensions.h; sourceTree = "<group>"; };
+		0E22C80E17FDB9C500A828A8 /* FlashRuntimeExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FlashRuntimeExtensions.h; path = ../../../../../sdks/air/3.6.0/include/FlashRuntimeExtensions.h; sourceTree = "<group>"; };
 		0E22C80F17FDBA3D00A828A8 /* DeviceInfo_FRETypeConversion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DeviceInfo_FRETypeConversion.h; sourceTree = "<group>"; };
 		0E22C81017FDBA3D00A828A8 /* DeviceInfo_FRETypeConversion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DeviceInfo_FRETypeConversion.m; sourceTree = "<group>"; };
 		0E22C81817FDC30900A828A8 /* DeviceInfoFacade.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DeviceInfoFacade.h; sourceTree = "<group>"; };
 		0E22C81917FDC3F800A828A8 /* DeviceInfoFacade.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DeviceInfoFacade.m; sourceTree = "<group>"; };
 		0EDD1CF618191BAC00B1FF6F /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
-		0EE1B54F18190DD100EC6DDC /* CoreTelephony.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreTelephony.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,12 +101,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0E10F56C19F7993F004A7E69 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				0E22C80E17FDB9C500A828A8 /* FlashRuntimeExtensions.h */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
 		0E22C7A417FD891D00A828A8 = {
 			isa = PBXGroup;
 			children = (
 				0EDD1CF618191BAC00B1FF6F /* CoreTelephony.framework */,
-				0E22C80E17FDB9C500A828A8 /* FlashRuntimeExtensions.h */,
-				0EE1B54F18190DD100EC6DDC /* CoreTelephony.h */,
 				0E22C7B217FD891D00A828A8 /* DeviceInfo */,
 				0E22C7E617FD918E00A828A8 /* DeviceInfoTest */,
 				0E22C7AF17FD891D00A828A8 /* Frameworks */,
@@ -138,6 +142,7 @@
 		0E22C7B217FD891D00A828A8 /* DeviceInfo */ = {
 			isa = PBXGroup;
 			children = (
+				0E10F56C19F7993F004A7E69 /* Supporting Files */,
 				0E22C81917FDC3F800A828A8 /* DeviceInfoFacade.m */,
 				0E22C81817FDC30900A828A8 /* DeviceInfoFacade.h */,
 				0E22C7B517FD891D00A828A8 /* DeviceInfo.h */,
@@ -191,7 +196,6 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0EE1B55018190DD100EC6DDC /* CoreTelephony.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -386,12 +390,14 @@
 		0E22C7BC17FD891D00A828A8 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD)";
 				DSTROOT = /tmp/DeviceInfo.dst;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "DeviceInfo/DeviceInfo-Prefix.pch";
 				ONLY_ACTIVE_ARCH = NO;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 			};
 			name = Debug;
@@ -399,12 +405,14 @@
 		0E22C7BD17FD891D00A828A8 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD)";
 				DSTROOT = /tmp/DeviceInfo.dst;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "DeviceInfo/DeviceInfo-Prefix.pch";
 				ONLY_ACTIVE_ARCH = NO;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 			};
 			name = Release;

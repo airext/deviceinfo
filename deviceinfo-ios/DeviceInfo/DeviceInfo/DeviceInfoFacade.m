@@ -121,6 +121,8 @@ void DeviceInfoContextFinalizer(FREContext ctx)
 
 void DeviceInfoInitializer(void** extDataToSet, FREContextInitializer* ctxInitializerToSet, FREContextFinalizer* ctxFinalizerToSet)
 {
+    NSLog(@"DeviceInfoInitializer");
+    
     *extDataToSet = NULL;
     
     *ctxInitializerToSet = &DeviceInfoContextInitializer;
@@ -129,5 +131,5 @@ void DeviceInfoInitializer(void** extDataToSet, FREContextInitializer* ctxInitia
 
 void DeviceInfoFinalizer(void* extData)
 {
-    
+    NSLog(@"DeviceInfoFinalizer");
 }

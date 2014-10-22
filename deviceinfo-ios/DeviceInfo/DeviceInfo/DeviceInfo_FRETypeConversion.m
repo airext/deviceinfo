@@ -43,7 +43,7 @@
     return FRENewObjectFromUTF8(length + 1, (const uint8_t*) utf8String, toString);
 }
 
-+ (FREResult) convertFREDateToNSDate:(FREObject) date asDate:(NSDate*) toDate
++ (FREResult) convertFREDateToNSDate:(FREObject) date asDate:(NSDate**) toDate
 {
     FREResult result;
     
@@ -57,7 +57,7 @@
     
     interval = interval / 1000;
     
-    toDate = [NSDate dateWithTimeIntervalSince1970:interval];
+    *toDate = [NSDate dateWithTimeIntervalSince1970:interval];
     
     return result;
 }

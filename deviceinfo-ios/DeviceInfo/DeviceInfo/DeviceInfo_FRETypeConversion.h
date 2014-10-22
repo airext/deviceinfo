@@ -15,7 +15,7 @@
 + (FREResult) convertFREStringToNSString:(FREObject) string asString:(NSString**) toString;
 + (FREResult) convertNSStringToFREString:(NSString*) string asString:(FREObject*) toString;
 
-+ (FREResult) convertFREDateToNSDate:(FREObject) date asDate:(NSDate*) toDate;
++ (FREResult) convertFREDateToNSDate:(FREObject) date asDate:(NSDate**) toDate;
 + (FREResult) convertNSDateToFREDate:(NSDate*) date asDate:(FREObject*) toDate;
 
 + (FREResult) convertNSDictionaryToFREObject:(NSDictionary*) dictionary asObject:(FREObject*) toObject;
