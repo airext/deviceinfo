@@ -12,11 +12,11 @@
 
 #import "FlashRuntimeExtensions.h"
 
-#import "DeviceInfo_FRETypeConversion.h"
+#import "ANXDeviceInfoConversionRoutines.h"
 
-@interface DeviceInfo : NSObject
+@interface ANXDeviceInfo : NSObject
 
-+ (DeviceInfo*) sharedInstance;
++ (ANXDeviceInfo*) sharedInstance;
 
 - (NSString*) getIMEI;
 

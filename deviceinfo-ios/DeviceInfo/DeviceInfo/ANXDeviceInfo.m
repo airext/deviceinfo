@@ -6,15 +6,15 @@
 //  Copyright (c) 2013 Max Rozdobudko. All rights reserved.
 //
 
-#import "DeviceInfo.h"
+#import "ANXDeviceInfo.h"
 
-@implementation DeviceInfo
+@implementation ANXDeviceInfo
 
 #pragma mark Shared Instance
 
-static DeviceInfo* _sharedInstance = nil;
+static ANXDeviceInfo* _sharedInstance = nil;
 
-+ (DeviceInfo*) sharedInstance
++ (ANXDeviceInfo*) sharedInstance
 {
     if (_sharedInstance == nil)
     {
@@ -26,14 +26,14 @@ static DeviceInfo* _sharedInstance = nil;
 
 - (NSString*) getIMEI 
 {
-    NSLog(@"DeviceInfo.getIMEI");
+    NSLog(@"ANXDeviceInfo.getIMEI");
     
     return nil;
 }
 
 - (NSDictionary*) getDeviceInfo
 {
-    NSLog(@"DeviceInfo.getDeviceInfo");
+    NSLog(@"ANXDeviceInfo.getDeviceInfo");
     
     NSMutableDictionary* result;
     
@@ -52,7 +52,7 @@ static DeviceInfo* _sharedInstance = nil;
     }
     @catch (NSException *exception)
     {
-        NSLog(@"DeviceInfo.getDeviceInfo: %@", exception);
+        NSLog(@"ANXDeviceInfo.getDeviceInfo: %@", exception);
     }
     @finally
     {

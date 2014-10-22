@@ -10,7 +10,7 @@
 
 #import "FlashRuntimeExtensions.h"
 
-@interface DeviceInfo_FRETypeConversion : NSObject
+@interface ANXDeviceInfoConversionRoutines : NSObject
 
 + (FREResult) convertFREStringToNSString:(FREObject) string asString:(NSString**) toString;
 + (FREResult) convertNSStringToFREString:(NSString*) string asString:(FREObject*) toString;
@@ -19,7 +19,5 @@
 + (FREResult) convertNSDateToFREDate:(NSDate*) date asDate:(FREObject*) toDate;
 
 + (FREResult) convertNSDictionaryToFREObject:(NSDictionary*) dictionary asObject:(FREObject*) toObject;
-
-+ (FREResult) convertNSDataToFREBitmapData:(NSData*) data asBitmapData:(FREObject*) toData;
 
 @end

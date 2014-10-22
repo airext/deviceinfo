@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-#import "DeviceInfo.h"
+#import "ANXDeviceInfo.h"
 
 @interface DeviceInfoTestViewController : UIViewController
 

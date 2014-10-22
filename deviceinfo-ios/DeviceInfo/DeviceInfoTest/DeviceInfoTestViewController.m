@@ -28,19 +28,19 @@
 
 - (IBAction)getIMEIAction:(id)sender
 {
-    NSLog(@"IMEI: %@", [[DeviceInfo sharedInstance] getIMEI]);
+    NSLog(@"IMEI: %@", [[ANXDeviceInfo sharedInstance] getIMEI]);
 }
 
 - (IBAction)getDeviceInfoAction:(id)sender
 {
-    NSDictionary* info = [[DeviceInfo sharedInstance] getDeviceInfo];
+    NSDictionary* info = [[ANXDeviceInfo sharedInstance] getDeviceInfo];
     
     NSLog(@"%@", info);
 }
 
 - (IBAction)getDeviceIdentifierAction:(id)sender
 {
-    NSString* id = [[DeviceInfo sharedInstance] getDeviceIdentifier];
+    NSString* id = [[ANXDeviceInfo sharedInstance] getDeviceIdentifier];
     
     NSLog(@"%@", id);
 }

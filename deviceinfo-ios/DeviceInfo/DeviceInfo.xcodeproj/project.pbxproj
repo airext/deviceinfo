@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0E0CA0D219F7A0A3003C5176 /* FlashRuntimeExtensions.h in Headers */ = {isa = PBXBuildFile; fileRef = 0E0CA0D119F7A0A3003C5176 /* FlashRuntimeExtensions.h */; };
-		0E22C7B817FD891D00A828A8 /* DeviceInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E22C7B717FD891D00A828A8 /* DeviceInfo.m */; };
+		0E22C7B817FD891D00A828A8 /* ANXDeviceInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E22C7B717FD891D00A828A8 /* ANXDeviceInfo.m */; };
 		0E22C7E317FD918E00A828A8 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E22C7C417FD915D00A828A8 /* UIKit.framework */; };
 		0E22C7E417FD918E00A828A8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E22C7B017FD891D00A828A8 /* Foundation.framework */; };
 		0E22C7E517FD918E00A828A8 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E22C7C717FD915D00A828A8 /* CoreGraphics.framework */; };
@@ -21,8 +21,8 @@
 		0E22C7FA17FD918E00A828A8 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0E22C7F817FD918E00A828A8 /* MainStoryboard.storyboard */; };
 		0E22C7FD17FD918E00A828A8 /* DeviceInfoTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E22C7FC17FD918E00A828A8 /* DeviceInfoTestViewController.m */; };
 		0E22C80317FD92A600A828A8 /* libDeviceInfo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E22C7AD17FD891D00A828A8 /* libDeviceInfo.a */; };
-		0E22C81117FDBA3D00A828A8 /* DeviceInfo_FRETypeConversion.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E22C81017FDBA3D00A828A8 /* DeviceInfo_FRETypeConversion.m */; };
-		0E22C81A17FDC3F800A828A8 /* DeviceInfoFacade.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E22C81917FDC3F800A828A8 /* DeviceInfoFacade.m */; };
+		0E22C81117FDBA3D00A828A8 /* ANXDeviceInfoConversionRoutines.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E22C81017FDBA3D00A828A8 /* ANXDeviceInfoConversionRoutines.m */; };
+		0E22C81A17FDC3F800A828A8 /* ANXDeviceInfoFacade.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E22C81917FDC3F800A828A8 /* ANXDeviceInfoFacade.m */; };
 		0E22C81E17FEB28100A828A8 /* libDeviceInfo.a in CopyFiles */ = {isa = PBXBuildFile; fileRef = 0E22C7AD17FD891D00A828A8 /* libDeviceInfo.a */; };
 		0EDD1CF718191BAC00B1FF6F /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0EDD1CF618191BAC00B1FF6F /* CoreTelephony.framework */; };
 /* End PBXBuildFile section */
@@ -55,8 +55,8 @@
 		0E22C7AD17FD891D00A828A8 /* libDeviceInfo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libDeviceInfo.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		0E22C7B017FD891D00A828A8 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		0E22C7B417FD891D00A828A8 /* DeviceInfo-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "DeviceInfo-Prefix.pch"; sourceTree = "<group>"; };
-		0E22C7B517FD891D00A828A8 /* DeviceInfo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DeviceInfo.h; sourceTree = "<group>"; };
-		0E22C7B717FD891D00A828A8 /* DeviceInfo.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DeviceInfo.m; sourceTree = "<group>"; };
+		0E22C7B517FD891D00A828A8 /* ANXDeviceInfo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ANXDeviceInfo.h; sourceTree = "<group>"; };
+		0E22C7B717FD891D00A828A8 /* ANXDeviceInfo.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ANXDeviceInfo.m; sourceTree = "<group>"; };
 		0E22C7C417FD915D00A828A8 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		0E22C7C717FD915D00A828A8 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		0E22C7E217FD918E00A828A8 /* DeviceInfoTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DeviceInfoTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -72,10 +72,10 @@
 		0E22C7F917FD918E00A828A8 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
 		0E22C7FB17FD918E00A828A8 /* DeviceInfoTestViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DeviceInfoTestViewController.h; sourceTree = "<group>"; };
 		0E22C7FC17FD918E00A828A8 /* DeviceInfoTestViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DeviceInfoTestViewController.m; sourceTree = "<group>"; };
-		0E22C80F17FDBA3D00A828A8 /* DeviceInfo_FRETypeConversion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DeviceInfo_FRETypeConversion.h; sourceTree = "<group>"; };
-		0E22C81017FDBA3D00A828A8 /* DeviceInfo_FRETypeConversion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DeviceInfo_FRETypeConversion.m; sourceTree = "<group>"; };
-		0E22C81817FDC30900A828A8 /* DeviceInfoFacade.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DeviceInfoFacade.h; sourceTree = "<group>"; };
-		0E22C81917FDC3F800A828A8 /* DeviceInfoFacade.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DeviceInfoFacade.m; sourceTree = "<group>"; };
+		0E22C80F17FDBA3D00A828A8 /* ANXDeviceInfoConversionRoutines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ANXDeviceInfoConversionRoutines.h; sourceTree = "<group>"; };
+		0E22C81017FDBA3D00A828A8 /* ANXDeviceInfoConversionRoutines.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ANXDeviceInfoConversionRoutines.m; sourceTree = "<group>"; };
+		0E22C81817FDC30900A828A8 /* ANXDeviceInfoFacade.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ANXDeviceInfoFacade.h; sourceTree = "<group>"; };
+		0E22C81917FDC3F800A828A8 /* ANXDeviceInfoFacade.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ANXDeviceInfoFacade.m; sourceTree = "<group>"; };
 		0EDD1CF618191BAC00B1FF6F /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -144,12 +144,12 @@
 			isa = PBXGroup;
 			children = (
 				0E10F56C19F7993F004A7E69 /* Supporting Files */,
-				0E22C81917FDC3F800A828A8 /* DeviceInfoFacade.m */,
-				0E22C81817FDC30900A828A8 /* DeviceInfoFacade.h */,
-				0E22C7B517FD891D00A828A8 /* DeviceInfo.h */,
-				0E22C7B717FD891D00A828A8 /* DeviceInfo.m */,
-				0E22C80F17FDBA3D00A828A8 /* DeviceInfo_FRETypeConversion.h */,
-				0E22C81017FDBA3D00A828A8 /* DeviceInfo_FRETypeConversion.m */,
+				0E22C81917FDC3F800A828A8 /* ANXDeviceInfoFacade.m */,
+				0E22C81817FDC30900A828A8 /* ANXDeviceInfoFacade.h */,
+				0E22C7B517FD891D00A828A8 /* ANXDeviceInfo.h */,
+				0E22C7B717FD891D00A828A8 /* ANXDeviceInfo.m */,
+				0E22C80F17FDBA3D00A828A8 /* ANXDeviceInfoConversionRoutines.h */,
+				0E22C81017FDBA3D00A828A8 /* ANXDeviceInfoConversionRoutines.m */,
 				0E22C7B317FD891D00A828A8 /* Supporting Files */,
 			);
 			path = DeviceInfo;
@@ -287,9 +287,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0E22C7B817FD891D00A828A8 /* DeviceInfo.m in Sources */,
-				0E22C81117FDBA3D00A828A8 /* DeviceInfo_FRETypeConversion.m in Sources */,
-				0E22C81A17FDC3F800A828A8 /* DeviceInfoFacade.m in Sources */,
+				0E22C7B817FD891D00A828A8 /* ANXDeviceInfo.m in Sources */,
+				0E22C81117FDBA3D00A828A8 /* ANXDeviceInfoConversionRoutines.m in Sources */,
+				0E22C81A17FDC3F800A828A8 /* ANXDeviceInfoFacade.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
