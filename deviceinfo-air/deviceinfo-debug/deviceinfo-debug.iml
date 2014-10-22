@@ -9,13 +9,13 @@
               <dependency linkage="Merged" />
             </entry>
           </entries>
-          <sdk name="3.6.0" />
+          <sdk name="15.0.0.249" />
         </dependencies>
         <compiler-options />
         <packaging-air-desktop />
         <packaging-android enabled="true" use-generated-descriptor="false" custom-descriptor-path="$MODULE_DIR$/DeviceInfoDebug-app.xml" package-file-name="DeviceInfoDebug" />
         <packaging-ios enabled="true" package-file-name="DeviceInfoDebug">
-          <AirSigningOptions keystore-path="$USER_HOME$/ios/certificate/ios_air_development.p12" provisioning-profile-path="$USER_HOME$/ios/provisioning/Mobitile_Development.mobileprovision" />
+          <AirSigningOptions keystore-path="$USER_HOME$/ios/certificate/ios_air_development.p12" provisioning-profile-path="$USER_HOME$/ios/provisioning/Generic_Profile.mobileprovision" />
         </packaging-ios>
       </configuration>
     </configurations>
