@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0E0CA0D219F7A0A3003C5176 /* FlashRuntimeExtensions.h in Headers */ = {isa = PBXBuildFile; fileRef = 0E0CA0D119F7A0A3003C5176 /* FlashRuntimeExtensions.h */; };
 		0E22C7B817FD891D00A828A8 /* DeviceInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E22C7B717FD891D00A828A8 /* DeviceInfo.m */; };
 		0E22C7E317FD918E00A828A8 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E22C7C417FD915D00A828A8 /* UIKit.framework */; };
 		0E22C7E417FD918E00A828A8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E22C7B017FD891D00A828A8 /* Foundation.framework */; };
@@ -50,6 +51,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		0E0CA0D119F7A0A3003C5176 /* FlashRuntimeExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlashRuntimeExtensions.h; sourceTree = "<group>"; };
 		0E22C7AD17FD891D00A828A8 /* libDeviceInfo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libDeviceInfo.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		0E22C7B017FD891D00A828A8 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		0E22C7B417FD891D00A828A8 /* DeviceInfo-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "DeviceInfo-Prefix.pch"; sourceTree = "<group>"; };
@@ -70,7 +72,6 @@
 		0E22C7F917FD918E00A828A8 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
 		0E22C7FB17FD918E00A828A8 /* DeviceInfoTestViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DeviceInfoTestViewController.h; sourceTree = "<group>"; };
 		0E22C7FC17FD918E00A828A8 /* DeviceInfoTestViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DeviceInfoTestViewController.m; sourceTree = "<group>"; };
-		0E22C80E17FDB9C500A828A8 /* FlashRuntimeExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FlashRuntimeExtensions.h; path = ../../../../../sdks/air/3.6.0/include/FlashRuntimeExtensions.h; sourceTree = "<group>"; };
 		0E22C80F17FDBA3D00A828A8 /* DeviceInfo_FRETypeConversion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DeviceInfo_FRETypeConversion.h; sourceTree = "<group>"; };
 		0E22C81017FDBA3D00A828A8 /* DeviceInfo_FRETypeConversion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DeviceInfo_FRETypeConversion.m; sourceTree = "<group>"; };
 		0E22C81817FDC30900A828A8 /* DeviceInfoFacade.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DeviceInfoFacade.h; sourceTree = "<group>"; };
@@ -104,7 +105,7 @@
 		0E10F56C19F7993F004A7E69 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				0E22C80E17FDB9C500A828A8 /* FlashRuntimeExtensions.h */,
+				0E0CA0D119F7A0A3003C5176 /* FlashRuntimeExtensions.h */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -196,6 +197,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0E0CA0D219F7A0A3003C5176 /* FlashRuntimeExtensions.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
