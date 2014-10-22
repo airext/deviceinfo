@@ -5,9 +5,9 @@
  * Time: 6:07 PM
  * To change this template use File | Settings | File Templates.
  */
-package com.github.rozd.ane
+package com.github.airext
 {
-import com.github.rozd.ane.core.device_info;
+import com.github.airext.core.device_info;
 
 import flash.events.StatusEvent;
 
@@ -23,7 +23,7 @@ public class DeviceInfo
     //
     //--------------------------------------------------------------------------
 
-    device_info static const EXTENSION_ID:String = "com.github.rozd.ane.DeviceInfo";
+    device_info static const EXTENSION_ID:String = "com.github.airext.DeviceInfo";
 
     //--------------------------------------------------------------------------
     //

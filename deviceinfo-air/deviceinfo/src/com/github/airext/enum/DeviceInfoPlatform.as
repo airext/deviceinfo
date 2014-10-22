@@ -5,7 +5,7 @@
  * Time: 10:44 AM
  * To change this template use File | Settings | File Templates.
  */
-package com.github.rozd.ane.enum
+package com.github.airext.enum
 {
 public class DeviceInfoPlatform
 {

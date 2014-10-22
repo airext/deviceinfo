@@ -1,8 +1,8 @@
-<platform xmlns="http://ns.adobe.com/air/extension/3.6">
+<platform xmlns="http://ns.adobe.com/air/extension/4.0">
     <description></description> 
-    <sdkVersion>6.1</sdkVersion> 
+    <sdkVersion>6.0</sdkVersion> 
     <linkerOptions>
-        <option>-framework CoreTelephony</option>
+        <!-- <option>-framework CoreTelephony</option> -->
     </linkerOptions> 
     <!-- <packagedDependencies> 
         <packagedDependency></packagedDependency> 

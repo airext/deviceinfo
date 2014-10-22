@@ -1,12 +1,11 @@
 package {
 
-import com.github.rozd.ane.DeviceInfo;
+import com.github.airext.DeviceInfo;
 
 import flash.display.Sprite;
 import flash.display.StageAlign;
 import flash.display.StageScaleMode;
 import flash.events.Event;
-import flash.events.MouseEvent;
 import flash.text.TextField;
 
 public class DeviceInfoDebug extends Sprite

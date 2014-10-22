@@ -5,7 +5,7 @@
  * Time: 6:37 PM
  * To change this template use File | Settings | File Templates.
  */
-package com.github.rozd.ane
+package com.github.airext
 {
 import flash.system.Capabilities;
 
