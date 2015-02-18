@@ -8,84 +8,71 @@
 
 #import "ANXDeviceInfoFacade.h"
 
-#pragma mark API
+#pragma mark General API
 
 FREObject ANXDeviceInfoIsSupported(FREContext context, void* functionData, uint32_t argc, FREObject argv[])
 {
     FREObject result;
     
-    FRENewObjectFromBool(TRUE, &result);
+    FRENewObjectFromBool([[ANXDeviceInfo sharedInstance] isSupported], &result);
     
     return result;
 }
 
 FREObject ANXDeviceInfoGetIMEI(FREContext context, void* functionData, uint32_t argc, FREObject argv[])
 {
-    FREObject result;
-    
-    [ANXDeviceInfoConversionRoutines convertNSStringToFREString:[[ANXDeviceInfo sharedInstance] getIMEI] asString:&result];
-    
-    return result;
+    return [ANXDeviceInfoConversionRoutines convertNSStringToFREObject:[[ANXDeviceInfo sharedInstance] getIMEI]];
 }
 
-FREObject ANXDeviceInfoGetPlatform(FREContext context, void* functionData, uint32_t argc, FREObject argv[])
+FREObject ANXDeviceInfoGetGeneralInfo(FREContext context, void* functionData, uint32_t argc, FREObject argv[])
 {
-    FREObject result;
+    ANXDeviceInfoGeneral *general = [[ANXDeviceInfo sharedInstance] getGeneralInfo];
     
-    FRENewObjectFromUTF8(4, (const uint8_t*) "ios", &result);
-    
-    return result;
+    return [general toFREOject];
 }
 
-FREObject ANXDeviceInfoGetDeviceInfo(FREContext context, void* functionData, uint32_t argc, FREObject argv[])
+#pragma mark Battery API
+
+FREObject ANXDeviceInfoGetBatteryLevel(FREContext context, void* functionData, uint32_t argc, FREObject argv[])
 {
-    FREObject result;
-    
-    NSDictionary* info = [[ANXDeviceInfo sharedInstance] getDeviceInfo];
-    
-    FRENewObject((const uint8_t*) "Object", 0, NULL, &result, NULL);
-    
-    FREObject name;
-    [ANXDeviceInfoConversionRoutines convertNSStringToFREString:[info objectForKey:@"name"] asString:&name];
-    FRESetObjectProperty(result, (const uint8_t*) "name", name, NULL);
-    
-    FREObject model;
-    [ANXDeviceInfoConversionRoutines convertNSStringToFREString:[info objectForKey:@"model"] asString:&model];
-    FRESetObjectProperty(result, (const uint8_t*) "model", model, NULL);
-    
-    FREObject manufacturer;
-    [ANXDeviceInfoConversionRoutines convertNSStringToFREString:[info objectForKey:@"manufacturer"] asString:&manufacturer];
-    FRESetObjectProperty(result, (const uint8_t*) "manufacturer", manufacturer, NULL);
-    
-    FREObject systemName;
-    [ANXDeviceInfoConversionRoutines convertNSStringToFREString:[info objectForKey:@"systemName"] asString:&systemName];
-    FRESetObjectProperty(result, (const uint8_t*) "systemName", systemName, NULL);
-    
-    FREObject systemVersion;
-    [ANXDeviceInfoConversionRoutines convertNSStringToFREString:[info objectForKey:@"systemVersion"] asString:&systemVersion];
-    FRESetObjectProperty(result, (const uint8_t*) "systemVersion", systemVersion, NULL);
-    
-//    [FRETypeConversion convertNSDictionaryToFREObject:[[DeviceInfo sharedInstance] getDeviceInfo] asObject:&result];
-    
-    return result;
+    return [ANXDeviceInfoConversionRoutines convertLongLongToFREObject:(long long)[ANXDeviceInfoBattery getBatteryLevel]];
 }
 
-FREObject ANXDeviceInfoGetDeviceIdentifier(FREContext context, void* functionData, uint32_t argc, FREObject argv[])
+FREObject ANXDeviceInfoGetBatteryState(FREContext context, void* functionData, uint32_t argc, FREObject argv[])
 {
-    FREObject result;
+    return [ANXDeviceInfoConversionRoutines convertNSStringToFREObject:[ANXDeviceInfoBattery getBatteryState]];
+}
+
+FREObject ANXDeviceInfoStartBatteryMonitoring(FREContext context, void* functionData, uint32_t argc, FREObject argv[])
+{
+    [ANXDeviceInfoBattery startMonitoring];
     
-    [ANXDeviceInfoConversionRoutines convertNSStringToFREString:[[ANXDeviceInfo sharedInstance] getDeviceIdentifier] asString:&result];
+    return NULL;
+}
+
+FREObject ANXDeviceInfoStopBatteryMonitoring(FREContext context, void* functionData, uint32_t argc, FREObject argv[])
+{
+    [ANXDeviceInfoBattery stopMonitoring];
     
-    return result;
+    return NULL;
+}
+
+#pragma mark iOS specific API
+
+FREObject ANXDeviceInfoGetVendorIdentifier(FREContext context, void* functionData, uint32_t argc, FREObject argv[])
+{
+    return [ANXDeviceInfoConversionRoutines convertNSStringToFREObject:[[ANXDeviceInfo sharedInstance] getVendorIdentifier]];
 }
 
 #pragma mark ContextInitialize/ContextFinalizer
 
 void ANXDeviceInfoContextInitializer(void* extData, const uint8_t* ctxType, FREContext ctx, uint32_t* numFunctionsToTest, const FRENamedFunction** functionsToSet)
 {
-    *numFunctionsToTest = 5;
+    *numFunctionsToTest = 8;
     
     FRENamedFunction* func = (FRENamedFunction*) malloc(sizeof(FRENamedFunction) * (*numFunctionsToTest));
+    
+    // general
     
     func[0].name = (const uint8_t*) "isSupported";
     func[0].functionData = NULL;
@@ -95,24 +82,43 @@ void ANXDeviceInfoContextInitializer(void* extData, const uint8_t* ctxType, FREC
     func[1].functionData = NULL;
     func[1].function = &ANXDeviceInfoGetIMEI;
     
-    func[2].name = (const uint8_t*) "getDeviceInfo";
+    func[2].name = (const uint8_t*) "getGeneralInfo";
     func[2].functionData = NULL;
-    func[2].function = &ANXDeviceInfoGetDeviceInfo;
+    func[2].function = &ANXDeviceInfoGetGeneralInfo;
     
-    func[3].name = (const uint8_t*) "getPlatform";
+    // battery
+    
+    func[3].name = (const uint8_t*) "getBatteryLevel";
     func[3].functionData = NULL;
-    func[3].function = &ANXDeviceInfoGetPlatform;
+    func[3].function = &ANXDeviceInfoGetBatteryLevel;
     
-    func[4].name = (const uint8_t*) "getDeviceIdentifier";
+    func[4].name = (const uint8_t*) "getBatteryState";
     func[4].functionData = NULL;
-    func[4].function = &ANXDeviceInfoGetDeviceIdentifier;
+    func[4].function = &ANXDeviceInfoGetBatteryState;
+    
+    
+    func[5].name = (const uint8_t*) "startBatteryMonitoring";
+    func[5].functionData = NULL;
+    func[5].function = &ANXDeviceInfoStartBatteryMonitoring;
+    
+    func[6].name = (const uint8_t*) "stopBatteryMonitoring";
+    func[6].functionData = NULL;
+    func[6].function = &ANXDeviceInfoStopBatteryMonitoring;
+    
+    // ios
+    
+    func[7].name = (const uint8_t*) "iosGetVendorIdentifier";
+    func[7].functionData = NULL;
+    func[7].function = &ANXDeviceInfoGetVendorIdentifier;
     
     *functionsToSet = func;
+    
+    [ANXDeviceInfo sharedInstance].context = ctx;
 }
 
 void ANXDeviceInfoContextFinalizer(FREContext ctx)
 {
-    
+    [ANXDeviceInfo sharedInstance].context = nil;
 }
 
 #pragma mark Initializer/Finalizer

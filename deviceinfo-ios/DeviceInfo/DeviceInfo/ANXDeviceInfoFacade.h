@@ -12,6 +12,8 @@
 
 #import "ANXDeviceInfo.h"
 
+#import "ANXDeviceInfoBattery.h"
+
 #pragma mark API
 
 FREObject ANXDeviceInfoIsSupported(FREContext context, void* functionData, uint32_t argc, FREObject argv[]);
@@ -22,7 +24,7 @@ FREObject ANXDeviceInfoGetPlatform(FREContext context, void* functionData, uint3
 
 FREObject ANXDeviceInfoGetDeviceInfo(FREContext context, void* functionData, uint32_t argc, FREObject argv[]);
 
-FREObject ANXDeviceInfoGetDeviceIdentifier(FREContext context, void* functionData, uint32_t argc, FREObject argv[]);
+FREObject ANXDeviceInfoGetVendorIdentifier(FREContext context, void* functionData, uint32_t argc, FREObject argv[]);
 
 #pragma mark ContextInitialize/ContextFinalizer
 

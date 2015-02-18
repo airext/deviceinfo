@@ -2,7 +2,7 @@
     <description></description> 
     <sdkVersion>6.0</sdkVersion> 
     <linkerOptions>
-        <!-- <option>-framework CoreTelephony</option> -->
+        <!-- <option></option> -->
     </linkerOptions> 
     <!-- <packagedDependencies> 
         <packagedDependency></packagedDependency> 

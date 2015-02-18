@@ -8,10 +8,14 @@
 package com.github.airext
 {
 import com.github.airext.core.device_info;
+import com.github.airext.data.DeviceInfoBattery;
+import com.github.airext.data.DeviceInfoGeneral;
 
 import flash.events.StatusEvent;
 
 import flash.external.ExtensionContext;
+import flash.net.registerClassAlias;
+import flash.system.Capabilities;
 
 use namespace device_info;
 
@@ -33,7 +37,7 @@ public class DeviceInfo
 
     private static var _context:ExtensionContext;
 
-    private static function get context():ExtensionContext
+    device_info static function get context():ExtensionContext
     {
         if (_context == null)
         {
@@ -56,7 +60,7 @@ public class DeviceInfo
 
     private static var instance:DeviceInfo;
 
-    public static function getInstance():DeviceInfo
+    public static function sharedInstance():DeviceInfo
     {
         if (instance == null)
         {
@@ -68,6 +72,16 @@ public class DeviceInfo
 
     //--------------------------------------------------------------------------
     //
+    //  Static initialization
+    //
+    //--------------------------------------------------------------------------
+
+    {
+        registerClassAlias("com.github.airext.data.DeviceInfoGeneral", DeviceInfoGeneral);
+    }
+
+    //--------------------------------------------------------------------------
+    //
     //  Constructor
     //
     //--------------------------------------------------------------------------
@@ -75,9 +89,69 @@ public class DeviceInfo
     public function DeviceInfo()
     {
         super();
-
-        context.addEventListener(StatusEvent.STATUS, statusHandler);
     }
+
+    //--------------------------------------------------------------------------
+    //
+    //  Properties
+    //
+    //--------------------------------------------------------------------------
+
+    //-------------------------------------
+    //  imei
+    //-------------------------------------
+
+    private var _imei:String;
+
+    public function get imei():String
+    {
+        if (_imei == null)
+        {
+            _imei = getIMEI();
+        }
+
+        return _imei;
+    }
+
+    //-------------------------------------
+    //  general
+    //-------------------------------------
+
+    private var _general:DeviceInfoGeneral;
+
+    public function get general():DeviceInfoGeneral
+    {
+        if (_general == null)
+        {
+            _general = getGeneral();
+        }
+
+        return _general;
+    }
+
+    //-------------------------------------
+    //  battery
+    //-------------------------------------
+
+    private var _battery:DeviceInfoBattery;
+
+    public function get battery():DeviceInfoBattery
+    {
+        if (_battery == null)
+        {
+            _battery = getBattery();
+        }
+
+        return _battery;
+    }
+
+    //-------------------------------------
+    //  network
+    //-------------------------------------
+
+    //-------------------------------------
+    //  display
+    //-------------------------------------
 
     //--------------------------------------------------------------------------
     //
@@ -85,24 +159,19 @@ public class DeviceInfo
     //
     //--------------------------------------------------------------------------
 
+    public function getGeneral():DeviceInfoGeneral
+    {
+        return context.call("getGeneralInfo") as DeviceInfoGeneral;
+    }
+
+    public function getBattery():DeviceInfoBattery
+    {
+        return new DeviceInfoBattery();
+    }
+
     public function getIMEI():String
     {
         return context.call("getIMEI") as String;
-    }
-
-    public function getPlatform():String
-    {
-        return context.call("getPlatform") as String;
-    }
-
-    public function getDeviceInfo():Object
-    {
-        return context.call("getDeviceInfo");
-    }
-
-    public function getDeviceIdentifier():String
-    {
-        return context.call("getDeviceIdentifier") as String;
     }
 
     //--------------------------------------------------------------------------

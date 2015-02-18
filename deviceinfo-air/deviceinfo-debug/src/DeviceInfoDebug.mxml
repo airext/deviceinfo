@@ -1,0 +1,55 @@
+<?xml version="1.0"?>
+<!--
+  Created by max on 10/23/14.
+-->
+<s:Application xmlns:fx="http://ns.adobe.com/mxml/2009"
+               xmlns:s="library://ns.adobe.com/flex/spark" backgroundColor="#00AAAA">
+
+    <fx:Script>
+        <![CDATA[
+        import com.github.airext.DeviceInfo;
+        import com.github.airext.data.DeviceInfoGeneral;
+
+        import spark.components.Alert;
+
+        private function imei_clickHandler(event:MouseEvent):void
+        {
+            Alert.show(String(DeviceInfo.sharedInstance().getIMEI()));
+        }
+
+        private function general_clickHandler(event:MouseEvent):void
+        {
+            var general:DeviceInfoGeneral = DeviceInfo.sharedInstance().general;
+
+            Alert.show(String(general));
+        }
+
+        private function iosVendorIdentifier_clickHandler(event:MouseEvent):void
+        {
+            var general:DeviceInfoGeneral = DeviceInfo.sharedInstance().general;
+
+            Alert.show(String(general.ios.getVendorIdentifier()));
+        }
+
+        ]]>
+    </fx:Script>
+
+    <s:layout>
+        <s:VerticalLayout horizontalAlign="justify" gap="30" paddingTop="30" />
+    </s:layout>
+
+    <s:Button label="IMEI" click="imei_clickHandler(event)" />
+
+    <s:Button label="General" click="general_clickHandler(event)" />
+
+    <s:SkinnableContainer backgroundColor="#FFFFFF">
+        <s:layout><s:HorizontalLayout paddingLeft="10" paddingTop="10" paddingBottom="10" /></s:layout>
+        <s:Label text="Battery State:{DeviceInfo.sharedInstance().battery.state}" />
+        <s:Label text="Battery Level:{DeviceInfo.sharedInstance().battery.level}" />
+    </s:SkinnableContainer>
+
+    <s:Label text="IOS SPECIFIC" />
+
+    <s:Button label="Vendor Identifier" click="iosVendorIdentifier_clickHandler(event)" />
+
+</s:Application>

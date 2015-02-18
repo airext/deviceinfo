@@ -6,6 +6,8 @@
 //  Copyright (c) 2013 Max Rozdobudko. All rights reserved.
 //
 
+#import <AdSupport/AdSupport.h>
+
 #import "ANXDeviceInfo.h"
 
 @implementation ANXDeviceInfo
@@ -24,45 +26,30 @@ static ANXDeviceInfo* _sharedInstance = nil;
     return _sharedInstance;
 }
 
+#pragma mark Properties
+
+@synthesize context;
+
+#pragma mark API Funcitons
+
+-(BOOL) isSupported
+{
+    return YES;
+}
+
+-(ANXDeviceInfoGeneral *) getGeneralInfo
+{
+    return [[ANXDeviceInfoGeneral alloc] init];
+}
+
 - (NSString*) getIMEI 
 {
-    NSLog(@"ANXDeviceInfo.getIMEI");
+    NSLog(@"[DeviceInfo] Warning: IMEI is not supported on iOS.");
     
     return nil;
 }
 
-- (NSDictionary*) getDeviceInfo
-{
-    NSLog(@"ANXDeviceInfo.getDeviceInfo");
-    
-    NSMutableDictionary* result;
-    
-    @try
-    {
-        result = [NSMutableDictionary dictionary];
-        
-        UIDevice* device = [UIDevice currentDevice];
-        
-        [result setObject:device.name forKey:@"name"];
-        [result setObject:device.model forKey:@"model"];
-        [result setObject:device.systemName forKey:@"systemName"];
-        [result setObject:device.systemVersion forKey:@"systemVersion"];
-        
-        [result setObject:@"Apple" forKey:@"manufacturer"];
-    }
-    @catch (NSException *exception)
-    {
-        NSLog(@"ANXDeviceInfo.getDeviceInfo: %@", exception);
-    }
-    @finally
-    {
-        // does nothing
-    }
-    
-    return result;
-}
-
-- (NSString*) getDeviceIdentifier
+-(NSString *) getVendorIdentifier
 {
     NSUUID* id = [[UIDevice currentDevice] identifierForVendor];
     
@@ -70,6 +57,23 @@ static ANXDeviceInfo* _sharedInstance = nil;
         return [id UUIDString];
     else
         return nil;
+}
+
+#pragma mark Dispatch events
+
+-(void) dispatch: (NSString *) code withLevel: (NSString *) level
+{
+    FREDispatchStatusEventAsync(context, (const uint8_t*) [code UTF8String], (const uint8_t*) [level UTF8String]);
+}
+
+-(void) dispatchError: (NSString *)code
+{
+    [self dispatch:code withLevel:@"error"];
+}
+
+-(void) dispatchStatus: (NSString *)code
+{
+    [self dispatch:code withLevel:@"status"];
 }
 
 @end

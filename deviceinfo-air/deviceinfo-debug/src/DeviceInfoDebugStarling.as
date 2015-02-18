@@ -1,6 +1,7 @@
 package {
 
 import com.github.airext.DeviceInfo;
+import com.github.airext.data.DeviceInfoGeneral;
 
 import flash.display.Sprite;
 import flash.display.StageAlign;
@@ -8,9 +9,9 @@ import flash.display.StageScaleMode;
 import flash.events.Event;
 import flash.text.TextField;
 
-public class DeviceInfoDebug extends Sprite
+public class DeviceInfoDebugStarling extends Sprite
 {
-    public function DeviceInfoDebug()
+    public function DeviceInfoDebugStarling()
     {
         super();
 
@@ -19,8 +20,8 @@ public class DeviceInfoDebug extends Sprite
             {
                 tf.text += "getting imei... \n";
 
-                tf.text += "imei: " + DeviceInfo.getInstance().getIMEI() + "\n";
-                trace(DeviceInfo.getInstance().getIMEI());
+                tf.text += "imei: " + DeviceInfo.sharedInstance().getIMEI() + "\n";
+                trace(DeviceInfo.sharedInstance().getIMEI());
             }
         );
 
@@ -29,8 +30,8 @@ public class DeviceInfoDebug extends Sprite
             {
                 tf.text += "getting identifier... \n";
 
-                tf.text += "deviceIdentifier: " + DeviceInfo.getInstance().getDeviceIdentifier() + "\n";
-                trace(DeviceInfo.getInstance().getDeviceIdentifier());
+                tf.text += "getVendorIdentifier: " + DeviceInfo.sharedInstance().general.ios.getVendorIdentifier() + "\n";
+                trace(DeviceInfo.sharedInstance().general.ios.getVendorIdentifier());
             }
         );
 
@@ -39,7 +40,7 @@ public class DeviceInfoDebug extends Sprite
             {
                 tf.text += "getting info... \n";
 
-                var info:Object = DeviceInfo.getInstance().getDeviceInfo() || {};
+                var info:DeviceInfoGeneral = DeviceInfo.sharedInstance().general || {};
 
                 tf.text += "name: " + info.name + "\n";
                 tf.text += "model: " + info.model + "\n";

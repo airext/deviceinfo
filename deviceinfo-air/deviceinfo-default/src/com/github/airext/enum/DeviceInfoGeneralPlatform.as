@@ -7,7 +7,7 @@
  */
 package com.github.airext.enum
 {
-public class DeviceInfoPlatform
+public class DeviceInfoGeneralPlatform
 {
     public static const IOS:String = "ios";
 

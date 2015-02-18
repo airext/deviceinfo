@@ -12,16 +12,36 @@
 
 #import "FlashRuntimeExtensions.h"
 
+#import "ANXDeviceInfoGeneral.h"
+
 #import "ANXDeviceInfoConversionRoutines.h"
 
 @interface ANXDeviceInfo : NSObject
 
+#pragma mark Shared Instance
+
 + (ANXDeviceInfo*) sharedInstance;
 
-- (NSString*) getIMEI;
+#pragma mark Properties
 
-- (NSDictionary*) getDeviceInfo;
+@property FREContext context;
 
-- (NSString*) getDeviceIdentifier;
+#pragma mark API Funcitons
+
+-(BOOL) isSupported;
+
+-(ANXDeviceInfoGeneral*) getGeneralInfo;
+
+-(NSString *) getIMEI;
+
+-(NSString *) getVendorIdentifier;
+
+#pragma mark Dispatch events
+
+-(void) dispatch: (NSString *) code withLevel: (NSString *) level;
+
+-(void) dispatchError: (NSString *)code;
+
+-(void) dispatchStatus: (NSString *)code;
 
 @end

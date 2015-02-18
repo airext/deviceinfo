@@ -14,7 +14,40 @@
 
 @implementation ANXDeviceInfoConversionRoutines
 
-+ (FREResult) convertFREStringToNSString:(FREObject) string asString:(NSString**) toString
+#pragma mark Write object's properties
+
++(void) setStringTo: (FREObject) object withValue: (NSString *) value forProperty: (NSString *) property
+{
+    FREObject temp = [self convertNSStringToFREObject: value];
+    
+    if (temp == NULL)
+    {
+        return;
+    }
+    
+    FRESetObjectProperty(object, (const uint8_t*) [property UTF8String], temp, NULL);
+}
+
+#pragma mark Conversion methods
+
++(FREObject) convertNSStringToFREObject:(NSString*) string
+{
+    if (string == nil) return NULL;
+    
+    const char* utf8String = string.UTF8String;
+    
+    unsigned long length = strlen( utf8String );
+    
+    FREObject converted;
+    FREResult result = FRENewObjectFromUTF8((uint32_t) length + 1, (const uint8_t*) utf8String, &converted);
+    
+    if (result != FRE_OK)
+        return NULL;
+    
+    return converted;
+}
+
++(NSString*) convertFREObjectToNSString: (FREObject) string
 {
     FREResult result;
     
@@ -23,87 +56,69 @@
     
     result = FREGetObjectAsUTF8(string, &length, &tempValue);
     
-    if(result != FRE_OK) return result;
+    if (result != FRE_OK)
+        return nil;
     
-    *toString = [NSString stringWithUTF8String: (char*) tempValue];
-    
-    return FRE_OK;
+    return [NSString stringWithUTF8String: (char*) tempValue];
 }
 
-+ (FREResult) convertNSStringToFREString:(NSString*) string asString:(FREObject*) toString
-{
-    if (string == nil) return FRE_INVALID_ARGUMENT;
-    
-    const char* utf8String = string.UTF8String;
-    
-    unsigned long length = strlen( utf8String );
-    
-    return FRENewObjectFromUTF8((uint32_t)length + 1, (const uint8_t*) utf8String, toString);
-}
 
-+ (FREResult) convertFREDateToNSDate:(FREObject) date asDate:(NSDate**) toDate
++(NSDate*) convertFREObjectToNSDate: (FREObject) date
 {
     FREResult result;
     
     FREObject time;
     result = FREGetObjectProperty(date, (const uint8_t*) "time", &time, NULL);
-    if (result != FRE_OK) return result;
+    
+    if (result != FRE_OK)
+        return nil;
     
     NSTimeInterval interval;
+    
     result = FREGetObjectAsDouble(time, &interval);
-    if (result != FRE_OK) return result;
+    
+    if (result != FRE_OK)
+        return nil;
     
     interval = interval / 1000;
     
-    *toDate = [NSDate dateWithTimeIntervalSince1970:interval];
+    return [NSDate dateWithTimeIntervalSince1970:interval];
+}
+
++(NSUInteger) convertFREObjectToNSUInteger: (FREObject) integer withDefault: (NSUInteger) defaultValue;
+{
+    FREResult result;
+    
+    uint32_t tempValue;
+    
+    result = FREGetObjectAsUint32(integer, &tempValue);
+    
+    if (result != FRE_OK)
+        return defaultValue;
+    
+    return (NSUInteger) tempValue;
+}
+
++(FREObject) convertLongLongToFREObject: (long long) number
+{
+    FREObject result;
+    FRENewObjectFromUint32((uint32_t) number, &result);
     
     return result;
 }
 
-+ (FREResult) convertNSDateToFREDate:(NSDate*) date asDate:(FREObject*) toDate
-{
-    NSTimeInterval timestamp = date.timeIntervalSince1970 * 1000;
-    
-    FREResult result;
-    FREObject time;
-    result = FRENewObjectFromDouble( timestamp, &time );
-    
-    if( result != FRE_OK ) return result;
-    result = FRENewObject( (const uint8_t*) "Date", 0, NULL, toDate, NULL );
-    if( result != FRE_OK ) return result;
-    result = FRESetObjectProperty( *toDate, (const uint8_t*) "time", time, NULL);
-    if( result != FRE_OK ) return result;
-    
-    return FRE_OK;
-}
-
-+ (FREResult) convertNSDictionaryToFREObject:(NSDictionary*) dictionary asObject:(FREObject*) toObject
++(double) convertFREObjectToDouble: (FREObject) number
 {
     FREResult result;
     
-    result = FRENewObject((const uint8_t*) "Object", 0, NULL, toObject, NULL);
-    if (result != FRE_OK) return result;
+    double value;
     
-    NSArray* keys = [dictionary allKeys];
-    NSArray* vals = [dictionary allValues];
+    result = FREGetObjectAsDouble(number, &value);
     
-    NSUInteger n = [keys count];
+    if (result != FRE_OK)
+        return 0.0;
     
-    for (NSUInteger i = 0; i < n; i++)
-    {
-        FREObject propertyKey;
-        result = [self convertNSStringToFREString:[keys objectAtIndex:i] asString:&propertyKey];
-        if (result != FRE_OK) return result;
-        
-        FREObject propertyValue;
-        result = [self convertNSStringToFREString:[vals objectAtIndex:i] asString:&propertyValue];
-        if (result != FRE_OK) return result;
-        
-        result = FRESetObjectProperty(*toObject, propertyKey, propertyValue, NULL);
-        if (result != FRE_OK) return result;
-    }
-    
-    return result;
+    return value;
 }
 
 @end

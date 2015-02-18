@@ -12,12 +12,21 @@
 
 @interface ANXDeviceInfoConversionRoutines : NSObject
 
-+ (FREResult) convertFREStringToNSString:(FREObject) string asString:(NSString**) toString;
-+ (FREResult) convertNSStringToFREString:(NSString*) string asString:(FREObject*) toString;
+#pragma mark Write object's properties
 
-+ (FREResult) convertFREDateToNSDate:(FREObject) date asDate:(NSDate**) toDate;
-+ (FREResult) convertNSDateToFREDate:(NSDate*) date asDate:(FREObject*) toDate;
++(void) setStringTo: (FREObject) object withValue: (NSString *) value forProperty: (NSString *) property;
 
-+ (FREResult) convertNSDictionaryToFREObject:(NSDictionary*) dictionary asObject:(FREObject*) toObject;
+#pragma mark Conversion methods
+
++(FREObject) convertNSStringToFREObject:(NSString*) string;
++(NSString*) convertFREObjectToNSString: (FREObject) string;
+
++(NSDate*) convertFREObjectToNSDate: (FREObject) date;
+
++(NSUInteger) convertFREObjectToNSUInteger: (FREObject) integer withDefault: (NSUInteger) defaultValue;
+
++(FREObject) convertLongLongToFREObject: (long long) number;
+
++(double) convertFREObjectToDouble: (FREObject) number;
 
 @end
