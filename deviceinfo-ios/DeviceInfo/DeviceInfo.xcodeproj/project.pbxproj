@@ -6,6 +6,21 @@
 	objectVersion = 46;
 	objects = {
 
+/* Begin PBXAggregateTarget section */
+		0E69FCF91AFCE3EE009BA544 /* DeviceInfoAggregator */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = 0E69FCFC1AFCE3EE009BA544 /* Build configuration list for PBXAggregateTarget "DeviceInfoAggregator" */;
+			buildPhases = (
+				0E69FCFF1AFCE41A009BA544 /* ShellScript */,
+				0E69FD2C1AFD1525009BA544 /* CopyFiles */,
+			);
+			dependencies = (
+			);
+			name = DeviceInfoAggregator;
+			productName = DeviceInfoAggregator;
+		};
+/* End PBXAggregateTarget section */
+
 /* Begin PBXBuildFile section */
 		0E0CA0D219F7A0A3003C5176 /* FlashRuntimeExtensions.h in Headers */ = {isa = PBXBuildFile; fileRef = 0E0CA0D119F7A0A3003C5176 /* FlashRuntimeExtensions.h */; };
 		0E0CA0DC19F7A6D2003C5176 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E0CA0DB19F7A6D2003C5176 /* main.m */; };
@@ -64,6 +79,15 @@
 			dstSubfolderSpec = 0;
 			files = (
 				0E22C81E17FEB28100A828A8 /* libDeviceInfo.a in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0E69FD2C1AFD1525009BA544 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 7;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -360,6 +384,9 @@
 					0E0CA0D619F7A6D2003C5176 = {
 						CreatedOnToolsVersion = 6.0.1;
 					};
+					0E69FCF91AFCE3EE009BA544 = {
+						CreatedOnToolsVersion = 6.3.1;
+					};
 				};
 			};
 			buildConfigurationList = 0E22C7A817FD891D00A828A8 /* Build configuration list for PBXProject "DeviceInfo" */;
@@ -378,6 +405,7 @@
 				0E22C7AC17FD891D00A828A8 /* DeviceInfo */,
 				0E22C7E117FD918E00A828A8 /* DeviceInfoTest */,
 				0E0CA0D619F7A6D2003C5176 /* DeviceInfoDebug */,
+				0E69FCF91AFCE3EE009BA544 /* DeviceInfoAggregator */,
 			);
 		};
 /* End PBXProject section */
@@ -420,6 +448,19 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "#!/bin/sh\n\nsource ~/.profile\n\nPATH=${PATH}:~/sdks/air/4.0.0/bin\n\necho \"Please provide the complete path of the IPA before building this target\"\n#PATH_TO_IPA=`~/dev/airext/deviceinfo/deviceinfo-ios/DeviceInfo/DeviceInfoDebug.ipa`\n\nBUILD_DIR=~/dev/airext/deviceinfo/build/\nANE_NAME=\"DeviceInfo.ane\"\n\n#IPA_DIR=`/usr/bin/dirname \"$PATH_TO_IPA\"`\nIPA_DIR=~/dev/airext/deviceinfo/build/launch/\n#IPA_NAME=`/usr/bin/basename \"$PATH_TO_IPA\"`\nIPA_NAME=\"DeviceInfoDebug.ipa\"\n#IPA_BASE_NAME=`/usr/bin/basename \"$PATH_TO_IPA\" .ipa`\nIPA_BASE_NAME=\"DeviceInfoDebug\"\n\n#package DeviceInfo.ane\n\npushd \"$BUILD_DIR\"\n\necho \"packaging s-picker.ane extension...\"\n\nsh build.sh\n\necho \"deviceinfo.ane packaged.\"\n\necho \"packaging DeviceInfoDebug.ipa application...\"\n\nsh debug.sh\n\necho \"DeviceInfoDebug.ipa packaged.\"\n\npopd\n\n#debug DeviceInfoDebug.ipa\n\necho start\necho \"$IPA_DIR\"\necho $IPA_NAME\necho $IPA_BASE_NAME\n\n# change to the proper directory\npushd \"$IPA_DIR\"\n\n# extract the IPA\ncp \"$IPA_NAME\" \"$IPA_NAME\".zip\nunzip -o \"$IPA_NAME\".zip\nrm \"$IPA_NAME\".zip\n\n# copy the contents of the IPA to the location xcode wants\ncp -r Payload/\"$IPA_BASE_NAME\".app/ \"${CONFIGURATION_BUILD_DIR}/${CONTENTS_FOLDER_PATH}/\"\ncp -r \"$IPA_BASE_NAME\".app.dSYM \"${CONFIGURATION_BUILD_DIR}/${CONTENTS_FOLDER_PATH}/\"\n\n# remove the following files and folders to avoid signature errors when installing the app\nrm \"${CONFIGURATION_BUILD_DIR}/${CONTENTS_FOLDER_PATH}/_CodeSignature/CodeResources\"\nrm \"${CONFIGURATION_BUILD_DIR}/${CONTENTS_FOLDER_PATH}/_CodeSignature\"\nrm \"${CONFIGURATION_BUILD_DIR}/${CONTENTS_FOLDER_PATH}/CodeResources\"\nrm \"${CONFIGURATION_BUILD_DIR}/${CONTENTS_FOLDER_PATH}/PkgInfo\" #2>/dev/null\n\n\n# restore working directory\npopd";
+		};
+		0E69FCFF1AFCE41A009BA544 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "xcodebuild -target DeviceInfo ONLY_ACTIVE_ARCH=NO -configuration ${CONFIGURATION} -sdk iphoneos  BUILD_DIR=\"${BUILD_DIR}\" BUILD_ROOT=\"${BUILD_ROOT}\"\nxcodebuild -target DeviceInfo -configuration ${CONFIGURATION} -sdk iphonesimulator -arch i386 BUILD_DIR=\"${BUILD_DIR}\" BUILD_ROOT=\"${BUILD_ROOT}\"";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -681,6 +722,20 @@
 			};
 			name = Release;
 		};
+		0E69FCFA1AFCE3EE009BA544 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		0E69FCFB1AFCE3EE009BA544 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -719,6 +774,14 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		0E69FCFC1AFCE3EE009BA544 /* Build configuration list for PBXAggregateTarget "DeviceInfoAggregator" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0E69FCFA1AFCE3EE009BA544 /* Debug */,
+				0E69FCFB1AFCE3EE009BA544 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 	};
