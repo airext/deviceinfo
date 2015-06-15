@@ -19,7 +19,7 @@
     </platform>
     <platform name="Android-ARM">
       <applicationDeployment>
-        <nativeLibrary>deviceinfo.jar</nativeLibrary>
+        <nativeLibrary>libDeviceInfo.jar</nativeLibrary>
         <initializer>com.github.airext.DeviceInfo</initializer>
         <finalizer>com.github.airext.DeviceInfo</finalizer>
       </applicationDeployment>

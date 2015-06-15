@@ -123,7 +123,9 @@ public class DeviceInfoGeneral
                'manufacturer="'+manufacturer+', ' +
                'systemName="'+systemName+'", ' +
                'systemVersion="'+systemVersion+'", ' +
-               'ios="'+ios+'"]';
+               'ios="'+ios+'",' +
+               'android="'+android+'",' +
+                ']';
     }
 }
 }

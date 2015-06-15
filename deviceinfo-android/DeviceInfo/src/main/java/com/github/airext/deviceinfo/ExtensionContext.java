@@ -2,10 +2,7 @@ package com.github.airext.deviceinfo;
 
 import com.adobe.fre.FREContext;
 import com.adobe.fre.FREFunction;
-import com.github.airext.deviceinfo.functions.GetAndroidIdentifierFunction;
-import com.github.airext.deviceinfo.functions.GetGeneralInfoFunction;
-import com.github.airext.deviceinfo.functions.GetIMEIFunction;
-import com.github.airext.deviceinfo.functions.IsSupportedFunction;
+import com.github.airext.deviceinfo.functions.*;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -23,6 +20,9 @@ public class ExtensionContext extends FREContext
         functions.put("isSupported", new IsSupportedFunction());
         functions.put("getGeneralInfo", new GetGeneralInfoFunction());
         functions.put("getIMEI", new GetIMEIFunction());
+
+        functions.put("getBatteryLevel", new GetBatteryLevelFunction());
+        functions.put("getBatteryState", new GetBatteryStateFunction());
 
         functions.put("getAndroidIdentifier", new GetAndroidIdentifierFunction());
 

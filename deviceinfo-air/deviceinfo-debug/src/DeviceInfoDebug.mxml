@@ -53,8 +53,8 @@
 
     <s:SkinnableContainer backgroundColor="#FFFFFF">
         <s:layout><s:HorizontalLayout paddingLeft="10" paddingTop="10" paddingBottom="10" /></s:layout>
-        <!--<s:Label text="Battery State:{DeviceInfo.sharedInstance().battery.state}" />-->
-        <!--<s:Label text="Battery Level:{DeviceInfo.sharedInstance().battery.level}" />-->
+        <s:Label text="Battery State:{DeviceInfo.sharedInstance().battery.state}" />
+        <s:Label text="Battery Level:{DeviceInfo.sharedInstance().battery.level}" />
     </s:SkinnableContainer>
 
     <s:Label text="IOS SPECIFIC" />
