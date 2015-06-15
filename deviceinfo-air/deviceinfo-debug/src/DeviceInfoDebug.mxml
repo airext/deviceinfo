@@ -31,6 +31,13 @@
             Alert.show(String(general.ios.getVendorIdentifier()));
         }
 
+        private function androidIdentifier_clickHandler(event:MouseEvent):void
+        {
+            var general:DeviceInfoGeneral = DeviceInfo.sharedInstance().general;
+
+            Alert.show(String(general.android.getAndroidIdentifier()));
+        }
+
         ]]>
     </fx:Script>
 
@@ -38,18 +45,24 @@
         <s:VerticalLayout horizontalAlign="justify" gap="30" paddingTop="30" />
     </s:layout>
 
+    <s:Button label="isSupported" click="Alert.show(String(DeviceInfo.isSupported()));" />
+
     <s:Button label="IMEI" click="imei_clickHandler(event)" />
 
     <s:Button label="General" click="general_clickHandler(event)" />
 
     <s:SkinnableContainer backgroundColor="#FFFFFF">
         <s:layout><s:HorizontalLayout paddingLeft="10" paddingTop="10" paddingBottom="10" /></s:layout>
-        <s:Label text="Battery State:{DeviceInfo.sharedInstance().battery.state}" />
-        <s:Label text="Battery Level:{DeviceInfo.sharedInstance().battery.level}" />
+        <!--<s:Label text="Battery State:{DeviceInfo.sharedInstance().battery.state}" />-->
+        <!--<s:Label text="Battery Level:{DeviceInfo.sharedInstance().battery.level}" />-->
     </s:SkinnableContainer>
 
     <s:Label text="IOS SPECIFIC" />
 
     <s:Button label="Vendor Identifier" click="iosVendorIdentifier_clickHandler(event)" />
+
+    <s:Label text="ANDROID SPECIFIC" />
+
+    <s:Button label="Android Identifier" click="androidIdentifier_clickHandler(event)" />
 
 </s:Application>

@@ -3,6 +3,8 @@
  */
 package com.github.airext.data
 {
+import flash.system.Capabilities;
+
 public class DeviceInfoGeneralAndroid
 {
     //--------------------------------------------------------------------------
@@ -14,6 +16,19 @@ public class DeviceInfoGeneralAndroid
     public function DeviceInfoGeneralAndroid()
     {
         super();
+    }
+
+    //--------------------------------------------------------------------------
+    //
+    //  Methods
+    //
+    //--------------------------------------------------------------------------
+
+    public function getAndroidIdentifier():String
+    {
+        trace("DeviceInfo is not supported for " + Capabilities.os);
+
+        return null;
     }
 }
 }

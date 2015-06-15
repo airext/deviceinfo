@@ -86,6 +86,22 @@ public class DeviceInfoGeneral
     }
 
     //-------------------------------------
+    //  android
+    //-------------------------------------
+
+    private var _android:DeviceInfoGeneralAndroid;
+
+    public function get android():DeviceInfoGeneralAndroid
+    {
+        if (_android == null)
+        {
+            _android = new DeviceInfoGeneralAndroid();
+        }
+
+        return _android;
+    }
+
+    //-------------------------------------
     //  osx
     //-------------------------------------
 

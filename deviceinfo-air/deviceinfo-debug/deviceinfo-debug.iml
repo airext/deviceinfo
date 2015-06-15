@@ -5,7 +5,7 @@
       <configuration name="deviceinfo-debug" target-platform="Mobile" main-class="DeviceInfoDebug" output-file="DeviceInfoDebug.swf" output-folder="$MODULE_DIR$/bin-debug">
         <dependencies>
           <entries>
-            <entry library-id="821c2973-4b24-492f-b19a-3804a1693d3f">
+            <entry library-id="dc656074-41d0-4bd8-a1d3-1ff64954d21f">
               <dependency linkage="Merged" />
             </entry>
           </entries>
@@ -33,13 +33,12 @@
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="module-library" exported="">
       <library type="flex">
-        <properties id="821c2973-4b24-492f-b19a-3804a1693d3f" />
+        <properties id="dc656074-41d0-4bd8-a1d3-1ff64954d21f" />
         <CLASSES>
-          <root url="file://$MODULE_DIR$/../../bin" />
+          <root url="jar://$MODULE_DIR$/../../bin/deviceinfo.ane!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
-        <jarDirectory url="file://$MODULE_DIR$/../../bin" recursive="false" />
       </library>
     </orderEntry>
   </component>

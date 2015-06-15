@@ -20,5 +20,16 @@ public class DeviceInfoGeneralAndroid
     {
         super();
     }
+    
+    //--------------------------------------------------------------------------
+    //
+    //  Methods
+    //
+    //--------------------------------------------------------------------------
+
+    public function getAndroidIdentifier():String
+    {
+        return DeviceInfo.context.call("getAndroidIdentifier") as String;
+    }
 }
 }

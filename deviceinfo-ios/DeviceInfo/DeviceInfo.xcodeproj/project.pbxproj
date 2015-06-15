@@ -30,18 +30,6 @@
 		0E0CA0E719F7A6D2003C5176 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0E0CA0E619F7A6D2003C5176 /* Images.xcassets */; };
 		0E0CA0EA19F7A6D2003C5176 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0E0CA0E819F7A6D2003C5176 /* LaunchScreen.xib */; };
 		0E22C7B817FD891D00A828A8 /* ANXDeviceInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E22C7B717FD891D00A828A8 /* ANXDeviceInfo.m */; };
-		0E22C7E317FD918E00A828A8 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E22C7C417FD915D00A828A8 /* UIKit.framework */; };
-		0E22C7E417FD918E00A828A8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E22C7B017FD891D00A828A8 /* Foundation.framework */; };
-		0E22C7E517FD918E00A828A8 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E22C7C717FD915D00A828A8 /* CoreGraphics.framework */; };
-		0E22C7EB17FD918E00A828A8 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0E22C7E917FD918E00A828A8 /* InfoPlist.strings */; };
-		0E22C7ED17FD918E00A828A8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E22C7EC17FD918E00A828A8 /* main.m */; };
-		0E22C7F117FD918E00A828A8 /* DeviceInfoTestAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E22C7F017FD918E00A828A8 /* DeviceInfoTestAppDelegate.m */; };
-		0E22C7F317FD918E00A828A8 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 0E22C7F217FD918E00A828A8 /* Default.png */; };
-		0E22C7F517FD918E00A828A8 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0E22C7F417FD918E00A828A8 /* Default@2x.png */; };
-		0E22C7F717FD918E00A828A8 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0E22C7F617FD918E00A828A8 /* Default-568h@2x.png */; };
-		0E22C7FA17FD918E00A828A8 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0E22C7F817FD918E00A828A8 /* MainStoryboard.storyboard */; };
-		0E22C7FD17FD918E00A828A8 /* DeviceInfoTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E22C7FC17FD918E00A828A8 /* DeviceInfoTestViewController.m */; };
-		0E22C80317FD92A600A828A8 /* libDeviceInfo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E22C7AD17FD891D00A828A8 /* libDeviceInfo.a */; };
 		0E22C81117FDBA3D00A828A8 /* ANXDeviceInfoConversionRoutines.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E22C81017FDBA3D00A828A8 /* ANXDeviceInfoConversionRoutines.m */; };
 		0E22C81A17FDC3F800A828A8 /* ANXDeviceInfoFacade.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E22C81917FDC3F800A828A8 /* ANXDeviceInfoFacade.m */; };
 		0E22C81E17FEB28100A828A8 /* libDeviceInfo.a in CopyFiles */ = {isa = PBXBuildFile; fileRef = 0E22C7AD17FD891D00A828A8 /* libDeviceInfo.a */; };
@@ -51,18 +39,10 @@
 		0EBC743919F90BF400054F57 /* ANXDeviceInfoGeneralProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EBC743719F90BF400054F57 /* ANXDeviceInfoGeneralProvider.m */; };
 		0EDB3FFE19FA280B0080256C /* ANXDeviceInfoBattery.h in Headers */ = {isa = PBXBuildFile; fileRef = 0EDB3FFC19FA280B0080256C /* ANXDeviceInfoBattery.h */; };
 		0EDB3FFF19FA280B0080256C /* ANXDeviceInfoBattery.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EDB3FFD19FA280B0080256C /* ANXDeviceInfoBattery.m */; };
-		0EDD1CF718191BAC00B1FF6F /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0EDD1CF618191BAC00B1FF6F /* CoreTelephony.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
 		0E0CA0FE19F7A7E2003C5176 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 0E22C7A517FD891D00A828A8 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 0E22C7AC17FD891D00A828A8;
-			remoteInfo = DeviceInfo;
-		};
-		0E22C80117FD91EC00A828A8 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 0E22C7A517FD891D00A828A8 /* Project object */;
 			proxyType = 1;
@@ -105,8 +85,6 @@
 		0E0CA0E419F7A6D2003C5176 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		0E0CA0E619F7A6D2003C5176 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		0E0CA0E919F7A6D2003C5176 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
-		0E0CA0F419F7A6D2003C5176 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		0E0CA0F519F7A6D2003C5176 /* DeviceInfoDebugTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DeviceInfoDebugTests.m; sourceTree = "<group>"; };
 		0E22C7AD17FD891D00A828A8 /* libDeviceInfo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libDeviceInfo.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		0E22C7B017FD891D00A828A8 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		0E22C7B417FD891D00A828A8 /* DeviceInfo-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "DeviceInfo-Prefix.pch"; sourceTree = "<group>"; };
@@ -114,19 +92,6 @@
 		0E22C7B717FD891D00A828A8 /* ANXDeviceInfo.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ANXDeviceInfo.m; sourceTree = "<group>"; };
 		0E22C7C417FD915D00A828A8 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		0E22C7C717FD915D00A828A8 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		0E22C7E217FD918E00A828A8 /* DeviceInfoTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DeviceInfoTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		0E22C7E817FD918E00A828A8 /* DeviceInfoTest-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "DeviceInfoTest-Info.plist"; sourceTree = "<group>"; };
-		0E22C7EA17FD918E00A828A8 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		0E22C7EC17FD918E00A828A8 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		0E22C7EE17FD918E00A828A8 /* DeviceInfoTest-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "DeviceInfoTest-Prefix.pch"; sourceTree = "<group>"; };
-		0E22C7EF17FD918E00A828A8 /* DeviceInfoTestAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DeviceInfoTestAppDelegate.h; sourceTree = "<group>"; };
-		0E22C7F017FD918E00A828A8 /* DeviceInfoTestAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DeviceInfoTestAppDelegate.m; sourceTree = "<group>"; };
-		0E22C7F217FD918E00A828A8 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
-		0E22C7F417FD918E00A828A8 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
-		0E22C7F617FD918E00A828A8 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
-		0E22C7F917FD918E00A828A8 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
-		0E22C7FB17FD918E00A828A8 /* DeviceInfoTestViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DeviceInfoTestViewController.h; sourceTree = "<group>"; };
-		0E22C7FC17FD918E00A828A8 /* DeviceInfoTestViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DeviceInfoTestViewController.m; sourceTree = "<group>"; };
 		0E22C80F17FDBA3D00A828A8 /* ANXDeviceInfoConversionRoutines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ANXDeviceInfoConversionRoutines.h; sourceTree = "<group>"; };
 		0E22C81017FDBA3D00A828A8 /* ANXDeviceInfoConversionRoutines.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ANXDeviceInfoConversionRoutines.m; sourceTree = "<group>"; };
 		0E22C81817FDC30900A828A8 /* ANXDeviceInfoFacade.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ANXDeviceInfoFacade.h; sourceTree = "<group>"; };
@@ -152,18 +117,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		0E22C7DF17FD918E00A828A8 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				0EDD1CF718191BAC00B1FF6F /* CoreTelephony.framework in Frameworks */,
-				0E22C80317FD92A600A828A8 /* libDeviceInfo.a in Frameworks */,
-				0E22C7E317FD918E00A828A8 /* UIKit.framework in Frameworks */,
-				0E22C7E417FD918E00A828A8 /* Foundation.framework in Frameworks */,
-				0E22C7E517FD918E00A828A8 /* CoreGraphics.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -194,31 +147,12 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		0E0CA0F219F7A6D2003C5176 /* DeviceInfoDebugTests */ = {
-			isa = PBXGroup;
-			children = (
-				0E0CA0F519F7A6D2003C5176 /* DeviceInfoDebugTests.m */,
-				0E0CA0F319F7A6D2003C5176 /* Supporting Files */,
-			);
-			path = DeviceInfoDebugTests;
-			sourceTree = "<group>";
-		};
-		0E0CA0F319F7A6D2003C5176 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				0E0CA0F419F7A6D2003C5176 /* Info.plist */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
 		0E22C7A417FD891D00A828A8 = {
 			isa = PBXGroup;
 			children = (
 				0EDD1CF618191BAC00B1FF6F /* CoreTelephony.framework */,
 				0E22C7B217FD891D00A828A8 /* DeviceInfo */,
-				0E22C7E617FD918E00A828A8 /* DeviceInfoTest */,
 				0E0CA0D819F7A6D2003C5176 /* DeviceInfoDebug */,
-				0E0CA0F219F7A6D2003C5176 /* DeviceInfoDebugTests */,
 				0E22C7AF17FD891D00A828A8 /* Frameworks */,
 				0E22C7AE17FD891D00A828A8 /* Products */,
 			);
@@ -228,7 +162,6 @@
 			isa = PBXGroup;
 			children = (
 				0E22C7AD17FD891D00A828A8 /* libDeviceInfo.a */,
-				0E22C7E217FD918E00A828A8 /* DeviceInfoTest.app */,
 				0E0CA0D719F7A6D2003C5176 /* DeviceInfoDebug.app */,
 			);
 			name = Products;
@@ -269,33 +202,6 @@
 			children = (
 				0E0CA0D119F7A0A3003C5176 /* FlashRuntimeExtensions.h */,
 				0E22C7B417FD891D00A828A8 /* DeviceInfo-Prefix.pch */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		0E22C7E617FD918E00A828A8 /* DeviceInfoTest */ = {
-			isa = PBXGroup;
-			children = (
-				0E22C7EF17FD918E00A828A8 /* DeviceInfoTestAppDelegate.h */,
-				0E22C7F017FD918E00A828A8 /* DeviceInfoTestAppDelegate.m */,
-				0E22C7F817FD918E00A828A8 /* MainStoryboard.storyboard */,
-				0E22C7FB17FD918E00A828A8 /* DeviceInfoTestViewController.h */,
-				0E22C7FC17FD918E00A828A8 /* DeviceInfoTestViewController.m */,
-				0E22C7E717FD918E00A828A8 /* Supporting Files */,
-			);
-			path = DeviceInfoTest;
-			sourceTree = "<group>";
-		};
-		0E22C7E717FD918E00A828A8 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				0E22C7E817FD918E00A828A8 /* DeviceInfoTest-Info.plist */,
-				0E22C7E917FD918E00A828A8 /* InfoPlist.strings */,
-				0E22C7EC17FD918E00A828A8 /* main.m */,
-				0E22C7EE17FD918E00A828A8 /* DeviceInfoTest-Prefix.pch */,
-				0E22C7F217FD918E00A828A8 /* Default.png */,
-				0E22C7F417FD918E00A828A8 /* Default@2x.png */,
-				0E22C7F617FD918E00A828A8 /* Default-568h@2x.png */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -354,31 +260,13 @@
 			productReference = 0E22C7AD17FD891D00A828A8 /* libDeviceInfo.a */;
 			productType = "com.apple.product-type.library.static";
 		};
-		0E22C7E117FD918E00A828A8 /* DeviceInfoTest */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 0E22C7FE17FD918E00A828A8 /* Build configuration list for PBXNativeTarget "DeviceInfoTest" */;
-			buildPhases = (
-				0E22C7DE17FD918E00A828A8 /* Sources */,
-				0E22C7DF17FD918E00A828A8 /* Frameworks */,
-				0E22C7E017FD918E00A828A8 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				0E22C80217FD91EC00A828A8 /* PBXTargetDependency */,
-			);
-			name = DeviceInfoTest;
-			productName = DeviceInfoTest;
-			productReference = 0E22C7E217FD918E00A828A8 /* DeviceInfoTest.app */;
-			productType = "com.apple.product-type.application";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		0E22C7A517FD891D00A828A8 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0460;
+				LastUpgradeCheck = 0630;
 				ORGANIZATIONNAME = "Max Rozdobudko";
 				TargetAttributes = {
 					0E0CA0D619F7A6D2003C5176 = {
@@ -403,7 +291,6 @@
 			projectRoot = "";
 			targets = (
 				0E22C7AC17FD891D00A828A8 /* DeviceInfo */,
-				0E22C7E117FD918E00A828A8 /* DeviceInfoTest */,
 				0E0CA0D619F7A6D2003C5176 /* DeviceInfoDebug */,
 				0E69FCF91AFCE3EE009BA544 /* DeviceInfoAggregator */,
 			);
@@ -418,18 +305,6 @@
 				0E0CA0E519F7A6D2003C5176 /* Main.storyboard in Resources */,
 				0E0CA0EA19F7A6D2003C5176 /* LaunchScreen.xib in Resources */,
 				0E0CA0E719F7A6D2003C5176 /* Images.xcassets in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		0E22C7E017FD918E00A828A8 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				0E22C7EB17FD918E00A828A8 /* InfoPlist.strings in Resources */,
-				0E22C7F317FD918E00A828A8 /* Default.png in Resources */,
-				0E22C7F517FD918E00A828A8 /* Default@2x.png in Resources */,
-				0E22C7F717FD918E00A828A8 /* Default-568h@2x.png in Resources */,
-				0E22C7FA17FD918E00A828A8 /* MainStoryboard.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -488,16 +363,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		0E22C7DE17FD918E00A828A8 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				0E22C7ED17FD918E00A828A8 /* main.m in Sources */,
-				0E22C7F117FD918E00A828A8 /* DeviceInfoTestAppDelegate.m in Sources */,
-				0E22C7FD17FD918E00A828A8 /* DeviceInfoTestViewController.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -505,11 +370,6 @@
 			isa = PBXTargetDependency;
 			target = 0E22C7AC17FD891D00A828A8 /* DeviceInfo */;
 			targetProxy = 0E0CA0FE19F7A7E2003C5176 /* PBXContainerItemProxy */;
-		};
-		0E22C80217FD91EC00A828A8 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 0E22C7AC17FD891D00A828A8 /* DeviceInfo */;
-			targetProxy = 0E22C80117FD91EC00A828A8 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -528,22 +388,6 @@
 				0E0CA0E919F7A6D2003C5176 /* Base */,
 			);
 			name = LaunchScreen.xib;
-			sourceTree = "<group>";
-		};
-		0E22C7E917FD918E00A828A8 /* InfoPlist.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				0E22C7EA17FD918E00A828A8 /* en */,
-			);
-			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
-		0E22C7F817FD918E00A828A8 /* MainStoryboard.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				0E22C7F917FD918E00A828A8 /* en */,
-			);
-			name = MainStoryboard.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -631,7 +475,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
-				ONLY_ACTIVE_ARCH = NO;
+				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -664,7 +508,6 @@
 		0E22C7BC17FD891D00A828A8 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD)";
 				DSTROOT = /tmp/DeviceInfo.dst;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "DeviceInfo/DeviceInfo-Prefix.pch";
@@ -679,7 +522,6 @@
 		0E22C7BD17FD891D00A828A8 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD)";
 				DSTROOT = /tmp/DeviceInfo.dst;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "DeviceInfo/DeviceInfo-Prefix.pch";
@@ -688,37 +530,6 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
-			};
-			name = Release;
-		};
-		0E22C7FF17FD918E00A828A8 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "DeviceInfoTest/DeviceInfoTest-Prefix.pch";
-				INFOPLIST_FILE = "DeviceInfoTest/DeviceInfoTest-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
-				WRAPPER_EXTENSION = app;
-			};
-			name = Debug;
-		};
-		0E22C80017FD918E00A828A8 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "DeviceInfoTest/DeviceInfoTest-Prefix.pch";
-				INFOPLIST_FILE = "DeviceInfoTest/DeviceInfoTest-Info.plist";
-				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
-				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
 		};
@@ -766,15 +577,6 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		0E22C7FE17FD918E00A828A8 /* Build configuration list for PBXNativeTarget "DeviceInfoTest" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				0E22C7FF17FD918E00A828A8 /* Debug */,
-				0E22C80017FD918E00A828A8 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 		0E69FCFC1AFCE3EE009BA544 /* Build configuration list for PBXAggregateTarget "DeviceInfoAggregator" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -782,6 +584,7 @@
 				0E69FCFB1AFCE3EE009BA544 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
