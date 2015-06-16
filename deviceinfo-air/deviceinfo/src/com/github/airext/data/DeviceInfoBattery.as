@@ -27,14 +27,6 @@ public class DeviceInfoBattery extends EventDispatcher
 
     //--------------------------------------------------------------------------
     //
-    //  Variables
-    //
-    //--------------------------------------------------------------------------
-
-    private var isMonitoring:Boolean = false;
-
-    //--------------------------------------------------------------------------
-    //
     //  Properties
     //
     //--------------------------------------------------------------------------
@@ -87,6 +79,18 @@ public class DeviceInfoBattery extends EventDispatcher
         dispatchEvent(new Event("stateChanged"));
     }
 
+    //------------------------------------
+    //  isMonitoring
+    //------------------------------------
+
+    private var _isMonitoring:Boolean = false;
+
+    [Bindable(event="isMonitoringChanged")]
+    public function get isMonitoring():Boolean
+    {
+        return _isMonitoring;
+    }
+
     //--------------------------------------------------------------------------
     //
     //  Methods
@@ -105,25 +109,29 @@ public class DeviceInfoBattery extends EventDispatcher
 
     public function startMonitoring():void
     {
-        if (!isMonitoring)
+        if (!_isMonitoring)
         {
             DeviceInfo.context.addEventListener(StatusEvent.STATUS, statusHandler);
 
             DeviceInfo.context.call("startBatteryMonitor");
 
-            isMonitoring = true;
+            _isMonitoring = true;
+
+            dispatchEvent(new Event("isMonitoringChanged"));
         }
     }
 
     public function stopMonitoring():void
     {
-        if (isMonitoring)
+        if (_isMonitoring)
         {
             DeviceInfo.context.removeEventListener(StatusEvent.STATUS, statusHandler);
 
             DeviceInfo.context.call("stopBatteryMonitor");
 
-            isMonitoring = false;
+            _isMonitoring = false;
+
+            dispatchEvent(new Event("isMonitoringChanged"));
         }
     }
 

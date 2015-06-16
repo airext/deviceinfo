@@ -7,6 +7,31 @@ import com.github.airext.deviceinfo.ExtensionContext;
 
 public class DeviceInfo implements FREExtension
 {
+    //--------------------------------------------------------------------------
+    //
+    //  Class variables
+    //
+    //--------------------------------------------------------------------------
+
+    private static FREContext context;
+
+    //--------------------------------------------------------------------------
+    //
+    //  Class methods
+    //
+    //--------------------------------------------------------------------------
+
+    public static void dispatch(String code, String level)
+    {
+        context.dispatchStatusEventAsync(code, level);
+    }
+
+    //--------------------------------------------------------------------------
+    //
+    //  Methods
+    //
+    //--------------------------------------------------------------------------
+
     @Override
     public void initialize()
     {
@@ -18,7 +43,9 @@ public class DeviceInfo implements FREExtension
     {
         Log.i("DeviceInfo", "createContext");
 
-        return new ExtensionContext();
+        context = new ExtensionContext();
+
+        return context;
     }
 
     @Override

@@ -74,6 +74,18 @@ public class DeviceInfoBattery extends EventDispatcher
         dispatchEvent(new Event("stateChanged"));
     }
 
+    //------------------------------------
+    //  isMonitoring
+    //------------------------------------
+
+    private var _isMonitoring:Boolean = false;
+
+    [Bindable(event="isMonitoringChanged")]
+    public function get isMonitoring():Boolean
+    {
+        return _isMonitoring;
+    }
+
     //--------------------------------------------------------------------------
     //
     //  Methods

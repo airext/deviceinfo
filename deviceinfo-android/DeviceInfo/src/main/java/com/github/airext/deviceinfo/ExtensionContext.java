@@ -23,6 +23,8 @@ public class ExtensionContext extends FREContext
 
         functions.put("getBatteryLevel", new GetBatteryLevelFunction());
         functions.put("getBatteryState", new GetBatteryStateFunction());
+        functions.put("startBatteryMonitor", new StartBatteryMonitorFunction());
+        functions.put("stopBatteryMonitor", new StopBatteryMonitorFunction());
 
         functions.put("getAndroidIdentifier", new GetAndroidIdentifierFunction());
 

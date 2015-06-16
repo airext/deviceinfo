@@ -38,6 +38,17 @@
             Alert.show(String(general.android.getAndroidIdentifier()));
         }
 
+        private function batteryMonitor_clickHandler(event:MouseEvent):void
+        {
+            if (DeviceInfo.sharedInstance().battery.isMonitoring)
+            {
+                DeviceInfo.sharedInstance().battery.stopMonitoring();
+            }
+            else
+            {
+                DeviceInfo.sharedInstance().battery.startMonitoring();
+            }
+        }
         ]]>
     </fx:Script>
 
@@ -51,11 +62,15 @@
 
     <s:Button label="General" click="general_clickHandler(event)" />
 
-    <s:SkinnableContainer backgroundColor="#FFFFFF">
-        <s:layout><s:HorizontalLayout paddingLeft="10" paddingTop="10" paddingBottom="10" /></s:layout>
-        <s:Label text="Battery State:{DeviceInfo.sharedInstance().battery.state}" />
-        <s:Label text="Battery Level:{DeviceInfo.sharedInstance().battery.level}" />
-    </s:SkinnableContainer>
+    <s:VGroup contentBackgroundColor="#FFFFFF">
+        <s:HGroup width="100%">
+            <s:Label text="Battery State:{DeviceInfo.sharedInstance().battery.state}" />
+            <s:Label text="Battery Level:{DeviceInfo.sharedInstance().battery.level}" />
+        </s:HGroup>
+        <s:HGroup>
+            <s:Button label="{DeviceInfo.sharedInstance().battery.isMonitoring ? 'Stop Battery Monitoring' : 'Start Battery Monitoring'}" click="batteryMonitor_clickHandler(event)" />
+        </s:HGroup>
+    </s:VGroup>
 
     <s:Label text="IOS SPECIFIC" />
 
