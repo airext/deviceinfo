@@ -1,6 +1,6 @@
 # Xcode
 #
-build/
+# build/
 *.pbxuser
 !default.pbxuser
 *.mode1v3
@@ -35,6 +35,14 @@ DerivedData
 bin-debug/
 bin-release/
 
+# ANT
+#
+build.properties
+
 # AirExt
 #
 build/launch/*
+build/build.config
+build/temp
+*.apk
+*.ipa
