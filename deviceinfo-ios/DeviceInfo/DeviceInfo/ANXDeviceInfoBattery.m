@@ -91,7 +91,7 @@ id batteryLevelChangeObserver;
             object:nil queue:[NSOperationQueue mainQueue]
             usingBlock:^(NSNotification *note)
             {
-                [[ANXDeviceInfo sharedInstance] dispatch:@"DeviceInfo.Battery.State" withLevel:[self getBatteryState]];
+                [[ANXDeviceInfo sharedInstance] dispatch:@"DeviceInfo.Battery.State.Change" withLevel:[self getBatteryState]];
             }];
         
         
@@ -103,7 +103,7 @@ id batteryLevelChangeObserver;
             {
                 NSString *levelAsString = [NSString stringWithFormat:@"%f", [self getBatteryLevel]];
                 
-                [[ANXDeviceInfo sharedInstance] dispatch:@"DeviceInfo.Battery.Level" withLevel:levelAsString];
+                [[ANXDeviceInfo sharedInstance] dispatch:@"DeviceInfo.Battery.Level.Change" withLevel:levelAsString];
             }];
         
         isMonitoring = YES;
