@@ -26,6 +26,10 @@ FREObject ANXDeviceInfoGetDeviceInfo(FREContext context, void* functionData, uin
 
 FREObject ANXDeviceInfoGetVendorIdentifier(FREContext context, void* functionData, uint32_t argc, FREObject argv[]);
 
+FREObject ANXDeviceInfoLog(FREContext context, void* functionData, uint32_t argc, FREObject argv[]);
+
+FREObject ANXDeviceInfoCrash(FREContext context, void* functionData, uint32_t argc, FREObject argv[]);
+
 #pragma mark ContextInitialize/ContextFinalizer
 
 void ANXDeviceInfoContextInitializer(void* extData, const uint8_t* ctxType, FREContext ctx, uint32_t* numFunctionsToTest, const FRENamedFunction** functionsToSet);

@@ -57,6 +57,26 @@ FREObject ANXDeviceInfoStopBatteryMonitoring(FREContext context, void* functionD
     return NULL;
 }
 
+
+FREObject ANXDeviceInfoLog(FREContext context, void* functionData, uint32_t argc, FREObject argv[])
+{
+    if (argc == 2)
+    {
+        NSLog(@"%@", [ANXDeviceInfoConversionRoutines convertFREObjectToNSString:argv[1]]);
+    }
+    
+    return NULL;
+}
+
+FREObject ANXDeviceInfoCrash(FREContext context, void* functionData, uint32_t argc, FREObject argv[])
+{
+    // causes out of range exception
+    
+    @[][1];
+
+    return NULL;
+}
+
 #pragma mark iOS specific API
 
 FREObject ANXDeviceInfoGetVendorIdentifier(FREContext context, void* functionData, uint32_t argc, FREObject argv[])
@@ -68,7 +88,7 @@ FREObject ANXDeviceInfoGetVendorIdentifier(FREContext context, void* functionDat
 
 void ANXDeviceInfoContextInitializer(void* extData, const uint8_t* ctxType, FREContext ctx, uint32_t* numFunctionsToTest, const FRENamedFunction** functionsToSet)
 {
-    *numFunctionsToTest = 8;
+    *numFunctionsToTest = 10;
     
     FRENamedFunction* func = (FRENamedFunction*) malloc(sizeof(FRENamedFunction) * (*numFunctionsToTest));
     
@@ -96,7 +116,6 @@ void ANXDeviceInfoContextInitializer(void* extData, const uint8_t* ctxType, FREC
     func[4].functionData = NULL;
     func[4].function = &ANXDeviceInfoGetBatteryState;
     
-    
     func[5].name = (const uint8_t*) "startBatteryMonitoring";
     func[5].functionData = NULL;
     func[5].function = &ANXDeviceInfoStartBatteryMonitoring;
@@ -104,12 +123,22 @@ void ANXDeviceInfoContextInitializer(void* extData, const uint8_t* ctxType, FREC
     func[6].name = (const uint8_t*) "stopBatteryMonitoring";
     func[6].functionData = NULL;
     func[6].function = &ANXDeviceInfoStopBatteryMonitoring;
+
+    // special
+    
+    func[7].name = (const uint8_t*) "log";
+    func[7].functionData = NULL;
+    func[7].function = &ANXDeviceInfoLog;
+    
+    func[8].name = (const uint8_t*) "crash";
+    func[8].functionData = NULL;
+    func[8].function = &ANXDeviceInfoCrash;
     
     // ios
     
-    func[7].name = (const uint8_t*) "iosGetVendorIdentifier";
-    func[7].functionData = NULL;
-    func[7].function = &ANXDeviceInfoGetVendorIdentifier;
+    func[9].name = (const uint8_t*) "iosGetVendorIdentifier";
+    func[9].functionData = NULL;
+    func[9].function = &ANXDeviceInfoGetVendorIdentifier;
     
     *functionsToSet = func;
     

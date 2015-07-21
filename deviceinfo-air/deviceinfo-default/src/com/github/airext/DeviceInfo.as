@@ -78,5 +78,15 @@ public class DeviceInfo
 
         return null;
     }
+
+    public function log():void
+    {
+        trace("DeviceInfo is not supported for " + Capabilities.os);
+    }
+
+    public function crash():void
+    {
+        trace("DeviceInfo is not supported for " + Capabilities.os);
+    }
 }
 }

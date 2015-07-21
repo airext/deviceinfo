@@ -28,6 +28,9 @@ public class ExtensionContext extends FREContext
 
         functions.put("getAndroidIdentifier", new GetAndroidIdentifierFunction());
 
+        functions.put("log", new LogFunction());
+        functions.put("crash", new CrashFunction());
+
         return functions;
     }
 

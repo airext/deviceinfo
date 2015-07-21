@@ -49,6 +49,16 @@
                 DeviceInfo.sharedInstance().battery.startMonitoring();
             }
         }
+
+        private function log_clickHandler(event:MouseEvent):void
+        {
+            DeviceInfo.sharedInstance().log(logInput.text);
+        }
+
+        private function crash_clickHandler(event:MouseEvent):void
+        {
+            DeviceInfo.sharedInstance().crash();
+        }
         ]]>
     </fx:Script>
 
@@ -71,6 +81,13 @@
             <s:Button label="{DeviceInfo.sharedInstance().battery.isMonitoring ? 'Stop Battery Monitoring' : 'Start Battery Monitoring'}" click="batteryMonitor_clickHandler(event)" />
         </s:HGroup>
     </s:VGroup>
+
+    <s:HGroup contentBackgroundColor="#FFFFFF">
+        <s:TextInput id="logInput" width="100%" />
+        <s:Button label="Log" click="log_clickHandler(event)" />
+    </s:HGroup>
+
+    <s:Button label="Crash" click="crash_clickHandler(event)" />
 
     <s:Label text="IOS SPECIFIC" />
 
