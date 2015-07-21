@@ -29,7 +29,7 @@ DeviceGeneralInfo
 }
 ```
 
-#### iOS General Info
+##### iOS General Info
 ```as3
 DeviceInfo.sharedInstance().general.ios;
 ```
@@ -42,7 +42,7 @@ DeviceInfoGeneralIOS
 }
 ```
 
-#### Android General Info
+##### Android General Info
 ```as3
 DeviceInfo.sharedInstance().general.android
 ```
