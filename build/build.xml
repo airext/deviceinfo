@@ -34,10 +34,18 @@
 		<exec executable="xcodebuild" failonerror="true" dir="${ios.project.dir}">
 			<arg line='-project DeviceInfo.xcodeproj'/>
 			<arg line='-sdk iphoneos' />
-            <arg line="-alltargets"/>
+            <arg line="-target DeviceInfo"/>
 			<arg line='-configuration Release'/>
 			<arg line='SYMROOT=$(PWD)/../build/temp/ios/build'/>
 		</exec>
+
+        <exec executable="xcodebuild" failonerror="true" dir="${ios.project.dir}">
+            <arg line='-project DeviceInfo.xcodeproj'/>
+            <arg line='-sdk iphonesimulator' />
+            <arg line="-target DeviceInfo"/>
+            <arg line='-configuration Release'/>
+            <arg line='SYMROOT=$(PWD)/../build/temp/ios/build'/>
+        </exec>
 
         <!-- Copy iOS build artifacts to temporary build folder -->
 		<copy file="temp/ios/build/Release-iphoneos/libDeviceInfo.a" todir="temp/ios" overwrite="true"/>
@@ -56,7 +64,7 @@
         <!-- Builds Android part of the extension -->
 		<!-- Compiles Android project and makes .JAR -->
 		<exec executable="gradle" failonerror="true" dir="${android.project.dir}/deviceinfo">
-			<arg line="jar" />
+            <arg line="jar -b build.gradle" />
 			<arg line="--info" />
 		</exec>
 
