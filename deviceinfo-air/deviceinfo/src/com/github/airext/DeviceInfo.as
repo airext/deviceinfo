@@ -10,6 +10,7 @@ package com.github.airext
 import com.github.airext.core.device_info;
 import com.github.airext.data.DeviceInfoBattery;
 import com.github.airext.data.DeviceInfoGeneral;
+import com.github.airext.data.StatusBar;
 
 import flash.desktop.NativeApplication;
 
@@ -184,6 +185,26 @@ public class DeviceInfo
     //  display
     //-------------------------------------
 
+    //-------------------------------------
+    //  statusBar
+    //-------------------------------------
+
+    /** @private */
+    private var _statusBar:StatusBar;
+
+    /**
+     * Provides access to system Status Bar
+     */
+    public function get statusBar():StatusBar
+    {
+        if (_statusBar == null)
+        {
+            _statusBar = getStatusBar();
+        }
+
+        return _statusBar;
+    }
+
     //--------------------------------------------------------------------------
     //
     //  Methods
@@ -208,6 +229,16 @@ public class DeviceInfo
     public function getBattery():DeviceInfoBattery
     {
         return new DeviceInfoBattery();
+    }
+
+    /**
+     * Returns proxy class for working with system Status Bar
+     *
+     * @return Instance of StatusBar class.
+     */
+    public function getStatusBar():StatusBar
+    {
+        return new StatusBar();
     }
 
     /**

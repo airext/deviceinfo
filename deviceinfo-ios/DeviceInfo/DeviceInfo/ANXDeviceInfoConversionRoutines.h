@@ -29,4 +29,7 @@
 
 +(double) convertFREObjectToDouble: (FREObject) number;
 
++(BOOL) convertFREObjectToBool: (FREObject) value;
++(FREObject) convertBoolToFREObject: (BOOL) value;
+
 @end

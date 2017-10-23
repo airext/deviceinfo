@@ -9,7 +9,7 @@
               <dependency linkage="Merged" />
             </entry>
           </entries>
-          <sdk name="4.15.0" />
+          <sdk name="4.15.0-air21.0.0" />
         </dependencies>
         <compiler-options />
         <packaging-air-desktop />
@@ -18,7 +18,26 @@
           <files-to-package>
             <FilePathAndPathInPackage file-path="$MODULE_DIR$/Default-568h@2x.png" path-in-package="Default-568h@2x.png" />
           </files-to-package>
-          <AirSigningOptions keystore-path="$USER_HOME$/ios/certificate/ios_air_development.p12" provisioning-profile-path="$USER_HOME$/ios/provisioning/Generic_Profile.mobileprovision" />
+          <AirSigningOptions sdk="/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.2.sdk" keystore-path="$USER_HOME$/cert/rozd/max.rozdobudko.dev.p12" provisioning-profile-path="$USER_HOME$/cert/rozd/whateverdev.mobileprovision" />
+        </packaging-ios>
+      </configuration>
+      <configuration name="deviceinfo-debug-starling" target-platform="Mobile" pure-as="true" main-class="DeviceInfoDebugStarling" output-file="deviceinfo-debug-starling.swf" output-folder="$MODULE_DIR$/bin-debug">
+        <dependencies>
+          <entries>
+            <entry library-id="d113df64-230c-4331-9cb2-5eadbba03226">
+              <dependency linkage="Merged" />
+            </entry>
+          </entries>
+          <sdk name="24.0.0.177" />
+        </dependencies>
+        <compiler-options />
+        <packaging-air-desktop />
+        <packaging-android enabled="true" use-generated-descriptor="false" custom-descriptor-path="$MODULE_DIR$/DeviceInfoDebug-app.xml" package-file-name="deviceinfo-debug-starling" />
+        <packaging-ios enabled="true" use-generated-descriptor="false" custom-descriptor-path="$MODULE_DIR$/DeviceInfoDebug-app.xml" package-file-name="deviceinfo-debug-starling">
+          <files-to-package>
+            <FilePathAndPathInPackage file-path="$MODULE_DIR$/Default-568h@2x.png" path-in-package="Default-568h@2x.png" />
+          </files-to-package>
+          <AirSigningOptions sdk="/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.2.sdk" keystore-path="$USER_HOME$/cert/rozd/max.rozdobudko.dev.p12" provisioning-profile-path="$USER_HOME$/cert/rozd/whateverdev.mobileprovision" />
         </packaging-ios>
       </configuration>
     </configurations>
@@ -29,11 +48,21 @@
     <content url="file://$MODULE_DIR$">
       <sourceFolder url="file://$MODULE_DIR$/src" isTestSource="false" />
     </content>
-    <orderEntry type="jdk" jdkName="4.15.0" jdkType="Flex SDK Type (new)" />
+    <orderEntry type="jdk" jdkName="24.0.0.177&#9;4.15.0-air21.0.0" jdkType="__CompositeFlexSdk__" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="module-library" exported="">
       <library type="flex">
         <properties id="dc656074-41d0-4bd8-a1d3-1ff64954d21f" />
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/../../bin/deviceinfo.ane!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" exported="">
+      <library type="flex">
+        <properties id="d113df64-230c-4331-9cb2-5eadbba03226" />
         <CLASSES>
           <root url="jar://$MODULE_DIR$/../../bin/deviceinfo.ane!/" />
         </CLASSES>

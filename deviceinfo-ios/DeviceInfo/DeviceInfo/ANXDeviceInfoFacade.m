@@ -77,6 +77,24 @@ FREObject ANXDeviceInfoCrash(FREContext context, void* functionData, uint32_t ar
     return NULL;
 }
 
+#pragma mark StatusBar API
+
+FREObject ANXDeviceInfoSetStatusBarStyle(FREContext context, void* functionData, uint32_t argc, FREObject argv[])
+{
+    if (argc == 1) {
+        NSString* style = [ANXDeviceInfoConversionRoutines convertFREObjectToNSString:argv[0]];
+        
+        [ANXDeviceInfoStatusBar setStyle:style];
+    }
+    
+    return NULL;
+}
+
+FREObject ANXDeviceInfoGetStatusBarStyle(FREContext context, void* functionData, uint32_t argc, FREObject argv[])
+{
+    return [ANXDeviceInfoConversionRoutines convertNSStringToFREObject:[ANXDeviceInfoStatusBar getStyle]];
+}
+
 #pragma mark iOS specific API
 
 FREObject ANXDeviceInfoGetVendorIdentifier(FREContext context, void* functionData, uint32_t argc, FREObject argv[])
@@ -88,7 +106,7 @@ FREObject ANXDeviceInfoGetVendorIdentifier(FREContext context, void* functionDat
 
 void ANXDeviceInfoContextInitializer(void* extData, const uint8_t* ctxType, FREContext ctx, uint32_t* numFunctionsToTest, const FRENamedFunction** functionsToSet)
 {
-    *numFunctionsToTest = 10;
+    *numFunctionsToTest = 12;
     
     FRENamedFunction* func = (FRENamedFunction*) malloc(sizeof(FRENamedFunction) * (*numFunctionsToTest));
     
@@ -139,6 +157,16 @@ void ANXDeviceInfoContextInitializer(void* extData, const uint8_t* ctxType, FREC
     func[9].name = (const uint8_t*) "iosGetVendorIdentifier";
     func[9].functionData = NULL;
     func[9].function = &ANXDeviceInfoGetVendorIdentifier;
+    
+    // status bar
+    
+    func[10].name = (const uint8_t*) "getStatusBarStyle";
+    func[10].functionData = NULL;
+    func[10].function = &ANXDeviceInfoGetStatusBarStyle;
+    
+    func[11].name = (const uint8_t*) "setStatusBarStyle";
+    func[11].functionData = NULL;
+    func[11].function = &ANXDeviceInfoSetStatusBarStyle;
     
     *functionsToSet = func;
     

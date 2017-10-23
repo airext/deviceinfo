@@ -40,7 +40,7 @@ public class DeviceInfoDebugStarling extends Sprite
             {
                 tf.text += "getting info... \n";
 
-                var info:DeviceInfoGeneral = DeviceInfo.sharedInstance().general || {};
+                var info:Object = DeviceInfo.sharedInstance().general || {};
 
                 tf.text += "name: " + info.name + "\n";
                 tf.text += "model: " + info.model + "\n";
@@ -53,6 +53,20 @@ public class DeviceInfoDebugStarling extends Sprite
                 trace("manufacturer:", info.manufacturer);
                 trace("systemName:", info.systemName);
                 trace("systemVersion:", info.systemVersion);
+            }
+        );
+
+        new PlainButton(this, "hideStatusBar", 0xFF0000, 0xFFFF00, {x: 100, y: 280, width : 200, height : 60},
+            function clickHandler(event:Event):void
+            {
+                DeviceInfo.sharedInstance().statusBar.setHidden(true);
+            }
+        );
+
+        new PlainButton(this, "showStatusBar", 0xFF0000, 0xFFFF00, {x: 100, y: 340, width : 200, height : 60},
+            function clickHandler(event:Event):void
+            {
+                DeviceInfo.sharedInstance().statusBar.setHidden(false);
             }
         );
 

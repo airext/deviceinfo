@@ -12,5 +12,14 @@
             android:text="@string/hello_world"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
+    <Button
+            android:text="Button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginLeft="329dp" android:layout_marginStart="329dp"
+            android:layout_marginTop="161dp" android:id="@+id/button2"/>
 
 </RelativeLayout>

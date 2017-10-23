@@ -101,6 +101,7 @@
             <arg line='-swf-version=13'/>
             <arg line='-external-library-path+="${air.sdk}/frameworks/libs/air/airglobal.swc"'/>
             <arg line='-include-classes ${classlist}'/>
+            <arg line="-debug=false" />
         </exec>
 
         <!-- Unzip .SWC to copy internal library.swf file to corresponded platfom folders -->
@@ -144,6 +145,7 @@
             <arg line='-swf-version=13'/>
             <arg line='-external-library-path+="${air.sdk}/frameworks/libs/air/airglobal.swc"'/>
             <arg line='-include-classes ${classlist-default}'/>
+            <arg line="-debug=false" />
         </exec>
 
         <!-- Unzip .SWC to copy internal library.swf file to default platform folder -->
@@ -172,6 +174,7 @@
             <arg line="${keystore.file}"/>
             <arg line="-storepass"/>
             <arg line="${keystore.password}"/>
+            <arg line="-tsa http://timestamp.entrust.net/TSS/JavaHttpTS"/>
             <arg line="-target"/>
             <arg line="ane"/>
             <arg line="${name}.ane"/>

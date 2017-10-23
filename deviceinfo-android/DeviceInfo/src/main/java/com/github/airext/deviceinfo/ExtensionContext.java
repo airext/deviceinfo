@@ -31,6 +31,9 @@ public class ExtensionContext extends FREContext
         functions.put("log", new LogFunction());
         functions.put("crash", new CrashFunction());
 
+        functions.put("setStatusBarStyle", new SetStatusBarStyleFunction());
+        functions.put("getStatusBarStyle", new GetStatusBarStyleFunction());
+
         return functions;
     }
 

@@ -8,11 +8,10 @@
 
 #import "FlashRuntimeExtensions.h"
 
-#import "ANXDeviceInfoConversionRoutines.h"
-
 #import "ANXDeviceInfo.h"
-
+#import "ANXDeviceInfoConversionRoutines.h"
 #import "ANXDeviceInfoBattery.h"
+#import "ANXDeviceInfoStatusBar.h"
 
 #pragma mark API
 

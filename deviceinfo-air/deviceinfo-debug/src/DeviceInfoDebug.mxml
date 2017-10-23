@@ -9,92 +9,130 @@
         <![CDATA[
         import com.github.airext.DeviceInfo;
         import com.github.airext.data.DeviceInfoGeneral;
+        import com.github.airext.enum.StatusBarStyle;
 
         import spark.components.Alert;
 
-        private function imei_clickHandler(event:MouseEvent):void
-        {
+        private function imei_clickHandler(event:MouseEvent):void {
             Alert.show(String(DeviceInfo.sharedInstance().getIMEI()));
         }
 
-        private function general_clickHandler(event:MouseEvent):void
-        {
+        private function general_clickHandler(event:MouseEvent):void {
             var general:DeviceInfoGeneral = DeviceInfo.sharedInstance().general;
 
             Alert.show(String(general));
         }
 
-        private function iosVendorIdentifier_clickHandler(event:MouseEvent):void
-        {
+        private function iosVendorIdentifier_clickHandler(event:MouseEvent):void {
             var general:DeviceInfoGeneral = DeviceInfo.sharedInstance().general;
 
             Alert.show(String(general.ios.getVendorIdentifier()));
         }
 
-        private function androidIdentifier_clickHandler(event:MouseEvent):void
-        {
+        private function androidIdentifier_clickHandler(event:MouseEvent):void {
             var general:DeviceInfoGeneral = DeviceInfo.sharedInstance().general;
 
             Alert.show(String(general.android.getAndroidIdentifier()));
         }
 
-        private function batteryMonitor_clickHandler(event:MouseEvent):void
-        {
-            if (DeviceInfo.sharedInstance().battery.isMonitoring)
-            {
+        private function batteryMonitor_clickHandler(event:MouseEvent):void {
+            if (DeviceInfo.sharedInstance().battery.isMonitoring) {
                 DeviceInfo.sharedInstance().battery.stopMonitoring();
             }
-            else
-            {
+            else {
                 DeviceInfo.sharedInstance().battery.startMonitoring();
             }
         }
 
-        private function log_clickHandler(event:MouseEvent):void
-        {
+        private function log_clickHandler(event:MouseEvent):void {
             DeviceInfo.sharedInstance().log(logInput.text);
         }
 
-        private function crash_clickHandler(event:MouseEvent):void
-        {
+        private function crash_clickHandler(event:MouseEvent):void {
             DeviceInfo.sharedInstance().crash();
         }
+
+        //        [Bindable]
+        //        private var isStatusBarHidden:Boolean = DeviceInfo.sharedInstance().statusBar.isHidden;
+
+        [Bindable]
+        public var statusBarStyle:String = DeviceInfo.sharedInstance().statusBar.getStyle();
+
+        private function setStatusBarStyle_clickHandler(event:MouseEvent):void {
+            if (DeviceInfo.sharedInstance().statusBar.getStyle() == StatusBarStyle.DEFAULT)
+                DeviceInfo.sharedInstance().statusBar.setStyle(StatusBarStyle.LIGHT);
+            else
+                DeviceInfo.sharedInstance().statusBar.setStyle(StatusBarStyle.DEFAULT);
+
+            statusBarStyle = DeviceInfo.sharedInstance().statusBar.getStyle();
+        }
+
+        private function hideStatusBar_clickHandler(event:MouseEvent):void {
+            if (stage.displayState == StageDisplayState.FULL_SCREEN_INTERACTIVE) {
+                stage.displayState = StageDisplayState.NORMAL;
+            } else {
+                stage.displayState = StageDisplayState.FULL_SCREEN_INTERACTIVE;
+            }
+//            if (DeviceInfo.sharedInstance().statusBar.isHidden)
+//                DeviceInfo.sharedInstance().statusBar.setHidden(false, StatusBarAnimation.FADE);
+//            else
+//                DeviceInfo.sharedInstance().statusBar.setHidden(true, StatusBarAnimation.SLIDE);
+//
+//            isStatusBarHidden = DeviceInfo.sharedInstance().statusBar.isHidden;
+        }
+
         ]]>
     </fx:Script>
 
     <s:layout>
-        <s:VerticalLayout horizontalAlign="justify" gap="30" paddingTop="30" />
+        <s:BasicLayout />
     </s:layout>
 
-    <s:Button label="isSupported" click="Alert.show(String(DeviceInfo.isSupported()));" />
+    <s:Scroller width="100%" height="100%">
+        <s:Group width="100%">
+            <s:layout>
+                <s:VerticalLayout horizontalAlign="justify" gap="30" paddingTop="30" />
+            </s:layout>
 
-    <s:Button label="IMEI" click="imei_clickHandler(event)" />
+            <s:Label text="GENERAL" />
 
-    <s:Button label="General" click="general_clickHandler(event)" />
+            <s:Button label="isSupported" click="Alert.show(String(DeviceInfo.isSupported()));" />
 
-    <s:VGroup contentBackgroundColor="#FFFFFF">
-        <s:HGroup width="100%">
-            <s:Label text="Battery State:{DeviceInfo.sharedInstance().battery.state}" />
-            <s:Label text="Battery Level:{DeviceInfo.sharedInstance().battery.level}" />
-        </s:HGroup>
-        <s:HGroup>
-            <s:Button label="{DeviceInfo.sharedInstance().battery.isMonitoring ? 'Stop Battery Monitoring' : 'Start Battery Monitoring'}" click="batteryMonitor_clickHandler(event)" />
-        </s:HGroup>
-    </s:VGroup>
+            <s:Button label="IMEI" click="imei_clickHandler(event)" />
 
-    <s:HGroup contentBackgroundColor="#FFFFFF">
-        <s:TextInput id="logInput" width="100%" />
-        <s:Button label="Log" click="log_clickHandler(event)" />
-    </s:HGroup>
+            <s:Button label="Get General Info" click="general_clickHandler(event)" />
 
-    <s:Button label="Crash" click="crash_clickHandler(event)" />
+            <s:VGroup contentBackgroundColor="#FFFFFF">
+                <s:HGroup width="100%">
+                    <s:Label text="Battery State:{DeviceInfo.sharedInstance().battery.state}" />
+                    <s:Label text="Battery Level:{DeviceInfo.sharedInstance().battery.level}" />
+                </s:HGroup>
+                <s:HGroup>
+                    <s:Button label="{DeviceInfo.sharedInstance().battery.isMonitoring ? 'Stop Battery Monitoring' : 'Start Battery Monitoring'}" click="batteryMonitor_clickHandler(event)" />
+                </s:HGroup>
+            </s:VGroup>
 
-    <s:Label text="IOS SPECIFIC" />
+            <s:HGroup contentBackgroundColor="#FFFFFF">
+                <s:TextInput id="logInput" width="100%" />
+                <s:Button label="Log" click="log_clickHandler(event)" />
+            </s:HGroup>
 
-    <s:Button label="Vendor Identifier" click="iosVendorIdentifier_clickHandler(event)" />
+            <s:Button label="Crash" click="crash_clickHandler(event)" />
 
-    <s:Label text="ANDROID SPECIFIC" />
+            <s:Label text="STATUS BAR" />
 
-    <s:Button label="Android Identifier" click="androidIdentifier_clickHandler(event)" />
+            <s:Button label="Show/Hide StatusBar" click="hideStatusBar_clickHandler(event)" />
+            <s:Button label="Shange StatusBar Style" click="setStatusBarStyle_clickHandler(event)" />
+
+            <s:Label text="IOS SPECIFIC" />
+
+            <s:Button label="Vendor Identifier" click="iosVendorIdentifier_clickHandler(event)" />
+
+            <s:Label text="ANDROID SPECIFIC" />
+
+            <s:Button label="Android Identifier" click="androidIdentifier_clickHandler(event)" />
+
+        </s:Group>
+    </s:Scroller>
 
 </s:Application>
