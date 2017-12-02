@@ -1,6 +1,7 @@
 package com.github.airext.deviceinfo.functions;
 
 import android.content.Context;
+import android.support.v4.content.ContextCompat;
 import android.telephony.TelephonyManager;
 import android.util.Log;
 import com.adobe.fre.FREContext;
