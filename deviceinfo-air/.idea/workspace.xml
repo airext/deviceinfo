@@ -20,133 +20,13 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="DeviceInfoAlert.as" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/deviceinfo/src/com/github/airext/data/DeviceInfoAlert.as">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
-              <caret line="45" column="42" lean-forward="false" selection-start-line="45" selection-start-column="42" selection-end-line="45" selection-end-column="42" />
-              <folding>
-                <element signature="e#92#128#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="DeviceInfoAlert.as" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/deviceinfo-default/src/com/github/airext/data/DeviceInfoAlert.as">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="422">
-              <caret line="77" column="61" lean-forward="false" selection-start-line="77" selection-start-column="61" selection-end-line="77" selection-end-column="61" />
-              <folding>
-                <element signature="e#92#134#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="DeviceInfoAlertAction.as" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/deviceinfo-default/src/com/github/airext/data/DeviceInfoAlertAction.as">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-253">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding>
-                <element signature="n#!!doc" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Call.as" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../../anx-bridge/anx-bridge-air/anx-bridge/src/com/github/airext/bridge/core/Call.as">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="182">
-              <caret line="141" column="44" lean-forward="false" selection-start-line="141" selection-start-column="44" selection-end-line="141" selection-end-column="44" />
-              <folding>
-                <element signature="n#!!doc" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="Bridge.as" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/../../anx-bridge/anx-bridge-air/anx-bridge/src/com/github/airext/bridge/core/Bridge.as">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-2370">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state relative-caret-position="2040">
+              <caret line="143" column="0" lean-forward="false" selection-start-line="143" selection-start-column="0" selection-end-line="143" selection-end-column="0" />
               <folding>
                 <element signature="n#!!doc" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="DeviceInfoAlertAction.as" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/deviceinfo/src/com/github/airext/data/DeviceInfoAlertAction.as">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="300">
-              <caret line="30" column="49" lean-forward="false" selection-start-line="30" selection-start-column="49" selection-end-line="30" selection-end-column="49" />
-              <folding>
-                <element signature="e#92#134#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="DeviceInfoAlertActionStyle.as" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/deviceinfo/src/com/github/airext/enum/DeviceInfoAlertActionStyle.as">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="2" column="3" lean-forward="true" selection-start-line="2" selection-start-column="3" selection-end-line="2" selection-end-column="3" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="DeviceInfoAlertActionStyle.as" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/deviceinfo-default/src/com/github/airext/enum/DeviceInfoAlertActionStyle.as">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="DeviceInfoAlertStyle.as" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/deviceinfo/src/com/github/airext/enum/DeviceInfoAlertStyle.as">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="60">
-              <caret line="6" column="86" lean-forward="false" selection-start-line="6" selection-start-column="86" selection-end-line="6" selection-end-column="86" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="DeviceInfoDebug.mxml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/deviceinfo-debug/src/DeviceInfoDebug.mxml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="282">
-              <caret line="99" column="9" lean-forward="false" selection-start-line="93" selection-start-column="8" selection-end-line="99" selection-end-column="9" />
-              <folding>
-                <marker date="1512240710000" expanded="true" signature="253:675" ph="..." />
-                <marker date="1512240710000" expanded="true" signature="743:825" ph="{...}" />
-                <marker date="1512240710000" expanded="true" signature="896:1030" ph="{...}" />
-                <marker date="1512240710000" expanded="true" signature="1113:1273" ph="{...}" />
-                <marker date="1512240710000" expanded="true" signature="1354:1519" ph="{...}" />
-                <marker date="1512240710000" expanded="true" signature="1597:1864" ph="{...}" />
-                <marker date="1512240710000" expanded="true" signature="1665:1750" ph="{...}" />
-                <marker date="1512240710000" expanded="true" signature="1768:1854" ph="{...}" />
-                <marker date="1512240710000" expanded="true" signature="1931:2002" ph="{...}" />
-                <marker date="1512240710000" expanded="true" signature="2071:2131" ph="{...}" />
-                <marker date="1512240710000" expanded="true" signature="2141:2267" ph="//..." />
-                <marker date="1512240710000" expanded="true" signature="2461:2835" ph="{...}" />
-                <marker date="1512240710000" expanded="true" signature="2912:3552" ph="{...}" />
-                <marker date="1512240710000" expanded="true" signature="2995:3073" ph="{...}" />
-                <marker date="1512240710000" expanded="true" signature="3079:3174" ph="{...}" />
-                <marker date="1512240710000" expanded="true" signature="3175:3542" ph="//..." />
-                <marker date="1512240710000" expanded="true" signature="3649:3699" ph="{...}" />
-                <marker date="1512240710000" expanded="true" signature="3774:4109" ph="{...}" />
-                <marker date="1512240710000" expanded="true" signature="4013:4057" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -155,63 +35,11 @@
       <file leaf-file-name="DeviceInfoDebugStarling.as" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/deviceinfo-debug/src/DeviceInfoDebugStarling.as">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="283">
-              <caret line="92" column="42" lean-forward="false" selection-start-line="92" selection-start-column="42" selection-end-line="92" selection-end-column="42" />
+            <state relative-caret-position="287">
+              <caret line="113" column="58" lean-forward="false" selection-start-line="113" selection-start-column="58" selection-end-line="113" selection-end-column="58" />
               <folding>
                 <element signature="e#11#47#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="platform.xml" pinned="false" current-in-tab="false">
-        <entry file="jar://$PROJECT_DIR$/deviceinfo-debug/ane/anx-bridge.ane!/META-INF/ANE/iPhone-ARM/platform.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="build.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../build/build.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="396">
-              <caret line="99" column="62" lean-forward="false" selection-start-line="99" selection-start-column="62" selection-end-line="99" selection-end-column="62" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="DeviceInfoDebug-app.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/deviceinfo-debug/DeviceInfoDebug-app.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="261">
-              <caret line="45" column="59" lean-forward="false" selection-start-line="45" selection-start-column="59" selection-end-line="45" selection-end-column="59" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="StatusBar.as" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/deviceinfo/src/com/github/airext/data/StatusBar.as">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
-              <caret line="20" column="31" lean-forward="false" selection-start-line="20" selection-start-column="31" selection-end-line="20" selection-end-column="31" />
-              <folding>
-                <element signature="e#92#128#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="StatusBarStyle.as" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/deviceinfo/src/com/github/airext/enum/StatusBarStyle.as">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="120">
-              <caret line="10" column="1" lean-forward="false" selection-start-line="10" selection-start-column="1" selection-end-line="10" selection-end-column="1" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -237,9 +65,12 @@
       <find>compc-cli</find>
       <find>cancel</find>
       <find>default</find>
+      <find>ANXBridgeCallGetValue</find>
+      <find>theme</find>
     </findStrings>
     <dirStrings>
       <dir>$PROJECT_DIR$/../../anx-bridge/anx-bridge-air/anx-bridge/src/com/github/airext/bridge</dir>
+      <dir>$PROJECT_DIR$/deviceinfo/src/com/github/airext</dir>
     </dirStrings>
   </component>
   <component name="GradleLocalSettings">
@@ -296,11 +127,31 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
+            <path>
+              <item name="deviceinfo" type="b2602c69:ProjectViewProjectNode" />
+              <item name="anx-bridge" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="deviceinfo" type="b2602c69:ProjectViewProjectNode" />
+              <item name="anx-bridge" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="deviceinfo" type="b2602c69:ProjectViewProjectNode" />
+              <item name="anx-bridge" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="bridge" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="deviceinfo" type="b2602c69:ProjectViewProjectNode" />
+              <item name="anx-bridge" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="bridge" type="462c0819:PsiDirectoryNode" />
+              <item name="core" type="462c0819:PsiDirectoryNode" />
+            </path>
             <path>
               <item name="deviceinfo" type="b2602c69:ProjectViewProjectNode" />
               <item name="deviceinfo" type="462c0819:PsiDirectoryNode" />
@@ -337,6 +188,11 @@
             <path>
               <item name="deviceinfo" type="b2602c69:ProjectViewProjectNode" />
               <item name="deviceinfo-debug" type="462c0819:PsiDirectoryNode" />
+              <item name="ane" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="deviceinfo" type="b2602c69:ProjectViewProjectNode" />
+              <item name="deviceinfo-debug" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -366,6 +222,8 @@
         </subPane>
       </pane>
       <pane id="Scratches" />
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -401,7 +259,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Flash App.deviceinfo-debug-starling:ios">
+  <component name="RunManager" selected="Flash App.deviceinfo-debug-starling:android">
     <configuration default="true" type="Applet" factoryName="Applet">
       <option name="HTML_USED" value="false" />
       <option name="WIDTH" value="400" />
@@ -706,6 +564,40 @@
       <option name="url" value="http://" />
       <option name="usbDebugPort" value="7936" />
     </configuration>
+    <configuration name="deviceinfo-debug-starling:android" type="FlashRunConfigurationType" factoryName="Flash App">
+      <option name="BCName" value="deviceinfo-debug-starling" />
+      <option name="IOSSimulatorSdkPath" value="" />
+      <option name="adlOptions" value="" />
+      <option name="airProgramParameters" value="" />
+      <option name="appDescriptorForEmulator" value="Android" />
+      <option name="debugTransport" value="USB" />
+      <option name="debuggerSdkRaw" value="BC SDK" />
+      <option name="emulator" value="NexusOne" />
+      <option name="emulatorAdlOptions" value="" />
+      <option name="fastPackaging" value="true" />
+      <option name="fullScreenHeight" value="0" />
+      <option name="fullScreenWidth" value="0" />
+      <option name="launchUrl" value="false" />
+      <option name="launcherParameters">
+        <LauncherParameters>
+          <option name="browser" value="a7bb68e0-33c0-4d6f-a81a-aac1fdb870c8" />
+          <option name="launcherType" value="OSDefault" />
+          <option name="newPlayerInstance" value="false" />
+          <option name="playerPath" value="/Applications/Flash Player Debugger.app" />
+        </LauncherParameters>
+      </option>
+      <option name="mobileRunTarget" value="AndroidDevice" />
+      <option name="moduleName" value="deviceinfo-debug" />
+      <option name="overriddenMainClass" value="" />
+      <option name="overriddenOutputFileName" value="" />
+      <option name="overrideMainClass" value="false" />
+      <option name="runTrusted" value="true" />
+      <option name="screenDpi" value="0" />
+      <option name="screenHeight" value="0" />
+      <option name="screenWidth" value="0" />
+      <option name="url" value="http://" />
+      <option name="usbDebugPort" value="7936" />
+    </configuration>
     <configuration name="deviceinfo-debug-starling:ios" type="FlashRunConfigurationType" factoryName="Flash App">
       <option name="BCName" value="deviceinfo-debug-starling" />
       <option name="IOSSimulatorSdkPath" value="" />
@@ -740,10 +632,11 @@
       <option name="url" value="http://" />
       <option name="usbDebugPort" value="7936" />
     </configuration>
-    <list size="3">
+    <list size="4">
       <item index="0" class="java.lang.String" itemvalue="Flash App.deviceinfo-debug-flex:ios" />
       <item index="1" class="java.lang.String" itemvalue="Flash App.deviceinfo-debug-flex:android" />
       <item index="2" class="java.lang.String" itemvalue="Flash App.deviceinfo-debug-starling:ios" />
+      <item index="3" class="java.lang.String" itemvalue="Flash App.deviceinfo-debug-starling:android" />
     </list>
   </component>
   <component name="ShelveChangesManager" show_recycled="false">
@@ -766,40 +659,41 @@
       <workItem from="1492949307988" duration="68000" />
       <workItem from="1495959686725" duration="6218000" />
       <workItem from="1495992310985" duration="35000" />
-      <workItem from="1512216724308" duration="11125000" />
+      <workItem from="1512216724308" duration="21370000" />
+      <workItem from="1483229044789" duration="236000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="45029000" />
+    <option name="totallyTimeSpent" value="55510000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1280" height="777" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.1920821" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.273021" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.398827" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.398827" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="PlantUML" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.1920821" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Profiler" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32991204" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -819,38 +713,10 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/deviceinfo-debug/src/DeviceInfoDebugStarling.as">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="780">
-          <caret line="52" column="52" lean-forward="false" selection-start-line="52" selection-start-column="52" selection-end-line="52" selection-end-column="52" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/deviceinfo-debug/src/DeviceInfoDebug.mxml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2055">
           <caret line="137" column="0" lean-forward="false" selection-start-line="137" selection-start-column="0" selection-end-line="137" selection-end-column="0" />
-          <folding>
-            <marker date="1512240710000" expanded="true" signature="253:675" ph="..." />
-            <marker date="1512240710000" expanded="true" signature="743:825" ph="{...}" />
-            <marker date="1512240710000" expanded="true" signature="896:1030" ph="{...}" />
-            <marker date="1512240710000" expanded="true" signature="1113:1273" ph="{...}" />
-            <marker date="1512240710000" expanded="true" signature="1354:1519" ph="{...}" />
-            <marker date="1512240710000" expanded="true" signature="1597:1864" ph="{...}" />
-            <marker date="1512240710000" expanded="true" signature="1665:1750" ph="{...}" />
-            <marker date="1512240710000" expanded="true" signature="1768:1854" ph="{...}" />
-            <marker date="1512240710000" expanded="true" signature="1931:2002" ph="{...}" />
-            <marker date="1512240710000" expanded="true" signature="2071:2131" ph="{...}" />
-            <marker date="1512240710000" expanded="true" signature="2141:2267" ph="//..." />
-            <marker date="1512240710000" expanded="true" signature="2461:2835" ph="{...}" />
-            <marker date="1512240710000" expanded="true" signature="2912:3552" ph="{...}" />
-            <marker date="1512240710000" expanded="true" signature="2995:3073" ph="{...}" />
-            <marker date="1512240710000" expanded="true" signature="3079:3174" ph="{...}" />
-            <marker date="1512240710000" expanded="true" signature="3175:3542" ph="//..." />
-            <marker date="1512240710000" expanded="true" signature="3649:3699" ph="{...}" />
-            <marker date="1512240710000" expanded="true" signature="3774:4109" ph="{...}" />
-            <marker date="1512240710000" expanded="true" signature="4013:4057" ph="{...}" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -927,13 +793,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="105">
           <caret line="7" column="56" lean-forward="true" selection-start-line="7" selection-start-column="56" selection-end-line="7" selection-end-column="56" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/deviceinfo/src/com/github/airext/data/DeviceInfoGeneralIOS.as">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -1046,7 +905,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="390">
           <caret line="28" column="68" lean-forward="true" selection-start-line="28" selection-start-column="8" selection-end-line="28" selection-end-column="68" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1054,7 +912,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="337">
           <caret line="77" column="29" lean-forward="true" selection-start-line="77" selection-start-column="29" selection-end-line="77" selection-end-column="29" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1070,27 +927,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="282">
           <caret line="99" column="9" lean-forward="false" selection-start-line="93" selection-start-column="8" selection-end-line="99" selection-end-column="9" />
-          <folding>
-            <marker date="1512240710000" expanded="true" signature="253:675" ph="..." />
-            <marker date="1512240710000" expanded="true" signature="743:825" ph="{...}" />
-            <marker date="1512240710000" expanded="true" signature="896:1030" ph="{...}" />
-            <marker date="1512240710000" expanded="true" signature="1113:1273" ph="{...}" />
-            <marker date="1512240710000" expanded="true" signature="1354:1519" ph="{...}" />
-            <marker date="1512240710000" expanded="true" signature="1597:1864" ph="{...}" />
-            <marker date="1512240710000" expanded="true" signature="1665:1750" ph="{...}" />
-            <marker date="1512240710000" expanded="true" signature="1768:1854" ph="{...}" />
-            <marker date="1512240710000" expanded="true" signature="1931:2002" ph="{...}" />
-            <marker date="1512240710000" expanded="true" signature="2071:2131" ph="{...}" />
-            <marker date="1512240710000" expanded="true" signature="2141:2267" ph="//..." />
-            <marker date="1512240710000" expanded="true" signature="2461:2835" ph="{...}" />
-            <marker date="1512240710000" expanded="true" signature="2912:3552" ph="{...}" />
-            <marker date="1512240710000" expanded="true" signature="2995:3073" ph="{...}" />
-            <marker date="1512240710000" expanded="true" signature="3079:3174" ph="{...}" />
-            <marker date="1512240710000" expanded="true" signature="3175:3542" ph="//..." />
-            <marker date="1512240710000" expanded="true" signature="3649:3699" ph="{...}" />
-            <marker date="1512240710000" expanded="true" signature="3774:4109" ph="{...}" />
-            <marker date="1512240710000" expanded="true" signature="4013:4057" ph="{...}" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1098,17 +934,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
           <caret line="8" column="41" lean-forward="false" selection-start-line="8" selection-start-column="21" selection-end-line="8" selection-end-column="41" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../../anx-bridge/anx-bridge-air/anx-bridge/src/com/github/airext/bridge/core/Bridge.as">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2370">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1116,7 +941,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1124,7 +948,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="548">
           <caret line="159" column="75" lean-forward="true" selection-start-line="159" selection-start-column="12" selection-end-line="159" selection-end-column="75" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1132,17 +955,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="329">
           <caret line="135" column="61" lean-forward="true" selection-start-line="135" selection-start-column="61" selection-end-line="135" selection-end-column="61" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../../anx-bridge/anx-bridge-air/anx-bridge/src/com/github/airext/bridge/core/Call.as">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="182">
-          <caret line="141" column="44" lean-forward="false" selection-start-line="141" selection-start-column="44" selection-end-line="141" selection-end-column="44" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1150,7 +962,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="396">
           <caret line="99" column="62" lean-forward="false" selection-start-line="99" selection-start-column="62" selection-end-line="99" selection-end-column="62" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1158,9 +969,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-253">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1168,9 +976,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="422">
           <caret line="77" column="61" lean-forward="false" selection-start-line="77" selection-start-column="61" selection-end-line="77" selection-end-column="61" />
-          <folding>
-            <element signature="e#92#134#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1184,14 +989,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/deviceinfo/src/com/github/airext/enum/DeviceInfoAlertStyle.as">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="6" column="86" lean-forward="false" selection-start-line="6" selection-start-column="86" selection-end-line="6" selection-end-column="86" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/deviceinfo-default/src/com/github/airext/enum/DeviceInfoAlertActionStyle.as">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -1200,9 +997,35 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/deviceinfo/src/com/github/airext/enum/DeviceInfoAlertStyle.as">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="6" column="86" lean-forward="false" selection-start-line="6" selection-start-column="86" selection-end-line="6" selection-end-column="86" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../anx-bridge/anx-bridge-air/anx-bridge/src/com/github/airext/bridge/core/Call.as">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="141">
+          <caret line="19" column="22" lean-forward="false" selection-start-line="19" selection-start-column="22" selection-end-line="19" selection-end-column="22" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/deviceinfo/src/com/github/airext/enum/DeviceInfoAlertActionStyle.as">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="15" column="31" lean-forward="false" selection-start-line="15" selection-start-column="31" selection-end-line="15" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/deviceinfo/src/com/github/airext/data/DeviceInfoAlertAction.as">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
+        <state relative-caret-position="388">
           <caret line="30" column="49" lean-forward="false" selection-start-line="30" selection-start-column="49" selection-end-line="30" selection-end-column="49" />
           <folding>
             <element signature="e#92#134#0" expanded="true" />
@@ -1210,18 +1033,38 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/deviceinfo/src/com/github/airext/enum/DeviceInfoAlertActionStyle.as">
+    <entry file="file://$PROJECT_DIR$/deviceinfo/src/com/github/airext/data/DeviceInfoGeneralIOS.as">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="2" column="3" lean-forward="true" selection-start-line="2" selection-start-column="3" selection-end-line="2" selection-end-column="3" />
+        <state relative-caret-position="-210">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/deviceinfo/src/com/github/airext/data/DeviceInfoGeneralAndroid.as">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-173">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../anx-bridge/anx-bridge-air/anx-bridge/src/com/github/airext/bridge/core/Bridge.as">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2040">
+          <caret line="143" column="0" lean-forward="false" selection-start-line="143" selection-start-column="0" selection-end-line="143" selection-end-column="0" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/deviceinfo-debug/src/DeviceInfoDebugStarling.as">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="283">
-          <caret line="92" column="42" lean-forward="false" selection-start-line="92" selection-start-column="42" selection-end-line="92" selection-end-column="42" />
+        <state relative-caret-position="287">
+          <caret line="113" column="58" lean-forward="false" selection-start-line="113" selection-start-column="58" selection-end-line="113" selection-end-column="58" />
           <folding>
             <element signature="e#11#47#0" expanded="true" />
           </folding>

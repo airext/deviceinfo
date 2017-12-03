@@ -2,6 +2,9 @@ package com.github.airext.deviceinfo;
 
 import com.adobe.fre.FREContext;
 import com.adobe.fre.FREFunction;
+import com.github.airext.bridge.Bridge;
+import com.github.airext.bridge.exceptions.BridgeInstantiationException;
+import com.github.airext.bridge.exceptions.BridgeNotFoundException;
 import com.github.airext.deviceinfo.functions.*;
 
 import java.util.HashMap;
@@ -33,6 +36,17 @@ public class ExtensionContext extends FREContext
 
         functions.put("setStatusBarStyle", new SetStatusBarStyleFunction());
         functions.put("getStatusBarStyle", new GetStatusBarStyleFunction());
+
+        functions.put("presentAlert", new PresentAlertFunction());
+        functions.put("dismissAlert", new DismissAlertFunction());
+
+        try {
+            Bridge.setup(functions);
+        } catch (BridgeNotFoundException e) {
+            e.printStackTrace();
+        } catch (BridgeInstantiationException e) {
+            e.printStackTrace();
+        }
 
         return functions;
     }
