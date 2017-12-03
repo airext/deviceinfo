@@ -7,6 +7,9 @@
 //
 
 #import "ANXDeviceInfoFacade.h"
+#import "ANXBridge.h"
+#import "ANXDeviceInfoAlert.h"
+#import "ANXBridgeSupport.h"
 
 #pragma mark General API
 
@@ -102,13 +105,81 @@ FREObject ANXDeviceInfoGetVendorIdentifier(FREContext context, void* functionDat
     return [ANXDeviceInfoConversionRoutines convertNSStringToFREObject:[[ANXDeviceInfo sharedInstance] getVendorIdentifier]];
 }
 
+#pragma mark Alert
+
+FREObject ANXDeviceInfoPresentAlert(FREContext context, void* functionData, uint32_t argc, FREObject argv[])
+{
+    ANXBridgeCall* call = [ANXBridge call:context];
+    
+    NSString* title              = [ANXDeviceInfoConversionRoutines convertFREObjectToNSString:argv[0]];
+    NSString* message            = [ANXDeviceInfoConversionRoutines convertFREObjectToNSString:argv[1]];
+    
+    FREObject alertStyleRawValue;
+    FREGetObjectProperty(argv[2], (const uint8_t *)"rawValue", &alertStyleRawValue, NULL);
+    
+    UIAlertControllerStyle style = [ANXDeviceInfoConversionRoutines convertFREObjectToNSUInteger:alertStyleRawValue withDefault:UIAlertControllerStyleAlert];
+    
+    NSMutableArray* actionDescriptors = [NSMutableArray array];
+    if (argc > 3) {
+        FREObject actions = argv[3];
+        uint32_t actionCount;
+        FREGetArrayLength(actions, &actionCount);
+        for (NSUInteger i = 0; i < actionCount; i++) {
+            FREObject action;
+            FREGetArrayElementAt(actions, (uint32_t) i, &action);
+            FREObject actionTitle;
+            FREGetObjectProperty(action, (const uint8_t *)"title", &actionTitle, NULL);
+            FREObject actionStyle;
+            FREGetObjectProperty(action, (const uint8_t *)"style", &actionStyle, NULL);
+            FREObject actionStyleRawValue;
+            FREGetObjectProperty(actionStyle, (const uint8_t *)"rawValue", &actionStyleRawValue, NULL);
+            FREObject actionEnabled;
+            FREGetObjectProperty(action, (const uint8_t *)"isEnabled", &actionEnabled, NULL);
+            NSString* title = [ANXDeviceInfoConversionRoutines convertFREObjectToNSString:actionTitle];
+            NSNumber* style = [NSNumber numberWithUnsignedInteger:[ANXDeviceInfoConversionRoutines convertFREObjectToNSUInteger:actionStyleRawValue withDefault:0]];
+            NSNumber* enabled = [NSNumber numberWithBool: [ANXDeviceInfoConversionRoutines convertFREObjectToBool:actionEnabled]];
+            NSNumber* index = [NSNumber numberWithUnsignedInteger:i];
+            
+            NSMutableDictionary* actionDescriptor = [NSMutableDictionary dictionary];
+            [actionDescriptor setObject:title forKey:@"title"];
+            [actionDescriptor setObject:style forKey:@"style"];
+            [actionDescriptor setObject:enabled forKey:@"enabled"];
+            [actionDescriptor setObject:index forKey:@"index"];
+            [actionDescriptors addObject:actionDescriptor];
+        }
+    }
+    
+    [ANXDeviceInfoAlert presentAlertWithTitle:title message:message preferredStyle:style withActions:actionDescriptors animated:YES withCompletion:^(NSInteger actionIndex) {
+        [call result:[[ANXDeviceInfoIntegerVO alloc] initWithValue:actionIndex]];
+    }];
+    
+    return [call toFREObject];
+}
+
+FREObject ANXDeviceInfoDismissAlert(FREContext context, void* functionData, uint32_t argc, FREObject argv[])
+{
+    [ANXDeviceInfoAlert dismissAlertAnimated:YES];
+    
+    if (argc > 0) {
+        NSInteger callId = [ANXDeviceInfoConversionRoutines convertFREObjectToNSUInteger:argv[0] withDefault:ANX_BRIDGE_MAX_QUEUE_LENGTH];
+        if (callId != ANX_BRIDGE_MAX_QUEUE_LENGTH) {
+            ANXBridgeCall* call = [ANXBridge callWithId:callId];
+            [call cancel];
+        }
+    }
+    
+    return NULL;
+}
+
 #pragma mark ContextInitialize/ContextFinalizer
 
-void ANXDeviceInfoContextInitializer(void* extData, const uint8_t* ctxType, FREContext ctx, uint32_t* numFunctionsToTest, const FRENamedFunction** functionsToSet)
+void ANXDeviceInfoContextInitializer(void* extData, const uint8_t* ctxType, FREContext ctx, uint32_t* numFunctionsToSet, const FRENamedFunction** functionsToSet)
 {
-    *numFunctionsToTest = 12;
+    NSLog(@"ANXDeviceInfoContextInitializer");
     
-    FRENamedFunction* func = (FRENamedFunction*) malloc(sizeof(FRENamedFunction) * (*numFunctionsToTest));
+    *numFunctionsToSet = 14;
+    
+    FRENamedFunction* func = (FRENamedFunction*) malloc(sizeof(FRENamedFunction) * (*numFunctionsToSet));
     
     // general
     
@@ -168,6 +239,20 @@ void ANXDeviceInfoContextInitializer(void* extData, const uint8_t* ctxType, FREC
     func[11].functionData = NULL;
     func[11].function = &ANXDeviceInfoSetStatusBarStyle;
     
+    // alert
+    
+    func[12].name = (const uint8_t*) "presentAlert";
+    func[12].functionData = NULL;
+    func[12].function = &ANXDeviceInfoPresentAlert;
+
+    func[13].name = (const uint8_t*) "dismissAlert";
+    func[13].functionData = NULL;
+    func[13].function = &ANXDeviceInfoDismissAlert;
+    
+    // rest
+    
+    [ANXBridge setup:numFunctionsToSet functions:&func];
+
     *functionsToSet = func;
     
     [ANXDeviceInfo sharedInstance].context = ctx;
@@ -175,6 +260,8 @@ void ANXDeviceInfoContextInitializer(void* extData, const uint8_t* ctxType, FREC
 
 void ANXDeviceInfoContextFinalizer(FREContext ctx)
 {
+    NSLog(@"ANXDeviceInfoContextFinalizer");
+    
     [ANXDeviceInfo sharedInstance].context = nil;
 }
 

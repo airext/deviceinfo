@@ -97,6 +97,7 @@
         <exec executable="java" failonerror="true">
             <arg line='-jar ${air.sdk}/lib/compc-cli.jar' />
             <arg line='-source-path ${air.project.dir}/src'/>
+            <arg line='-external-library-path+="${air.project.dir}/lib"' />
             <arg line='-output temp/swc/${name}.swc'/>
             <arg line='-swf-version=13'/>
             <arg line='-external-library-path+="${air.sdk}/frameworks/libs/air/airglobal.swc"'/>
@@ -189,6 +190,7 @@
 
         <!-- Move packaged .ANE file to /bin directory -->
         <move file="temp/${name}.ane" todir="../bin"/>
+        <copy file="../bin/deviceinfo.ane" todir="../deviceinfo-air/deviceinfo-debug/ane" />
 
         <!-- Move default .SWC library to /bin directory -->
         <copy file="temp/default/${name}.swc" todir="../bin"/>

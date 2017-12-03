@@ -1,13 +1,18 @@
 package {
 
 import com.github.airext.DeviceInfo;
+import com.github.airext.data.DeviceInfoAlert;
+import com.github.airext.data.DeviceInfoAlertAction;
 import com.github.airext.data.DeviceInfoGeneral;
+import com.github.airext.enum.DeviceInfoAlertActionStyle;
+import com.github.airext.enum.DeviceInfoAlertStyle;
 
 import flash.display.Sprite;
 import flash.display.StageAlign;
 import flash.display.StageScaleMode;
 import flash.events.Event;
 import flash.text.TextField;
+import flash.utils.setTimeout;
 
 public class DeviceInfoDebugStarling extends Sprite
 {
@@ -59,16 +64,39 @@ public class DeviceInfoDebugStarling extends Sprite
         new PlainButton(this, "hideStatusBar", 0xFF0000, 0xFFFF00, {x: 100, y: 280, width : 200, height : 60},
             function clickHandler(event:Event):void
             {
-                DeviceInfo.sharedInstance().statusBar.setHidden(true);
+//                DeviceInfo.sharedInstance().statusBar.setHidden(true);
             }
         );
 
         new PlainButton(this, "showStatusBar", 0xFF0000, 0xFFFF00, {x: 100, y: 340, width : 200, height : 60},
             function clickHandler(event:Event):void
             {
-                DeviceInfo.sharedInstance().statusBar.setHidden(false);
+//                DeviceInfo.sharedInstance().statusBar.setHidden(false);
             }
         );
+
+        new PlainButton(this, "showAlert", 0xFF0000, 0xFFFF00, {x: 100, y: 400, width : 200, height : 60},
+            function clickHandler(event:Event):void {
+                showAlert("Info", "Hi");
+            }
+        );
+
+        new PlainButton(this, "showActionSheet", 0xFF0000, 0xFFFF00, {x: 100, y: 460, width : 200, height : 60},
+            function clickHandler(event:Event):void {
+                showActionSheet("Info", "Hi");
+            }
+        );
+
+        new PlainButton(this, "showTitleAlert", 0xFF0000, 0xFFFF00, {x: 100, y: 520, width : 200, height : 60},
+            function clickHandler(event:Event):void {
+                var alertController: DeviceInfoAlert = new DeviceInfoAlert("Processing...", null, DeviceInfoAlertStyle.alert);
+                alertController.present();
+                setTimeout(function (): void {
+                    alertController.dismiss();
+                }, 2000);
+            }
+        );
+
 
         var tf:TextField = new TextField();
         tf.border = true;
@@ -87,6 +115,27 @@ public class DeviceInfoDebugStarling extends Sprite
                 stage.align = StageAlign.TOP_LEFT;
             }
         );
+    }
+
+    private function showAlert(title: String, message: String): void {
+        var alertController: DeviceInfoAlert = new DeviceInfoAlert(title, message, DeviceInfoAlertStyle.alert);
+        alertController.addAction(new DeviceInfoAlertAction("OK", DeviceInfoAlertActionStyle.normal, function(): void{
+            trace("OK");
+        }));
+        alertController.present();
+    }
+    private function showActionSheet(title: String, message: String): void {
+        var alertController: DeviceInfoAlert = new DeviceInfoAlert(title, message, DeviceInfoAlertStyle.actionSheet);
+        alertController.addAction(new DeviceInfoAlertAction("Cancel", DeviceInfoAlertActionStyle.cancellation, function(): void{
+            trace("Cancel");
+        }));
+        alertController.addAction(new DeviceInfoAlertAction("Delete", DeviceInfoAlertActionStyle.destructive, function(): void{
+            trace("Delete");
+        }));
+        alertController.addAction(new DeviceInfoAlertAction("Send", DeviceInfoAlertActionStyle.normal, function(): void{
+            trace("send");
+        }));
+        alertController.present();
     }
 }
 }

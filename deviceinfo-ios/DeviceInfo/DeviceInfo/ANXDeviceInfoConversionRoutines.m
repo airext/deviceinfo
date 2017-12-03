@@ -99,6 +99,26 @@
     return (NSUInteger) tempValue;
 }
 
++(NSInteger) convertFREObjectToNSInteger: (FREObject) integer withDefault: (NSInteger) defaultValue {
+    FREResult result;
+    
+    int32_t tempValue;
+    result = FREGetObjectAsInt32(integer, &tempValue);
+    
+    if (result != FRE_OK)
+        return defaultValue;
+    
+    return (NSUInteger) tempValue;
+}
++(FREObject) convertNSIntegerToFREObject: (NSInteger) integer {
+    FREObject result;
+    if (FRENewObjectFromInt32((int32_t)integer, &result) == FRE_OK) {
+        return result;
+    } else {
+        return NULL;
+    }
+}
+
 +(FREObject) convertLongLongToFREObject: (long long) number
 {
     FREObject result;

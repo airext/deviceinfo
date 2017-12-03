@@ -4,7 +4,12 @@
     <configurations>
       <configuration name="deviceinfo" target-platform="Mobile" pure-as="true" output-type="Library" output-file="deviceinfo.swc" output-folder="$MODULE_DIR$/../../build">
         <dependencies>
-          <sdk name="19.0.0" />
+          <entries>
+            <entry library-id="bd734012-abdd-49fe-b5b6-878a7d2dded4">
+              <dependency linkage="External" />
+            </entry>
+          </entries>
+          <sdk name="27.0.0" />
         </dependencies>
         <compiler-options>
           <map>
@@ -23,7 +28,18 @@
     <content url="file://$MODULE_DIR$">
       <sourceFolder url="file://$MODULE_DIR$/src" isTestSource="false" />
     </content>
-    <orderEntry type="jdk" jdkName="19.0.0" jdkType="Flex SDK Type (new)" />
+    <orderEntry type="jdk" jdkName="27.0.0" jdkType="Flex SDK Type (new)" />
     <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="module-library" exported="">
+      <library type="flex">
+        <properties id="bd734012-abdd-49fe-b5b6-878a7d2dded4" />
+        <CLASSES>
+          <root url="file://$MODULE_DIR$/lib" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+        <jarDirectory url="file://$MODULE_DIR$/lib" recursive="false" />
+      </library>
+    </orderEntry>
   </component>
 </module>

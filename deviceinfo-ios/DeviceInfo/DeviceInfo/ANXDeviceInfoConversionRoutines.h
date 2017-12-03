@@ -25,6 +25,9 @@
 
 +(NSUInteger) convertFREObjectToNSUInteger: (FREObject) integer withDefault: (NSUInteger) defaultValue;
 
++(NSInteger) convertFREObjectToNSInteger: (FREObject) integer withDefault: (NSInteger) defaultValue;
++(FREObject) convertNSIntegerToFREObject: (NSInteger) integer;
+
 +(FREObject) convertLongLongToFREObject: (long long) number;
 
 +(double) convertFREObjectToDouble: (FREObject) number;

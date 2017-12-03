@@ -8,7 +8,11 @@
     <fx:Script>
         <![CDATA[
         import com.github.airext.DeviceInfo;
+        import com.github.airext.data.DeviceInfoAlert;
+        import com.github.airext.data.DeviceInfoAlertAction;
         import com.github.airext.data.DeviceInfoGeneral;
+        import com.github.airext.enum.DeviceInfoAlertActionStyle;
+        import com.github.airext.enum.DeviceInfoAlertStyle;
         import com.github.airext.enum.StatusBarStyle;
 
         import spark.components.Alert;
@@ -81,6 +85,20 @@
 //            isStatusBarHidden = DeviceInfo.sharedInstance().statusBar.isHidden;
         }
 
+        // Alert
+        
+        private function alert_clickHandler(event: MouseEvent): void {
+            showAlert("Title1", "Hi");
+        }
+
+        private function showAlert(title: String, message: String): void {
+            var alertController: DeviceInfoAlert = new DeviceInfoAlert(title, message, DeviceInfoAlertStyle.alert);
+            alertController.addAction(new DeviceInfoAlertAction("OK", DeviceInfoAlertActionStyle.normal, function(): void{
+                trace("OK");
+            }));
+            alertController.present();
+        }
+
         ]]>
     </fx:Script>
 
@@ -116,6 +134,8 @@
                 <s:TextInput id="logInput" width="100%" />
                 <s:Button label="Log" click="log_clickHandler(event)" />
             </s:HGroup>
+            
+            <s:Button label="Alert" click="alert_clickHandler(event)" />
 
             <s:Button label="Crash" click="crash_clickHandler(event)" />
 
