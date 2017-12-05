@@ -97,7 +97,8 @@
         <exec executable="java" failonerror="true">
             <arg line='-jar ${air.sdk}/lib/compc-cli.jar' />
             <arg line='-source-path ${air.project.dir}/src'/>
-            <arg line='-external-library-path+="${air.project.dir}/lib"' />
+            <arg line='-library-path+="${air.project.dir}/lib/skein-utils.swc"' />
+            <arg line='-external-library-path+="${air.project.dir}/lib/anx-bridge.swc"' />
             <arg line='-output temp/swc/${name}.swc'/>
             <arg line='-swf-version=13'/>
             <arg line='-external-library-path+="${air.sdk}/frameworks/libs/air/airglobal.swc"'/>

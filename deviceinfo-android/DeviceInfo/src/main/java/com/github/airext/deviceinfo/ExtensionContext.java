@@ -40,6 +40,15 @@ public class ExtensionContext extends FREContext
         functions.put("presentAlert", new PresentAlertFunction());
         functions.put("dismissAlert", new DismissAlertFunction());
 
+        functions.put("notificationCenterIsSupported", new NotificationCenterIsSupportedFunction());
+        functions.put("notificationCenterPermissionStatus", new NotificationCenterPermissionStatusFunction());
+        functions.put("notificationCenterRequestPermission", new NotificationCenterRequestPermissionFunction());
+        functions.put("notificationCenterAddRequest", new NotificationCenterAddRequestFunction());
+        functions.put("notificationCenterRemovePendingNotificationRequests", new NotificationCenterRemovePendingNotificationRequestsFunction());
+        functions.put("notificationCenterRemoveAllPendingNotificationRequests", new NotificationCenterRemoveAllPendingNotificationRequestsFunction());
+        functions.put("notificationCenterInBackground", new NotificationCenterInBackgroundFunction());
+        functions.put("notificationCenterInForeground", new NotificationCenterInForegroundFunction());
+
         try {
             Bridge.setup(functions);
         } catch (BridgeNotFoundException e) {

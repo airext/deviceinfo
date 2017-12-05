@@ -4,8 +4,13 @@ import com.github.airext.DeviceInfo;
 import com.github.airext.data.DeviceInfoAlert;
 import com.github.airext.data.DeviceInfoAlertAction;
 import com.github.airext.data.DeviceInfoGeneral;
+import com.github.airext.data.DeviceInfoNotificationCenter;
+import com.github.airext.data.DeviceInfoNotificationContent;
+import com.github.airext.data.DeviceInfoNotificationRequest;
+import com.github.airext.data.DeviceInfoTimeIntervalNotificationTrigger;
 import com.github.airext.enum.DeviceInfoAlertActionStyle;
 import com.github.airext.enum.DeviceInfoAlertStyle;
+import com.github.airext.events.NotificationCenterEvent;
 
 import flash.display.Sprite;
 import flash.display.StageAlign;
@@ -97,6 +102,26 @@ public class DeviceInfoDebugStarling extends Sprite
             }
         );
 
+        new PlainButton(this, "sendLocalNotification", 0xFF0000, 0xFFFF00, {x: 100, y: 580, width : 200, height : 60},
+            function clickHandler(event:Event):void {
+                var content: DeviceInfoNotificationContent = new DeviceInfoNotificationContent();
+                content.title = "Title";
+                content.body = "Message";
+                content.userInfo = {message: "Hello, world!"};
+
+                var trigger: DeviceInfoTimeIntervalNotificationTrigger = new DeviceInfoTimeIntervalNotificationTrigger(10);
+                var request: DeviceInfoNotificationRequest = new DeviceInfoNotificationRequest(1, content, trigger);
+
+                DeviceInfoNotificationCenter.current.add(request, function (error: Error) {
+                    trace(error);
+                });
+            }
+        );
+
+        DeviceInfoNotificationCenter.current.addEventListener(NotificationCenterEvent.NOTIFICATION_RECEIVED, function (event: NotificationCenterEvent): void {
+            trace(">", event.parameters);
+            tf.text += event.parameters + "\n";
+        });
 
         var tf:TextField = new TextField();
         tf.border = true;

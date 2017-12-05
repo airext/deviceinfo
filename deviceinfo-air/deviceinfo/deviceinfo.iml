@@ -5,8 +5,11 @@
       <configuration name="deviceinfo" target-platform="Mobile" pure-as="true" output-type="Library" output-file="deviceinfo.swc" output-folder="$MODULE_DIR$/../../build">
         <dependencies>
           <entries>
-            <entry library-id="bd734012-abdd-49fe-b5b6-878a7d2dded4">
+            <entry library-id="2417ef7d-0334-4544-a4d8-14b1dbdb2120">
               <dependency linkage="External" />
+            </entry>
+            <entry library-id="e7f3d35b-6cd2-484f-b10c-61304b1af6c1">
+              <dependency linkage="Merged" />
             </entry>
           </entries>
           <sdk name="27.0.0" />
@@ -32,13 +35,22 @@
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="module-library" exported="">
       <library type="flex">
-        <properties id="bd734012-abdd-49fe-b5b6-878a7d2dded4" />
+        <properties id="2417ef7d-0334-4544-a4d8-14b1dbdb2120" />
         <CLASSES>
-          <root url="file://$MODULE_DIR$/lib" />
+          <root url="jar://$MODULE_DIR$/lib/anx-bridge.swc!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
-        <jarDirectory url="file://$MODULE_DIR$/lib" recursive="false" />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" exported="">
+      <library type="flex">
+        <properties id="e7f3d35b-6cd2-484f-b10c-61304b1af6c1" />
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/lib/skein-utils.swc!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
       </library>
     </orderEntry>
   </component>
