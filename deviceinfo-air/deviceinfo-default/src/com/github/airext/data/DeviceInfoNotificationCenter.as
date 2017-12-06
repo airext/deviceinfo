@@ -14,6 +14,17 @@ public class DeviceInfoNotificationCenter extends EventDispatcher {
         return false;
     }
 
+    public static function get isEnabled(): Boolean {
+        return false;
+    }
+
+    public static function get canOpenSettings(): Boolean {
+        return false;
+    }
+
+    public static function openSettings(): void {
+    }
+
     public static function get permissionStatus(): String {
         return null;
     }
@@ -40,6 +51,12 @@ public class DeviceInfoNotificationCenter extends EventDispatcher {
     }
 
     public function removeAllPendingNotificationRequests(): void {
+    }
+
+    device_info function inForeground(): void {
+    }
+
+    device_info function inBackground(): void {
     }
 }
 }

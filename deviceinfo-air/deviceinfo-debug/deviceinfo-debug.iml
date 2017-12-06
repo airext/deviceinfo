@@ -24,10 +24,10 @@
       <configuration name="deviceinfo-debug-starling" target-platform="Mobile" pure-as="true" main-class="DeviceInfoDebugStarling" output-file="deviceinfo-debug-starling.swf" output-folder="$MODULE_DIR$/bin-debug">
         <dependencies>
           <entries>
-            <entry library-id="d113df64-230c-4331-9cb2-5eadbba03226">
+            <entry library-id="3eb14729-b186-4fda-b6a4-36f7129da671">
               <dependency linkage="Merged" />
             </entry>
-            <entry library-id="3eb14729-b186-4fda-b6a4-36f7129da671">
+            <entry library-id="e807c126-ce07-4586-bfbe-5eb388f19ab8">
               <dependency linkage="Merged" />
             </entry>
           </entries>
@@ -55,16 +55,6 @@
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="module-library" exported="">
       <library type="flex">
-        <properties id="d113df64-230c-4331-9cb2-5eadbba03226" />
-        <CLASSES>
-          <root url="jar://$MODULE_DIR$/../../bin/deviceinfo.ane!/" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES />
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library" exported="">
-      <library type="flex">
         <properties id="f9e12659-5cda-4b11-a7b8-61355919ecd0" />
         <CLASSES>
           <root url="file://$MODULE_DIR$/ane" />
@@ -82,6 +72,17 @@
         </CLASSES>
         <JAVADOC />
         <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" exported="">
+      <library type="flex">
+        <properties id="e807c126-ce07-4586-bfbe-5eb388f19ab8" />
+        <CLASSES>
+          <root url="file://$MODULE_DIR$/ane" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+        <jarDirectory url="file://$MODULE_DIR$/ane" recursive="false" />
       </library>
     </orderEntry>
   </component>

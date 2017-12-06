@@ -22,6 +22,8 @@ use namespace device_info;
 
 public class DeviceInfoNotificationCenter extends EventDispatcher {
 
+    // Availability & Permissions
+
     public static function get isSupported(): Boolean {
         if (DeviceInfo.isSupported()) {
             return DeviceInfo.context.call("notificationCenterIsSupported");
@@ -30,9 +32,23 @@ public class DeviceInfoNotificationCenter extends EventDispatcher {
         }
     }
 
+    public static function get isEnabled(): Boolean {
+        return DeviceInfo.context.call("notificationCenterIsEnabled");
+    }
+
+    public static function get canOpenSettings(): Boolean {
+        return DeviceInfo.context.call("notificationCenterCanOpenSettings");
+    }
+
+    public static function openSettings(): void {
+        DeviceInfo.context.call("notificationCenterOpenSettings");
+    }
+
     public static function get permissionStatus(): String {
         return DeviceInfo.context.call("notificationCenterPermissionStatus") as String;
     }
+
+    // Shared instance
 
     private static var _current: DeviceInfoNotificationCenter;
     public static function get current(): DeviceInfoNotificationCenter {
@@ -41,6 +57,8 @@ public class DeviceInfoNotificationCenter extends EventDispatcher {
         }
         return _current;
     }
+
+    // Constructor
 
     public function DeviceInfoNotificationCenter() {
         super();

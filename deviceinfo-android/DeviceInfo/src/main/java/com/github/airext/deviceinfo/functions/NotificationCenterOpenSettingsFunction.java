@@ -5,13 +5,13 @@ import com.adobe.fre.FREObject;
 import com.github.airext.deviceinfo.managers.NotificationCenter;
 
 /**
- * Created by max on 12/5/17.
+ * Created by max on 12/6/17.
  */
 
-public class NotificationCenterInForegroundFunction implements com.adobe.fre.FREFunction {
+public class NotificationCenterOpenSettingsFunction implements com.adobe.fre.FREFunction {
     @Override
     public FREObject call(FREContext context, FREObject[] args) {
-        NotificationCenter.inForeground(context.getActivity(), context.getActivity().getIntent());
+        NotificationCenter.openSettings(context.getActivity());
         return null;
     }
 }

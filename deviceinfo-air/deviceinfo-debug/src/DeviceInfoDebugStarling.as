@@ -12,10 +12,13 @@ import com.github.airext.enum.DeviceInfoAlertActionStyle;
 import com.github.airext.enum.DeviceInfoAlertStyle;
 import com.github.airext.events.NotificationCenterEvent;
 
+import flash.desktop.NativeApplication;
+
 import flash.display.Sprite;
 import flash.display.StageAlign;
 import flash.display.StageScaleMode;
 import flash.events.Event;
+import flash.events.InvokeEvent;
 import flash.text.TextField;
 import flash.utils.setTimeout;
 
@@ -109,7 +112,7 @@ public class DeviceInfoDebugStarling extends Sprite
                 content.body = "Message";
                 content.userInfo = {message: "Hello, world!"};
 
-                var trigger: DeviceInfoTimeIntervalNotificationTrigger = new DeviceInfoTimeIntervalNotificationTrigger(10);
+                var trigger: DeviceInfoTimeIntervalNotificationTrigger = new DeviceInfoTimeIntervalNotificationTrigger(8);
                 var request: DeviceInfoNotificationRequest = new DeviceInfoNotificationRequest(1, content, trigger);
 
                 DeviceInfoNotificationCenter.current.add(request, function (error: Error) {
@@ -118,10 +121,41 @@ public class DeviceInfoDebugStarling extends Sprite
             }
         );
 
-        DeviceInfoNotificationCenter.current.addEventListener(NotificationCenterEvent.NOTIFICATION_RECEIVED, function (event: NotificationCenterEvent): void {
-            trace(">", event.parameters);
-            tf.text += event.parameters + "\n";
+        new PlainButton(this, "localNotificationEnabled", 0xFF0000, 0xFFFF00, {x: 100, y: 640, width : 200, height : 60},
+            function clickHandler(event:Event):void {
+                log(DeviceInfoNotificationCenter.isEnabled);
+            }
+        );
+        new PlainButton(this, "localNotificationCanOpenSettings", 0xFF0000, 0xFFFF00, {x: 100, y: 700, width : 200, height : 60},
+            function clickHandler(event:Event):void {
+                log(DeviceInfoNotificationCenter.canOpenSettings);
+            }
+        );
+        new PlainButton(this, "localNotificationOpenSettings", 0xFF0000, 0xFFFF00, {x: 100, y: 760, width : 200, height : 60},
+            function clickHandler(event:Event):void {
+                DeviceInfoNotificationCenter.openSettings();
+            }
+        );
+        new PlainButton(this, "localNotificationPermissionStatus", 0xFF0000, 0xFFFF00, {x: 100, y: 820, width : 200, height : 60},
+            function clickHandler(event:Event):void {
+                log(DeviceInfoNotificationCenter.permissionStatus);
+            }
+        );
+
+        NativeApplication.nativeApplication.addEventListener(InvokeEvent.INVOKE, function(event: InvokeEvent): void {
+            trace(event.arguments, event.reason);
+            tf.text += event.arguments + " " + event.reason +"\n";
         });
+
+        DeviceInfoNotificationCenter.current.addEventListener(NotificationCenterEvent.NOTIFICATION_RECEIVED, function (event: NotificationCenterEvent): void {
+            log(event.parameters);
+        });
+
+        function log(...rest): void {
+            trace(rest);
+            tf.text += rest + "\n";
+            tf.scrollV = tf.maxScrollV;
+        }
 
         var tf:TextField = new TextField();
         tf.border = true;

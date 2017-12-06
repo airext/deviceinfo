@@ -48,6 +48,9 @@ public class ExtensionContext extends FREContext
         functions.put("notificationCenterRemoveAllPendingNotificationRequests", new NotificationCenterRemoveAllPendingNotificationRequestsFunction());
         functions.put("notificationCenterInBackground", new NotificationCenterInBackgroundFunction());
         functions.put("notificationCenterInForeground", new NotificationCenterInForegroundFunction());
+        functions.put("notificationCenterIsEnabled", new NotificationCenterIsEnabledFunction());
+        functions.put("notificationCenterCanOpenSettings", new NotificationCenterCanOpenSettingsFunction());
+        functions.put("notificationCenterOpenSettings", new NotificationCenterOpenSettingsFunction());
 
         try {
             Bridge.setup(functions);
