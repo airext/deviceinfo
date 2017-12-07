@@ -52,6 +52,9 @@ public class ExtensionContext extends FREContext
         functions.put("notificationCenterCanOpenSettings", new NotificationCenterCanOpenSettingsFunction());
         functions.put("notificationCenterOpenSettings", new NotificationCenterOpenSettingsFunction());
 
+        functions.put("themeIsSupported", new ThemeIsSupportedFunction());
+        functions.put("themeSetStyle", new ThemeSetStyleFunction());
+
         try {
             Bridge.setup(functions);
         } catch (BridgeNotFoundException e) {

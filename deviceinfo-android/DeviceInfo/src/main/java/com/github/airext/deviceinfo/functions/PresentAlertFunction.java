@@ -2,14 +2,18 @@ package com.github.airext.deviceinfo.functions;
 
 import android.app.Activity;
 import android.app.AlertDialog;
+import android.content.Context;
 import android.content.DialogInterface;
+import android.content.pm.PackageManager;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.text.Html;
+import android.util.Log;
 import com.adobe.fre.*;
 import com.github.airext.bridge.Bridge;
 import com.github.airext.bridge.Call;
 
+import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -20,12 +24,38 @@ import java.util.List;
 
 public class PresentAlertFunction implements FREFunction {
 
+    private static final String TAG = "AlertController";
+
     public static AlertDialog currentAlert = null;
+
+    int getThemeId(Context context) {
+        try {
+            Class<?> wrapper = Context.class;
+            Method method = wrapper.getMethod("getThemeResId");
+            method.setAccessible(true);
+            return (Integer) method.invoke(context);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return 0;
+    }
 
     @Override
     public FREObject call(FREContext context, FREObject[] args) {
+        Log.d(TAG, "PresentAlertFunction");
 
         Activity activity = context.getActivity();
+
+        Log.i(TAG, String.valueOf(activity.getApplicationInfo().theme));
+        Log.i(TAG, String.valueOf(getThemeId(activity)));
+
+        try {
+            Log.i(TAG, String.valueOf(activity.getPackageManager().getActivityInfo(activity.getComponentName(), 0).theme));
+        } catch (PackageManager.NameNotFoundException e) {
+            e.printStackTrace();
+        }
+
+        Log.i(TAG, "");
 
         String title = null;
         String message = null;

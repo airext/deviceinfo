@@ -7,18 +7,15 @@
  */
 package com.github.airext
 {
+import com.github.airext.appearance.StatusBar;
 import com.github.airext.core.device_info;
-import com.github.airext.data.DeviceInfoBattery;
-import com.github.airext.data.DeviceInfoGeneral;
-import com.github.airext.data.StatusBar;
+import com.github.airext.deviceinfo.DeviceInfoBattery;
+import com.github.airext.deviceinfo.DeviceInfoGeneral;
 
 import flash.desktop.NativeApplication;
-
 import flash.events.StatusEvent;
-
 import flash.external.ExtensionContext;
 import flash.net.registerClassAlias;
-import flash.system.Capabilities;
 
 use namespace device_info;
 
@@ -96,7 +93,7 @@ public class DeviceInfo
     //--------------------------------------------------------------------------
 
     {
-        registerClassAlias("com.github.airext.data.DeviceInfoGeneral", DeviceInfoGeneral);
+        registerClassAlias("com.github.airext.deviceinfo.DeviceInfoGeneral", DeviceInfoGeneral);
     }
 
     //--------------------------------------------------------------------------

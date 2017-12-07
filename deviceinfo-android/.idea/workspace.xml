@@ -135,7 +135,7 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="NotificationCenter.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="NotificationCenter.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/DeviceInfo/src/main/java/com/github/airext/deviceinfo/managers/NotificationCenter.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="690">
@@ -152,49 +152,57 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ContextCompat.java" pinned="false" current-in-tab="false">
-        <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.android.support/support-compat/27.0.2/80acc64f280831f05960ede2cd87237e8d097ed2/support-compat-27.0.2-sources.jar!/android/support/v4/content/ContextCompat.java">
+      <file leaf-file-name="Activity.class" pinned="false" current-in-tab="false">
+        <entry file="jar://$USER_HOME$/Library/Android/sdk/platforms/android-27/android.jar!/android/app/Activity.class">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="287">
+              <caret line="680" column="37" lean-forward="false" selection-start-line="680" selection-start-column="37" selection-end-line="680" selection-end-column="37" />
+              <folding>
+                <element signature="e#19021#19022#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="PresentAlertFunction.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/DeviceInfo/src/main/java/com/github/airext/deviceinfo/functions/PresentAlertFunction.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="517">
+              <caret line="52" column="120" lean-forward="false" selection-start-line="52" selection-start-column="38" selection-end-line="52" selection-end-column="120" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ActivityInfo.class" pinned="false" current-in-tab="false">
+        <entry file="jar://$USER_HOME$/Library/Android/sdk/platforms/android-27/android.jar!/android/content/pm/ActivityInfo.class">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="313">
-              <caret line="433" column="22" lean-forward="false" selection-start-line="433" selection-start-column="22" selection-end-line="433" selection-end-column="22" />
+              <caret line="90" column="15" lean-forward="false" selection-start-line="90" selection-start-column="15" selection-end-line="90" selection-end-column="15" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="NotificationManagerCompat.java" pinned="false" current-in-tab="false">
-        <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.android.support/support-compat/27.0.2/80acc64f280831f05960ede2cd87237e8d097ed2/support-compat-27.0.2-sources.jar!/android/support/v4/app/NotificationManagerCompat.java">
+      <file leaf-file-name="ContextThemeWrapper.class" pinned="false" current-in-tab="false">
+        <entry file="jar://$USER_HOME$/Library/Android/sdk/platforms/android-27/android.jar!/android/view/ContextThemeWrapper.class">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="63" column="76" lean-forward="false" selection-start-line="63" selection-start-column="56" selection-end-line="63" selection-end-column="76" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="NotificationManager.class" pinned="false" current-in-tab="false">
-        <entry file="jar://$USER_HOME$/Library/Android/sdk/platforms/android-27/android.jar!/android/app/NotificationManager.class">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1532">
-              <caret line="154" column="54" lean-forward="false" selection-start-line="154" selection-start-column="54" selection-end-line="154" selection-end-column="54" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="NotificationCenterAddRequestFunction.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/DeviceInfo/src/main/java/com/github/airext/deviceinfo/functions/NotificationCenterAddRequestFunction.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="250">
-              <caret line="18" column="13" lean-forward="false" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="13" />
+            <state relative-caret-position="540">
+              <caret line="50" column="13" lean-forward="false" selection-start-line="50" selection-start-column="13" selection-end-line="50" selection-end-column="13" />
               <folding>
-                <element signature="e#2121#2270#0" expanded="false" />
-                <element signature="e#2269#2270#0" expanded="false" />
-                <element signature="e#2327#2507#0" expanded="false" />
-                <element signature="e#2506#2507#0" expanded="false" />
-                <element signature="e#2655#2797#0" expanded="false" />
-                <element signature="e#2796#2797#0" expanded="false" />
+                <element signature="e#1368#1369#0" expanded="true" />
+                <element signature="e#1419#1420#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Resources.class" pinned="false" current-in-tab="false">
+        <entry file="jar://$USER_HOME$/Library/Android/sdk/platforms/android-27/android.jar!/android/content/res/Resources.class">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1777">
+              <caret line="243" column="23" lean-forward="false" selection-start-line="243" selection-start-column="23" selection-end-line="243" selection-end-column="23" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -202,49 +210,41 @@
       <file leaf-file-name="ExtensionContext.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/DeviceInfo/src/main/java/com/github/airext/deviceinfo/ExtensionContext.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="379">
-              <caret line="43" column="77" lean-forward="false" selection-start-line="43" selection-start-column="77" selection-end-line="43" selection-end-column="77" />
+            <state relative-caret-position="701">
+              <caret line="55" column="56" lean-forward="false" selection-start-line="55" selection-start-column="56" selection-end-line="55" selection-end-column="56" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="NotificationCenterPermissionStatusFunction.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/DeviceInfo/src/main/java/com/github/airext/deviceinfo/functions/NotificationCenterPermissionStatusFunction.java">
+      <file leaf-file-name="ThemeSetStyleFunction.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/DeviceInfo/src/main/java/com/github/airext/deviceinfo/functions/ThemeSetStyleFunction.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="210">
-              <caret line="19" column="71" lean-forward="false" selection-start-line="19" selection-start-column="71" selection-end-line="19" selection-end-column="71" />
+            <state relative-caret-position="75">
+              <caret line="5" column="31" lean-forward="true" selection-start-line="5" selection-start-column="31" selection-end-line="5" selection-end-column="31" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="NotificationCenterCanOpenSettingsFunction.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/DeviceInfo/src/main/java/com/github/airext/deviceinfo/functions/NotificationCenterCanOpenSettingsFunction.java">
+      <file leaf-file-name="Resources.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/DeviceInfo/src/main/java/com/distriqt/extension/Resources.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
-              <caret line="15" column="63" lean-forward="false" selection-start-line="15" selection-start-column="63" selection-end-line="15" selection-end-column="63" />
+            <state relative-caret-position="232">
+              <caret line="34" column="74" lean-forward="false" selection-start-line="34" selection-start-column="74" selection-end-line="34" selection-end-column="74" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="NotificationCenterOpenSettingsFunction.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/DeviceInfo/src/main/java/com/github/airext/deviceinfo/functions/NotificationCenterOpenSettingsFunction.java">
+      <file leaf-file-name="ThemeIsSupportedFunction.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/DeviceInfo/src/main/java/com/github/airext/deviceinfo/functions/ThemeIsSupportedFunction.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
-              <caret line="15" column="5" lean-forward="false" selection-start-line="15" selection-start-column="5" selection-end-line="15" selection-end-column="5" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="NotificationCenterIsEnabledFunction.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/DeviceInfo/src/main/java/com/github/airext/deviceinfo/functions/NotificationCenterIsEnabledFunction.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="300">
-              <caret line="20" column="61" lean-forward="false" selection-start-line="20" selection-start-column="61" selection-end-line="20" selection-end-column="61" />
-              <folding />
+            <state relative-caret-position="60">
+              <caret line="4" column="45" lean-forward="false" selection-start-line="4" selection-start-column="45" selection-end-line="4" selection-end-column="45" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -2030,7 +2030,6 @@
         <option value="$USER_HOME$/Library/Android/sdk/platforms/android-27/android.jar!/android/app/AlertDialog.class" />
         <option value="$PROJECT_DIR$/DeviceInfo/src/main/java/com/github/airext/deviceinfo/functions/DismissAlertFunction.java" />
         <option value="$PROJECT_DIR$/DeviceInfo/src/main/java/com/github/airext/DeviceInfo.java" />
-        <option value="$PROJECT_DIR$/DeviceInfo/src/main/java/com/github/airext/deviceinfo/functions/PresentAlertFunction.java" />
         <option value="$PROJECT_DIR$/DeviceInfo/src/main/java/com/github/airext/deviceinfo/functions/NotificationCenterRequestPermission.java" />
         <option value="$PROJECT_DIR$/DeviceInfo/build.gradle" />
         <option value="$PROJECT_DIR$/app/build.gradle" />
@@ -2051,12 +2050,15 @@
         <option value="$PROJECT_DIR$/DeviceInfo/src/main/java/com/github/airext/deviceinfo/functions/NotificationCenterAddRequestFunction.java" />
         <option value="$PROJECT_DIR$/DeviceInfo/src/main/java/com/github/airext/deviceinfo/activities/NotificationActivity.java" />
         <option value="$PROJECT_DIR$/DeviceInfo/src/main/java/com/github/airext/deviceinfo/functions/NotificationCenterInForegroundFunction.java" />
-        <option value="$PROJECT_DIR$/DeviceInfo/src/main/java/com/github/airext/deviceinfo/ExtensionContext.java" />
         <option value="$PROJECT_DIR$/DeviceInfo/src/main/java/com/github/airext/deviceinfo/NotificationCenterCanOpenSettingsFunction.java" />
         <option value="$PROJECT_DIR$/DeviceInfo/src/main/java/com/github/airext/deviceinfo/functions/NotificationCenterCanOpenSettingsFunction.java" />
         <option value="$PROJECT_DIR$/DeviceInfo/src/main/java/com/github/airext/deviceinfo/functions/NotificationCenterOpenSettingsFunction.java" />
         <option value="$PROJECT_DIR$/DeviceInfo/src/main/java/com/github/airext/deviceinfo/functions/NotificationCenterIsEnabledFunction.java" />
         <option value="$PROJECT_DIR$/DeviceInfo/src/main/java/com/github/airext/deviceinfo/managers/NotificationCenter.java" />
+        <option value="$PROJECT_DIR$/DeviceInfo/src/main/java/com/github/airext/deviceinfo/functions/PresentAlertFunction.java" />
+        <option value="$PROJECT_DIR$/DeviceInfo/src/main/java/com/github/airext/deviceinfo/ExtensionContext.java" />
+        <option value="$PROJECT_DIR$/DeviceInfo/src/main/java/com/github/airext/deviceinfo/functions/ThemeIsSupportedFunction.java" />
+        <option value="$PROJECT_DIR$/DeviceInfo/src/main/java/com/github/airext/deviceinfo/functions/ThemeSetStyleFunction.java" />
       </list>
     </option>
   </component>
@@ -2320,6 +2322,10 @@
               <option name="myItemId" value="" />
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="distriqt/extension">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT USER_OBJECT="Root">
@@ -2464,8 +2470,8 @@
       <recent name="$PROJECT_DIR$/DeviceInfo/src/main/java/com/distriqt/extension" />
     </key>
     <key name="CreateClassDialog.RecentsKey">
-      <recent name="com.github.airext.deviceinfo" />
       <recent name="com.github.airext.deviceinfo.functions" />
+      <recent name="com.github.airext.deviceinfo" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/DeviceInfo/libs" />
@@ -2644,7 +2650,7 @@
       <option name="ACTIVITY_CLASS" value="" />
       <method>
         <option name="Android.Gradle.BeforeRunTask" enabled="true" />
-        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1512557675642" />
+        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1512636203597" />
       </method>
     </configuration>
     <configuration default="true" type="AndroidTestRunConfigurationType" factoryName="Android Instrumented Tests">
@@ -2692,7 +2698,7 @@
       </Profilers>
       <method>
         <option name="Android.Gradle.BeforeRunTask" enabled="true" />
-        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1512557675642" />
+        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1512636203597" />
       </method>
     </configuration>
     <configuration default="true" type="Application" factoryName="Application">
@@ -2875,7 +2881,7 @@
       <option name="ACTIVITY_CLASS" value="" />
       <method>
         <option name="Android.Gradle.BeforeRunTask" enabled="true" />
-        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1512557675643" />
+        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1512636203599" />
       </method>
     </configuration>
     <list size="6">
@@ -2888,9 +2894,9 @@
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Gradle.deviceinfo-android:DeviceInfo [jar]" />
-        <item index="1" class="java.lang.String" itemvalue="Gradle.deviceinfo-android:DeviceInfo [clean]" />
-        <item index="2" class="java.lang.String" itemvalue="Gradle.deviceinfo-android:DeviceInfo [build]" />
+        <item index="0" class="java.lang.String" itemvalue="Gradle.deviceinfo-android:DeviceInfo [build]" />
+        <item index="1" class="java.lang.String" itemvalue="Gradle.deviceinfo-android:DeviceInfo [jar]" />
+        <item index="2" class="java.lang.String" itemvalue="Gradle.deviceinfo-android:DeviceInfo [clean]" />
         <item index="3" class="java.lang.String" itemvalue="Gradle.deviceinfo-android [build]" />
         <item index="4" class="java.lang.String" itemvalue="Gradle.deviceinfo-android:app [build]" />
       </list>
@@ -3042,7 +3048,7 @@
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39977852" sideWeight="0.5021299" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32751092" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32678387" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Logcat" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -3051,7 +3057,7 @@
       <window_info id="Gradle Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.27582535" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2564633" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2564633" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.16882068" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Device File Explorer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
@@ -3090,42 +3096,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" column="70" lean-forward="false" selection-start-line="5" selection-start-column="70" selection-end-line="5" selection-end-column="70" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/gradle.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/Library/Android/sdk/platforms/android-27/android.jar!/android/app/AlertDialog.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2925">
-          <caret line="226" column="47" lean-forward="false" selection-start-line="226" selection-start-column="47" selection-end-line="226" selection-end-column="47" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/DeviceInfo/libs/FlashRuntimeExtensions.jar!/com/adobe/fre/FREInvalidObjectException.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="7" column="13" lean-forward="false" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/DeviceInfo/src/main/java/com/github/airext/deviceinfo/functions/CrashFunction.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="9" column="13" lean-forward="false" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$USER_HOME$/Library/Android/sdk/platforms/android-27/android.jar!/android/app/Dialog.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="4455">
@@ -3299,16 +3269,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/DeviceInfo/src/main/java/com/github/airext/deviceinfo/functions/PresentAlertFunction.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="20" column="13" lean-forward="false" selection-start-line="20" selection-start-column="13" selection-end-line="20" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/DeviceInfo/src/main/java/com/github/airext/deviceinfo/functions/NotificationCenterRequestPermissionFunction.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="195">
@@ -3357,22 +3317,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="450">
           <caret line="30" column="5" lean-forward="true" selection-start-line="30" selection-start-column="5" selection-end-line="30" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/DeviceInfo/src/main/java/com/distriqt/extension/Resources.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="23" column="13" lean-forward="false" selection-start-line="23" selection-start-column="13" selection-end-line="23" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/Library/Android/sdk/platforms/android-27/android.jar!/android/app/Activity.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="112" column="19" lean-forward="false" selection-start-line="112" selection-start-column="19" selection-end-line="112" selection-end-column="19" />
           <folding />
         </state>
       </provider>
@@ -3495,14 +3439,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/DeviceInfo/src/main/java/com/github/airext/deviceinfo/ExtensionContext.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="379">
-          <caret line="43" column="77" lean-forward="false" selection-start-line="43" selection-start-column="77" selection-end-line="43" selection-end-column="77" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/DeviceInfo/src/main/java/com/github/airext/deviceinfo/functions/NotificationCenterPermissionStatusFunction.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="210">
@@ -3531,6 +3467,85 @@
             <element signature="e#4475#4476#0" expanded="true" />
             <element signature="e#4885#4893#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/Library/Android/sdk/platforms/android-27/android.jar!/android/app/Activity.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="287">
+          <caret line="680" column="37" lean-forward="false" selection-start-line="680" selection-start-column="37" selection-end-line="680" selection-end-column="37" />
+          <folding>
+            <element signature="e#19021#19022#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/Library/Android/sdk/platforms/android-27/android.jar!/android/content/res/Resources.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1777">
+          <caret line="243" column="23" lean-forward="false" selection-start-line="243" selection-start-column="23" selection-end-line="243" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/Library/Android/sdk/platforms/android-27/android.jar!/android/view/ContextThemeWrapper.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="540">
+          <caret line="50" column="13" lean-forward="false" selection-start-line="50" selection-start-column="13" selection-end-line="50" selection-end-column="13" />
+          <folding>
+            <element signature="e#1368#1369#0" expanded="true" />
+            <element signature="e#1419#1420#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/Library/Android/sdk/platforms/android-27/android.jar!/android/content/pm/ActivityInfo.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="313">
+          <caret line="90" column="15" lean-forward="false" selection-start-line="90" selection-start-column="15" selection-end-line="90" selection-end-column="15" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DeviceInfo/src/main/java/com/github/airext/deviceinfo/ExtensionContext.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="701">
+          <caret line="55" column="56" lean-forward="false" selection-start-line="55" selection-start-column="56" selection-end-line="55" selection-end-column="56" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DeviceInfo/src/main/java/com/github/airext/deviceinfo/functions/PresentAlertFunction.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="517">
+          <caret line="52" column="120" lean-forward="false" selection-start-line="52" selection-start-column="38" selection-end-line="52" selection-end-column="120" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DeviceInfo/src/main/java/com/github/airext/deviceinfo/functions/ThemeIsSupportedFunction.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="45" lean-forward="false" selection-start-line="4" selection-start-column="45" selection-end-line="4" selection-end-column="45" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DeviceInfo/src/main/java/com/distriqt/extension/Resources.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="232">
+          <caret line="34" column="74" lean-forward="false" selection-start-line="34" selection-start-column="74" selection-end-line="34" selection-end-column="74" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DeviceInfo/src/main/java/com/github/airext/deviceinfo/functions/ThemeSetStyleFunction.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="31" lean-forward="true" selection-start-line="5" selection-start-column="31" selection-end-line="5" selection-end-column="31" />
+          <folding />
         </state>
       </provider>
     </entry>

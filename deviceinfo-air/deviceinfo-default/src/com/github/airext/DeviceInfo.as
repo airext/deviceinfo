@@ -7,9 +7,9 @@
  */
 package com.github.airext
 {
-import com.github.airext.data.DeviceInfoBattery;
-import com.github.airext.data.DeviceInfoGeneral;
-import com.github.airext.data.StatusBar;
+import com.github.airext.appearance.StatusBar;
+import com.github.airext.deviceinfo.DeviceInfoBattery;
+import com.github.airext.deviceinfo.DeviceInfoGeneral;
 
 import flash.system.Capabilities;
 
