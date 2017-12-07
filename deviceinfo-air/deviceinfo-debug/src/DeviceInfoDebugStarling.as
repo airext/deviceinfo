@@ -1,19 +1,20 @@
 package {
 
 import com.github.airext.DeviceInfo;
-import com.github.airext.data.DeviceInfoAlert;
-import com.github.airext.data.DeviceInfoAlertAction;
-import com.github.airext.data.DeviceInfoGeneral;
-import com.github.airext.data.DeviceInfoNotificationCenter;
-import com.github.airext.data.DeviceInfoNotificationContent;
-import com.github.airext.data.DeviceInfoNotificationRequest;
-import com.github.airext.data.DeviceInfoTimeIntervalNotificationTrigger;
-import com.github.airext.enum.DeviceInfoAlertActionStyle;
-import com.github.airext.enum.DeviceInfoAlertStyle;
-import com.github.airext.events.NotificationCenterEvent;
+import com.github.airext.alert.Alert;
+import com.github.airext.alert.AlertAction;
+import com.github.airext.alert.AlertActionStyle;
+import com.github.airext.alert.AlertStyle;
+import com.github.airext.appearance.Theme;
+import com.github.airext.appearance.ThemeAndroidStyle;
+import com.github.airext.appearance.ThemeStyle;
+import com.github.airext.notification.NotificationCenter;
+import com.github.airext.notification.NotificationCenterEvent;
+import com.github.airext.notification.NotificationContent;
+import com.github.airext.notification.NotificationRequest;
+import com.github.airext.notification.TimeIntervalNotificationTrigger;
 
 import flash.desktop.NativeApplication;
-
 import flash.display.Sprite;
 import flash.display.StageAlign;
 import flash.display.StageScaleMode;
@@ -97,7 +98,7 @@ public class DeviceInfoDebugStarling extends Sprite
 
         new PlainButton(this, "showTitleAlert", 0xFF0000, 0xFFFF00, {x: 100, y: 520, width : 200, height : 60},
             function clickHandler(event:Event):void {
-                var alertController: DeviceInfoAlert = new DeviceInfoAlert("Processing...", null, DeviceInfoAlertStyle.alert);
+                var alertController: Alert = new Alert("Processing...", null, AlertStyle.alert);
                 alertController.present();
                 setTimeout(function (): void {
                     alertController.dismiss();
@@ -107,15 +108,15 @@ public class DeviceInfoDebugStarling extends Sprite
 
         new PlainButton(this, "sendLocalNotification", 0xFF0000, 0xFFFF00, {x: 100, y: 580, width : 200, height : 60},
             function clickHandler(event:Event):void {
-                var content: DeviceInfoNotificationContent = new DeviceInfoNotificationContent();
+                var content: NotificationContent = new NotificationContent();
                 content.title = "Title";
                 content.body = "Message";
                 content.userInfo = {message: "Hello, world!"};
 
-                var trigger: DeviceInfoTimeIntervalNotificationTrigger = new DeviceInfoTimeIntervalNotificationTrigger(8);
-                var request: DeviceInfoNotificationRequest = new DeviceInfoNotificationRequest(1, content, trigger);
+                var trigger: TimeIntervalNotificationTrigger = new TimeIntervalNotificationTrigger(8);
+                var request: NotificationRequest = new NotificationRequest(1, content, trigger);
 
-                DeviceInfoNotificationCenter.current.add(request, function (error: Error) {
+                NotificationCenter.current.add(request, function (error: Error) {
                     trace(error);
                 });
             }
@@ -123,22 +124,63 @@ public class DeviceInfoDebugStarling extends Sprite
 
         new PlainButton(this, "localNotificationEnabled", 0xFF0000, 0xFFFF00, {x: 100, y: 640, width : 200, height : 60},
             function clickHandler(event:Event):void {
-                log(DeviceInfoNotificationCenter.isEnabled);
+                log(NotificationCenter.isEnabled);
             }
         );
         new PlainButton(this, "localNotificationCanOpenSettings", 0xFF0000, 0xFFFF00, {x: 100, y: 700, width : 200, height : 60},
             function clickHandler(event:Event):void {
-                log(DeviceInfoNotificationCenter.canOpenSettings);
+                log(NotificationCenter.canOpenSettings);
             }
         );
         new PlainButton(this, "localNotificationOpenSettings", 0xFF0000, 0xFFFF00, {x: 100, y: 760, width : 200, height : 60},
             function clickHandler(event:Event):void {
-                DeviceInfoNotificationCenter.openSettings();
+                NotificationCenter.openSettings();
             }
         );
         new PlainButton(this, "localNotificationPermissionStatus", 0xFF0000, 0xFFFF00, {x: 100, y: 820, width : 200, height : 60},
             function clickHandler(event:Event):void {
-                log(DeviceInfoNotificationCenter.permissionStatus);
+                log(NotificationCenter.permissionStatus);
+            }
+        );
+
+        new PlainButton(this, "isThemeSupported", 0xFF0000, 0xFFFF00, {x: 400, y: 80, width : 200, height : 60},
+                function clickHandler(event:Event):void {
+                    log(Theme.isSupported);
+                }
+        );
+        new PlainButton(this, "setLightTheme", 0xFF0000, 0xFFFF00, {x: 400, y: 160, width : 200, height : 60},
+            function clickHandler(event:Event):void {
+                Theme.shared.style = ThemeStyle.Light;
+            }
+        );
+        new PlainButton(this, "setDarkTheme", 0xFF0000, 0xFFFF00, {x: 400, y: 240, width : 200, height : 60},
+            function clickHandler(event:Event):void {
+                Theme.shared.style = ThemeStyle.Dark;
+            }
+        );
+        new PlainButton(this, "setMaterialDarkTheme", 0xFF0000, 0xFFFF00, {x: 400, y: 320, width : 200, height : 60},
+            function clickHandler(event:Event):void {
+                Theme.shared.android.style = ThemeAndroidStyle.MaterialDark;
+            }
+        );
+        new PlainButton(this, "setMaterialLightTheme", 0xFF0000, 0xFFFF00, {x: 400, y: 400, width : 200, height : 60},
+            function clickHandler(event:Event):void {
+                Theme.shared.android.style = ThemeAndroidStyle.MaterialLight;
+            }
+        );
+        new PlainButton(this, "setHoloDarkTheme", 0xFF0000, 0xFFFF00, {x: 400, y: 480, width : 200, height : 60},
+            function clickHandler(event:Event):void {
+                Theme.shared.android.style = ThemeAndroidStyle.HoloDark;
+            }
+        );
+        new PlainButton(this, "setHoloLightTheme", 0xFF0000, 0xFFFF00, {x: 400, y: 560, width : 200, height : 60},
+            function clickHandler(event:Event):void {
+                Theme.shared.android.style = ThemeAndroidStyle.HoloLight;
+            }
+        );
+        new PlainButton(this, "setAirDefaultTheme", 0xFF0000, 0xFFFF00, {x: 400, y: 640, width : 200, height : 60},
+            function clickHandler(event:Event):void {
+                Theme.shared.android.style = ThemeAndroidStyle.NoShadow;
             }
         );
 
@@ -147,7 +189,7 @@ public class DeviceInfoDebugStarling extends Sprite
             tf.text += event.arguments + " " + event.reason +"\n";
         });
 
-        DeviceInfoNotificationCenter.current.addEventListener(NotificationCenterEvent.NOTIFICATION_RECEIVED, function (event: NotificationCenterEvent): void {
+        NotificationCenter.current.addEventListener(NotificationCenterEvent.NOTIFICATION_RECEIVED, function (event: NotificationCenterEvent): void {
             log(event.parameters);
         });
 
@@ -162,7 +204,7 @@ public class DeviceInfoDebugStarling extends Sprite
         tf.width = 600;
         tf.x = 20;
         tf.text = "Initializing...";
-        tf.y = 240;
+        tf.y = 900;
         addChild(tf);
 
         tf.text += "isSupported: " + DeviceInfo.isSupported() + "\n";
@@ -177,21 +219,21 @@ public class DeviceInfoDebugStarling extends Sprite
     }
 
     private function showAlert(title: String, message: String): void {
-        var alertController: DeviceInfoAlert = new DeviceInfoAlert(title, message, DeviceInfoAlertStyle.alert);
-        alertController.addAction(new DeviceInfoAlertAction("OK", DeviceInfoAlertActionStyle.normal, function(): void{
+        var alertController: Alert = new Alert(title, message, AlertStyle.alert);
+        alertController.addAction(new AlertAction("OK", AlertActionStyle.normal, function(): void{
             trace("OK");
         }));
         alertController.present();
     }
     private function showActionSheet(title: String, message: String): void {
-        var alertController: DeviceInfoAlert = new DeviceInfoAlert(title, message, DeviceInfoAlertStyle.actionSheet);
-        alertController.addAction(new DeviceInfoAlertAction("Cancel", DeviceInfoAlertActionStyle.cancellation, function(): void{
+        var alertController: Alert = new Alert(title, message, AlertStyle.actionSheet);
+        alertController.addAction(new AlertAction("Cancel", AlertActionStyle.cancellation, function(): void{
             trace("Cancel");
         }));
-        alertController.addAction(new DeviceInfoAlertAction("Delete", DeviceInfoAlertActionStyle.destructive, function(): void{
+        alertController.addAction(new AlertAction("Delete", AlertActionStyle.destructive, function(): void{
             trace("Delete");
         }));
-        alertController.addAction(new DeviceInfoAlertAction("Send", DeviceInfoAlertActionStyle.normal, function(): void{
+        alertController.addAction(new AlertAction("Send", AlertActionStyle.normal, function(): void{
             trace("send");
         }));
         alertController.present();
@@ -203,7 +245,6 @@ import flash.display.DisplayObjectContainer;
 import flash.display.Sprite;
 import flash.events.Event;
 import flash.events.MouseEvent;
-import flash.events.TouchEvent;
 import flash.text.TextField;
 import flash.text.TextFormat;
 import flash.text.TextFormatAlign;
