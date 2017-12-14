@@ -9,9 +9,21 @@
 #import <Foundation/Foundation.h>
 #import "FlashRuntimeExtensions.h"
 
-@interface ANXDeviceInfoIntegerVO : NSObject
+@interface ANXDeviceInfoVO : NSObject
 
-- (id)initWithValue:(NSInteger)value;
++ (id)valueObjectWithInteger:(NSInteger)value;
++ (id)valueObjectWithBoolean:(BOOL)value;
+
+- (id)initWithInteger:(NSInteger)value;
+- (id)initWithBoolean:(BOOL)value;
+
+- (FREObject)toFREObject;
+
+@end
+
+@interface ANXNotificationCenterSettingsVO : NSObject
+
+- (id)initWithAuthorizationStatus:(NSString*)authorizationStatus;
 
 - (FREObject)toFREObject;
 

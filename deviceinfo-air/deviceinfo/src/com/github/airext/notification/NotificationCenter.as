@@ -44,9 +44,33 @@ public class NotificationCenter extends EventDispatcher {
         DeviceInfo.context.call("notificationCenterOpenSettings");
     }
 
-    public static function get permissionStatus(): String {
-        trace("NotificationCenter.permissionStatus");
-        return DeviceInfo.context.call("notificationCenterPermissionStatus") as String;
+    public static function requestAuthorizationWithOptions(options: int, completion: Function): void {
+        trace("NotificationCenter.requestAuthorizationWithCompletion");
+        bridge(DeviceInfo.context).call("notificationCenterRequestAuthorization", options).callback(function (error: Error, value: Object): void {
+            if (error) {
+                if (completion.length == 2) {
+                    completion(PermissionStatus.UNKNOWN, error);
+                } else {
+                    completion(PermissionStatus.UNKNOWN);
+                }
+            } else {
+                completion(value as String);
+            }
+        });
+    }
+
+    public static function getNotificationSettingsWithCompletion(handler: Function): void {
+        bridge(DeviceInfo.context).call("notificationCenterGetNotificationSettings").callback(function (error: Error, value: Object): void {
+            if (error) {
+                if (handler.length == 2) {
+                    handler(null, error);
+                } else {
+                    handler(null);
+                }
+            } else {
+                handler(value);
+            }
+        });
     }
 
     // Shared instance
@@ -71,17 +95,6 @@ public class NotificationCenter extends EventDispatcher {
 
         delayToTimeout(30, function (): void {
             inForeground();
-        });
-    }
-
-    public function requestPermission(callback: Function): void {
-        trace("NotificationCenter.requestPermission");
-        bridge(DeviceInfo.context).call("notificationCenterRequestPermission").callback(function (error: Error, value: Object): void {
-            if (error) {
-                callback(PermissionStatus.UNKNOWN);
-            } else {
-                callback(value as String);
-            }
         });
     }
 

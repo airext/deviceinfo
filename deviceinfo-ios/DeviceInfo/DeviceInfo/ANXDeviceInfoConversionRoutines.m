@@ -165,4 +165,41 @@
     return tempValue > 0;
 }
 
++ (NSString*)readNSStringFrom:(FREObject)object field:(NSString*)field withDefaultValue:(NSString*)defaultValue {
+    FREObject propertyObject;
+    if (FREGetObjectProperty(object, (const uint8_t *)[field UTF8String], &propertyObject, NULL) == FRE_OK) {
+        return [self convertFREObjectToNSString:propertyObject] ?: defaultValue;
+    } else {
+        return defaultValue;
+    }
+}
+
++ (NSInteger)readNSIntegerFrom:(FREObject)object field:(NSString*)field withDefaultValue:(NSInteger)defaultValue {
+    FREObject propertyObject;
+    if (FREGetObjectProperty(object, (const uint8_t *)[field UTF8String], &propertyObject, NULL) == FRE_OK) {
+        return [self convertFREObjectToNSInteger:propertyObject withDefault:defaultValue];
+    } else {
+        return defaultValue;
+    }
+}
+
++ (double)readDoubleFrom:(FREObject)object field:(NSString*)field withDefaultValue:(double)defaultValue {
+    
+    FREObject propertyObject = [self readFREObjectFrom:object field:field];
+    if (propertyObject != NULL) {
+        return [self convertFREObjectToDouble:propertyObject];
+    } else {
+        return defaultValue;
+    }
+}
+
++ (FREObject)readFREObjectFrom:(FREObject)object field:(NSString*)field {
+    FREObject propertyObject;
+    if (FREGetObjectProperty(object, (const uint8_t *)[field UTF8String], &propertyObject, NULL) == FRE_OK) {
+        return propertyObject;
+    } else {
+        return NULL;
+    }
+}
+
 @end

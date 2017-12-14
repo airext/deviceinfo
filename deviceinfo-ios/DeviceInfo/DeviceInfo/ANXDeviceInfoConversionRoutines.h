@@ -35,4 +35,10 @@
 +(BOOL) convertFREObjectToBool: (FREObject) value;
 +(FREObject) convertBoolToFREObject: (BOOL) value;
 
++ (NSString*)readNSStringFrom:(FREObject)object field:(NSString*)field withDefaultValue:(NSString*)defaultValue;
++ (NSInteger)readNSIntegerFrom:(FREObject)object field:(NSString*)field withDefaultValue:(NSInteger)defaultValue;
++ (double)readDoubleFrom:(FREObject)object field:(NSString*)field withDefaultValue:(double)defaultValue;
+
++ (FREObject)readFREObjectFrom:(FREObject)object field:(NSString*)field;
+
 @end

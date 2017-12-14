@@ -9,6 +9,7 @@ import com.github.airext.bridge.Call;
 import com.github.airext.deviceinfo.managers.NotificationCenter;
 import com.github.airext.deviceinfo.receivers.LocalNotificationBroadcastReceiver;
 import com.github.airext.deviceinfo.utils.ConversionRoutines;
+import com.github.airext.deviceinfo.utils.DispatchQueue;
 
 import java.util.Calendar;
 
@@ -60,14 +61,14 @@ public class NotificationCenterAddRequestFunction implements FREFunction {
 
             NotificationCenter.scheduleNotification(activity, identifier, timestamp, title, body, userInfo);
 
-            dispatch_async(activity, new Runnable() {
+            DispatchQueue.dispatch_async(activity, new Runnable() {
                 @Override
                 public void run() {
                     call.result(true);
                 }
             });
         } else {
-            dispatch_async(activity, new Runnable() {
+            DispatchQueue.dispatch_async(activity, new Runnable() {
                 @Override
                 public void run() {
                     call.reject("Specified timeInterval is invalid");
@@ -76,14 +77,5 @@ public class NotificationCenterAddRequestFunction implements FREFunction {
         }
 
         return call.toFREObject();
-    }
-
-    private void dispatch_async(final Activity activity, final Runnable runnable) {
-        new Thread() {
-            @Override
-            public void run() {
-                activity.runOnUiThread(runnable);
-            }
-        };
     }
 }

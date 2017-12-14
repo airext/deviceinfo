@@ -9,7 +9,9 @@ import com.github.airext.appearance.Theme;
 import com.github.airext.appearance.ThemeAndroidStyle;
 import com.github.airext.appearance.ThemeStyle;
 import com.github.airext.notification.NotificationCenter;
+import com.github.airext.notification.NotificationCenterAuthorizationOptions;
 import com.github.airext.notification.NotificationCenterEvent;
+import com.github.airext.notification.NotificationCenterSettings;
 import com.github.airext.notification.NotificationContent;
 import com.github.airext.notification.NotificationRequest;
 import com.github.airext.notification.TimeIntervalNotificationTrigger;
@@ -137,9 +139,19 @@ public class DeviceInfoDebugStarling extends Sprite
                 NotificationCenter.openSettings();
             }
         );
-        new PlainButton(this, "localNotificationPermissionStatus", 0xFF0000, 0xFFFF00, {x: 100, y: 820, width : 200, height : 60},
+        new PlainButton(this, "Request Authorization", 0xFF0000, 0xFFFF00, {x: 100, y: 820, width : 200, height : 60},
             function clickHandler(event:Event):void {
-                log(NotificationCenter.permissionStatus);
+                var options: int = NotificationCenterAuthorizationOptions.alert.rawValue | NotificationCenterAuthorizationOptions.sound.rawValue;
+                NotificationCenter.requestAuthorizationWithOptions(options, function (status: String, error: Error = null) {
+                    log(status, error);
+                });
+            }
+        );
+        new PlainButton(this, "Get Notification Settings", 0xFF0000, 0xFFFF00, {x: 100, y: 900, width : 200, height : 60},
+            function clickHandler(event:Event):void {
+                NotificationCenter.getNotificationSettingsWithCompletion(function (settings: NotificationCenterSettings) {
+                    log(settings.authorizationStatus);
+                });
             }
         );
 
@@ -204,7 +216,7 @@ public class DeviceInfoDebugStarling extends Sprite
         tf.width = 600;
         tf.x = 20;
         tf.text = "Initializing...";
-        tf.y = 900;
+        tf.y = 980;
         addChild(tf);
 
         tf.text += "isSupported: " + DeviceInfo.isSupported() + "\n";

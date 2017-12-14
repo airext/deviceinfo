@@ -41,8 +41,8 @@ public class ExtensionContext extends FREContext
         functions.put("dismissAlert", new DismissAlertFunction());
 
         functions.put("notificationCenterIsSupported", new NotificationCenterIsSupportedFunction());
-        functions.put("notificationCenterPermissionStatus", new NotificationCenterPermissionStatusFunction());
-        functions.put("notificationCenterRequestPermission", new NotificationCenterRequestPermissionFunction());
+        functions.put("notificationCenterGetNotificationSettings", new NotificationCenterGetNotificationSettingsFunction());
+        functions.put("notificationCenterRequestAuthorization", new NotificationCenterRequestAuthorizationFunction());
         functions.put("notificationCenterAddRequest", new NotificationCenterAddRequestFunction());
         functions.put("notificationCenterRemovePendingNotificationRequests", new NotificationCenterRemovePendingNotificationRequestsFunction());
         functions.put("notificationCenterRemoveAllPendingNotificationRequests", new NotificationCenterRemoveAllPendingNotificationRequestsFunction());

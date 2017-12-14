@@ -29,10 +29,14 @@ public class NotificationCenter extends EventDispatcher {
         trace("DeviceInfo is not supported for " + Capabilities.os);
     }
 
-    public static function get permissionStatus(): String {
+    public static function requestAuthorizationWithOptions(options: int, completion: Function): void {
         trace("DeviceInfo is not supported for " + Capabilities.os);
-        return null;
     }
+
+    public static function getNotificationSettingsWithCompletion(handler: Function): void {
+        trace("DeviceInfo is not supported for " + Capabilities.os);
+    }
+
 
     private static var _current: NotificationCenter;
     public static function get current(): NotificationCenter {
@@ -44,10 +48,6 @@ public class NotificationCenter extends EventDispatcher {
 
     public function NotificationCenter() {
         super();
-    }
-
-    public function requestPermission(callback: Function): void {
-        trace("DeviceInfo is not supported for " + Capabilities.os);
     }
 
     public function add(request: NotificationRequest, callback: Function): void {
