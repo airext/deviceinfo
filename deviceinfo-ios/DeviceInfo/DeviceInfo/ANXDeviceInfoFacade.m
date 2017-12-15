@@ -11,6 +11,7 @@
 #import "ANXDeviceInfoAlert.h"
 #import "ANXBridgeSupport.h"
 #import "ANXNotificationCenter.h"
+#import <AudioToolbox/AudioServices.h>
 
 #pragma mark General API
 
@@ -308,13 +309,21 @@ FREObject ANXDeviceInfoThemeSetStyle(FREContext context, void* functionData, uin
     return NULL;
 }
 
+#pragma mark Vibration
+
+FREObject ANXDeviceInfoVibrate(FREContext context, void* functionData, uint32_t argc, FREObject argv[]) {
+    NSLog(@"ANXDeviceInfoVibrate");
+    AudioServicesPlaySystemSound(kSystemSoundID_Vibrate);
+    return NULL;
+}
+
 #pragma mark ContextInitialize/ContextFinalizer
 
 void ANXDeviceInfoContextInitializer(void* extData, const uint8_t* ctxType, FREContext ctx, uint32_t* numFunctionsToSet, const FRENamedFunction** functionsToSet)
 {
     NSLog(@"ANXDeviceInfoContextInitializer");
     
-    *numFunctionsToSet = 27;
+    *numFunctionsToSet = 28;
     
     FRENamedFunction* func = (FRENamedFunction*) malloc(sizeof(FRENamedFunction) * (*numFunctionsToSet));
     
@@ -441,6 +450,12 @@ void ANXDeviceInfoContextInitializer(void* extData, const uint8_t* ctxType, FREC
     func[26].name = (const uint8_t*) "themeSetStyle";
     func[26].functionData = NULL;
     func[26].function = &ANXDeviceInfoThemeSetStyle;
+    
+    // vibration
+    
+    func[27].name = (const uint8_t*) "vibrate";
+    func[27].functionData = NULL;
+    func[27].function = &ANXDeviceInfoVibrate;
     
     // setup bridge
     

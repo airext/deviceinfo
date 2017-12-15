@@ -55,6 +55,8 @@ public class ExtensionContext extends FREContext
         functions.put("themeIsSupported", new ThemeIsSupportedFunction());
         functions.put("themeSetStyle", new ThemeSetStyleFunction());
 
+        functions.put("vibrate", new VibrateFunction());
+
         try {
             Bridge.setup(functions);
         } catch (BridgeNotFoundException e) {
