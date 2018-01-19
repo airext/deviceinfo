@@ -1,10 +1,13 @@
 package com.github.airext.deviceinfo.functions;
 
 import android.app.Activity;
+import android.util.Log;
 import com.adobe.fre.*;
+import com.github.airext.DeviceInfo;
 import com.github.airext.bridge.Bridge;
 import com.github.airext.bridge.Call;
 import com.github.airext.bridge.CallResultValue;
+import com.github.airext.deviceinfo.data.NotificationCenterSettings;
 import com.github.airext.deviceinfo.managers.NotificationCenter;
 import com.github.airext.deviceinfo.utils.DispatchQueue;
 
@@ -15,40 +18,19 @@ import com.github.airext.deviceinfo.utils.DispatchQueue;
 public class NotificationCenterGetNotificationSettingsFunction implements FREFunction {
     @Override
     public FREObject call(FREContext context, FREObject[] args) {
+        Log.d(DeviceInfo.TAG, "NotificationCenterGetNotificationSettingsFunction");
+
         Activity activity = context.getActivity();
 
         final Call call = Bridge.call(context);
 
-        DispatchQueue.dispatch_async(activity, new Runnable() {
+        NotificationCenter.getNotificationSettings(activity, new NotificationCenter.NotificationSettingsListener() {
             @Override
-            public void run() {
-                call.result(new NotificationCenterSettingsVO());
+            public void onSettings(NotificationCenterSettings settings) {
+                call.result(settings);
             }
         });
 
         return call.toFREObject();
-    }
-}
-
-class NotificationCenterSettingsVO implements CallResultValue {
-
-    public NotificationCenterSettingsVO() {
-        super();
-    }
-
-    @Override
-    public FREObject toFREObject() throws FRETypeMismatchException, FREInvalidObjectException, FREWrongThreadException, IllegalStateException {
-        try {
-            FREObject settings = FREObject.newObject("com.github.airext.notification.NotificationCenterSettings", null);
-            settings.setProperty("authorizationStatus", FREObject.newObject("granted"));
-            return settings;
-        } catch (FREASErrorException e) {
-            e.printStackTrace();
-        } catch (FRENoSuchNameException e) {
-            e.printStackTrace();
-        } catch (FREReadOnlyException e) {
-            e.printStackTrace();
-        }
-        return null;
     }
 }

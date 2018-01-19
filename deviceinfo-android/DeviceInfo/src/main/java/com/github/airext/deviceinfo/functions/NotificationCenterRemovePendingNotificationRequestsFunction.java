@@ -1,10 +1,12 @@
 package com.github.airext.deviceinfo.functions;
 
 import android.app.Activity;
+import android.util.Log;
 import com.adobe.fre.FREArray;
 import com.adobe.fre.FREContext;
 import com.adobe.fre.FREFunction;
 import com.adobe.fre.FREObject;
+import com.github.airext.DeviceInfo;
 import com.github.airext.deviceinfo.managers.NotificationCenter;
 
 /**
@@ -14,6 +16,7 @@ import com.github.airext.deviceinfo.managers.NotificationCenter;
 public class NotificationCenterRemovePendingNotificationRequestsFunction implements FREFunction {
     @Override
     public FREObject call(FREContext context, FREObject[] args) {
+        Log.d(DeviceInfo.TAG, "NotificationCenterRemovePendingNotificationRequestsFunction");
 
         Activity activity = context.getActivity();
 

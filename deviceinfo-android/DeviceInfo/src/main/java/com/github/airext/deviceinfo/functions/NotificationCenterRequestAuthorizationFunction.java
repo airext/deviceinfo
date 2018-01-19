@@ -6,11 +6,12 @@ import android.content.pm.PackageManager;
 import android.os.Handler;
 import android.os.Looper;
 import android.support.v4.app.ActivityCompat;
-import com.adobe.fre.FREContext;
-import com.adobe.fre.FREFunction;
-import com.adobe.fre.FREObject;
+import android.util.Log;
+import com.adobe.fre.*;
+import com.github.airext.DeviceInfo;
 import com.github.airext.bridge.Bridge;
 import com.github.airext.bridge.Call;
+import com.github.airext.deviceinfo.managers.NotificationCenter;
 import com.github.airext.deviceinfo.utils.DispatchQueue;
 
 /**
@@ -21,14 +22,26 @@ public class NotificationCenterRequestAuthorizationFunction implements FREFuncti
 
     @Override
     public FREObject call(FREContext context, FREObject[] args) {
-        Activity activity = context.getActivity();
+        Log.d(DeviceInfo.TAG, "NotificationCenterRequestAuthorizationFunction");
+
+        final Activity activity = context.getActivity();
 
         final Call call = Bridge.call(context);
 
-        DispatchQueue.dispatch_async(activity, new Runnable() {
+        int options = 0;
+
+        if (args.length > 0) {
+            try {
+                options = args[0].getAsInt();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+
+        NotificationCenter.requestAuthorizationWithOptions(activity, options, new NotificationCenter.AuthorizationStatusListener() {
             @Override
-            public void run() {
-                call.result("granted");
+            public void onStatus(String status) {
+                call.result(status);
             }
         });
 

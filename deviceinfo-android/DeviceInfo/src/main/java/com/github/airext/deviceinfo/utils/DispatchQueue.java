@@ -13,6 +13,6 @@ public class DispatchQueue {
             public void run() {
                 activity.runOnUiThread(runnable);
             }
-        };
+        }.start();
     }
 }

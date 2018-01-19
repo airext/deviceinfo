@@ -3,7 +3,9 @@ package com.github.airext.deviceinfo.functions;
 import android.app.*;
 import android.content.Context;
 import android.content.Intent;
+import android.util.Log;
 import com.adobe.fre.*;
+import com.github.airext.DeviceInfo;
 import com.github.airext.bridge.Bridge;
 import com.github.airext.bridge.Call;
 import com.github.airext.deviceinfo.managers.NotificationCenter;
@@ -21,6 +23,7 @@ public class NotificationCenterAddRequestFunction implements FREFunction {
 
     @Override
     public FREObject call(FREContext context, FREObject[] args) {
+        Log.d(DeviceInfo.TAG, "NotificationCenterAddRequestFunction");
 
         Activity activity = context.getActivity();
 

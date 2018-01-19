@@ -16,7 +16,9 @@ import android.provider.Settings;
 import android.util.Log;
 import com.distriqt.extension.Resources;
 import com.github.airext.DeviceInfo;
+import com.github.airext.deviceinfo.data.NotificationCenterSettings;
 import com.github.airext.deviceinfo.receivers.LocalNotificationBroadcastReceiver;
+import com.github.airext.deviceinfo.utils.DispatchQueue;
 
 import java.lang.reflect.Field;
 import java.lang.reflect.InvocationTargetException;
@@ -57,6 +59,21 @@ public class NotificationCenter {
             return "denied";
         } else {
             return "unknown";
+        }
+    }
+
+    public static void requestAuthorizationWithOptions(Activity activity, int options, final AuthorizationStatusListener listener) {
+        Log.d(TAG, "requestAuthorizationWithOptions");
+
+        final String status = permissionStatus(activity);
+
+        if (listener != null) {
+            DispatchQueue.dispatch_async(activity, new Runnable() {
+                @Override
+                public void run() {
+                    listener.onStatus(status);
+                }
+            });
         }
     }
 
@@ -139,7 +156,23 @@ public class NotificationCenter {
         }
     }
 
-    // API
+    // API: Settings
+
+    public static void getNotificationSettings(Activity activity, final NotificationSettingsListener listener) {
+        Log.d(TAG, "getNotificationSettings");
+
+        final String authorizationStatus = permissionStatus(activity);
+        if (listener != null) {
+            DispatchQueue.dispatch_async(activity, new Runnable() {
+                @Override
+                public void run() {
+                    listener.onSettings(new NotificationCenterSettings(authorizationStatus));
+                }
+            });
+        }
+    }
+
+    // API: Notifications
 
     public static void scheduleNotification(Context context, int identifier, long timestamp, String title, String body, String userInfo) {
         Log.d(TAG, "scheduleNotification");
@@ -263,5 +296,15 @@ public class NotificationCenter {
         } else {
             keepDataForLaunch(context, intent);
         }
+    }
+
+    // Callbacks
+
+    public interface AuthorizationStatusListener {
+        void onStatus(String status);
+    }
+
+    public interface NotificationSettingsListener {
+        void onSettings(NotificationCenterSettings settings);
     }
 }

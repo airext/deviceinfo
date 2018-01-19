@@ -5,13 +5,15 @@ import com.adobe.fre.FREContext;
 import com.adobe.fre.FREExtension;
 import com.github.airext.deviceinfo.ExtensionContext;
 
-public class DeviceInfo implements FREExtension
-{
+public class DeviceInfo implements FREExtension {
+
     //--------------------------------------------------------------------------
     //
     //  Class variables
     //
     //--------------------------------------------------------------------------
+
+    public static final String TAG = "ANXDeviceInfo";
 
     private static FREContext context;
 
