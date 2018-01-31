@@ -1,0 +1,3 @@
+[submodule "Vendor/airext/ANR-WatchDog"]
+	path = Vendor/airext/ANR-WatchDog
+	url = https://github.com/airext/ANR-WatchDog.git

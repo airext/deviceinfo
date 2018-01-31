@@ -57,6 +57,8 @@ public class ExtensionContext extends FREContext
 
         functions.put("vibrate", new VibrateFunction());
 
+        functions.put("debugStartANRWatchdog", new DebugStartANRWatchdogFunction());
+
         try {
             Bridge.setup(functions);
         } catch (BridgeNotFoundException e) {
