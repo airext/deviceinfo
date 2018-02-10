@@ -43,11 +43,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="extension.xml" pinned="false" current-in-tab="false">
+      <file leaf-file-name="extension.xml" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/deviceinfo/build/extension.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
-              <caret line="10" column="30" lean-forward="false" selection-start-line="10" selection-start-column="30" selection-end-line="10" selection-end-column="30" />
+            <state relative-caret-position="105">
+              <caret line="7" column="45" lean-forward="true" selection-start-line="7" selection-start-column="45" selection-end-line="7" selection-end-column="45" />
               <folding />
             </state>
           </provider>
@@ -63,11 +63,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="build.xml" pinned="false" current-in-tab="true">
+      <file leaf-file-name="build.xml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/deviceinfo/build/build.xml">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="485">
-              <caret line="85" column="80" lean-forward="true" selection-start-line="85" selection-start-column="80" selection-end-line="85" selection-end-column="80" />
+              <caret line="85" column="80" lean-forward="false" selection-start-line="85" selection-start-column="80" selection-end-line="85" selection-end-column="80" />
               <folding />
             </state>
           </provider>
@@ -217,7 +217,6 @@
         <option value="$PROJECT_DIR$/deviceinfo/build/platform-ios.xml" />
         <option value="$PROJECT_DIR$/deviceinfo-default/src/com/github/airext/debug/Debug.as" />
         <option value="$PROJECT_DIR$/deviceinfo/src/com/github/airext/debug/Debug.as" />
-        <option value="$PROJECT_DIR$/deviceinfo/build/extension.xml" />
         <option value="$PROJECT_DIR$/deviceinfo-default/src/com/github/airext/notification/NotificationContent.as" />
         <option value="$PROJECT_DIR$/deviceinfo/src/com/github/airext/notification/NotificationContent.as" />
         <option value="$PROJECT_DIR$/deviceinfo-default/src/com/github/airext/notification/NotificationSound.as" />
@@ -226,6 +225,7 @@
         <option value="$PROJECT_DIR$/deviceinfo/build/platform-android.xml" />
         <option value="$PROJECT_DIR$/deviceinfo-debug/DeviceInfoDebug-app.xml" />
         <option value="$PROJECT_DIR$/deviceinfo/build/build.xml" />
+        <option value="$PROJECT_DIR$/deviceinfo/build/extension.xml" />
       </list>
     </option>
   </component>
@@ -808,15 +808,16 @@
       <workItem from="1518166803369" duration="5074000" />
       <workItem from="1518190561323" duration="3996000" />
       <workItem from="1518196584098" duration="8654000" />
-      <workItem from="1518206216587" duration="14463000" />
+      <workItem from="1518206216587" duration="14660000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="205319000" />
+    <option name="totallyTimeSpent" value="205516000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-1920" y="23" width="1920" height="1057" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3004158" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -827,7 +828,7 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22896698" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22896698" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24959612" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -1155,14 +1156,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/deviceinfo/build/extension.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" column="30" lean-forward="false" selection-start-line="10" selection-start-column="30" selection-end-line="10" selection-end-column="30" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/deviceinfo/build/platform-ios.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
@@ -1217,7 +1210,15 @@
     <entry file="file://$PROJECT_DIR$/deviceinfo/build/build.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="485">
-          <caret line="85" column="80" lean-forward="true" selection-start-line="85" selection-start-column="80" selection-end-line="85" selection-end-column="80" />
+          <caret line="85" column="80" lean-forward="false" selection-start-line="85" selection-start-column="80" selection-end-line="85" selection-end-column="80" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/deviceinfo/build/extension.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="7" column="45" lean-forward="true" selection-start-line="7" selection-start-column="45" selection-end-line="7" selection-end-column="45" />
           <folding />
         </state>
       </provider>
