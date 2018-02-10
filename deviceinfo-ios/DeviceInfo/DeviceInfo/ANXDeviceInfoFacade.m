@@ -245,13 +245,32 @@ FREObject ANXDeviceInfoNotificationCenterAddRequest(FREContext context, void* fu
         NSInteger identifier = [ANXDeviceInfoConversionRoutines readNSIntegerFrom:request field:@"identifier" withDefaultValue:0];
         NSString* title      = [ANXDeviceInfoConversionRoutines readNSStringFrom:content field:@"title" withDefaultValue:@""];
         NSString* body       = [ANXDeviceInfoConversionRoutines readNSStringFrom:content field:@"body" withDefaultValue:@""];
+        FREObject sound      = [ANXDeviceInfoConversionRoutines readFREObjectFrom:content field:@"sound"];
+
+        NSLog(@"ANX sound:%@", sound != nil ? @"some sound" : @"nil");
+
+        NSString* soundName  = nil;
+        if (sound) {
+            soundName = [ANXDeviceInfoConversionRoutines readNSStringFrom:sound field:@"named" withDefaultValue:nil];
+        }
+
+        NSLog(@"ANX soundName:%@", soundName);
+
         NSTimeInterval timeInterval = [ANXDeviceInfoConversionRoutines readDoubleFrom:trigger field:@"timeInterval" withDefaultValue:0.0];
         
         FREObject userInfoObject;
         FRECallObjectMethod(content, (const uint8_t *) "userInfoAsJSON", 0, NULL, &userInfoObject, NULL);
         NSString* userInfo   = [ANXDeviceInfoConversionRoutines convertFREObjectToNSString:userInfoObject];
-        
-        [ANXNotificationCenter.sharedInstance addNotificationRequestWithIdentifier:[NSString stringWithFormat:@"%li", (long)identifier] timestamp:timeInterval title:title body:body userInfo:userInfo withCompletion:^(NSError *error) {
+
+        NSString* identifierAsString = [NSString stringWithFormat:@"%li", (long)identifier];
+
+        [ANXNotificationCenter.sharedInstance addNotificationRequestWithIdentifier:identifierAsString
+                                                                         timestamp:timeInterval
+                                                                             title:title
+                                                                              body:body
+                                                                        soundNamed:soundName
+                                                                          userInfo:userInfo
+                                                                    withCompletion:^(NSError *error) {
             if (error) {
                 [call reject:error];
             } else {

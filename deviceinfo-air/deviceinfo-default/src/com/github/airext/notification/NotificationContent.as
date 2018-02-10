@@ -12,6 +12,7 @@ public class NotificationContent {
 
     public var title: String;
     public var body: String;
+    public var sound: NotificationSound;
     public var userInfo: Object;
 
     public function userInfoAsJSON(): String {
@@ -20,7 +21,7 @@ public class NotificationContent {
     }
 
     public function toString(): String {
-        return '[NotificationContent(title="'+title+'", body="'+body+'", userInfo="'+userInfo+'")]';
+        return '[NotificationContent(title="'+title+'", body="'+body+'", sound="'+sound+'", userInfo="'+userInfo+'")]';
     }
 }
 }

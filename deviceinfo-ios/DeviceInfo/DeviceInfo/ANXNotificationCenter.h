@@ -45,7 +45,7 @@ typedef void(^AddNotificationRequestCompletion)(NSError* error);
 
 # pragma mark Schedule Notification
 
-- (void)addNotificationRequestWithIdentifier:(NSString*)identifier timestamp:(NSTimeInterval)timestamp title:(NSString*)title body:(NSString*)body userInfo:(NSString*)userinfo withCompletion:(AddNotificationRequestCompletion)completion;
+- (void)addNotificationRequestWithIdentifier:(NSString*)identifier timestamp:(NSTimeInterval)timestamp title:(NSString*)title body:(NSString*)body soundNamed:(NSString*)soundName userInfo:(NSString*)userinfo withCompletion:(AddNotificationRequestCompletion)completion;
 - (void)removePendingNotificationRequestWithIdentifiers:(NSArray*)identifiers;
 - (void)removeAllPendingRequests;
 

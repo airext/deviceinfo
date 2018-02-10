@@ -14,6 +14,7 @@ import com.github.airext.notification.NotificationCenterEvent;
 import com.github.airext.notification.NotificationCenterSettings;
 import com.github.airext.notification.NotificationContent;
 import com.github.airext.notification.NotificationRequest;
+import com.github.airext.notification.NotificationSound;
 import com.github.airext.notification.TimeIntervalNotificationTrigger;
 
 import flash.desktop.NativeApplication;
@@ -114,12 +115,18 @@ public class DeviceInfoDebugStarling extends Sprite
                 content.title = "Title";
                 content.body = "Message";
                 content.userInfo = {message: "Hello, world!"};
+//                content.sound = new NotificationSound("alert_tone.aiff");
+                content.sound = new NotificationSound("alert_tone.mp3");
 
                 var trigger: TimeIntervalNotificationTrigger = new TimeIntervalNotificationTrigger(8);
                 var request: NotificationRequest = new NotificationRequest(1, content, trigger);
 
                 NotificationCenter.current.add(request, function (error: Error) {
-                    trace(error);
+                    if (error) {
+                        trace(error);
+                    } else {
+                        trace("Notification requested: " + request);
+                    }
                 });
             }
         );

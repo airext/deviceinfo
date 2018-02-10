@@ -11,18 +11,23 @@ import android.graphics.BitmapFactory;
 import android.media.RingtoneManager;
 import android.net.Uri;
 import android.os.Build;
-import android.os.Process;
 import android.provider.Settings;
 import android.util.Log;
 import com.distriqt.extension.Resources;
 import com.github.airext.DeviceInfo;
 import com.github.airext.deviceinfo.data.NotificationCenterSettings;
+import com.github.airext.deviceinfo.permissions.PermissionManager;
 import com.github.airext.deviceinfo.receivers.LocalNotificationBroadcastReceiver;
+import com.github.airext.deviceinfo.utils.AssetsUtil;
+import com.github.airext.deviceinfo.utils.ContentProviderUtil;
 import com.github.airext.deviceinfo.utils.DispatchQueue;
 
+import java.io.File;
 import java.lang.reflect.Field;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
+import java.util.Arrays;
+import java.util.List;
 import java.util.Stack;
 
 import static android.content.Context.ALARM_SERVICE;
@@ -37,10 +42,13 @@ public class NotificationCenter {
 
     // Keys
 
-    private static final String identifierKey = "com.github.airext.deviceinfo.managers.NotificationCenter.title";
+    private static final String identifierKey = "com.github.airext.deviceinfo.managers.NotificationCenter.identifier";
     private static final String titleKey      = "com.github.airext.deviceinfo.managers.NotificationCenter.title";
     private static final String bodyKey       = "com.github.airext.deviceinfo.managers.NotificationCenter.body";
-    private static final String paramsKey     = "com.github.airext.deviceinfo.managers.NotificationCenter.params";
+    private static final String soundKey      = "com.github.airext.deviceinfo.managers.NotificationCenter.sound";
+    private static final String userInfoKey   = "com.github.airext.deviceinfo.managers.NotificationCenter.params";
+
+    private static final int REQUEST_PERMISSIONS_CODE = 42;
 
     // Availability & Permissions
 
@@ -51,30 +59,39 @@ public class NotificationCenter {
     public static String permissionStatus(Context context) {
         Log.d(TAG, "permissionStatus");
 
-        int status  = context.checkPermission(Manifest.permission.SET_ALARM, android.os.Process.myPid(), Process.myUid());
+        Boolean isSetAlarmGranted = PermissionManager.checkIfPermissionsGranted(context, Manifest.permission.SET_ALARM);
+        Boolean isReadExternalStorageGranted = PermissionManager.checkIfPermissionsGranted(context, Manifest.permission.READ_EXTERNAL_STORAGE);
 
-        if (status == PackageManager.PERMISSION_GRANTED) {
+        if (isSetAlarmGranted && isReadExternalStorageGranted) {
             return "granted";
-        } else if (status == PackageManager.PERMISSION_DENIED) {
-            return "denied";
         } else {
-            return "unknown";
+            return "denied";
         }
     }
 
-    public static void requestAuthorizationWithOptions(Activity activity, int options, final AuthorizationStatusListener listener) {
+    public static void requestAuthorizationWithOptions(final Activity activity, int options, final AuthorizationStatusListener listener) {
         Log.d(TAG, "requestAuthorizationWithOptions");
 
-        final String status = permissionStatus(activity);
-
-        if (listener != null) {
-            DispatchQueue.dispatch_async(activity, new Runnable() {
-                @Override
-                public void run() {
-                    listener.onStatus(status);
+        PermissionManager.requestPermissions(activity, new String[]{Manifest.permission.SET_ALARM, Manifest.permission.READ_EXTERNAL_STORAGE}, new PermissionManager.Listener() {
+            @Override
+            public void onPermissionsCheck(String[] grantedPermissions, String[] deniedPermissions) {
+                if (listener != null) {
+                    List<String> granted = Arrays.asList(grantedPermissions);
+                    if (granted.contains(Manifest.permission.SET_ALARM) &&
+                        granted.contains(Manifest.permission.READ_EXTERNAL_STORAGE)) {
+                        listener.onStatus("granted");
+                        return;
+                    }
+                    List<String> denied = Arrays.asList(deniedPermissions);
+                    if (denied.contains(Manifest.permission.SET_ALARM) &&
+                        denied.contains(Manifest.permission.READ_EXTERNAL_STORAGE)) {
+                        listener.onStatus("denied");
+                        return;
+                    }
+                    listener.onStatus("unknown");
                 }
-            });
-        }
+            }
+        });
     }
 
     public static Boolean isEnabled(Context context) {
@@ -174,7 +191,7 @@ public class NotificationCenter {
 
     // API: Notifications
 
-    public static void scheduleNotification(Context context, int identifier, long timestamp, String title, String body, String userInfo) {
+    public static void scheduleNotification(Context context, int identifier, long timestamp, String title, String body, String sound, String userInfo) {
         Log.d(TAG, "scheduleNotification");
 
         // cancel already scheduled reminders
@@ -191,7 +208,8 @@ public class NotificationCenter {
         intent.putExtra(identifierKey, identifier);
         intent.putExtra(titleKey, title);
         intent.putExtra(bodyKey, body);
-        intent.putExtra(paramsKey, userInfo);
+        intent.putExtra(soundKey, sound);
+        intent.putExtra(userInfoKey, userInfo);
 
         PendingIntent pendingIntent = PendingIntent.getBroadcast(context, identifier, intent, PendingIntent.FLAG_UPDATE_CURRENT);
 
@@ -221,11 +239,11 @@ public class NotificationCenter {
     public static void showNotification(Context context, Intent intent) {
         Log.d(TAG, "showNotification");
 
-        Uri alarmSound = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION);
         int identifier = intent.getIntExtra(identifierKey, 0);
         String title   = intent.getStringExtra(titleKey);
         String content = intent.getStringExtra(bodyKey);
-        String params  = intent.getStringExtra(paramsKey);
+        String sound   = intent.getStringExtra(soundKey);
+        String userInfo = intent.getStringExtra(userInfoKey);
 
         Intent notificationIntent = null;
         try {
@@ -233,13 +251,25 @@ public class NotificationCenter {
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
         }
-        notificationIntent.putExtra(paramsKey, params);
+        notificationIntent.putExtra(userInfoKey, userInfo);
         notificationIntent.putExtra(identifierKey, identifier);
 
         PendingIntent pendingIntent = PendingIntent.getActivity(context, 0, notificationIntent, PendingIntent.FLAG_UPDATE_CURRENT);
 
         int smallIconId = Resources.getResourseIdByName(context.getPackageName(), "mipmap", "icon");
         int largeIconId = Resources.getResourseIdByName(context.getPackageName(), "mipmap", "icon");
+
+        Uri soundUri = null;
+        if (sound != null) {
+            File audioFile = AssetsUtil.copyAssetToTempFileIfNeeded(context, sound);
+            if (audioFile != null) {
+                soundUri = ContentProviderUtil.getAudioContentUri(context, audioFile);
+            }
+        }
+
+        if (soundUri == null) {
+            soundUri = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION);
+        }
 
         Notification notification = new Notification.Builder(context)
             .setSmallIcon(smallIconId)
@@ -248,7 +278,7 @@ public class NotificationCenter {
             .setContentText(content)
             .setAutoCancel(true)
             .setWhen(System.currentTimeMillis())
-            .setSound(alarmSound)
+            .setSound(soundUri)
             .setContentIntent(pendingIntent)
             .build();
 
@@ -259,11 +289,11 @@ public class NotificationCenter {
     private static void notifyAppWithDataIfAvailable(Context context, Intent intent) {
         Log.d(TAG, "notifyAppWithDataIfAvailable");
 
-        if (intent.hasExtra(identifierKey) && intent.hasExtra(paramsKey)) {
+        if (intent.hasExtra(identifierKey) && intent.hasExtra(userInfoKey)) {
             int identifier = intent.getIntExtra(identifierKey, 0);
             intent.removeExtra(identifierKey);
-            String params  = intent.getStringExtra(paramsKey);
-            intent.removeExtra(paramsKey);
+            String params  = intent.getStringExtra(userInfoKey);
+            intent.removeExtra(userInfoKey);
 
             DeviceInfo.dispatch("DeviceInfo.NotificationCenter.Data.Receive", params);
         }
@@ -273,7 +303,7 @@ public class NotificationCenter {
         Log.d(TAG, "keepDataForLaunch");
 
         int identifier = intent.getIntExtra(identifierKey, 0);
-        String params  = intent.getStringExtra(paramsKey);
+        String params  = intent.getStringExtra(userInfoKey);
 
         pushDataToStack(params);
     }

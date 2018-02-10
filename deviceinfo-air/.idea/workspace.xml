@@ -23,124 +23,21 @@
       <file leaf-file-name="DeviceInfoDebugStarling.as" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/deviceinfo-debug/src/DeviceInfoDebugStarling.as">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="75">
-              <caret line="28" column="1" lean-forward="false" selection-start-line="28" selection-start-column="1" selection-end-line="28" selection-end-column="1" />
+            <state relative-caret-position="522">
+              <caret line="123" column="45" lean-forward="false" selection-start-line="123" selection-start-column="45" selection-end-line="123" selection-end-column="45" />
               <folding>
                 <element signature="e#11#47#0" expanded="true" />
-                <element signature="e#11125#11169#0" expanded="true" />
+                <element signature="e#11488#11532#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="NotificationCenter.as" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/deviceinfo/src/com/github/airext/notification/NotificationCenter.as">
+      <file leaf-file-name="NotificationSound.as" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/deviceinfo/src/com/github/airext/notification/NotificationSound.as">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1425">
-              <caret line="107" column="32" lean-forward="false" selection-start-line="107" selection-start-column="32" selection-end-line="107" selection-end-column="32" />
-              <folding>
-                <element signature="e#100#136#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="AlertAction.as" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/deviceinfo/src/com/github/airext/alert/AlertAction.as">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="585">
-              <caret line="41" column="31" lean-forward="false" selection-start-line="41" selection-start-column="31" selection-end-line="41" selection-end-column="31" />
-              <folding>
-                <element signature="n#!!doc" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Alert.as" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/deviceinfo/src/com/github/airext/alert/Alert.as">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1020">
-              <caret line="73" column="0" lean-forward="false" selection-start-line="73" selection-start-column="0" selection-end-line="73" selection-end-column="0" />
-              <folding>
-                <element signature="n#!!doc" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Debug.as" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/deviceinfo/src/com/github/airext/debug/Debug.as">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="21" column="58" lean-forward="false" selection-start-line="21" selection-start-column="37" selection-end-line="21" selection-end-column="58" />
-              <folding>
-                <element signature="e#93#129#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="DeviceInfoGeneralAndroid.as" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/deviceinfo/src/com/github/airext/deviceinfo/DeviceInfoGeneralAndroid.as">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="420">
-              <caret line="31" column="60" lean-forward="false" selection-start-line="31" selection-start-column="40" selection-end-line="31" selection-end-column="60" />
-              <folding>
-                <element signature="n#!!doc" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="DeviceInfoGeneralIOS.as" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/deviceinfo/src/com/github/airext/deviceinfo/DeviceInfoGeneralIOS.as">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="435">
-              <caret line="32" column="5" lean-forward="false" selection-start-line="32" selection-start-column="5" selection-end-line="32" selection-end-column="5" />
-              <folding>
-                <element signature="n#!!doc" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="DeviceInfoGeneral.as" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/deviceinfo/src/com/github/airext/deviceinfo/DeviceInfoGeneral.as">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1410">
-              <caret line="96" column="38" lean-forward="false" selection-start-line="96" selection-start-column="38" selection-end-line="96" selection-end-column="38" />
-              <folding>
-                <element signature="n#!!doc" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Default-568h@2x.png" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/deviceinfo-debug/Default-568h@2x.png">
-          <provider selected="true" editor-type-id="images">
-            <state />
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Debug.as" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/deviceinfo-default/src/com/github/airext/debug/Debug.as">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="195">
-              <caret line="15" column="68" lean-forward="false" selection-start-line="15" selection-start-column="68" selection-end-line="15" selection-end-column="68" />
-              <folding>
-                <element signature="n#!!doc" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Call.as" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../../anx-bridge/anx-bridge-air/anx-bridge/src/com/github/airext/bridge/core/Call.as">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1740">
-              <caret line="123" column="168" lean-forward="false" selection-start-line="123" selection-start-column="168" selection-end-line="123" selection-end-column="168" />
+            <state relative-caret-position="330">
+              <caret line="24" column="5" lean-forward="false" selection-start-line="24" selection-start-column="5" selection-end-line="24" selection-end-column="5" />
               <folding />
             </state>
           </provider>
@@ -159,8 +56,8 @@
       <file leaf-file-name="platform-android.xml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/deviceinfo/build/platform-android.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state relative-caret-position="30">
+              <caret line="2" column="11" lean-forward="false" selection-start-line="2" selection-start-column="11" selection-end-line="2" selection-end-column="11" />
               <folding />
             </state>
           </provider>
@@ -169,18 +66,48 @@
       <file leaf-file-name="build.xml" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/deviceinfo/build/build.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2755">
-              <caret line="184" column="93" lean-forward="false" selection-start-line="184" selection-start-column="93" selection-end-line="184" selection-end-column="93" />
+            <state relative-caret-position="485">
+              <caret line="85" column="80" lean-forward="true" selection-start-line="85" selection-start-column="80" selection-end-line="85" selection-end-column="80" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="NotificationCenterSettings.as" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/deviceinfo/src/com/github/airext/notification/NotificationCenterSettings.as">
+      <file leaf-file-name="platform-ios.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/deviceinfo/build/platform-ios.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="285">
-              <caret line="21" column="0" lean-forward="false" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
+            <state relative-caret-position="90">
+              <caret line="6" column="22" lean-forward="false" selection-start-line="6" selection-start-column="22" selection-end-line="6" selection-end-column="22" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="NotificationContent.as" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/deviceinfo/src/com/github/airext/notification/NotificationContent.as">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="240">
+              <caret line="18" column="0" lean-forward="false" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="DeviceInfoDebug-app.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/deviceinfo-debug/DeviceInfoDebug-app.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="503">
+              <caret line="253" column="30" lean-forward="false" selection-start-line="253" selection-start-column="30" selection-end-line="253" selection-end-column="30" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="provider_paths.xml" pinned="false" current-in-tab="false">
+        <entry file="jar://$PROJECT_DIR$/deviceinfo-debug/bin-debug/deviceinfo-debug-starling.apk!/res/xml/provider_paths.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -191,20 +118,13 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="ActionScript Class" />
         <option value="ActionScript Class with Supers" />
+        <option value="ActionScript Class" />
       </list>
     </option>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>full</find>
-      <find>UIStatusBarHidden</find>
-      <find>stat</find>
-      <find>systemChrom</find>
-      <find>defau</find>
-      <find>debug</find>
-      <find>compc-cli</find>
       <find>cancel</find>
       <find>default</find>
       <find>&quot;Device</find>
@@ -228,9 +148,17 @@
       <find>requestAuthorizationWithOptions</find>
       <find>targetPlayerMajorVersion</find>
       <find>ANXBridgeCallGetValue</find>
+      <find>registerClass</find>
+      <find>path</find>
+      <find>READ_EXTERNAL_STORAGE</find>
+      <find>www/</find>
+      <find>NotificationCenter</find>
+      <find>files</find>
+      <find>classfiles</find>
     </findStrings>
     <replaceStrings>
       <replace>400</replace>
+      <replace>named</replace>
     </replaceStrings>
     <dirStrings>
       <dir>$PROJECT_DIR$/../../anx-bridge/anx-bridge-air/anx-bridge/src/com/github/airext/bridge</dir>
@@ -247,11 +175,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/deviceinfo-default/src/com/github/airext/alert/DeviceInfoAlertActionStyle.as" />
-        <option value="$PROJECT_DIR$/deviceinfo-default/src/com/github/airext/alert/Alert.as" />
-        <option value="$PROJECT_DIR$/deviceinfo-default/src/com/github/airext/alert/AlertAction.as" />
-        <option value="$PROJECT_DIR$/deviceinfo-default/src/com/github/airext/alert/AlertActionStyle.as" />
-        <option value="$PROJECT_DIR$/deviceinfo-default/src/com/github/airext/alert/AlertStyle.as" />
         <option value="$PROJECT_DIR$/deviceinfo-default/src/com/github/airext/notification/NotificationCenterEvent.as" />
         <option value="$PROJECT_DIR$/deviceinfo/src/com/github/airext/notification/NotificationCenterEvent.as" />
         <option value="$PROJECT_DIR$/deviceinfo/src/com/github/airext/alert/Alert.as" />
@@ -270,11 +193,9 @@
         <option value="$PROJECT_DIR$/deviceinfo/src/com/github/airext/info/DeviceInfoBattery.as" />
         <option value="$PROJECT_DIR$/deviceinfo-default/src/com/github/airext/info/DeviceInfoBatteryEvent.as" />
         <option value="$PROJECT_DIR$/deviceinfo-debug/src/DeviceInfoDebug.mxml" />
-        <option value="$PROJECT_DIR$/deviceinfo/src/com/github/airext/notification/NotificationContent.as" />
         <option value="$PROJECT_DIR$/deviceinfo/src/com/github/airext/notification/NotificationTrigger.as" />
         <option value="$PROJECT_DIR$/deviceinfo/src/com/github/airext/notification/NotificationRequest.as" />
         <option value="$PROJECT_DIR$/deviceinfo-default/src/com/github/airext/notification/NotificationRequest.as" />
-        <option value="$PROJECT_DIR$/deviceinfo-default/src/com/github/airext/notification/NotificationContent.as" />
         <option value="$PROJECT_DIR$/deviceinfo-default/src/com/github/airext/notification/TimeIntervalNotificationTrigger.as" />
         <option value="$PROJECT_DIR$/deviceinfo/src/com/github/airext/appearance/ThemeStyle.as" />
         <option value="$PROJECT_DIR$/deviceinfo/src/com/github/airext/appearance/ThemeAndroidStyle.as" />
@@ -290,7 +211,6 @@
         <option value="$PROJECT_DIR$/deviceinfo/src/com/github/airext/notification/NotificationCenterSettings.as" />
         <option value="$PROJECT_DIR$/deviceinfo/src/com/github/airext/notification/NotificationCenter.as" />
         <option value="$PROJECT_DIR$/deviceinfo-default/src/com/github/airext/notification/NotificationCenter.as" />
-        <option value="$PROJECT_DIR$/deviceinfo-debug/src/DeviceInfoDebugStarling.as" />
         <option value="$PROJECT_DIR$/deviceinfo/src/com/github/airext/vibration/Vibration.as" />
         <option value="$PROJECT_DIR$/deviceinfo-default/src/com/github/airext/vibration/Vibration.as" />
         <option value="$PROJECT_DIR$/.idea/misc.xml" />
@@ -298,6 +218,14 @@
         <option value="$PROJECT_DIR$/deviceinfo-default/src/com/github/airext/debug/Debug.as" />
         <option value="$PROJECT_DIR$/deviceinfo/src/com/github/airext/debug/Debug.as" />
         <option value="$PROJECT_DIR$/deviceinfo/build/extension.xml" />
+        <option value="$PROJECT_DIR$/deviceinfo-default/src/com/github/airext/notification/NotificationContent.as" />
+        <option value="$PROJECT_DIR$/deviceinfo/src/com/github/airext/notification/NotificationContent.as" />
+        <option value="$PROJECT_DIR$/deviceinfo-default/src/com/github/airext/notification/NotificationSound.as" />
+        <option value="$PROJECT_DIR$/deviceinfo-debug/src/DeviceInfoDebugStarling.as" />
+        <option value="$PROJECT_DIR$/deviceinfo/src/com/github/airext/notification/NotificationSound.as" />
+        <option value="$PROJECT_DIR$/deviceinfo/build/platform-android.xml" />
+        <option value="$PROJECT_DIR$/deviceinfo-debug/DeviceInfoDebug-app.xml" />
+        <option value="$PROJECT_DIR$/deviceinfo/build/build.xml" />
       </list>
     </option>
   </component>
@@ -307,7 +235,7 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="-1920" />
     <option name="y" value="23" />
     <option name="width" value="1920" />
@@ -328,49 +256,10 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="PackagesPane" />
-      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
-            <path>
-              <item name="deviceinfo" type="b2602c69:ProjectViewProjectNode" />
-              <item name="anx-bridge" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="deviceinfo" type="b2602c69:ProjectViewProjectNode" />
-              <item name="anx-bridge" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="deviceinfo" type="b2602c69:ProjectViewProjectNode" />
-              <item name="anx-bridge" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="bridge" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="deviceinfo" type="b2602c69:ProjectViewProjectNode" />
-              <item name="anx-bridge" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="bridge" type="462c0819:PsiDirectoryNode" />
-              <item name="core" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="deviceinfo" type="b2602c69:ProjectViewProjectNode" />
-              <item name="anx-bridge-default" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="deviceinfo" type="b2602c69:ProjectViewProjectNode" />
-              <item name="anx-bridge-default" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="deviceinfo" type="b2602c69:ProjectViewProjectNode" />
-              <item name="anx-bridge-default" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="bridge" type="462c0819:PsiDirectoryNode" />
-            </path>
             <path>
               <item name="deviceinfo" type="b2602c69:ProjectViewProjectNode" />
               <item name="deviceinfo" type="462c0819:PsiDirectoryNode" />
@@ -396,14 +285,7 @@
               <item name="deviceinfo" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="airext" type="462c0819:PsiDirectoryNode" />
-              <item name="debug" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="deviceinfo" type="b2602c69:ProjectViewProjectNode" />
-              <item name="deviceinfo" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="airext" type="462c0819:PsiDirectoryNode" />
-              <item name="deviceinfo" type="462c0819:PsiDirectoryNode" />
+              <item name="notification" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="deviceinfo" type="b2602c69:ProjectViewProjectNode" />
@@ -412,28 +294,7 @@
             <path>
               <item name="deviceinfo" type="b2602c69:ProjectViewProjectNode" />
               <item name="deviceinfo-debug" type="462c0819:PsiDirectoryNode" />
-              <item name="ane" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="deviceinfo" type="b2602c69:ProjectViewProjectNode" />
-              <item name="deviceinfo-debug" type="462c0819:PsiDirectoryNode" />
-              <item name="ane" type="462c0819:PsiDirectoryNode" />
-              <item name="deviceinfo.ane" type="ab9368bb:PsiFileNode" />
-            </path>
-            <path>
-              <item name="deviceinfo" type="b2602c69:ProjectViewProjectNode" />
-              <item name="deviceinfo-debug" type="462c0819:PsiDirectoryNode" />
-              <item name="ane" type="462c0819:PsiDirectoryNode" />
-              <item name="deviceinfo.ane" type="ab9368bb:PsiFileNode" />
-              <item name="library.swf" type="ab9368bb:PsiFileNode" />
-            </path>
-            <path>
-              <item name="deviceinfo" type="b2602c69:ProjectViewProjectNode" />
-              <item name="deviceinfo-debug" type="462c0819:PsiDirectoryNode" />
-              <item name="ane" type="462c0819:PsiDirectoryNode" />
-              <item name="deviceinfo.ane" type="ab9368bb:PsiFileNode" />
-              <item name="library.swf" type="ab9368bb:PsiFileNode" />
-              <item name="com.github.airext" type="9c46ba4a:SwfPackageElementNode" />
+              <item name="bin-debug" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="deviceinfo" type="b2602c69:ProjectViewProjectNode" />
@@ -454,13 +315,6 @@
               <item name="deviceinfo-default" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="airext" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="deviceinfo" type="b2602c69:ProjectViewProjectNode" />
-              <item name="deviceinfo-default" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="airext" type="462c0819:PsiDirectoryNode" />
-              <item name="debug" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="deviceinfo" type="b2602c69:ProjectViewProjectNode" />
@@ -473,6 +327,8 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scratches" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -482,28 +338,30 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="flex.preferred.android.device.id" value="3100bfda6635a243" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/deviceinfo-default/src/com/github/airext" />
-      <recent name="$PROJECT_DIR$/deviceinfo-default/src/com/github/airext/notification" />
-      <recent name="$PROJECT_DIR$/deviceinfo-default/src/com/github/airext/appearance" />
-      <recent name="$PROJECT_DIR$/deviceinfo-debug/ane" />
-      <recent name="$PROJECT_DIR$/deviceinfo/lib" />
-    </key>
-    <key name="CreateActionScriptClassDialog.DESTINATION_PACKAGE_RECENT_KEY">
-      <recent name="com.github.airext.debug" />
-      <recent name="com.github.airext.vibration" />
-      <recent name="com.github.airext.notification" />
-      <recent name="com.github.airext.appearance" />
-      <recent name="com.github.airext.events" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/deviceinfo-debug/assets/Library/Sounds" />
       <recent name="$PROJECT_DIR$/deviceinfo/src/com/github/airext/info" />
       <recent name="$PROJECT_DIR$/deviceinfo-default/src/com/github/airext/info" />
       <recent name="$PROJECT_DIR$/deviceinfo-default/src/com/github/airext/appearance" />
       <recent name="$PROJECT_DIR$/deviceinfo/src/com/github/airext/style" />
-      <recent name="$PROJECT_DIR$/deviceinfo/src/com/github/airext/notification" />
+    </key>
+    <key name="CreateActionScriptClassDialog.DESTINATION_PACKAGE_RECENT_KEY">
+      <recent name="com.github.airext.notification" />
+      <recent name="com.github.airext.debug" />
+      <recent name="com.github.airext.vibration" />
+      <recent name="com.github.airext.appearance" />
+      <recent name="com.github.airext.events" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/deviceinfo-debug/assets" />
+      <recent name="$PROJECT_DIR$/deviceinfo-default/src/com/github/airext/notification" />
+      <recent name="$PROJECT_DIR$/deviceinfo-default/src/com/github/airext" />
+      <recent name="$PROJECT_DIR$/deviceinfo-default/src/com/github/airext/appearance" />
+      <recent name="$PROJECT_DIR$/deviceinfo-debug/ane" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -567,18 +425,6 @@
       </option>
       <envs />
       <patterns />
-    </configuration>
-    <configuration default="true" type="JetRunConfigurationType" factoryName="Kotlin">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" />
-      <option name="WORKING_DIRECTORY" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <module name="deviceinfo" />
-      <envs />
     </configuration>
     <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
       <module name="" />
@@ -720,6 +566,18 @@
     </configuration>
     <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug">
       <method />
+    </configuration>
+    <configuration default="true" type="JetRunConfigurationType" factoryName="Kotlin">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="deviceinfo" />
+      <envs />
     </configuration>
     <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType" factoryName="Kotlin script">
       <option name="filePath" />
@@ -947,17 +805,21 @@
       <workItem from="1517770603383" duration="2336000" />
       <workItem from="1518119350216" duration="627000" />
       <workItem from="1518120556461" duration="8000" />
+      <workItem from="1518166803369" duration="5074000" />
+      <workItem from="1518190561323" duration="3996000" />
+      <workItem from="1518196584098" duration="8654000" />
+      <workItem from="1518206216587" duration="14463000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="173132000" />
+    <option name="totallyTimeSpent" value="205319000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-1920" y="23" width="1920" height="1057" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3004158" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -965,15 +827,14 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2625133" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22896698" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24959612" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2952183" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2900208" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="PlantUML" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3014553" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -999,48 +860,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/deviceinfo/src/com/github/airext/appearance/StatusBar.as">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/deviceinfo-debug/bin-debug/deviceinfo-debug-starling/res/values/styles.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="31" lean-forward="false" selection-start-line="2" selection-start-column="23" selection-end-line="2" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/deviceinfo/src/com/github/airext/appearance/ThemeStyle.as">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="15" column="42" lean-forward="false" selection-start-line="15" selection-start-column="42" selection-end-line="15" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/deviceinfo-default/src/com/github/airext/appearance/ThemeAndroid.as">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="23" column="5" lean-forward="true" selection-start-line="23" selection-start-column="5" selection-end-line="23" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/deviceinfo-default/src/com/github/airext/appearance/ThemeAndroidStyle.as">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/deviceinfo-default/src/com/github/airext/appearance/ThemeStyle.as">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="20" column="0" lean-forward="true" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/deviceinfo-default/src/com/github/airext/appearance/Theme.as">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="600">
@@ -1062,13 +881,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/deviceinfo-debug/bin-debug/deviceinfo-debug-starling/AndroidManifest.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="281" lean-forward="false" selection-start-line="2" selection-start-column="267" selection-end-line="2" selection-end-column="281" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/deviceinfo-debug/bin-debug/deviceinfo-debug-starling/AndroidManifest.xml" />
     <entry file="file://$PROJECT_DIR$/deviceinfo/src/com/github/airext/appearance/ThemeAndroidStyle.as">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
@@ -1104,38 +917,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/deviceinfo/src/com/github/airext/notification/NotificationContent.as">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="14" column="46" lean-forward="false" selection-start-line="14" selection-start-column="46" selection-end-line="14" selection-end-column="46" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/deviceinfo/src/com/github/airext/notification/NotificationRequest.as">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
-          <caret line="27" column="44" lean-forward="false" selection-start-line="27" selection-start-column="44" selection-end-line="27" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/deviceinfo/src/com/github/airext/notification/NotificationTrigger.as">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="4" column="13" lean-forward="false" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/deviceinfo/src/com/github/airext/notification/TimeIntervalNotificationTrigger.as">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="225">
           <caret line="17" column="40" lean-forward="true" selection-start-line="17" selection-start-column="40" selection-end-line="17" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/deviceinfo-debug/ane/deviceinfo.ane!/library.swf">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2745">
-          <caret line="183" column="72" lean-forward="false" selection-start-line="183" selection-start-column="72" selection-end-line="183" selection-end-column="72" />
         </state>
       </provider>
     </entry>
@@ -1202,27 +987,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/deviceinfo/deviceinfo.iml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="13" column="20" lean-forward="false" selection-start-line="0" selection-start-column="8" selection-end-line="4" selection-end-column="169" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/deviceinfo/build/platform-ios.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="6" column="22" lean-forward="false" selection-start-line="6" selection-start-column="22" selection-end-line="6" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/deviceinfo/src/com/github/airext/DeviceInfo.as">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-344">
-          <caret line="27" column="54" lean-forward="false" selection-start-line="27" selection-start-column="54" selection-end-line="27" selection-end-column="54" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/deviceinfo-debug/src/DeviceInfoDebug.mxml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="349">
@@ -1244,21 +1008,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/deviceinfo/src/com/github/airext/notification/NotificationCenter.as">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1425">
-          <caret line="107" column="32" lean-forward="false" selection-start-line="107" selection-start-column="32" selection-end-line="107" selection-end-column="32" />
-          <folding>
-            <element signature="e#100#136#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/deviceinfo/src/com/github/airext/notification/NotificationCenterSettings.as">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="285">
           <caret line="21" column="0" lean-forward="false" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1266,7 +1019,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1740">
           <caret line="123" column="168" lean-forward="false" selection-start-line="123" selection-start-column="168" selection-end-line="123" selection-end-column="168" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1274,9 +1026,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="585">
           <caret line="41" column="31" lean-forward="false" selection-start-line="41" selection-start-column="31" selection-end-line="41" selection-end-column="31" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1284,9 +1033,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1020">
           <caret line="73" column="0" lean-forward="false" selection-start-line="73" selection-start-column="0" selection-end-line="73" selection-end-column="0" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1302,23 +1048,10 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/deviceinfo-default/src/com/github/airext/debug/Debug.as">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="15" column="68" lean-forward="false" selection-start-line="15" selection-start-column="68" selection-end-line="15" selection-end-column="68" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/deviceinfo/src/com/github/airext/deviceinfo/DeviceInfoGeneral.as">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1410">
           <caret line="96" column="38" lean-forward="false" selection-start-line="96" selection-start-column="38" selection-end-line="96" selection-end-column="38" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1326,9 +1059,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="420">
           <caret line="31" column="60" lean-forward="false" selection-start-line="31" selection-start-column="40" selection-end-line="31" selection-end-column="60" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1336,9 +1066,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="435">
           <caret line="32" column="5" lean-forward="false" selection-start-line="32" selection-start-column="5" selection-end-line="32" selection-end-column="5" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1346,9 +1073,85 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="240">
           <caret line="21" column="58" lean-forward="false" selection-start-line="21" selection-start-column="37" selection-end-line="21" selection-end-column="58" />
-          <folding>
-            <element signature="e#93#129#0" expanded="true" />
-          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/deviceinfo-default/src/com/github/airext/debug/Debug.as">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="15" column="68" lean-forward="false" selection-start-line="15" selection-start-column="68" selection-end-line="15" selection-end-column="68" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/deviceinfo/deviceinfo.iml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="13" column="20" lean-forward="false" selection-start-line="0" selection-start-column="8" selection-end-line="4" selection-end-column="169" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/deviceinfo-default/src/com/github/airext/notification/NotificationContent.as">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="359">
+          <caret line="24" column="5" lean-forward="false" selection-start-line="21" selection-start-column="0" selection-end-line="24" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/deviceinfo-default/src/com/github/airext/notification/NotificationSound.as">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="17" column="22" lean-forward="false" selection-start-line="17" selection-start-column="22" selection-end-line="17" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/deviceinfo/src/com/github/airext/DeviceInfo.as">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="458">
+          <caret line="95" column="96" lean-forward="false" selection-start-line="95" selection-start-column="96" selection-end-line="95" selection-end-column="96" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/deviceinfo-debug/ane/deviceinfo.ane!/library.swf">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="151">
+          <caret line="44" column="13" lean-forward="false" selection-start-line="44" selection-start-column="13" selection-end-line="44" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/deviceinfo/src/com/github/airext/notification/NotificationTrigger.as">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="4" column="13" lean-forward="false" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/deviceinfo/src/com/github/airext/notification/NotificationCenter.as">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1273">
+          <caret line="107" column="32" lean-forward="false" selection-start-line="107" selection-start-column="32" selection-end-line="107" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/deviceinfo/src/com/github/airext/notification/NotificationRequest.as">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="435">
+          <caret line="31" column="40" lean-forward="false" selection-start-line="31" selection-start-column="40" selection-end-line="31" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/deviceinfo/src/com/github/airext/notification/NotificationContent.as">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="18" column="0" lean-forward="false" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/deviceinfo/src/com/github/airext/notification/NotificationSound.as">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="24" column="5" lean-forward="false" selection-start-line="24" selection-start-column="5" selection-end-line="24" selection-end-column="5" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1360,7 +1163,23 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/deviceinfo/build/platform-ios.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="6" column="22" lean-forward="false" selection-start-line="6" selection-start-column="22" selection-end-line="6" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/deviceinfo/build/platform-android.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="11" lean-forward="false" selection-start-line="2" selection-start-column="11" selection-end-line="2" selection-end-column="11" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/deviceinfo-debug/bin-debug/deviceinfo-debug-starling.apk!/res/xml/provider_paths.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -1368,21 +1187,37 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/deviceinfo-debug/bin-debug/deviceinfo-debug-starling/res/xml/provider_paths.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="8" lean-forward="false" selection-start-line="4" selection-start-column="8" selection-end-line="4" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/deviceinfo-debug/src/DeviceInfoDebugStarling.as">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="28" column="1" lean-forward="false" selection-start-line="28" selection-start-column="1" selection-end-line="28" selection-end-column="1" />
+        <state relative-caret-position="522">
+          <caret line="123" column="45" lean-forward="false" selection-start-line="123" selection-start-column="45" selection-end-line="123" selection-end-column="45" />
           <folding>
             <element signature="e#11#47#0" expanded="true" />
-            <element signature="e#11125#11169#0" expanded="true" />
+            <element signature="e#11488#11532#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/deviceinfo-debug/DeviceInfoDebug-app.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="503">
+          <caret line="253" column="30" lean-forward="false" selection-start-line="253" selection-start-column="30" selection-end-line="253" selection-end-column="30" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/deviceinfo/build/build.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2755">
-          <caret line="184" column="93" lean-forward="false" selection-start-line="184" selection-start-column="93" selection-end-line="184" selection-end-column="93" />
+        <state relative-caret-position="485">
+          <caret line="85" column="80" lean-forward="true" selection-start-line="85" selection-start-column="80" selection-end-line="85" selection-end-column="80" />
           <folding />
         </state>
       </provider>
@@ -1440,7 +1275,7 @@
       </state>
       <state key="ModuleStructureConfigurable.UI">
         <settings>
-          <last-edited>deviceinfo-debug|deviceinfo-debug</last-edited>
+          <last-edited>deviceinfo-debug-starling|deviceinfo-debug</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>

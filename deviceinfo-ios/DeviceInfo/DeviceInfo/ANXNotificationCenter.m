@@ -196,7 +196,7 @@ static BOOL _isInForeground;
 
 # pragma mark Schedule Notification
 
-- (void)addNotificationRequestWithIdentifier:(NSString*)identifier timestamp:(NSTimeInterval)timestamp title:(NSString*)title body:(NSString*)body userInfo:(NSString*)userinfo withCompletion:(AddNotificationRequestCompletion)completion {
+- (void)addNotificationRequestWithIdentifier:(NSString*)identifier timestamp:(NSTimeInterval)timestamp title:(NSString*)title body:(NSString*)body  soundNamed:(NSString*)soundName userInfo:(NSString*)userinfo withCompletion:(AddNotificationRequestCompletion)completion {
     if (floor(NSFoundationVersionNumber) >= NSFoundationVersionNumber10_0) {
         [UNUserNotificationCenter.currentNotificationCenter getNotificationSettingsWithCompletionHandler:^(UNNotificationSettings * _Nonnull settings) {
             switch (settings.authorizationStatus) {
@@ -205,12 +205,21 @@ static BOOL _isInForeground;
                     UNMutableNotificationContent* content = [UNMutableNotificationContent new];
                     content.title = title;
                     content.body = body;
-                    content.sound = [UNNotificationSound defaultSound];
+                    NSLog(@"ANX soundNamed:%@", soundName);
+                    if (soundName) {
+                        content.sound = [UNNotificationSound soundNamed:soundName];
+                    } else {
+                        content.sound = [UNNotificationSound defaultSound];
+                    }
+                    NSLog(@"ANX sound to play:%@", content.sound);
                     content.userInfo = @{@"params" : userinfo};
                     UNTimeIntervalNotificationTrigger* trigger = [UNTimeIntervalNotificationTrigger triggerWithTimeInterval:timestamp repeats:NO];
                     UNNotificationRequest* request = [UNNotificationRequest requestWithIdentifier:identifier content:content trigger:trigger];
                     [UNUserNotificationCenter.currentNotificationCenter addNotificationRequest:request withCompletionHandler:completion];
                     NSLog(@"ANX notification requested");
+                    if (completion) {
+                        completion(nil);
+                    }
                     break;
                 }
                 case UNAuthorizationStatusDenied : {
