@@ -6,7 +6,8 @@ import flash.events.Event;
 
 public class NotificationCenterEvent extends Event {
 
-    public static const NOTIFICATION_RECEIVED: String = "notificationReceived";
+    public static const NOTIFICATION_RECEIVED_IN_BACKGROUND: String = "notificationReceivedInBackground";
+    public static const NOTIFICATION_RECEIVED_IN_FOREGROUND: String = "notificationReceivedInForeground";
 
     public function NotificationCenterEvent(type: String, bubbles: Boolean = false, cancelable: Boolean = false, parameters: Object = null) {
         super(type, bubbles, cancelable);

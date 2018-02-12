@@ -132,16 +132,25 @@ public class NotificationCenter extends EventDispatcher {
 
     private function statusHandler(event:StatusEvent):void {
         switch (event.code) {
-            case "DeviceInfo.NotificationCenter.Data.Receive" :
-                    var params: Object = null;
-                    try {
-                        params = JSON.parse(event.level);
-                    } catch (e: Error) {
-                        params = event.level;
-                    }
-                    dispatchEvent(new NotificationCenterEvent(NotificationCenterEvent.NOTIFICATION_RECEIVED, false, false, params));
+            case "DeviceInfo.NotificationCenter.Notification.ReceivedInForeground" :
+                var params: Object = parseParams(event.level);
+                dispatchEvent(new NotificationCenterEvent(NotificationCenterEvent.NOTIFICATION_RECEIVED_IN_FOREGROUND, false, false, params));
+                break;
+            case "DeviceInfo.NotificationCenter.Notification.ReceivedInBackground" :
+                var params: Object = parseParams(event.level);
+                dispatchEvent(new NotificationCenterEvent(NotificationCenterEvent.NOTIFICATION_RECEIVED_IN_BACKGROUND, false, false, params));
                 break;
         }
+    }
+
+    private function parseParams(raw: String): Object {
+        var params: Object = null;
+        try {
+            params = JSON.parse(raw);
+        } catch (e: Error) {
+            params = raw;
+        }
+        return params;
     }
 
     // NativeApplication handlers

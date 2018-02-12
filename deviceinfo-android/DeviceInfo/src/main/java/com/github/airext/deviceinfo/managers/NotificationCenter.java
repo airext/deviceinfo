@@ -153,24 +153,12 @@ public class NotificationCenter {
 
         _isInForeground = true;
 
-        notifyAppWithDataIfAvailable(context, intent);
+        notifyAppWithDataIfAvailable(context, intent, false);
     }
     public static void inBackground() {
         Log.d(TAG, "inBackground");
 
         _isInForeground = false;
-    }
-
-    // Working with Data Stack
-
-    private static Stack<String> receivedData = new Stack<String>();
-    private static void pushDataToStack(String data) {
-        receivedData.push(data);
-    }
-    private static void sendDataFromStackIfAvailable() {
-        while (!receivedData.empty()) {
-            DeviceInfo.dispatch("DeviceInfo.NotificationCenter.Data.Receive", receivedData.pop());
-        }
     }
 
     // API: Settings
@@ -286,7 +274,7 @@ public class NotificationCenter {
         notificationManager.notify(identifier, notification);
     }
 
-    private static void notifyAppWithDataIfAvailable(Context context, Intent intent) {
+    private static void notifyAppWithDataIfAvailable(Context context, Intent intent, Boolean notifyForForeground) {
         Log.d(TAG, "notifyAppWithDataIfAvailable");
 
         if (intent.hasExtra(identifierKey) && intent.hasExtra(userInfoKey)) {
@@ -295,36 +283,21 @@ public class NotificationCenter {
             String params  = intent.getStringExtra(userInfoKey);
             intent.removeExtra(userInfoKey);
 
-            DeviceInfo.dispatch("DeviceInfo.NotificationCenter.Data.Receive", params);
+            if (notifyForForeground) {
+                DeviceInfo.dispatch("DeviceInfo.NotificationCenter.Notification.ReceivedInForeground", params);
+            } else {
+                DeviceInfo.dispatch("DeviceInfo.NotificationCenter.Notification.ReceivedInBackground", params);
+            }
         }
-    }
-
-    private static void keepDataForLaunch(Context context, Intent intent) {
-        Log.d(TAG, "keepDataForLaunch");
-
-        int identifier = intent.getIntExtra(identifierKey, 0);
-        String params  = intent.getStringExtra(userInfoKey);
-
-        pushDataToStack(params);
     }
 
     public static void handleAlarmReceived(Context context, Intent intent) {
         Log.d(TAG, "handleAlarmReceived");
 
         if (isInForeground()) {
-            notifyAppWithDataIfAvailable(context, intent);
+            notifyAppWithDataIfAvailable(context, intent, true);
         } else {
             showNotification(context, intent);
-        }
-    }
-
-    public static void handleNotificationReceived(Context context, Intent intent) {
-        Log.d(TAG, "handleNotificationReceived");
-
-        if (isInForeground()) {
-            notifyAppWithDataIfAvailable(context, intent);
-        } else {
-            keepDataForLaunch(context, intent);
         }
     }
 

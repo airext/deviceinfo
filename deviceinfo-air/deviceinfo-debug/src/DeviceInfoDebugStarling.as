@@ -115,8 +115,9 @@ public class DeviceInfoDebugStarling extends Sprite
                 content.title = "Title";
                 content.body = "Message";
                 content.userInfo = {message: "Hello, world!"};
+                content.sound = new NotificationSound("alert_17.wav");
 //                content.sound = new NotificationSound("alert_tone.aiff");
-                content.sound = new NotificationSound("alert_tone.mp3");
+//                content.sound = new NotificationSound("alert_tone.mp3");
 
                 var trigger: TimeIntervalNotificationTrigger = new TimeIntervalNotificationTrigger(8);
                 var request: NotificationRequest = new NotificationRequest(1, content, trigger);
@@ -208,8 +209,11 @@ public class DeviceInfoDebugStarling extends Sprite
             tf.text += event.arguments + " " + event.reason +"\n";
         });
 
-        NotificationCenter.current.addEventListener(NotificationCenterEvent.NOTIFICATION_RECEIVED, function (event: NotificationCenterEvent): void {
-            log(event.parameters);
+        NotificationCenter.current.addEventListener(NotificationCenterEvent.NOTIFICATION_RECEIVED_IN_BACKGROUND, function (event: NotificationCenterEvent): void {
+            log("received in background:" + event.parameters);
+        });
+        NotificationCenter.current.addEventListener(NotificationCenterEvent.NOTIFICATION_RECEIVED_IN_FOREGROUND, function (event: NotificationCenterEvent): void {
+            log("received in foreground:" + event.parameters);
         });
 
         function log(...rest): void {

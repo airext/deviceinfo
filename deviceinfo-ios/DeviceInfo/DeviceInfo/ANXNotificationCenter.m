@@ -182,7 +182,7 @@ static BOOL _isInForeground;
 + (void)inForeground {
     _isInForeground = YES;
     if (ANXNotificationCenter.sharedInstance.params) {
-        [ANXDeviceInfo.sharedInstance dispatch:@"DeviceInfo.NotificationCenter.Data.Receive" withLevel:ANXNotificationCenter.sharedInstance.params];
+        [ANXDeviceInfo.sharedInstance dispatch:@"DeviceInfo.NotificationCenter.Notification.ReceivedInBackground" withLevel:ANXNotificationCenter.sharedInstance.params];
         ANXNotificationCenter.sharedInstance.params = nil;
     }
 }
@@ -282,7 +282,7 @@ static BOOL _isInForeground;
     
     NSString* params = notification.request.content.userInfo[@"params"];
     
-    [ANXDeviceInfo.sharedInstance dispatch:@"DeviceInfo.NotificationCenter.Data.Receive" withLevel:params];
+    [ANXDeviceInfo.sharedInstance dispatch:@"DeviceInfo.NotificationCenter.Notification.ReceivedInForeground" withLevel:params];
 }
 
 - (void)userNotificationCenter:(UNUserNotificationCenter *)center didReceiveNotificationResponse:(UNNotificationResponse *)response withCompletionHandler:(void(^)(void))completionHandler {
@@ -293,7 +293,7 @@ static BOOL _isInForeground;
     NSString* params = notification.request.content.userInfo[@"params"];
     
     if (ANXNotificationCenter.isInForeground) {
-        [ANXDeviceInfo.sharedInstance dispatch:@"DeviceInfo.NotificationCenter.Data.Receive" withLevel:params];
+        [ANXDeviceInfo.sharedInstance dispatch:@"DeviceInfo.NotificationCenter.Notification.ReceivedInBackground" withLevel:params];
     } else {
         ANXNotificationCenter.sharedInstance.params = params;
     }
