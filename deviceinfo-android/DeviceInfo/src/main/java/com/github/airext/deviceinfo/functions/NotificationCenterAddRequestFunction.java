@@ -61,26 +61,21 @@ public class NotificationCenterAddRequestFunction implements FREFunction {
 
         final Call call = Bridge.call(context);
 
-        if (timeInterval > 0) {
-            Calendar calendar = Calendar.getInstance();
-            long timestamp = calendar.getTimeInMillis() + timeInterval * 1000;
-
-            NotificationCenter.scheduleNotification(activity, identifier, timestamp, title, body, soundName, userInfo);
-
-            DispatchQueue.dispatch_async(activity, new Runnable() {
-                @Override
-                public void run() {
-                    call.result(true);
-                }
-            });
-        } else {
-            DispatchQueue.dispatch_async(activity, new Runnable() {
-                @Override
-                public void run() {
-                    call.reject("Specified timeInterval is invalid");
-                }
-            });
+        if (timeInterval < 0) {
+            timeInterval = 0;
         }
+
+        Calendar calendar = Calendar.getInstance();
+        long timestamp = calendar.getTimeInMillis() + timeInterval * 1000;
+
+        NotificationCenter.scheduleNotification(activity, identifier, timestamp, title, body, soundName, userInfo);
+
+        DispatchQueue.dispatch_async(activity, new Runnable() {
+            @Override
+            public void run() {
+                call.result(true);
+            }
+        });
 
         return call.toFREObject();
     }

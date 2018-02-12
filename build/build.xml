@@ -197,11 +197,12 @@
         </exec>
 
         <!-- Move packaged .ANE file to /bin directory -->
-        <move file="temp/${name}.ane" todir="../bin"/>
-        <copy file="../bin/deviceinfo.ane" todir="../deviceinfo-air/deviceinfo-debug/ane" />
-
+        <move file="temp/${name}.ane" tofile="../bin/com.github.airext.DeviceInfo.ane"/>
         <!-- Move default .SWC library to /bin directory -->
-        <copy file="temp/default/${name}.swc" todir="../bin"/>
+        <copy file="temp/default/${name}.swc" tofile="../bin/com.github.airext.DeviceInfo.swc"/>
+
+        <!-- Copy packaged .ANE file to debug app anr directory -->
+        <copy file="../bin/com.github.airext.DeviceInfo.ane" todir="../deviceinfo-air/deviceinfo-debug/ane" />
 
         <!-- Remove temporary directory -->
         <delete dir="temp"/>

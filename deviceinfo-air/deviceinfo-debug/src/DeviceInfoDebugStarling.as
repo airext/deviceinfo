@@ -119,7 +119,7 @@ public class DeviceInfoDebugStarling extends Sprite
 //                content.sound = new NotificationSound("alert_tone.aiff");
 //                content.sound = new NotificationSound("alert_tone.mp3");
 
-                var trigger: TimeIntervalNotificationTrigger = new TimeIntervalNotificationTrigger(8);
+                var trigger: TimeIntervalNotificationTrigger = new TimeIntervalNotificationTrigger(0);
                 var request: NotificationRequest = new NotificationRequest(1, content, trigger);
 
                 NotificationCenter.current.add(request, function (error: Error) {
