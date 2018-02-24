@@ -38,6 +38,19 @@ public class DeviceInfo
         return instance;
     }
 
+    //-------------------------------------
+    //  extensionVersion
+    //-------------------------------------
+
+    /**
+     * Returns version of extension
+     * @return extension version
+     */
+    public static function extensionVersion():String
+    {
+        return null
+    }
+
     //--------------------------------------------------------------------------
     //
     //  Constructor

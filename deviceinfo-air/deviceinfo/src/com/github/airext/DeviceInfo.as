@@ -15,6 +15,9 @@ import com.github.airext.deviceinfo.DeviceInfoGeneral;
 import flash.desktop.NativeApplication;
 import flash.events.StatusEvent;
 import flash.external.ExtensionContext;
+import flash.filesystem.File;
+import flash.filesystem.FileMode;
+import flash.filesystem.FileStream;
 import flash.net.registerClassAlias;
 
 use namespace device_info;
@@ -84,6 +87,40 @@ public class DeviceInfo
         }
 
         return instance;
+    }
+
+    //-------------------------------------
+    //  extensionVersion
+    //-------------------------------------
+
+    private static var _extensionVersion:String = null;
+
+    /**
+     * Returns version of extension
+     * @return extension version
+     */
+    public static function extensionVersion():String
+    {
+        if (_extensionVersion == null) {
+            try {
+                var extension_xml:File = ExtensionContext.getExtensionDirectory(EXTENSION_ID).resolvePath("META-INF/ANE/extension.xml");
+                if (extension_xml.exists) {
+                    var stream:FileStream = new FileStream();
+                    stream.open(extension_xml, FileMode.READ);
+
+                    var extension:XML = new XML(stream.readUTFBytes(stream.bytesAvailable));
+                    stream.close();
+
+                    var ns:Namespace = extension.namespace();
+
+                    _extensionVersion = extension.ns::versionNumber;
+                }
+            } catch (error:Error) {
+                // ignore
+            }
+        }
+
+        return _extensionVersion;
     }
 
     //--------------------------------------------------------------------------
