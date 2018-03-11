@@ -141,6 +141,16 @@
     return value;
 }
 
++(FREObject) convertDoubleToFREObject: (double) value {
+
+    FREObject result;
+    if (FRENewObjectFromDouble(value, &result) != FRE_OK) {
+        return NULL;
+    }
+
+    return result;
+}
+
 +(FREObject) convertBoolToFREObject: (BOOL) value
 {
     FREObject result = NULL;

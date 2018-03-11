@@ -36,18 +36,13 @@ public class DeviceInfoBattery extends EventDispatcher
     //------------------------------------
 
     private var _level:Number;
-
     [Bindable(event="batteryLevelChange")]
-    public function get level():Number
-    {
-        if (isNaN(_level))
-        {
+    public function get level():Number {
+        if (isNaN(_level)) {
              _level = getLevel();
         }
-
         return _level;
     }
-
     private function setLevel(value:Number):void
     {
         if (value == _level) return;
@@ -60,20 +55,14 @@ public class DeviceInfoBattery extends EventDispatcher
     //------------------------------------
 
     private var _state:String;
-
     [Bindable(event="batteryStateChange")]
-    public function get state():String
-    {
-        if (_state == null)
-        {
+    public function get state():String {
+        if (_state == null) {
             _state = getState();
         }
-
         return _state;
     }
-
-    private function setState(value:String):void
-    {
+    private function setState(value:String):void {
         if (value == _state) return;
         _state = value;
         dispatchEvent(new DeviceInfoBatteryEvent(DeviceInfoBatteryEvent.BATTERY_STATE_CHANGE));
@@ -84,7 +73,6 @@ public class DeviceInfoBattery extends EventDispatcher
     //------------------------------------
 
     private var _isMonitoring:Boolean = false;
-
     [Bindable(event="isMonitoringChanged")]
     public function get isMonitoring():Boolean
     {
@@ -97,40 +85,28 @@ public class DeviceInfoBattery extends EventDispatcher
     //
     //--------------------------------------------------------------------------
 
-    public function getLevel():Number
-    {
+    public function getLevel():Number {
         return DeviceInfo.context.call("getBatteryLevel") as Number;
     }
 
-    public function getState():String
-    {
+    public function getState():String {
         return DeviceInfo.context.call("getBatteryState") as String;
     }
 
-    public function startMonitoring():void
-    {
-        if (!_isMonitoring)
-        {
+    public function startMonitoring():void {
+        if (!_isMonitoring) {
             DeviceInfo.context.addEventListener(StatusEvent.STATUS, statusHandler);
-
             DeviceInfo.context.call("startBatteryMonitor");
-
             _isMonitoring = true;
-
             dispatchEvent(new Event("isMonitoringChanged"));
         }
     }
 
-    public function stopMonitoring():void
-    {
-        if (_isMonitoring)
-        {
+    public function stopMonitoring():void {
+        if (_isMonitoring) {
             DeviceInfo.context.removeEventListener(StatusEvent.STATUS, statusHandler);
-
             DeviceInfo.context.call("stopBatteryMonitor");
-
             _isMonitoring = false;
-
             dispatchEvent(new Event("isMonitoringChanged"));
         }
     }
@@ -141,8 +117,7 @@ public class DeviceInfoBattery extends EventDispatcher
     //
     //--------------------------------------------------------------------------
 
-    override public function toString():String
-    {
+    override public function toString():String {
         return '[DeviceInfoBattery level="'+_level+'", state="'+_state+'"]';
     }
 
@@ -152,20 +127,13 @@ public class DeviceInfoBattery extends EventDispatcher
     //
     //--------------------------------------------------------------------------
 
-    private function statusHandler(event:StatusEvent):void
-    {
-        switch (event.code)
-        {
+    private function statusHandler(event:StatusEvent):void {
+        switch (event.code) {
             case "DeviceInfo.Battery.State.Change" :
-
                 setState(event.level);
-
                 break;
-
             case "DeviceInfo.Battery.Level.Change" :
-
                 setLevel(parseFloat(event.level));
-
                 break;
         }
     }

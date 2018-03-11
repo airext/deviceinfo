@@ -57,6 +57,8 @@ public class ExtensionContext extends FREContext
 
         functions.put("vibrate", new VibrateFunction());
 
+        functions.put("getSafeArea", new GetSafeAreaFunction());
+
         functions.put("debugStartANRWatchdog", new DebugStartANRWatchdogFunction());
 
         try {

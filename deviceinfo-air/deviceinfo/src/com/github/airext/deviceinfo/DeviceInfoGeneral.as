@@ -15,8 +15,7 @@ public class DeviceInfoGeneral
     //
     //--------------------------------------------------------------------------
 
-    public function DeviceInfoGeneral()
-    {
+    public function DeviceInfoGeneral() {
         super();
     }
 
@@ -73,11 +72,8 @@ public class DeviceInfoGeneral
     //-------------------------------------
 
     private var _ios:DeviceInfoGeneralIOS;
-
-    public function get ios():DeviceInfoGeneralIOS
-    {
-        if (_ios == null)
-        {
+    public function get ios():DeviceInfoGeneralIOS {
+        if (_ios == null) {
             _ios = new DeviceInfoGeneralIOS();
         }
 
@@ -89,11 +85,8 @@ public class DeviceInfoGeneral
     //-------------------------------------
 
     private var _android:DeviceInfoGeneralAndroid;
-
-    public function get android():DeviceInfoGeneralAndroid
-    {
-        if (_android == null)
-        {
+    public function get android():DeviceInfoGeneralAndroid {
+        if (_android == null) {
             _android = new DeviceInfoGeneralAndroid();
         }
 

@@ -31,6 +31,7 @@
 +(FREObject) convertLongLongToFREObject: (long long) number;
 
 +(double) convertFREObjectToDouble: (FREObject) number;
++(FREObject) convertDoubleToFREObject: (double) value;
 
 +(BOOL) convertFREObjectToBool: (FREObject) value;
 +(FREObject) convertBoolToFREObject: (BOOL) value;

@@ -43,6 +43,8 @@
 		502E65B81E819DF0005CAB26 /* ANXDeviceInfoStatusBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 502E65B61E819DF0005CAB26 /* ANXDeviceInfoStatusBar.m */; };
 		503E512E1FD9D9460044B558 /* ANXNotificationCenter.h in Headers */ = {isa = PBXBuildFile; fileRef = 503E512C1FD9D9460044B558 /* ANXNotificationCenter.h */; };
 		503E512F1FD9D9460044B558 /* ANXNotificationCenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 503E512D1FD9D9460044B558 /* ANXNotificationCenter.m */; };
+		504341C92055B4E500496819 /* ANXDeviceInfoScreen.h in Headers */ = {isa = PBXBuildFile; fileRef = 504341C72055B4E500496819 /* ANXDeviceInfoScreen.h */; };
+		504341CA2055B4E500496819 /* ANXDeviceInfoScreen.m in Sources */ = {isa = PBXBuildFile; fileRef = 504341C82055B4E500496819 /* ANXDeviceInfoScreen.m */; };
 		50DCBD791FD2D49B00648DC8 /* ANXDeviceInfoAlert.h in Headers */ = {isa = PBXBuildFile; fileRef = 50DCBD771FD2D49B00648DC8 /* ANXDeviceInfoAlert.h */; };
 		50DCBD7A1FD2D49B00648DC8 /* ANXDeviceInfoAlert.m in Sources */ = {isa = PBXBuildFile; fileRef = 50DCBD781FD2D49B00648DC8 /* ANXDeviceInfoAlert.m */; };
 		50DCBD7D1FD2F05700648DC8 /* ANXBridgeCall.h in Headers */ = {isa = PBXBuildFile; fileRef = 50DCBD7B1FD2F05700648DC8 /* ANXBridgeCall.h */; };
@@ -117,6 +119,8 @@
 		502E65B61E819DF0005CAB26 /* ANXDeviceInfoStatusBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ANXDeviceInfoStatusBar.m; sourceTree = "<group>"; };
 		503E512C1FD9D9460044B558 /* ANXNotificationCenter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ANXNotificationCenter.h; sourceTree = "<group>"; };
 		503E512D1FD9D9460044B558 /* ANXNotificationCenter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ANXNotificationCenter.m; sourceTree = "<group>"; };
+		504341C72055B4E500496819 /* ANXDeviceInfoScreen.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ANXDeviceInfoScreen.h; sourceTree = "<group>"; };
+		504341C82055B4E500496819 /* ANXDeviceInfoScreen.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ANXDeviceInfoScreen.m; sourceTree = "<group>"; };
 		50DCBD771FD2D49B00648DC8 /* ANXDeviceInfoAlert.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ANXDeviceInfoAlert.h; sourceTree = "<group>"; };
 		50DCBD781FD2D49B00648DC8 /* ANXDeviceInfoAlert.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ANXDeviceInfoAlert.m; sourceTree = "<group>"; };
 		50DCBD7B1FD2F05700648DC8 /* ANXBridgeCall.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ANXBridgeCall.h; sourceTree = "<group>"; };
@@ -221,6 +225,8 @@
 				50DCBD801FD2F9B700648DC8 /* ANXBridgeSupport.m */,
 				503E512C1FD9D9460044B558 /* ANXNotificationCenter.h */,
 				503E512D1FD9D9460044B558 /* ANXNotificationCenter.m */,
+				504341C72055B4E500496819 /* ANXDeviceInfoScreen.h */,
+				504341C82055B4E500496819 /* ANXDeviceInfoScreen.m */,
 			);
 			path = DeviceInfo;
 			sourceTree = "<group>";
@@ -249,6 +255,7 @@
 				502E65B71E819DF0005CAB26 /* ANXDeviceInfoStatusBar.h in Headers */,
 				0EDB3FFE19FA280B0080256C /* ANXDeviceInfoBattery.h in Headers */,
 				50DCBD7E1FD2F05700648DC8 /* ANXBridge.h in Headers */,
+				504341C92055B4E500496819 /* ANXDeviceInfoScreen.h in Headers */,
 				0E0CA0D219F7A0A3003C5176 /* FlashRuntimeExtensions.h in Headers */,
 				50DCBD811FD2F9B700648DC8 /* ANXBridgeSupport.h in Headers */,
 				503E512E1FD9D9460044B558 /* ANXNotificationCenter.h in Headers */,
@@ -403,6 +410,7 @@
 				0E22C81117FDBA3D00A828A8 /* ANXDeviceInfoConversionRoutines.m in Sources */,
 				0E22C81A17FDC3F800A828A8 /* ANXDeviceInfoFacade.m in Sources */,
 				50DCBD821FD2F9B700648DC8 /* ANXBridgeSupport.m in Sources */,
+				504341CA2055B4E500496819 /* ANXDeviceInfoScreen.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

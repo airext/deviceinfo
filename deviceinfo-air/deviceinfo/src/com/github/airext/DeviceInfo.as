@@ -11,6 +11,7 @@ import com.github.airext.appearance.StatusBar;
 import com.github.airext.core.device_info;
 import com.github.airext.deviceinfo.DeviceInfoBattery;
 import com.github.airext.deviceinfo.DeviceInfoGeneral;
+import com.github.airext.deviceinfo.DeviceInfoScreen;
 
 import flash.desktop.NativeApplication;
 import flash.events.StatusEvent;
@@ -146,7 +147,7 @@ public class DeviceInfo
 
     //--------------------------------------------------------------------------
     //
-    //  Properties
+    //  Information API
     //
     //--------------------------------------------------------------------------
 
@@ -170,6 +171,15 @@ public class DeviceInfo
         return _imei;
     }
 
+    /**
+     * Returns IMEI if supported.
+     *
+     * @return actual IMEI on Android, or <code>null</code> on iOS
+     */
+    public function getIMEI():String {
+        return context.call("getIMEI") as String;
+    }
+
     //-------------------------------------
     //  general
     //-------------------------------------
@@ -191,6 +201,15 @@ public class DeviceInfo
         return _general;
     }
 
+    /**
+     * Gathers general info and returns it as DeviceInfoGeneral object.
+     *
+     * @return Instance of DeviceInfoGeneral class.
+     */
+    public function getGeneral():DeviceInfoGeneral {
+        return context.call("getGeneralInfo") as DeviceInfoGeneral;
+    }
+
     //-------------------------------------
     //  battery
     //-------------------------------------
@@ -199,16 +218,23 @@ public class DeviceInfo
     private var _battery:DeviceInfoBattery;
 
     /**
-     * Provides access for DeviceInfoBattery object that describes Battery state.
+     * Provides access to DeviceInfoBattery object that describes Battery state.
      */
-    public function get battery():DeviceInfoBattery
-    {
-        if (_battery == null)
-        {
+    public function get battery():DeviceInfoBattery {
+        if (_battery == null) {
             _battery = getBattery();
         }
 
         return _battery;
+    }
+
+    /**
+     * Gathers Battery's info and returns it as DeviceInfoBattery object.
+     *
+     * @return Instance of DeviceInfoBattery class.
+     */
+    public function getBattery():DeviceInfoBattery {
+        return new DeviceInfoBattery();
     }
 
     //-------------------------------------
@@ -216,8 +242,20 @@ public class DeviceInfo
     //-------------------------------------
 
     //-------------------------------------
-    //  display
+    //  screen
     //-------------------------------------
+
+    private var _screen: DeviceInfoScreen;
+    public function get screen(): DeviceInfoScreen {
+        if (_screen == null) {
+            _screen = new DeviceInfoScreen();
+        }
+        return _screen;
+    }
+
+    public function getScreen(): DeviceInfoScreen {
+        return new DeviceInfoScreen();
+    }
 
     //-------------------------------------
     //  statusBar
@@ -229,40 +267,12 @@ public class DeviceInfo
     /**
      * Provides access to system Status Bar
      */
-    public function get statusBar():StatusBar
-    {
-        if (_statusBar == null)
-        {
+    public function get statusBar():StatusBar {
+        if (_statusBar == null) {
             _statusBar = getStatusBar();
         }
 
         return _statusBar;
-    }
-
-    //--------------------------------------------------------------------------
-    //
-    //  Methods
-    //
-    //--------------------------------------------------------------------------
-
-    /**
-     * Gathers general info and returns it as DeviceInfoGeneral object.
-     *
-     * @return Instance of DeviceInfoGeneral class.
-     */
-    public function getGeneral():DeviceInfoGeneral
-    {
-        return context.call("getGeneralInfo") as DeviceInfoGeneral;
-    }
-
-    /**
-     * Gathers Battery's info and returns it as DeviceInfoBattery object.
-     *
-     * @return Instance of DeviceInfoBattery class.
-     */
-    public function getBattery():DeviceInfoBattery
-    {
-        return new DeviceInfoBattery();
     }
 
     /**
@@ -270,20 +280,15 @@ public class DeviceInfo
      *
      * @return Instance of StatusBar class.
      */
-    public function getStatusBar():StatusBar
-    {
+    public function getStatusBar():StatusBar {
         return new StatusBar();
     }
 
-    /**
-     * Returns IMEI if supported.
-     *
-     * @return actual IMEI on Android, or <code>null</code> on iOS
-     */
-    public function getIMEI():String
-    {
-        return context.call("getIMEI") as String;
-    }
+    //--------------------------------------------------------------------------
+    //
+    //  Special API
+    //
+    //--------------------------------------------------------------------------
 
     /**
      * Logs specified message through NSLog on iOS and Log.w on Android. Could
@@ -297,12 +302,10 @@ public class DeviceInfo
      *
      * @param args TAG and/or logging message.
      */
-    public function log(...args):void
-    {
+    public function log(...args):void {
         var params:Array = ["log"];
 
-        switch (args.length)
-        {
+        switch (args.length) {
             case 0 :
                 params.concat(NativeApplication.nativeApplication.applicationID);
                 params.concat("");
@@ -324,8 +327,7 @@ public class DeviceInfo
     /**
      * Simulates out-of-range run time error.
      */
-    public function crash():void
-    {
+    public function crash():void {
         context.call("crash");
     }
 
@@ -335,8 +337,7 @@ public class DeviceInfo
     //
     //--------------------------------------------------------------------------
 
-    private function statusHandler(event:StatusEvent):void
-    {
+    private function statusHandler(event:StatusEvent):void {
 
     }
 }

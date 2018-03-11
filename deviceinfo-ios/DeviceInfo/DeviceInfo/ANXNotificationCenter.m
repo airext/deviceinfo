@@ -85,7 +85,7 @@ static ANXNotificationCenterDelegate* _delegate = nil;
         objc_registerClassPair(swizzledAppDelegateClass);
         object_setClass(appDelegate, swizzledAppDelegateClass);
         
-        if (floor(NSFoundationVersionNumber) >= NSFoundationVersionNumber10_0) {
+        if (SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(@"10.0")) {
             _delegate = [[ANXNotificationCenterDelegate alloc] init];
             UNUserNotificationCenter.currentNotificationCenter.delegate = _delegate;
         }
@@ -127,7 +127,7 @@ void didRegisterUserNotificationSettings(id self, SEL _cmd, UIApplication* appli
 }
 
 + (BOOL)isEnabled {
-    if (floor(NSFoundationVersionNumber) >= NSFoundationVersionNumber10_0) {
+    if (SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(@"10.0")) {
         return YES;
     } else {
         UIUserNotificationSettings* settings = UIApplication.sharedApplication.currentUserNotificationSettings;
@@ -144,7 +144,7 @@ void didRegisterUserNotificationSettings(id self, SEL _cmd, UIApplication* appli
 }
 
 + (void)getNotificationSettingsWithCompletion:(GetNotificationSettingsCompletion)completion {
-    if (floor(NSFoundationVersionNumber) >= NSFoundationVersionNumber10_0) {
+    if (SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(@"10.0")) {
         [UNUserNotificationCenter.currentNotificationCenter getNotificationSettingsWithCompletionHandler:^(UNNotificationSettings * _Nonnull settings) {
             NSString* authorizationStatus = @"unknown";
             if (settings.authorizationStatus == UNAuthorizationStatusAuthorized) {
@@ -164,7 +164,7 @@ void didRegisterUserNotificationSettings(id self, SEL _cmd, UIApplication* appli
 static RequestAuthorizationCompletion _authorizationCompletionHandler;
 
 + (void)requestAuthorizationWithOPtions:(NSInteger)options withCompletion:(RequestAuthorizationCompletion)completion {
-    if (floor(NSFoundationVersionNumber) >= NSFoundationVersionNumber10_0) {
+    if (SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(@"10.0")) {
         [UNUserNotificationCenter.currentNotificationCenter requestAuthorizationWithOptions:(UNAuthorizationOptionAlert | UNAuthorizationOptionBadge | UNAuthorizationOptionSound) completionHandler:completion];
     } else {
         _authorizationCompletionHandler = completion;
@@ -197,7 +197,7 @@ static BOOL _isInForeground;
 # pragma mark Schedule Notification
 
 - (void)addNotificationRequestWithIdentifier:(NSString*)identifier timestamp:(NSTimeInterval)timestamp title:(NSString*)title body:(NSString*)body  soundNamed:(NSString*)soundName userInfo:(NSString*)userinfo withCompletion:(AddNotificationRequestCompletion)completion {
-    if (floor(NSFoundationVersionNumber) >= NSFoundationVersionNumber10_0) {
+    if (SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(@"10.0")) {
         [UNUserNotificationCenter.currentNotificationCenter getNotificationSettingsWithCompletionHandler:^(UNNotificationSettings * _Nonnull settings) {
             switch (settings.authorizationStatus) {
                 case UNAuthorizationStatusAuthorized : {
@@ -244,7 +244,7 @@ static BOOL _isInForeground;
 }
 
 - (void)removePendingNotificationRequestWithIdentifiers:(NSArray*)identifiers {
-    if (floor(NSFoundationVersionNumber) >= NSFoundationVersionNumber10_0) {
+    if (SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(@"10.0")) {
         [UNUserNotificationCenter.currentNotificationCenter getNotificationSettingsWithCompletionHandler:^(UNNotificationSettings * _Nonnull settings) {
             if (settings.authorizationStatus == UNAuthorizationStatusAuthorized) {
                 [UNUserNotificationCenter.currentNotificationCenter removePendingNotificationRequestsWithIdentifiers:identifiers];
@@ -255,7 +255,7 @@ static BOOL _isInForeground;
 }
 
 - (void)removeAllPendingRequests {
-    if (floor(NSFoundationVersionNumber) >= NSFoundationVersionNumber10_0) {
+    if (SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(@"10.0")) {
         [UNUserNotificationCenter.currentNotificationCenter getNotificationSettingsWithCompletionHandler:^(UNNotificationSettings * _Nonnull settings) {
             if (settings.authorizationStatus == UNAuthorizationStatusAuthorized) {
                 [UNUserNotificationCenter.currentNotificationCenter removeAllPendingNotificationRequests];

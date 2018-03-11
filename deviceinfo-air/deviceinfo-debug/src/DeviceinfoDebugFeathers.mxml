@@ -1,0 +1,247 @@
+<?xml version="1.0"?>
+<f:Application xmlns:fx="http://ns.adobe.com/mxml/2009"
+               xmlns:f="library://ns.feathersui.com/mxml" xmlns:utils="utils.*"
+               theme="feathers.themes.MetalWorksMobileTheme">
+
+    <fx:Script>
+        <![CDATA[
+        import com.github.airext.DeviceInfo;
+        import com.github.airext.alert.Alert;
+        import com.github.airext.alert.AlertAction;
+        import com.github.airext.alert.AlertActionStyle;
+        import com.github.airext.alert.AlertStyle;
+        import com.github.airext.appearance.Theme;
+        import com.github.airext.appearance.ThemeAndroidStyle;
+        import com.github.airext.appearance.ThemeStyle;
+        import com.github.airext.notification.NotificationCenter;
+        import com.github.airext.notification.NotificationCenterAuthorizationOptions;
+        import com.github.airext.notification.NotificationCenterEvent;
+        import com.github.airext.notification.NotificationCenterSettings;
+        import com.github.airext.notification.NotificationContent;
+        import com.github.airext.notification.NotificationRequest;
+        import com.github.airext.notification.NotificationSound;
+        import com.github.airext.notification.TimeIntervalNotificationTrigger;
+
+        import flash.events.InvokeEvent;
+
+        // NativeApplication handlers
+
+        NativeApplication.nativeApplication.addEventListener(InvokeEvent.INVOKE, function (event: InvokeEvent): void {
+            log(event.arguments + " " + event.reason);
+        });
+        NotificationCenter.current.addEventListener(NotificationCenterEvent.NOTIFICATION_RECEIVED_IN_BACKGROUND, function (event: NotificationCenterEvent): void {
+            log("received in background:" + event.parameters);
+        });
+        NotificationCenter.current.addEventListener(NotificationCenterEvent.NOTIFICATION_RECEIVED_IN_FOREGROUND, function (event: NotificationCenterEvent): void {
+            log("received in foreground:" + event.parameters);
+        });
+
+        // Alerts
+
+        private function showAlert(title: String, message: String): void {
+            var alertController: Alert = new Alert(title, message, AlertStyle.alert);
+            alertController.addAction(new AlertAction("OK", AlertActionStyle.normal, function (): void {
+                log("OK");
+            }));
+            alertController.present();
+        }
+
+        private function showActionSheet(title: String, message: String): void {
+            var alertController: Alert = new Alert(title, message, AlertStyle.actionSheet);
+            alertController.addAction(new AlertAction("Cancel", AlertActionStyle.cancellation, function (): void {
+                log("Cancel");
+            }));
+            alertController.addAction(new AlertAction("Delete", AlertActionStyle.destructive, function (): void {
+                log("Delete");
+            }));
+            alertController.addAction(new AlertAction("Send", AlertActionStyle.normal, function (): void {
+                log("send");
+            }));
+            alertController.present();
+        }
+
+        private function showTitleAlert(): void {
+            var alertController: Alert = new Alert("Processing...", null, AlertStyle.alert);
+            alertController.present();
+            setTimeout(function (): void {
+                alertController.dismiss();
+            }, 2000);
+        }
+
+        // Helper methods
+
+        private static var outputText: ScrollText;
+        private static function log(...rest): void {
+            trace(rest);
+            outputText.text += rest + "\n";
+            outputText.verticalScrollPosition = outputText.maxVerticalScrollPosition;
+        }
+
+        // Handlers
+
+        private function getIMEI(): void {
+            log('imei:' + DeviceInfo.sharedInstance().getIMEI())
+        }
+
+        private function getDeviceIdentifier(): void {
+            log('getVendorIdentifier:' + DeviceInfo.sharedInstance().general.ios.getVendorIdentifier())
+        }
+
+        private function getDeviceInfo(): void {
+            var info: Object = DeviceInfo.sharedInstance().general || {};
+
+            log("name: " + info.name);
+            log("model: " + info.model);
+            log("manufacturer: " + info.manufacturer);
+            log("systemName: " + info.systemName);
+            log("systemVersion: " + info.systemVersion);
+        }
+
+        private function sendLocalNotification(): void {
+            var content: NotificationContent = new NotificationContent();
+            content.title = "Title";
+            content.body = "Message";
+            content.userInfo = {message: "Hello, world!"};
+            content.sound = new NotificationSound("alert_17.wav");
+//                content.sound = new NotificationSound("alert_tone.aiff");
+//                content.sound = new NotificationSound("alert_tone.mp3");
+
+            var trigger: TimeIntervalNotificationTrigger = new TimeIntervalNotificationTrigger(0);
+            var request: NotificationRequest = new NotificationRequest(1, content, trigger);
+
+            NotificationCenter.current.add(request, function (error: Error): void {
+                if (error) {
+                    log(error);
+                } else {
+                    log("Notification requested: " + request);
+                }
+            });
+        }
+
+        private function localNotificationRequestAuthorization(): void {
+            var options: int = NotificationCenterAuthorizationOptions.alert.rawValue | NotificationCenterAuthorizationOptions.sound.rawValue;
+            NotificationCenter.requestAuthorizationWithOptions(options, function (status: String, error: Error = null) {
+                log(status, error);
+            });
+        }
+
+        private function localNotificationGetNotificationSettings(): void {
+            NotificationCenter.getNotificationSettingsWithCompletion(function (settings: NotificationCenterSettings) {
+                log(settings.authorizationStatus);
+            });
+        }
+
+        private function getSafeArea(): void {
+            log("safe area:" + DeviceInfo.sharedInstance().screen.getSafeArea());
+        }
+
+        ]]>
+    </fx:Script>
+
+    <f:layout>
+        <f:VerticalLayout horizontalAlign="justify" />
+    </f:layout>
+
+    <f:ScrollContainer>
+        <f:layoutData>
+            <f:VerticalLayoutData percentHeight="80" />
+        </f:layoutData>
+
+        <f:layout>
+            <f:VerticalLayout horizontalAlign="justify" verticalAlign="top" gap="10" paddingTop="20" paddingLeft="20" paddingRight="20" paddingBottom="20" />
+        </f:layout>
+
+        <f:Label text="Identity">
+            <f:textRendererProperties>
+                <fx:Object>
+                    <fx:textAlign>center</fx:textAlign>
+                </fx:Object>
+            </f:textRendererProperties>
+        </f:Label>
+
+        <f:Button label="getIMEI" triggered="getIMEI()" />
+        <f:Button label="getDeviceIdentifier" triggered="getDeviceIdentifier()" />
+
+        <f:Label text="General Info">
+            <f:textRendererProperties>
+                <fx:Object>
+                    <fx:textAlign>center</fx:textAlign>
+                </fx:Object>
+            </f:textRendererProperties>
+        </f:Label>
+
+        <f:Button label="getDeviceInfo" triggered="getDeviceInfo()" />
+
+        <!--<f:Label text="General Info">-->
+            <!--<f:textRendererProperties>-->
+                <!--<fx:Object>-->
+                    <!--<fx:textAlign>center</fx:textAlign>-->
+                <!--</fx:Object>-->
+            <!--</f:textRendererProperties>-->
+        <!--</f:Label>-->
+        <!--<f:Button label="hideStatusBar" triggered="DeviceInfo.sharedInstance().statusBar.setHidden(true)" />-->
+        <!--<f:Button label="showStatusBar" triggered="DeviceInfo.sharedInstance().statusBar.setHidden(false)" />-->
+
+        <f:Label text="Alert">
+            <f:textRendererProperties>
+                <fx:Object>
+                    <fx:textAlign>center</fx:textAlign>
+                </fx:Object>
+            </f:textRendererProperties>
+        </f:Label>
+
+        <f:Button label="showAlert" triggered="showAlert('Info', 'Hi')" />
+        <f:Button label="showActionSheet" triggered="showActionSheet('Info', 'Hi')" />
+        <f:Button label="showTitleAlert" triggered="showTitleAlert()" />
+
+        <f:Label text="Screen">
+            <f:textRendererProperties>
+                <fx:Object>
+                    <fx:textAlign>center</fx:textAlign>
+                </fx:Object>
+            </f:textRendererProperties>
+        </f:Label>
+
+        <f:Button label="getSafeArea" triggered="getSafeArea()" />
+
+        <f:Label text="Local Notifications">
+            <f:textRendererProperties>
+                <fx:Object>
+                    <fx:textAlign>center</fx:textAlign>
+                </fx:Object>
+            </f:textRendererProperties>
+        </f:Label>
+
+        <f:Button label="sendLocalNotification" triggered="sendLocalNotification()" />
+        <f:Button label="localNotificationEnabled" triggered="log(NotificationCenter.isEnabled)" />
+        <f:Button label="localNotificationCanOpenSettings" triggered="log(NotificationCenter.canOpenSettings)" />
+        <f:Button label="localNotificationOpenSettings" triggered="NotificationCenter.openSettings()" />
+        <f:Button label="localNotificationRequestAuthorization" triggered="localNotificationRequestAuthorization()" />
+        <f:Button label="localGetNotificationSettings" triggered="localNotificationGetNotificationSettings()" />
+
+        <f:Label text="Theme">
+            <f:textRendererProperties>
+                <fx:Object>
+                    <fx:textAlign>center</fx:textAlign>
+                </fx:Object>
+            </f:textRendererProperties>
+        </f:Label>
+
+        <f:Button label="isThemeSupported" triggered="log(Theme.isSupported)" />
+        <f:Button label="setLightTheme" triggered="Theme.shared.style = ThemeStyle.Light" />
+        <f:Button label="setDarkTheme" triggered="Theme.shared.style = ThemeStyle.Dark" />
+        <f:Button label="setMaterialDarkTheme" triggered="Theme.shared.android.style = ThemeAndroidStyle.MaterialDark" />
+        <f:Button label="setMaterialLightTheme" triggered="Theme.shared.android.style = ThemeAndroidStyle.MaterialLight" />
+        <f:Button label="setHoloDarkTheme" triggered="Theme.shared.android.style = ThemeAndroidStyle.HoloDark" />
+        <f:Button label="setHoloLightTheme" triggered="Theme.shared.android.style = ThemeAndroidStyle.HoloLight" />
+        <f:Button label="setAirDefaultTheme" triggered="Theme.shared.android.style = ThemeAndroidStyle.NoShadow" />
+
+    </f:ScrollContainer>
+
+    <f:ScrollText initialize="outputText = event.target as ScrollText">
+        <f:layoutData>
+            <f:VerticalLayoutData percentHeight="20" />
+        </f:layoutData>
+    </f:ScrollText>
+
+</f:Application>

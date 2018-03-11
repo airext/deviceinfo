@@ -7,14 +7,12 @@
 //
 
 #import <Foundation/Foundation.h>
-
 #import <UIKit/UIKit.h>
-
 #import "FlashRuntimeExtensions.h"
-
 #import "ANXDeviceInfoGeneral.h"
-
 #import "ANXDeviceInfoConversionRoutines.h"
+
+#define SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(v) ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] != NSOrderedAscending)
 
 @interface ANXDeviceInfo : NSObject
 

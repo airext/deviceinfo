@@ -11,6 +11,7 @@
 #import "ANXDeviceInfoAlert.h"
 #import "ANXBridgeSupport.h"
 #import "ANXNotificationCenter.h"
+#import "ANXDeviceInfoScreen.h"
 #import <AudioToolbox/AudioServices.h>
 
 #pragma mark General API
@@ -336,13 +337,35 @@ FREObject ANXDeviceInfoVibrate(FREContext context, void* functionData, uint32_t 
     return NULL;
 }
 
+#pragma mark Screen
+
+FREObject ANXDeviceInfoGetSafeArea(FREContext context, void* functionData, uint32_t argc, FREObject argv[]) {
+    NSLog(@"ANXDeviceInfoGetSafeArea");
+
+    UIEdgeInsets safeArea = [ANXDeviceInfoScreen getSafeArea];
+
+    FREObject top = [ANXDeviceInfoConversionRoutines convertDoubleToFREObject:(CGFloat)safeArea.top];
+    FREObject left = [ANXDeviceInfoConversionRoutines convertDoubleToFREObject:(CGFloat)safeArea.left];
+    FREObject bottom = [ANXDeviceInfoConversionRoutines convertDoubleToFREObject:(CGFloat)safeArea.bottom];
+    FREObject right = [ANXDeviceInfoConversionRoutines convertDoubleToFREObject:(CGFloat)safeArea.right];
+
+    FREObject args[] = { top, left, bottom, right };
+
+    FREObject insets;
+    if (FRENewObject((const uint8_t *) "com.github.airext.deviceinfo.data.EdgeInsets", 4, args, &insets, NULL) != FRE_OK) {
+        return NULL;
+    }
+    
+    return insets;
+}
+
 #pragma mark ContextInitialize/ContextFinalizer
 
 void ANXDeviceInfoContextInitializer(void* extData, const uint8_t* ctxType, FREContext ctx, uint32_t* numFunctionsToSet, const FRENamedFunction** functionsToSet)
 {
     NSLog(@"ANXDeviceInfoContextInitializer");
     
-    *numFunctionsToSet = 28;
+    *numFunctionsToSet = 29;
     
     FRENamedFunction* func = (FRENamedFunction*) malloc(sizeof(FRENamedFunction) * (*numFunctionsToSet));
     
@@ -475,6 +498,12 @@ void ANXDeviceInfoContextInitializer(void* extData, const uint8_t* ctxType, FREC
     func[27].name = (const uint8_t*) "vibrate";
     func[27].functionData = NULL;
     func[27].function = &ANXDeviceInfoVibrate;
+
+    // scree
+
+    func[28].name = (const uint8_t*) "getSafeArea";
+    func[28].functionData = NULL;
+    func[28].function = &ANXDeviceInfoGetSafeArea;
     
     // setup bridge
     
