@@ -17,9 +17,9 @@ public class GetSafeAreaFunction implements FREFunction {
 
         Activity activity = context.getActivity();
 
-        ViewCompat.onApplyWindowInsets()
-
-        FREObject top = FREObject.newObject(activity.view)
+//        ViewCompat.onApplyWindowInsets()
+//
+//        FREObject top = FREObject.newObject(activity.view)
 
 //        FREObject insets = FREObject.newObject()
 

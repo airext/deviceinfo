@@ -10,6 +10,7 @@ package com.github.airext
 import com.github.airext.appearance.StatusBar;
 import com.github.airext.deviceinfo.DeviceInfoBattery;
 import com.github.airext.deviceinfo.DeviceInfoGeneral;
+import com.github.airext.deviceinfo.DeviceInfoScreen;
 
 import flash.system.Capabilities;
 
@@ -134,8 +135,20 @@ public class DeviceInfo
     //-------------------------------------
 
     //-------------------------------------
-    //  display
+    //  screen
     //-------------------------------------
+
+    private var _screen: DeviceInfoScreen;
+    public function get screen(): DeviceInfoScreen {
+        if (_screen == null) {
+            _screen = new DeviceInfoScreen();
+        }
+        return _screen;
+    }
+
+    public function getScreen(): DeviceInfoScreen {
+        return new DeviceInfoScreen();
+    }
 
     //-------------------------------------
     //  statusBar

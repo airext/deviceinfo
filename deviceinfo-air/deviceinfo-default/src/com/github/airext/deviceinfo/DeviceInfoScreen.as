@@ -31,7 +31,7 @@ public class DeviceInfoScreen {
 
     public function getSafeArea(): EdgeInsets {
         trace("DeviceInfo is not supported for " + Capabilities.os);
-        return null;
+        return new EdgeInsets(0, 0, 0, 0);
     }
 }
 }
