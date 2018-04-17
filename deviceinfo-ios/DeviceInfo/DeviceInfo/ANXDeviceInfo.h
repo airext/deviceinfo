@@ -12,7 +12,13 @@
 #import "ANXDeviceInfoGeneral.h"
 #import "ANXDeviceInfoConversionRoutines.h"
 
-#define SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(v) ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] != NSOrderedAscending)
+int isOperatingSystemAtLeast(int major, int minor, int patch) {
+    NSOperatingSystemVersion version;
+    version.majorVersion = major;
+    version.minorVersion = minor;
+    version.patchVersion = patch;
+    return [[NSProcessInfo processInfo] isOperatingSystemAtLeastVersion:version];
+}
 
 @interface ANXDeviceInfo : NSObject
 

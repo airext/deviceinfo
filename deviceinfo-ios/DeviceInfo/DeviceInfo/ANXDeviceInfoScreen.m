@@ -30,7 +30,7 @@
         return UIEdgeInsetsZero;
     }
 
-    if (SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(@"11.0")) {
+    if (isOperatingSystemAtLeast(11, 0, 0)) {
         return view.safeAreaInsets;
     } else {
         return UIEdgeInsetsMake(viewController.topLayoutGuide.length, 0.0, viewController.bottomLayoutGuide.length, 0.0);
