@@ -18,11 +18,11 @@
               <dependency linkage="Merged" />
             </entry>
           </entries>
-          <sdk name="3.4.1" />
+          <sdk name="3.4.x" />
         </dependencies>
         <compiler-options />
         <packaging-air-desktop />
-        <packaging-android enabled="true" use-generated-descriptor="false" custom-descriptor-path="$MODULE_DIR$/DeviceInfoDebug-app.xml" package-file-name="deviceinfo-debug-feathers">
+        <packaging-android use-generated-descriptor="false" custom-descriptor-path="$MODULE_DIR$/DeviceInfoDebug-app.xml" package-file-name="deviceinfo-debug-feathers">
           <files-to-package>
             <FilePathAndPathInPackage file-path="$MODULE_DIR$/assets" path-in-package="." />
           </files-to-package>
@@ -42,17 +42,17 @@
     <content url="file://$MODULE_DIR$">
       <sourceFolder url="file://$MODULE_DIR$/src" isTestSource="false" />
     </content>
-    <orderEntry type="jdk" jdkName="3.4.1" jdkType="Flex SDK Type (new)" />
+    <orderEntry type="jdk" jdkName="3.4.x" jdkType="Flex SDK Type (new)" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="module-library" exported="">
       <library type="flex">
         <properties id="95abd262-15d7-43b6-a6dc-9c70904923dc" />
         <CLASSES>
-          <root url="file:///Volumes/Macintosh HD/sdks/feathers/3.4.1/frameworks/libs" />
+          <root url="file://$USER_HOME$/sdks/feathers/3.4.1/frameworks/libs" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
-        <jarDirectory url="file:///Volumes/Macintosh HD/sdks/feathers/3.4.1/frameworks/libs" recursive="false" />
+        <jarDirectory url="file://$USER_HOME$/sdks/feathers/3.4.1/frameworks/libs" recursive="false" />
       </library>
     </orderEntry>
     <orderEntry type="module-library" exported="">
@@ -81,7 +81,7 @@
       <library type="flex">
         <properties id="9d8881c0-34db-44d4-bfe8-7110221cdf12" />
         <CLASSES>
-          <root url="jar:///Volumes/Macintosh HD/sdks/feathers/3.4.1/frameworks/themes/MetalWorksMobileTheme/MetalWorksMobileTheme.swc!/" />
+          <root url="jar://$USER_HOME$/sdks/feathers/3.4.1/frameworks/themes/MetalWorksMobileTheme/MetalWorksMobileTheme.swc!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
