@@ -61,6 +61,8 @@ public class ExtensionContext extends FREContext
 
         functions.put("debugStartANRWatchdog", new DebugStartANRWatchdogFunction());
 
+        functions.put("openSettings", new OpenSettingsFunction());
+
         try {
             Bridge.setup(functions);
         } catch (BridgeNotFoundException e) {

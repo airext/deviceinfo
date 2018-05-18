@@ -21,7 +21,7 @@ public class NotificationCenter extends EventDispatcher {
     // Availability & Permissions
 
     public static function get isSupported(): Boolean {
-        if (DeviceInfo.isSupported()) {
+        if (DeviceInfo.isSupported) {
             trace("NotificationCenter.isSupported");
             return DeviceInfo.context.call("notificationCenterIsSupported");
         } else {

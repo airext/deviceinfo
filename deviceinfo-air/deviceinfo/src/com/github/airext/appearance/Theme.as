@@ -12,7 +12,7 @@ use namespace device_info;
 public class Theme {
 
     public static function get isSupported(): Boolean {
-        if (DeviceInfo.isSupported()) {
+        if (DeviceInfo.isSupported) {
             return DeviceInfo.context.call("themeIsSupported");
         } else {
             return false;

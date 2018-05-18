@@ -359,13 +359,23 @@ FREObject ANXDeviceInfoGetSafeArea(FREContext context, void* functionData, uint3
     return insets;
 }
 
+#pragma mark Settings
+
+FREObject ANXDeviceInfoOpenSettings(FREContext context, void* functionData, uint32_t argc, FREObject argv[]) {
+    NSURL* appSettingsURL = [NSURL URLWithString:UIApplicationOpenSettingsURLString];
+    if (appSettingsURL != nil) {
+        [UIApplication.sharedApplication openURL:appSettingsURL];
+    }
+    return NULL;
+}
+
 #pragma mark ContextInitialize/ContextFinalizer
 
 void ANXDeviceInfoContextInitializer(void* extData, const uint8_t* ctxType, FREContext ctx, uint32_t* numFunctionsToSet, const FRENamedFunction** functionsToSet)
 {
     NSLog(@"ANXDeviceInfoContextInitializer");
     
-    *numFunctionsToSet = 29;
+    *numFunctionsToSet = 30;
     
     FRENamedFunction* func = (FRENamedFunction*) malloc(sizeof(FRENamedFunction) * (*numFunctionsToSet));
     
@@ -499,12 +509,18 @@ void ANXDeviceInfoContextInitializer(void* extData, const uint8_t* ctxType, FREC
     func[27].functionData = NULL;
     func[27].function = &ANXDeviceInfoVibrate;
 
-    // scree
+    // screen
 
     func[28].name = (const uint8_t*) "getSafeArea";
     func[28].functionData = NULL;
     func[28].function = &ANXDeviceInfoGetSafeArea;
-    
+
+    // settings
+
+    func[29].name = (const uint8_t*) "openSettings";
+    func[29].functionData = NULL;
+    func[29].function = &ANXDeviceInfoOpenSettings;
+
     // setup bridge
     
     [ANXBridge setup:numFunctionsToSet functions:&func];

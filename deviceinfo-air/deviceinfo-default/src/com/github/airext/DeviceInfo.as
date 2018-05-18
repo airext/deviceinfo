@@ -22,17 +22,14 @@ public class DeviceInfo
     //
     //--------------------------------------------------------------------------
 
-    public static function isSupported():Boolean
-    {
+    public static function get isSupported(): Boolean {
         return false;
     }
 
-    private static var instance:DeviceInfo;
+    private static var instance: DeviceInfo;
 
-    public static function sharedInstance():DeviceInfo
-    {
-        if (instance == null)
-        {
+    public static function get sharedInstance(): DeviceInfo {
+        if (instance == null) {
             instance = new DeviceInfo();
         }
 
@@ -47,8 +44,7 @@ public class DeviceInfo
      * Returns version of extension
      * @return extension version
      */
-    public static function extensionVersion():String
-    {
+    public static function extensionVersion():String {
         return null
     }
 
@@ -58,8 +54,7 @@ public class DeviceInfo
     //
     //--------------------------------------------------------------------------
 
-    public function DeviceInfo()
-    {
+    public function DeviceInfo() {
         super();
     }
 
@@ -79,10 +74,8 @@ public class DeviceInfo
     /**
      * Returns IMEI if supporte, or <code>null</code> otherwise.
      */
-    public function get imei():String
-    {
-        if (_imei == null)
-        {
+    public function get imei():String {
+        if (_imei == null) {
             _imei = getIMEI();
         }
 
@@ -100,10 +93,8 @@ public class DeviceInfo
      * Provides access for DeviceInfoGeneral object that describes device's
      * general info.
      */
-    public function get general():DeviceInfoGeneral
-    {
-        if (_general == null)
-        {
+    public function get general():DeviceInfoGeneral {
+        if (_general == null) {
             _general = getGeneral();
         }
 
@@ -120,10 +111,8 @@ public class DeviceInfo
     /**
      * Provides access for DeviceInfoBattery object that describes Battery state.
      */
-    public function get battery():DeviceInfoBattery
-    {
-        if (_battery == null)
-        {
+    public function get battery():DeviceInfoBattery {
+        if (_battery == null) {
             _battery = getBattery();
         }
 
@@ -160,10 +149,8 @@ public class DeviceInfo
     /**
      * Provides access to system Status Bar
      */
-    public function get statusBar():StatusBar
-    {
-        if (_statusBar == null)
-        {
+    public function get statusBar():StatusBar {
+        if (_statusBar == null) {
             _statusBar = getStatusBar();
         }
 
@@ -176,41 +163,31 @@ public class DeviceInfo
     //
     //--------------------------------------------------------------------------
 
-    public function getIMEI():String
-    {
+    public function getIMEI():String {
         trace("DeviceInfo is not supported for " + Capabilities.os);
-
         return null;
     }
 
-    public function getGeneral():DeviceInfoGeneral
-    {
+    public function getGeneral():DeviceInfoGeneral {
         trace("DeviceInfo is not supported for " + Capabilities.os);
-
         return new DeviceInfoGeneral();
     }
 
-    public function getBattery():DeviceInfoBattery
-    {
+    public function getBattery():DeviceInfoBattery {
         trace("DeviceInfo is not supported for " + Capabilities.os);
-
         return new DeviceInfoBattery();
     }
 
-    public function getStatusBar():StatusBar
-    {
+    public function getStatusBar():StatusBar {
         trace("DeviceInfo is not supported for " + Capabilities.os);
-
         return new StatusBar();
     }
 
-    public function log():void
-    {
+    public function log():void {
         trace("DeviceInfo is not supported for " + Capabilities.os);
     }
 
-    public function crash():void
-    {
+    public function crash():void {
         trace("DeviceInfo is not supported for " + Capabilities.os);
     }
 }

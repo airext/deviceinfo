@@ -23,8 +23,8 @@ import flash.net.registerClassAlias;
 
 use namespace device_info;
 
-public class DeviceInfo
-{
+public class DeviceInfo {
+
     //--------------------------------------------------------------------------
     //
     //  Class constants
@@ -41,10 +41,8 @@ public class DeviceInfo
 
     private static var _context:ExtensionContext;
 
-    device_info static function get context():ExtensionContext
-    {
-        if (_context == null)
-        {
+    device_info static function get context():ExtensionContext {
+        if (_context == null) {
             _context = ExtensionContext.createExtensionContext(EXTENSION_ID, null);
         }
 
@@ -63,8 +61,7 @@ public class DeviceInfo
      * @return <code>true</code> if DeviceInfo is supported or <code>false</code>
      * otherwise.
      */
-    public static function isSupported():Boolean
-    {
+    public static function get isSupported():Boolean {
         return context != null && context.call("isSupported");
     }
 
@@ -80,10 +77,8 @@ public class DeviceInfo
      *
      * @return
      */
-    public static function sharedInstance():DeviceInfo
-    {
-        if (instance == null)
-        {
+    public static function get sharedInstance(): DeviceInfo {
+        if (instance == null) {
             instance = new DeviceInfo();
         }
 
@@ -100,8 +95,7 @@ public class DeviceInfo
      * Returns version of extension
      * @return extension version
      */
-    public static function extensionVersion():String
-    {
+    public static function extensionVersion():String {
         if (_extensionVersion == null) {
             try {
                 var extension_xml:File = ExtensionContext.getExtensionDirectory(EXTENSION_ID).resolvePath("META-INF/ANE/extension.xml");
@@ -140,8 +134,7 @@ public class DeviceInfo
     //
     //--------------------------------------------------------------------------
 
-    public function DeviceInfo()
-    {
+    public function DeviceInfo() {
         super();
     }
 
@@ -161,10 +154,8 @@ public class DeviceInfo
     /**
      * Returns IMEI if supporte, or <code>null</code> otherwise.
      */
-    public function get imei():String
-    {
-        if (_imei == null)
-        {
+    public function get imei():String {
+        if (_imei == null) {
             _imei = getIMEI();
         }
 
@@ -191,10 +182,8 @@ public class DeviceInfo
      * Provides access for DeviceInfoGeneral object that describes device's
      * general info.
      */
-    public function get general():DeviceInfoGeneral
-    {
-        if (_general == null)
-        {
+    public function get general():DeviceInfoGeneral {
+        if (_general == null) {
             _general = getGeneral();
         }
 
@@ -282,6 +271,14 @@ public class DeviceInfo
      */
     public function getStatusBar():StatusBar {
         return new StatusBar();
+    }
+
+    //-------------------------------------
+    //  openSettings
+    //-------------------------------------
+
+    public function openSettings(): void {
+        context.call("openSettings");
     }
 
     //--------------------------------------------------------------------------
