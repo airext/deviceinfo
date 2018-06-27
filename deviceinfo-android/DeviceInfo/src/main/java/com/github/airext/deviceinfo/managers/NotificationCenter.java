@@ -244,7 +244,7 @@ public class NotificationCenter {
 
         PendingIntent pendingIntent = PendingIntent.getActivity(context, 0, notificationIntent, PendingIntent.FLAG_UPDATE_CURRENT);
 
-        int smallIconId = Resources.getResourseIdByName(context.getPackageName(), "mipmap", "icon");
+        int smallIconId = Resources.getResourseIdByName(context.getPackageName(), "drawable", "ic_stat_notify");
         int largeIconId = Resources.getResourseIdByName(context.getPackageName(), "mipmap", "icon");
 
         Uri soundUri = null;
