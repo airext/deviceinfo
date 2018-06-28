@@ -31,8 +31,7 @@ public class ContentProviderUtil {
             if (audioFile.exists()) {
                 ContentValues values = new ContentValues();
                 values.put(MediaStore.Audio.Media.DATA, filePath);
-                return context.getContentResolver().insert(
-                        MediaStore.Audio.Media.EXTERNAL_CONTENT_URI, values);
+                return context.getContentResolver().insert(MediaStore.Audio.Media.EXTERNAL_CONTENT_URI, values);
             } else {
                 return null;
             }
