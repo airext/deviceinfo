@@ -10,7 +10,6 @@
 #import "ANXBridge.h"
 #import "ANXDeviceInfoAlert.h"
 #import "ANXBridgeSupport.h"
-#import "ANXNotificationCenter.h"
 #import "ANXDeviceInfoScreen.h"
 #import <AudioToolbox/AudioServices.h>
 
@@ -177,143 +176,57 @@ FREObject ANXDeviceInfoDismissAlert(FREContext context, void* functionData, uint
 #pragma mark NotificationCenter
 
 FREObject ANXDeviceInfoNotificationCenterIsSupported(FREContext context, void* functionData, uint32_t argc, FREObject argv[]) {
-    NSLog(@"ANXDeviceInfoNotificationCenterIsSupported");
-    return [ANXDeviceInfoConversionRoutines convertBoolToFREObject:[ANXNotificationCenter isSupported]];
+    NSLog(@"Use com.github.airext.Notifications ANE for notifications");
+    return NULL;
 }
 
 FREObject ANXDeviceInfoNotificationCenterInBackground(FREContext context, void* functionData, uint32_t argc, FREObject argv[]) {
-    NSLog(@"ANXDeviceInfoNotificationCenterInBackground");
-    [ANXNotificationCenter inBackground];
+    NSLog(@"Use com.github.airext.Notifications ANE for notifications");
     return NULL;
 }
 
 FREObject ANXDeviceInfoNotificationCenterInForeground(FREContext context, void* functionData, uint32_t argc, FREObject argv[]) {
-    NSLog(@"ANXDeviceInfoNotificationCenterInForeground");
-    [ANXNotificationCenter inForeground];
+    NSLog(@"Use com.github.airext.Notifications ANE for notifications");
     return NULL;
 }
 
 FREObject ANXDeviceInfoNotificationCenterIsEnabled(FREContext context, void* functionData, uint32_t argc, FREObject argv[]) {
-    NSLog(@"ANXDeviceInfoNotificationCenterIsEnabled");
-    return [ANXDeviceInfoConversionRoutines convertBoolToFREObject:[ANXNotificationCenter isEnabled]];
+    NSLog(@"Use com.github.airext.Notifications ANE for notifications");
+    return NULL;
 }
 
 FREObject ANXDeviceInfoNotificationCenterGetNotificationSettings(FREContext context, void* functionData, uint32_t argc, FREObject argv[]) {
-    NSLog(@"ANXDeviceInfoNotificationCenterGetNotificationSettings");
-    
-    ANXBridgeCall* call = [ANXBridge call:context];
-    
-    [ANXNotificationCenter getNotificationSettingsWithCompletion:^(NSString *authorizationStatus) {
-        [call result:[[ANXNotificationCenterSettingsVO alloc] initWithAuthorizationStatus:authorizationStatus]];
-    }];
-    
-    return [call toFREObject];
+    NSLog(@"Use com.github.airext.Notifications ANE for notifications");
+    return NULL;
 }
 
 FREObject ANXDeviceInfoNotificationCenterRequestAuthorization(FREContext context, void* functionData, uint32_t argc, FREObject argv[]) {
-    NSLog(@"ANXDeviceInfoNotificationCenterRequestAuthorization");
-    
-    ANXBridgeCall* call = [ANXBridge call:context];
-    
-    if (argc > 0) {
-        NSInteger options = [ANXDeviceInfoConversionRoutines convertFREObjectToNSInteger:argv[0] withDefault:0];
-        [ANXNotificationCenter requestAuthorizationWithOPtions:options withCompletion:^(BOOL granted, NSError *error) {
-            if (granted) {
-                [call result:@"granted"];
-            } else {
-                if (error) {
-                    [call reject:error];
-                } else {
-                    [call result:@"denied"];
-                }
-            }
-        }];
-    }
-    
-    return [call toFREObject];
+    NSLog(@"Use com.github.airext.Notifications ANE for notifications");
+    return NULL;
 }
 
 FREObject ANXDeviceInfoNotificationCenterAddRequest(FREContext context, void* functionData, uint32_t argc, FREObject argv[]) {
-    NSLog(@"ANXDeviceInfoNotificationCenterAddRequest");
-    
-    ANXBridgeCall* call = [ANXBridge call:context];
-    
-    if (argc > 0) {
-        FREObject request = argv[0];
-        FREObject content = [ANXDeviceInfoConversionRoutines readFREObjectFrom:request field:@"content"];
-        FREObject trigger = [ANXDeviceInfoConversionRoutines readFREObjectFrom:request field:@"trigger"];
-        
-        NSInteger identifier = [ANXDeviceInfoConversionRoutines readNSIntegerFrom:request field:@"identifier" withDefaultValue:0];
-        NSString* title      = [ANXDeviceInfoConversionRoutines readNSStringFrom:content field:@"title" withDefaultValue:@""];
-        NSString* body       = [ANXDeviceInfoConversionRoutines readNSStringFrom:content field:@"body" withDefaultValue:@""];
-        FREObject sound      = [ANXDeviceInfoConversionRoutines readFREObjectFrom:content field:@"sound"];
-
-        NSLog(@"ANX sound:%@", sound != nil ? @"some sound" : @"nil");
-
-        NSString* soundName  = nil;
-        if (sound) {
-            soundName = [ANXDeviceInfoConversionRoutines readNSStringFrom:sound field:@"named" withDefaultValue:nil];
-        }
-
-        NSLog(@"ANX soundName:%@", soundName);
-
-        NSTimeInterval timeInterval = [ANXDeviceInfoConversionRoutines readDoubleFrom:trigger field:@"timeInterval" withDefaultValue:0.0];
-        
-        FREObject userInfoObject;
-        FRECallObjectMethod(content, (const uint8_t *) "userInfoAsJSON", 0, NULL, &userInfoObject, NULL);
-        NSString* userInfo   = [ANXDeviceInfoConversionRoutines convertFREObjectToNSString:userInfoObject];
-
-        NSString* identifierAsString = [NSString stringWithFormat:@"%li", (long)identifier];
-
-        [ANXNotificationCenter.sharedInstance addNotificationRequestWithIdentifier:identifierAsString
-                                                                         timestamp:timeInterval
-                                                                             title:title
-                                                                              body:body
-                                                                        soundNamed:soundName
-                                                                          userInfo:userInfo
-                                                                    withCompletion:^(NSError *error) {
-            if (error) {
-                [call reject:error];
-            } else {
-                [call result:nil];
-            }
-        }];
-    }
-    
-    return [call toFREObject];
+    NSLog(@"Use com.github.airext.Notifications ANE for notifications");
+    return NULL;
 }
 
 FREObject ANXDeviceInfoNotificationCenterRemovePendingNotificationRequests(FREContext context, void* functionData, uint32_t argc, FREObject argv[]) {
-    NSLog(@"ANXDeviceInfoNotificationCenterRemovePendingNotificationRequests");
-    if (argc > 0) {
-        NSMutableArray* identifiers = [NSMutableArray array];
-        uint32_t identifierCount;
-        FREGetArrayLength(argv[0], &identifierCount);
-        for (uint32_t index = 0; index < identifierCount; index++) {
-            FREObject identifierObject;
-            FREGetArrayElementAt(argv[0], index, &identifierObject);
-            
-            [identifiers addObject:[NSString stringWithFormat:@"(long)%li", (long)[ANXDeviceInfoConversionRoutines convertFREObjectToNSInteger:identifierObject withDefault:0]]];
-        }
-        
-        [ANXNotificationCenter.sharedInstance removePendingNotificationRequestWithIdentifiers:identifiers];
-    }
+    NSLog(@"Use com.github.airext.Notifications ANE for notifications");
     return NULL;
 }
 
 FREObject ANXDeviceInfoNotificationCenterRemoveAllPendingNotificationRequests(FREContext context, void* functionData, uint32_t argc, FREObject argv[]) {
-    NSLog(@"ANXDeviceInfoNotificationCenterRemoveAllPendingNotificationRequests");
-    [ANXNotificationCenter.sharedInstance removeAllPendingRequests];
+    NSLog(@"Use com.github.airext.Notifications ANE for notifications");
     return NULL;
 }
 
 FREObject ANXDeviceInfoNotificationCenterCanOpenSettings(FREContext context, void* functionData, uint32_t argc, FREObject argv[]) { 
-    NSLog(@"ANXDeviceInfoNotificationCenterCanOpenSettings");
+    NSLog(@"Use com.github.airext.Notifications ANE for notifications");
     return NULL;
 }
 
 FREObject ANXDeviceInfoNotificationCenterOpenSettings(FREContext context, void* functionData, uint32_t argc, FREObject argv[]) {
-    NSLog(@"ANXDeviceInfoNotificationCenterOpenSettings");
+    NSLog(@"Use com.github.airext.Notifications ANE for notifications");
     return NULL;
 }
 
