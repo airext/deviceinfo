@@ -93,7 +93,7 @@ public class PresentAlertFunction implements FREFunction {
             builder.setMessage(message);
         }
 
-        // set Cancellation (Negative)
+        // set Cancellation (Negative) or Normal (Negative)
 
         final ActionDescriptor cancellationAction = ActionDescriptor.findCancellationAction(actionDescriptors);
         if (cancellationAction != null) {
@@ -110,6 +110,16 @@ public class PresentAlertFunction implements FREFunction {
                     call.result(cancellationAction.getIndex());
                 }
             });
+        } else {
+            final ActionDescriptor normalAction = ActionDescriptor.findNormalAction(actionDescriptors);
+            if (normalAction != null) {
+                builder.setNegativeButton(normalAction.getTitle(), new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        call.result(normalAction.getIndex());
+                    }
+                });
+            }
         }
 
         // set Default (Positive)
@@ -183,15 +193,18 @@ class ActionDescriptor {
                 return descriptor;
             }
         }
+        return null;
+    }
 
-        // If there is an another default button use it as cancellation one
+    @Nullable
+    static ActionDescriptor findNormalAction(ArrayList<ActionDescriptor> descriptors) {
+        // if there is two default buttons, trait second as normal (negative)
         ActionDescriptor defaultAction = findDefaultAction(descriptors);
         for (ActionDescriptor descriptor : descriptors) {
             if (descriptor.isDefault() && descriptor != defaultAction) {
                 return descriptor;
             }
         }
-
         return null;
     }
 
