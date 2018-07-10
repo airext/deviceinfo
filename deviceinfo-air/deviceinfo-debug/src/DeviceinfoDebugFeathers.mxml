@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <f:Application xmlns:fx="http://ns.adobe.com/mxml/2009"
-               xmlns:f="library://ns.feathersui.com/mxml" xmlns:utils="utils.*"
+               xmlns:f="library://ns.feathersui.com/mxml"
                theme="feathers.themes.MetalWorksMobileTheme">
 
     <fx:Script>
@@ -13,28 +13,6 @@
         import com.github.airext.appearance.Theme;
         import com.github.airext.appearance.ThemeAndroidStyle;
         import com.github.airext.appearance.ThemeStyle;
-        import com.github.airext.notification.NotificationCenter;
-        import com.github.airext.notification.NotificationCenterAuthorizationOptions;
-        import com.github.airext.notification.NotificationCenterEvent;
-        import com.github.airext.notification.NotificationCenterSettings;
-        import com.github.airext.notification.NotificationContent;
-        import com.github.airext.notification.NotificationRequest;
-        import com.github.airext.notification.NotificationSound;
-        import com.github.airext.notification.TimeIntervalNotificationTrigger;
-
-        import flash.events.InvokeEvent;
-
-        // NativeApplication handlers
-
-        NativeApplication.nativeApplication.addEventListener(InvokeEvent.INVOKE, function (event: InvokeEvent): void {
-            log(event.arguments + " " + event.reason);
-        });
-        NotificationCenter.current.addEventListener(NotificationCenterEvent.NOTIFICATION_RECEIVED_IN_BACKGROUND, function (event: NotificationCenterEvent): void {
-            log("received in background:" + event.parameters);
-        });
-        NotificationCenter.current.addEventListener(NotificationCenterEvent.NOTIFICATION_RECEIVED_IN_FOREGROUND, function (event: NotificationCenterEvent): void {
-            log("received in foreground:" + event.parameters);
-        });
 
         // Alerts
 
@@ -43,15 +21,18 @@
             alertController.addAction(new AlertAction("OK", AlertActionStyle.normal, function (): void {
                 log("OK");
             }));
+            alertController.addAction(new AlertAction("Cancel", AlertActionStyle.normal, function (): void {
+                log("Cancel");
+            }));
             alertController.present();
         }
 
         private function showActionSheet(title: String, message: String): void {
             var alertController: Alert = new Alert(title, message, AlertStyle.actionSheet);
-            alertController.addAction(new AlertAction("Cancel", AlertActionStyle.cancellation, function (): void {
+            alertController.addAction(new AlertAction("Cancel", AlertActionStyle.normal, function (): void {
                 log("Cancel");
             }));
-            alertController.addAction(new AlertAction("Delete", AlertActionStyle.destructive, function (): void {
+            alertController.addAction(new AlertAction("Delete", AlertActionStyle.normal, function (): void {
                 log("Delete");
             }));
             alertController.addAction(new AlertAction("Send", AlertActionStyle.normal, function (): void {
@@ -71,6 +52,7 @@
         // Helper methods
 
         private static var outputText: ScrollText;
+
         private static function log(...rest): void {
             trace(rest);
             outputText.text += rest + "\n";
@@ -97,44 +79,9 @@
             log("systemVersion: " + info.systemVersion);
         }
 
-        private function sendLocalNotification(): void {
-            var content: NotificationContent = new NotificationContent();
-            content.title = "Title";
-            content.body = "Message";
-            content.userInfo = {message: "Hello, world!"};
-            content.sound = new NotificationSound("alert_17.wav");
-//                content.sound = new NotificationSound("alert_tone.aiff");
-//                content.sound = new NotificationSound("alert_tone.mp3");
-
-            var trigger: TimeIntervalNotificationTrigger = new TimeIntervalNotificationTrigger(0);
-            var request: NotificationRequest = new NotificationRequest(1, content, trigger);
-
-            NotificationCenter.current.add(request, function (error: Error): void {
-                if (error) {
-                    log(error);
-                } else {
-                    log("Notification requested: " + request);
-                }
-            });
-        }
-
-        private function localNotificationRequestAuthorization(): void {
-            var options: int = NotificationCenterAuthorizationOptions.alert.rawValue | NotificationCenterAuthorizationOptions.sound.rawValue;
-            NotificationCenter.requestAuthorizationWithOptions(options, function (status: String, error: Error = null) {
-                log(status, error);
-            });
-        }
-
-        private function localNotificationGetNotificationSettings(): void {
-            NotificationCenter.getNotificationSettingsWithCompletion(function (settings: NotificationCenterSettings) {
-                log(settings.authorizationStatus);
-            });
-        }
-
         private function getSafeArea(): void {
             log("safe area:" + DeviceInfo.sharedInstance.screen.getSafeArea());
         }
-
         ]]>
     </fx:Script>
 
@@ -203,21 +150,6 @@
         </f:Label>
 
         <f:Button label="getSafeArea" triggered="getSafeArea()" />
-
-        <f:Label text="Local Notifications">
-            <f:textRendererProperties>
-                <fx:Object>
-                    <fx:textAlign>center</fx:textAlign>
-                </fx:Object>
-            </f:textRendererProperties>
-        </f:Label>
-
-        <f:Button label="sendLocalNotification" triggered="sendLocalNotification()" />
-        <f:Button label="localNotificationEnabled" triggered="log(NotificationCenter.isEnabled)" />
-        <f:Button label="localNotificationCanOpenSettings" triggered="log(NotificationCenter.canOpenSettings)" />
-        <f:Button label="localNotificationOpenSettings" triggered="NotificationCenter.openSettings()" />
-        <f:Button label="localNotificationRequestAuthorization" triggered="localNotificationRequestAuthorization()" />
-        <f:Button label="localGetNotificationSettings" triggered="localNotificationGetNotificationSettings()" />
 
         <f:Label text="Theme">
             <f:textRendererProperties>

@@ -81,6 +81,9 @@ public class PresentAlertFunction implements FREFunction {
         }
 
         final Call call = Bridge.call(context);
+        if (call == null) {
+            return null;
+        }
 
         AlertDialog.Builder builder = new AlertDialog.Builder(activity);
         if (title != null && !title.equals("")) {
@@ -90,9 +93,11 @@ public class PresentAlertFunction implements FREFunction {
             builder.setMessage(message);
         }
 
+        // set Cancellation (Negative)
+
         final ActionDescriptor cancellationAction = ActionDescriptor.findCancellationAction(actionDescriptors);
         if (cancellationAction != null) {
-            builder.setNeutralButton(cancellationAction.getTitle(), new DialogInterface.OnClickListener() {
+            builder.setNegativeButton(cancellationAction.getTitle(), new DialogInterface.OnClickListener() {
                 @Override
                 public void onClick(DialogInterface dialogInterface, int i) {
                     call.result(cancellationAction.getIndex());
@@ -107,6 +112,8 @@ public class PresentAlertFunction implements FREFunction {
             });
         }
 
+        // set Default (Positive)
+
         final ActionDescriptor defaultAction = ActionDescriptor.findDefaultAction(actionDescriptors);
         if (defaultAction != null) {
             builder.setPositiveButton(defaultAction.getTitle(), new DialogInterface.OnClickListener() {
@@ -117,9 +124,11 @@ public class PresentAlertFunction implements FREFunction {
             });
         }
 
+        // set Destructive (Neutral)
+
         final ActionDescriptor destructiveAction = ActionDescriptor.findDestructiveAction(actionDescriptors);
         if (destructiveAction != null) {
-            builder.setNegativeButton(destructiveAction.getTitle(), new DialogInterface.OnClickListener() {
+            builder.setNeutralButton(destructiveAction.getTitle(), new DialogInterface.OnClickListener() {
                 @Override
                 public void onClick(DialogInterface dialogInterface, int i) {
                     call.result(destructiveAction.getIndex());
@@ -158,7 +167,7 @@ class ActionDescriptor {
     static int styleDestructive = 2;
 
     @Nullable
-    public static ActionDescriptor findDefaultAction(ArrayList<ActionDescriptor> descriptors) {
+    static ActionDescriptor findDefaultAction(ArrayList<ActionDescriptor> descriptors) {
         for (ActionDescriptor descriptor : descriptors) {
             if (descriptor.isDefault()) {
                 return descriptor;
@@ -168,17 +177,26 @@ class ActionDescriptor {
     }
 
     @Nullable
-    public static ActionDescriptor findCancellationAction(ArrayList<ActionDescriptor> descriptors) {
+    static ActionDescriptor findCancellationAction(ArrayList<ActionDescriptor> descriptors) {
         for (ActionDescriptor descriptor : descriptors) {
             if (descriptor.isCancellation()) {
                 return descriptor;
             }
         }
+
+        // If there is an another default button use it as cancellation one
+        ActionDescriptor defaultAction = findDefaultAction(descriptors);
+        for (ActionDescriptor descriptor : descriptors) {
+            if (descriptor.isDefault() && descriptor != defaultAction) {
+                return descriptor;
+            }
+        }
+
         return null;
     }
 
     @Nullable
-    public static ActionDescriptor findDestructiveAction(ArrayList<ActionDescriptor> descriptors) {
+    static ActionDescriptor findDestructiveAction(ArrayList<ActionDescriptor> descriptors) {
         for (ActionDescriptor descriptor : descriptors) {
             if (descriptor.isDestructive()) {
                 return descriptor;
@@ -187,7 +205,7 @@ class ActionDescriptor {
         return null;
     }
 
-    public static ArrayList<ActionDescriptor> fromFREArray(FREArray array) {
+    static ArrayList<ActionDescriptor> fromFREArray(FREArray array) {
         ArrayList<ActionDescriptor> descriptors = new ArrayList<ActionDescriptor>();
         try {
             for (int i = 0, n = array != null ? (int)array.getLength() : 0; i < n; i++) {
@@ -201,7 +219,7 @@ class ActionDescriptor {
         return  descriptors;
     }
 
-    public ActionDescriptor(FREObject action) {
+    private ActionDescriptor(FREObject action) {
         super();
 
         try {
@@ -224,25 +242,25 @@ class ActionDescriptor {
     }
 
     private Boolean enabled;
-    public Boolean isEnabled() {
+    Boolean isEnabled() {
         return enabled;
     }
 
-    public Boolean isDefault() {
+    private Boolean isDefault() {
         return style == styleDefault;
     }
-    public Boolean isDestructive() {
+    private Boolean isDestructive() {
         return style == styleDestructive;
     }
-    public Boolean isCancellation() {
+    private Boolean isCancellation() {
         return style == styleCancellation;
     }
 
-    public int index;
-    public int getIndex() {
+    private int index;
+    int getIndex() {
         return index;
     }
-    public void setIndex(int index) {
+    private void setIndex(int index) {
         this.index = index;
     }
 }
