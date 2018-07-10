@@ -45,27 +45,3 @@
 }
 
 @end
-
-@implementation ANXNotificationCenterSettingsVO {
-    NSString* _authorizationStatus;
-}
-
-- (id)initWithAuthorizationStatus:(NSString*)authorizationStatus {
-    if ([super init]) {
-        _authorizationStatus = authorizationStatus;
-    }
-    return self;
-}
-
-- (FREObject)toFREObject {
-    FREObject resultObject;
-    if (FRENewObject((const uint8_t *)"com.github.airext.notification.NotificationCenterSettings", 0, NULL, &resultObject, NULL) != FRE_OK) {
-        return NULL;
-    }
-    if (FRESetObjectProperty(resultObject, (const uint8_t *)"authorizationStatus", [ANXDeviceInfoConversionRoutines convertNSStringToFREObject:_authorizationStatus], NULL) != FRE_OK) {
-        return NULL;
-    }
-    return resultObject;
-}
-
-@end

@@ -1,10 +1,9 @@
 package com.github.airext.deviceinfo.functions;
 
 import android.app.Activity;
-import android.content.pm.PackageManager;
 import com.adobe.fre.FREContext;
 import com.adobe.fre.FREObject;
-import com.distriqt.extension.Resources;
+import com.github.airext.deviceinfo.utils.Resources;
 import com.github.airext.deviceinfo.utils.ConversionRoutines;
 
 /**

@@ -20,11 +20,3 @@
 - (FREObject)toFREObject;
 
 @end
-
-@interface ANXNotificationCenterSettingsVO : NSObject
-
-- (id)initWithAuthorizationStatus:(NSString*)authorizationStatus;
-
-- (FREObject)toFREObject;
-
-@end

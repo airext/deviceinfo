@@ -80,15 +80,15 @@
         // Handlers
 
         private function getIMEI(): void {
-            log('imei:' + DeviceInfo.sharedInstance().getIMEI())
+            log('imei:' + DeviceInfo.sharedInstance.getIMEI())
         }
 
         private function getDeviceIdentifier(): void {
-            log('getVendorIdentifier:' + DeviceInfo.sharedInstance().general.ios.getVendorIdentifier())
+            log('getVendorIdentifier:' + DeviceInfo.sharedInstance.general.ios.getVendorIdentifier())
         }
 
         private function getDeviceInfo(): void {
-            var info: Object = DeviceInfo.sharedInstance().general || {};
+            var info: Object = DeviceInfo.sharedInstance.general || {};
 
             log("name: " + info.name);
             log("model: " + info.model);
@@ -132,7 +132,7 @@
         }
 
         private function getSafeArea(): void {
-            log("safe area:" + DeviceInfo.sharedInstance().screen.getSafeArea());
+            log("safe area:" + DeviceInfo.sharedInstance.screen.getSafeArea());
         }
 
         ]]>

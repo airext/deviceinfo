@@ -16,7 +16,7 @@
  * @copyright	http://distriqt.com/copyright/license.txt
  *
  */
-package com.distriqt.extension;
+package com.github.airext.deviceinfo.utils;
 
 import android.util.Log;
 import java.lang.reflect.Field;
