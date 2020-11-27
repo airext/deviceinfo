@@ -13,6 +13,9 @@
         import com.github.airext.appearance.Theme;
         import com.github.airext.appearance.ThemeAndroidStyle;
         import com.github.airext.appearance.ThemeStyle;
+        import com.github.airext.utils.SystemUtil;
+
+        import starling.utils.SystemUtil;
 
         // Alerts
 
@@ -86,6 +89,13 @@
         private function getSafeArea(): void {
             log("safe area:" + DeviceInfo.shared.screen.getSafeArea());
         }
+
+        private function ignoreSnapshotOnNextApplicationLaunch(): void {
+            trace(Capabilities.version, com.github.airext.utils.SystemUtil.isIOS);
+            var device = DeviceInfo.shared;
+            var ios = DeviceInfo.shared.general.ios;
+            trace(ios);
+            DeviceInfo.shared.general.ios.ignoreSnapshotOnNextApplicationLaunch();
         }
         ]]>
     </fx:Script>
@@ -172,6 +182,16 @@
         <f:Button label="setHoloDarkTheme" triggered="Theme.shared.android.style = ThemeAndroidStyle.HoloDark" />
         <f:Button label="setHoloLightTheme" triggered="Theme.shared.android.style = ThemeAndroidStyle.HoloLight" />
         <f:Button label="setAirDefaultTheme" triggered="Theme.shared.android.style = ThemeAndroidStyle.NoShadow" />
+
+        <f:Label text="iOS State Preservation">
+            <f:textRendererProperties>
+                <fx:Object>
+                    <fx:textAlign>center</fx:textAlign>
+                </fx:Object>
+            </f:textRendererProperties>
+        </f:Label>
+
+        <f:Button label="ignoreSnapshotOnNextApplicationLaunch()" triggered="ignoreSnapshotOnNextApplicationLaunch()" />
 
     </f:ScrollContainer>
 

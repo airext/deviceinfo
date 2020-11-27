@@ -4,6 +4,7 @@
 package com.github.airext.deviceinfo
 {
 import com.github.airext.core.device_info;
+import com.github.airext.utils.SystemUtil;
 
 use namespace device_info;
 
@@ -73,6 +74,9 @@ public class DeviceInfoGeneral
 
     private var _ios:DeviceInfoGeneralIOS;
     public function get ios():DeviceInfoGeneralIOS {
+        if (!SystemUtil.isIOS) {
+            return null;
+        }
         if (_ios == null) {
             _ios = new DeviceInfoGeneralIOS();
         }
@@ -86,6 +90,9 @@ public class DeviceInfoGeneral
 
     private var _android:DeviceInfoGeneralAndroid;
     public function get android():DeviceInfoGeneralAndroid {
+        if (!SystemUtil.isAndroid) {
+            return null;
+        }
         if (_android == null) {
             _android = new DeviceInfoGeneralAndroid();
         }

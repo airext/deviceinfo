@@ -8,16 +8,15 @@ import com.github.airext.core.device_info;
 
 use namespace device_info;
 
-public class DeviceInfoGeneralIOS
-{
+public class DeviceInfoGeneralIOS {
+
     //--------------------------------------------------------------------------
     //
     //  Constructor
     //
     //--------------------------------------------------------------------------
 
-    public function DeviceInfoGeneralIOS()
-    {
+    public function DeviceInfoGeneralIOS() {
         super();
     }
 
@@ -27,9 +26,20 @@ public class DeviceInfoGeneralIOS
     //
     //--------------------------------------------------------------------------
 
-    public function getVendorIdentifier():String
-    {
+    //------------------------------------
+    //  Methods: Platform Info
+    //------------------------------------
+
+    public function getVendorIdentifier():String {
         return DeviceInfo.context.call("iosGetVendorIdentifier") as String;
+    }
+
+    //------------------------------------
+    //  Methods: State preservation
+    //------------------------------------
+
+    public function ignoreSnapshotOnNextApplicationLaunch(): void {
+        DeviceInfo.context.call("ignoreSnapshotOnNextApplicationLaunch");
     }
 }
 }

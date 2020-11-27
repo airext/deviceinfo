@@ -224,13 +224,19 @@ FREObject ANXDeviceInfoOpenSettings(FREContext context, void* functionData, uint
     return NULL;
 }
 
+FREObject ANXDeviceInfoIgnoreSnapshotOnNextApplicationLaunch(FREContext context, void* functionData, uint32_t argc, FREObject argv[]) {
+    NSLog(@"ANXDeviceInfoIgnoreSnapshotOnNextApplicationLaunch");
+    [UIApplication.sharedApplication ignoreSnapshotOnNextApplicationLaunch];
+    return NULL;
+}
+
 #pragma mark ContextInitialize/ContextFinalizer
 
 void ANXDeviceInfoContextInitializer(void* extData, const uint8_t* ctxType, FREContext ctx, uint32_t* numFunctionsToSet, const FRENamedFunction** functionsToSet)
 {
     NSLog(@"ANXDeviceInfoContextInitializer");
     
-    *numFunctionsToSet = 19;
+    *numFunctionsToSet = 20;
     
     FRENamedFunction* func = (FRENamedFunction*) malloc(sizeof(FRENamedFunction) * (*numFunctionsToSet));
     
@@ -329,6 +335,12 @@ void ANXDeviceInfoContextInitializer(void* extData, const uint8_t* ctxType, FREC
     func[18].name = (const uint8_t*) "openSettings";
     func[18].functionData = NULL;
     func[18].function = &ANXDeviceInfoOpenSettings;
+
+    // state preservation
+
+    func[19].name = (const uint8_t*) "ignoreSnapshotOnNextApplicationLaunch";
+    func[19].functionData = NULL;
+    func[19].function = &ANXDeviceInfoIgnoreSnapshotOnNextApplicationLaunch;
 
     // setup bridge
     

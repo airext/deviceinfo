@@ -183,7 +183,7 @@
             <arg line="${keystore.file}"/>
             <arg line="-storepass"/>
             <arg line="${keystore.password}"/>
-            <arg line="-tsa http://timestamp.entrust.net/TSS/JavaHttpTS"/>
+            <arg line="-tsa http://timestamp.globalsign.com/scripts/timstamp.dll"/>
             <arg line="-target"/>
             <arg line="ane"/>
             <arg line="${name}.ane"/>
