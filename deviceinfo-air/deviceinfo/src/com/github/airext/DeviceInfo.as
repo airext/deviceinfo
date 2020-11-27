@@ -77,7 +77,7 @@ public class DeviceInfo {
      *
      * @return
      */
-    public static function get sharedInstance(): DeviceInfo {
+    public static function get shared(): DeviceInfo {
         if (instance == null) {
             instance = new DeviceInfo();
         }
@@ -291,9 +291,9 @@ public class DeviceInfo {
      * Logs specified message through NSLog on iOS and Log.w on Android. Could
      * take one or two params:
      *
-     * <code>DeviceInfo.sharedInstance().log("Logging message");</code>
+     * <code>DeviceInfo.shared.log("Logging message");</code>
      * or
-     * <code>DeviceInfo.sharedInstance().log("TAG", "Logging message");</code>
+     * <code>DeviceInfo.shared.log("TAG", "Logging message");</code>
      * if TAG is not specified the Application's id will used. TAG is always
      * ignored on iOS.
      *

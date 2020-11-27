@@ -62,15 +62,19 @@
         // Handlers
 
         private function getIMEI(): void {
-            log('imei:' + DeviceInfo.sharedInstance.getIMEI())
+            log('imei:' + DeviceInfo.shared.getIMEI())
         }
 
         private function getDeviceIdentifier(): void {
-            log('getVendorIdentifier:' + DeviceInfo.sharedInstance.general.ios.getVendorIdentifier())
+            if (starling.utils.SystemUtil.isIOS) {
+                log('getVendorIdentifier:' + DeviceInfo.shared.general.ios.getVendorIdentifier());
+            } else if (com.github.airext.utils.SystemUtil.isAndroid) {
+                log('getAndroidIdentifier:' + DeviceInfo.shared.general.android.getAndroidIdentifier());
+            }
         }
 
         private function getDeviceInfo(): void {
-            var info: Object = DeviceInfo.sharedInstance.general || {};
+            var info: Object = DeviceInfo.shared.general || {};
 
             log("name: " + info.name);
             log("model: " + info.model);
@@ -80,7 +84,8 @@
         }
 
         private function getSafeArea(): void {
-            log("safe area:" + DeviceInfo.sharedInstance.screen.getSafeArea());
+            log("safe area:" + DeviceInfo.shared.screen.getSafeArea());
+        }
         }
         ]]>
     </fx:Script>
@@ -126,8 +131,8 @@
                 <!--</fx:Object>-->
             <!--</f:textRendererProperties>-->
         <!--</f:Label>-->
-        <!--<f:Button label="hideStatusBar" triggered="DeviceInfo.sharedInstance().statusBar.setHidden(true)" />-->
-        <!--<f:Button label="showStatusBar" triggered="DeviceInfo.sharedInstance().statusBar.setHidden(false)" />-->
+        <!--<f:Button label="hideStatusBar" triggered="DeviceInfo.shared.statusBar.setHidden(true)" />-->
+        <!--<f:Button label="showStatusBar" triggered="DeviceInfo.shared.statusBar.setHidden(false)" />-->
 
         <f:Label text="Alert">
             <f:textRendererProperties>

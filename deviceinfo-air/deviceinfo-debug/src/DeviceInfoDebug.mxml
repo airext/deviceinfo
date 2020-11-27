@@ -14,62 +14,62 @@
         import com.github.airext.alert.AlertActionStyle;
         import com.github.airext.alert.AlertStyle;
         import com.github.airext.appearance.StatusBarStyle;
-        import com.github.airext.info.DeviceInfoGeneral;
+        import com.github.airext.deviceinfo.DeviceInfoGeneral;
 
         import spark.components.Alert;
 
         private function imei_clickHandler(event: MouseEvent): void {
-            spark.components.Alert.show(String(DeviceInfo.sharedInstance().getIMEI()));
+            spark.components.Alert.show(String(DeviceInfo.shared.getIMEI()));
         }
 
         private function general_clickHandler(event: MouseEvent): void {
-            var general: DeviceInfoGeneral = DeviceInfo.sharedInstance().general;
+            var general: DeviceInfoGeneral = DeviceInfo.shared.general;
 
             spark.components.Alert.show(String(general));
         }
 
         private function iosVendorIdentifier_clickHandler(event: MouseEvent): void {
-            var general: DeviceInfoGeneral = DeviceInfo.sharedInstance().general;
+            var general: DeviceInfoGeneral = DeviceInfo.shared.general;
 
             spark.components.Alert.show(String(general.ios.getVendorIdentifier()));
         }
 
         private function androidIdentifier_clickHandler(event: MouseEvent): void {
-            var general: DeviceInfoGeneral = DeviceInfo.sharedInstance().general;
+            var general: DeviceInfoGeneral = DeviceInfo.shared.general;
 
             spark.components.Alert.show(String(general.android.getAndroidIdentifier()));
         }
 
         private function batteryMonitor_clickHandler(event: MouseEvent): void {
-            if (DeviceInfo.sharedInstance().battery.isMonitoring) {
-                DeviceInfo.sharedInstance().battery.stopMonitoring();
+            if (DeviceInfo.shared.battery.isMonitoring) {
+                DeviceInfo.shared.battery.stopMonitoring();
             }
             else {
-                DeviceInfo.sharedInstance().battery.startMonitoring();
+                DeviceInfo.shared.battery.startMonitoring();
             }
         }
 
         private function log_clickHandler(event: MouseEvent): void {
-            DeviceInfo.sharedInstance().log(logInput.text);
+            DeviceInfo.shared.log(logInput.text);
         }
 
         private function crash_clickHandler(event: MouseEvent): void {
-            DeviceInfo.sharedInstance().crash();
+            DeviceInfo.shared.crash();
         }
 
         //        [Bindable]
-        //        private var isStatusBarHidden:Boolean = DeviceInfo.sharedInstance().statusBar.isHidden;
+        //        private var isStatusBarHidden:Boolean = DeviceInfo.shared.statusBar.isHidden;
 
         [Bindable]
-        public var statusBarStyle: String = DeviceInfo.sharedInstance().statusBar.getStyle();
+        public var statusBarStyle: String = DeviceInfo.shared.statusBar.getStyle();
 
         private function setStatusBarStyle_clickHandler(event: MouseEvent): void {
-            if (DeviceInfo.sharedInstance().statusBar.getStyle() == StatusBarStyle.DEFAULT)
-                DeviceInfo.sharedInstance().statusBar.setStyle(StatusBarStyle.LIGHT);
+            if (DeviceInfo.shared.statusBar.getStyle() == StatusBarStyle.DEFAULT)
+                DeviceInfo.shared.statusBar.setStyle(StatusBarStyle.LIGHT);
             else
-                DeviceInfo.sharedInstance().statusBar.setStyle(StatusBarStyle.DEFAULT);
+                DeviceInfo.shared.statusBar.setStyle(StatusBarStyle.DEFAULT);
 
-            statusBarStyle = DeviceInfo.sharedInstance().statusBar.getStyle();
+            statusBarStyle = DeviceInfo.shared.statusBar.getStyle();
         }
 
         private function hideStatusBar_clickHandler(event: MouseEvent): void {
@@ -78,12 +78,12 @@
             } else {
                 stage.displayState = StageDisplayState.FULL_SCREEN_INTERACTIVE;
             }
-//            if (DeviceInfo.sharedInstance().statusBar.isHidden)
-//                DeviceInfo.sharedInstance().statusBar.setHidden(false, StatusBarAnimation.FADE);
+//            if (DeviceInfo.shared.statusBar.isHidden)
+//                DeviceInfo.shared.statusBar.setHidden(false, StatusBarAnimation.FADE);
 //            else
-//                DeviceInfo.sharedInstance().statusBar.setHidden(true, StatusBarAnimation.SLIDE);
+//                DeviceInfo.shared.statusBar.setHidden(true, StatusBarAnimation.SLIDE);
 //
-//            isStatusBarHidden = DeviceInfo.sharedInstance().statusBar.isHidden;
+//            isStatusBarHidden = DeviceInfo.shared.statusBar.isHidden;
         }
 
         // Alert
@@ -122,11 +122,11 @@
 
             <s:VGroup contentBackgroundColor="#FFFFFF">
                 <s:HGroup width="100%">
-                    <s:Label text="Battery State:{DeviceInfo.sharedInstance().battery.state}" />
-                    <s:Label text="Battery Level:{DeviceInfo.sharedInstance().battery.level}" />
+                    <s:Label text="Battery State:{DeviceInfo.shared.battery.state}" />
+                    <s:Label text="Battery Level:{DeviceInfo.shared.battery.level}" />
                 </s:HGroup>
                 <s:HGroup>
-                    <s:Button label="{DeviceInfo.sharedInstance().battery.isMonitoring ? 'Stop Battery Monitoring' : 'Start Battery Monitoring'}" click="batteryMonitor_clickHandler(event)" />
+                    <s:Button label="{DeviceInfo.shared.battery.isMonitoring ? 'Stop Battery Monitoring' : 'Start Battery Monitoring'}" click="batteryMonitor_clickHandler(event)" />
                 </s:HGroup>
             </s:VGroup>
 

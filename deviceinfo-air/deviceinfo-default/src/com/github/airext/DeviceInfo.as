@@ -28,7 +28,7 @@ public class DeviceInfo
 
     private static var instance: DeviceInfo;
 
-    public static function get sharedInstance(): DeviceInfo {
+    public static function get shared(): DeviceInfo {
         if (instance == null) {
             instance = new DeviceInfo();
         }
