@@ -17,7 +17,7 @@
         FREResult result;
         
         FREObject info;
-        result = FRENewObject((const uint8_t *) "com.github.airext.data.DeviceInfoGeneral", 0, NULL, &info, NULL);
+        result = FRENewObject((const uint8_t *) "com.github.airext.deviceinfo.DeviceInfoGeneral", 0, NULL, &info, NULL);
         
         if (result != FRE_OK)
             return NULL;
