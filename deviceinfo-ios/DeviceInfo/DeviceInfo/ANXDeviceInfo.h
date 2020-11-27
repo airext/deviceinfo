@@ -12,14 +12,6 @@
 #import "ANXDeviceInfoGeneral.h"
 #import "ANXDeviceInfoConversionRoutines.h"
 
-int isOperatingSystemAtLeast(int major, int minor, int patch) {
-    NSOperatingSystemVersion version;
-    version.majorVersion = major;
-    version.minorVersion = minor;
-    version.patchVersion = patch;
-    return [[NSProcessInfo processInfo] isOperatingSystemAtLeastVersion:version];
-}
-
 @interface ANXDeviceInfo : NSObject
 
 #pragma mark Shared Instance

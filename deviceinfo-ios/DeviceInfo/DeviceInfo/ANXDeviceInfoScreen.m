@@ -29,8 +29,7 @@
         NSLog(@"ANXDeviceInfoScreen.getSafeArea no view");
         return UIEdgeInsetsZero;
     }
-
-    if (isOperatingSystemAtLeast(11, 0, 0)) {
+    if (@available(iOS 11.0, *)) {
         return view.safeAreaInsets;
     } else {
         return UIEdgeInsetsMake(viewController.topLayoutGuide.length, 0.0, viewController.bottomLayoutGuide.length, 0.0);
