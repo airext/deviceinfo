@@ -183,7 +183,7 @@
             <arg line="${keystore.file}"/>
             <arg line="-storepass"/>
             <arg line="${keystore.password}"/>
-            <arg line="-tsa http://timestamp.globalsign.com/scripts/timstamp.dll"/>
+            <arg line="-tsa http://timestamp.apple.com/ts01"/>
             <arg line="-target"/>
             <arg line="ane"/>
             <arg line="${name}.ane"/>

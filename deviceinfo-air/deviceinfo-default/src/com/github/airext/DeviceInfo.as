@@ -157,6 +157,14 @@ public class DeviceInfo
         return _statusBar;
     }
 
+    //-------------------------------------
+    //  openSettings
+    //-------------------------------------
+
+    public function openSettings(): void {
+        trace("DeviceInfo is not supported for " + Capabilities.os);
+    }
+
     //--------------------------------------------------------------------------
     //
     //  Methods
