@@ -71,9 +71,6 @@
 		<!-- Copy Android build artifacts to temporary build folder -->
 		<copy file="${android.project.dir}/deviceinfo/build/libs/deviceinfo.jar" tofile="temp/android/libDeviceInfo.jar" overwrite="true"/>
 
-        <!-- Copy manifest to include it into ANE file -->
-        <copy file="${android.project.dir}/deviceinfo/src/main/AndroidManifest.xml" todir="temp/android" overwrite="true"/>
-
         <!-- Copy res fodler to be packaged into ANE file -->
         <copy todir="temp/android/res" overwrite="true">
             <fileset dir="${android.project.dir}/deviceinfo/src/main/res">
