@@ -264,11 +264,11 @@ void ANXDeviceInfoContextInitializer(void* extData, const uint8_t* ctxType, FREC
     func[4].functionData = NULL;
     func[4].function = &ANXDeviceInfoGetBatteryState;
     
-    func[5].name = (const uint8_t*) "startBatteryMonitoring";
+    func[5].name = (const uint8_t*) "startBatteryMonitor";
     func[5].functionData = NULL;
     func[5].function = &ANXDeviceInfoStartBatteryMonitoring;
     
-    func[6].name = (const uint8_t*) "stopBatteryMonitoring";
+    func[6].name = (const uint8_t*) "stopBatteryMonitor";
     func[6].functionData = NULL;
     func[6].function = &ANXDeviceInfoStopBatteryMonitoring;
 

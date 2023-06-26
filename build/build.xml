@@ -63,7 +63,7 @@
 
         <!-- Builds Android part of the extension -->
 		<!-- Compiles Android project and makes .JAR -->
-		<exec executable="gradle" failonerror="true" dir="${android.project.dir}">
+		<exec executable="./gradlew" failonerror="true" dir="${android.project.dir}">
             <arg line="jar -b build.gradle" />
 			<arg line="--info" />
 		</exec>

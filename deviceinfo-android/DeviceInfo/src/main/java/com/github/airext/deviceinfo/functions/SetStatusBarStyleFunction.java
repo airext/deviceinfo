@@ -23,7 +23,7 @@ public class SetStatusBarStyleFunction implements FREFunction {
                 if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
                     window.getDecorView().setSystemUiVisibility(window.getDecorView().getSystemUiVisibility() ^ View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR);
                 }
-            } else if (style.equals("default")) {
+            } else { // if default or dark
                 if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
                     window.getDecorView().setSystemUiVisibility(window.getDecorView().getSystemUiVisibility() | View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR);
                 }

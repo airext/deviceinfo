@@ -17,10 +17,13 @@ static NSString* ANXDeviceInfoStatusBarAnimation;
 @implementation ANXDeviceInfoStatusBar
 
 +(NSString*) getStyle {
-    if ([[UIApplication sharedApplication] statusBarStyle] == UIStatusBarStyleLightContent) {
-        return @"light";
-    } else {
-        return @"default";
+    switch ([[UIApplication sharedApplication] statusBarStyle]) {
+        case UIStatusBarStyleLightContent:
+            return @"light";
+        case UIStatusBarStyleDarkContent:
+            return @"dark";
+        default:
+            return @"default";
     }
 }
 
@@ -28,6 +31,12 @@ static NSString* ANXDeviceInfoStatusBarAnimation;
     NSLog(@"ANXDeviceInfoStatusBar setStyle:%@", style);
     if ([style isEqualToString: @"light"]) {
         [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
+    } else if ([style isEqualToString: @"dark"]) {
+        if (@available(iOS 13.0, *)) {
+            [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleDarkContent];
+        } else {
+            [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleDefault];
+        }
     } else {
         [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleDefault];
     }

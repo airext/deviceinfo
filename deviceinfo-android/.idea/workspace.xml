@@ -5,15 +5,53 @@
       <config />
     </shared>
   </component>
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="NONE" />
+  </component>
   <component name="CMakeSettings">
     <configurations>
       <configuration PROFILE_NAME="Debug" CONFIG_NAME="Debug" />
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="dbb4b0ec-2f6b-4b63-9a7c-3166f42511f3" name="Default" comment="" />
-    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
-    <option name="TRACKING_ENABLED" value="true" />
+    <list default="true" id="dbb4b0ec-2f6b-4b63-9a7c-3166f42511f3" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules/deviceinfo/deviceinfo-android.deviceinfo.androidTest.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules/deviceinfo/deviceinfo-android.deviceinfo.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules/deviceinfo/deviceinfo-android.deviceinfo.main.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules/deviceinfo/deviceinfo-android.deviceinfo.unitTest.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bin/com.github.airext.DeviceInfo.ane" beforeDir="false" afterPath="$PROJECT_DIR$/../bin/com.github.airext.DeviceInfo.ane" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bin/com.github.airext.DeviceInfo.swc" beforeDir="false" afterPath="$PROJECT_DIR$/../bin/com.github.airext.DeviceInfo.swc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../build/.java-version" beforeDir="false" afterPath="$PROJECT_DIR$/../build/.java-version" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../build/build.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../build/build.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../build/deviceinfo.ane" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../build/deviceinfo.swc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../build/extension.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../build/extension.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../build/libDeviceInfo.a" beforeDir="false" afterPath="$PROJECT_DIR$/../build/libDeviceInfo.a" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../build/platform-ios.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../build/platform-ios.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../deviceinfo-air/deviceinfo-debug/DeviceInfoDebug-app.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../deviceinfo-air/deviceinfo-debug/DeviceInfoDebug-app.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../deviceinfo-air/deviceinfo-debug/ane/com.github.airext.DeviceInfo.ane" beforeDir="false" afterPath="$PROJECT_DIR$/../deviceinfo-air/deviceinfo-debug/ane/com.github.airext.DeviceInfo.ane" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../deviceinfo-air/deviceinfo-debug/deviceinfo-debug.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../deviceinfo-air/deviceinfo-debug/deviceinfo-debug.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../deviceinfo-air/deviceinfo-debug/src/DeviceInfoDebug.mxml" beforeDir="false" afterPath="$PROJECT_DIR$/../deviceinfo-air/deviceinfo-debug/src/DeviceInfoDebug.mxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../deviceinfo-air/deviceinfo-default/deviceinfo-default.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../deviceinfo-air/deviceinfo-default/deviceinfo-default.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../deviceinfo-air/deviceinfo-default/src/com/github/airext/appearance/StatusBarStyle.as" beforeDir="false" afterPath="$PROJECT_DIR$/../deviceinfo-air/deviceinfo-default/src/com/github/airext/appearance/StatusBarStyle.as" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../deviceinfo-air/deviceinfo/deviceinfo.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../deviceinfo-air/deviceinfo/deviceinfo.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../deviceinfo-air/deviceinfo/src/com/github/airext/appearance/StatusBarStyle.as" beforeDir="false" afterPath="$PROJECT_DIR$/../deviceinfo-air/deviceinfo/src/com/github/airext/appearance/StatusBarStyle.as" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/runConfigurations.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.java-version" beforeDir="false" afterPath="$PROJECT_DIR$/.java-version" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DeviceInfo/DeviceInfo.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DeviceInfo/src/main/java/com/github/airext/deviceinfo/functions/SetStatusBarStyleFunction.java" beforeDir="false" afterPath="$PROJECT_DIR$/DeviceInfo/src/main/java/com/github/airext/deviceinfo/functions/SetStatusBarStyleFunction.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/deviceinfo-android.iml" beforeDir="false" afterPath="$PROJECT_DIR$/deviceinfo-android.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../deviceinfo-ios/DeviceInfo/DeviceInfo.xcodeproj/project.pbxproj" beforeDir="false" afterPath="$PROJECT_DIR$/../deviceinfo-ios/DeviceInfo/DeviceInfo.xcodeproj/project.pbxproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../deviceinfo-ios/DeviceInfo/DeviceInfo/ANXDeviceInfoStatusBar.m" beforeDir="false" afterPath="$PROJECT_DIR$/../deviceinfo-ios/DeviceInfo/DeviceInfo/ANXDeviceInfoStatusBar.m" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -36,6 +74,9 @@
         <task path="$PROJECT_DIR$">
           <activation />
         </task>
+        <task path="$PROJECT_DIR$/deviceinfo">
+          <activation />
+        </task>
         <projects_view>
           <tree_state>
             <expand>
@@ -46,45 +87,25 @@
               <path>
                 <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
                 <item name="deviceinfo-android" type="f1a62948:ProjectNode" />
-                <item name="deviceinfo-android" type="2d1252cf:ModuleNode" />
+                <item name="Run Configurations" type="7b0102dc:RunConfigurationsNode" />
               </path>
               <path>
                 <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
                 <item name="deviceinfo-android" type="f1a62948:ProjectNode" />
-                <item name="deviceinfo-android" type="2d1252cf:ModuleNode" />
+                <item name="deviceinfo" type="2d1252cf:ModuleNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="deviceinfo-android" type="f1a62948:ProjectNode" />
+                <item name="deviceinfo" type="2d1252cf:ModuleNode" />
                 <item name="Tasks" type="e4a08cd1:TasksNode" />
               </path>
               <path>
                 <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
                 <item name="deviceinfo-android" type="f1a62948:ProjectNode" />
-                <item name="deviceinfo-android" type="2d1252cf:ModuleNode" />
-                <item name="Tasks" type="e4a08cd1:TasksNode" />
-                <item name="build" type="c8890929:TasksNode$1" />
-              </path>
-              <path>
-                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
-                <item name="deviceinfo-android" type="f1a62948:ProjectNode" />
-                <item name="deviceinfo-android" type="2d1252cf:ModuleNode" />
+                <item name="deviceinfo" type="2d1252cf:ModuleNode" />
                 <item name="Tasks" type="e4a08cd1:TasksNode" />
                 <item name="other" type="c8890929:TasksNode$1" />
-              </path>
-              <path>
-                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
-                <item name="deviceinfo-android" type="f1a62948:ProjectNode" />
-                <item name=":deviceinfo" type="2d1252cf:ModuleNode" />
-              </path>
-              <path>
-                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
-                <item name="deviceinfo-android" type="f1a62948:ProjectNode" />
-                <item name=":deviceinfo" type="2d1252cf:ModuleNode" />
-                <item name="Tasks" type="e4a08cd1:TasksNode" />
-              </path>
-              <path>
-                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
-                <item name="deviceinfo-android" type="f1a62948:ProjectNode" />
-                <item name=":deviceinfo" type="2d1252cf:ModuleNode" />
-                <item name="Tasks" type="e4a08cd1:TasksNode" />
-                <item name="build" type="c8890929:TasksNode$1" />
               </path>
             </expand>
             <select />
@@ -92,60 +113,6 @@
         </projects_view>
       </state>
     </system>
-  </component>
-  <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="PresentAlertFunction.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/DeviceInfo/src/main/java/com/github/airext/deviceinfo/functions/PresentAlertFunction.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-380">
-              <caret line="200" column="77" lean-forward="true" selection-start-line="200" selection-start-column="77" selection-end-line="200" selection-end-column="77" />
-              <folding>
-                <element signature="e#1867#1885#0" expanded="true" />
-                <element signature="e#3065#3304#0" expanded="true" />
-                <element signature="e#3303#3304#0" expanded="true" />
-                <element signature="e#3388#3622#0" expanded="true" />
-                <element signature="e#3621#3622#0" expanded="true" />
-                <element signature="e#3906#4117#0" expanded="true" />
-                <element signature="e#4116#4117#0" expanded="true" />
-                <element signature="e#3839#4073#0" expanded="true" />
-                <element signature="e#4072#4073#0" expanded="true" />
-                <element signature="e#4306#4544#0" expanded="true" />
-                <element signature="e#4543#4544#0" expanded="true" />
-                <element signature="e#4663#4923#0" expanded="true" />
-                <element signature="e#4922#4923#0" expanded="true" />
-                <element signature="e#6522#6540#0" expanded="true" />
-                <element signature="e#7751#7752#0" expanded="true" />
-                <element signature="e#7779#7780#0" expanded="true" />
-                <element signature="e#7831#7832#0" expanded="true" />
-                <element signature="e#7859#7860#0" expanded="true" />
-                <element signature="e#7915#7916#0" expanded="true" />
-                <element signature="e#7945#7946#0" expanded="true" />
-                <element signature="e#7980#7981#0" expanded="true" />
-                <element signature="e#8024#8025#0" expanded="true" />
-                <element signature="e#8062#8063#0" expanded="true" />
-                <element signature="e#8110#8111#0" expanded="true" />
-                <element signature="e#8149#8150#0" expanded="true" />
-                <element signature="e#8198#8199#0" expanded="true" />
-                <element signature="e#8243#8244#0" expanded="true" />
-                <element signature="e#8271#8272#0" expanded="true" />
-                <element signature="e#8310#8311#0" expanded="true" />
-                <element signature="e#8344#8345#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="build.gradle" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/DeviceInfo/build.gradle">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="485">
-              <caret line="45" column="54" selection-start-line="45" selection-start-column="54" selection-end-line="45" selection-end-column="54" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -165,6 +132,9 @@
       <find>NotificationCenterPickHoldenDataFunction</find>
       <find>PermissionsRequestActivity</find>
     </findStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="GradleLocalSettings">
     <option name="myGradleHomes">
@@ -2407,11 +2377,15 @@
       </list>
     </option>
   </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
   <component name="ProjectFrameBounds">
     <option name="y" value="23" />
     <option name="width" value="80" />
     <option name="height" value="22" />
   </component>
+  <component name="ProjectId" id="2RhbmAgvVIoWv9Z7dwCnZBzwR4Q" />
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <autoscrollFromSource AndroidView="true" />
@@ -2587,55 +2561,44 @@
       </pane>
     </panes>
   </component>
-  <component name="PropertiesComponent">
-    <property name="android.project.structure.last.selected" value="deviceinfo" />
-    <property name="android.project.structure.proportion" value="0.15" />
-    <property name="android.sdk.path" value="$USER_HOME$/Library/Android/sdk" />
-    <property name="project.structure.last.edited" value="Libraries" />
-    <property name="project.structure.proportion" value="0.15295815" />
-    <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="AndroidSdkUpdater" />
-    <property name="sync.plugin.last.upgrade.timestamp" value="1523903909794" />
+  <component name="ProjectViewState">
+    <option name="autoscrollFromSource" value="true" />
+    <option name="autoscrollToSource" value="true" />
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
   </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
-      <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
-      </list>
-    </option>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.cidr.known.project.marker&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;cidr.known.project.marker&quot;: &quot;true&quot;,
+    &quot;dart.analysis.tool.window.visible&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/max/dev/airext/deviceinfo/deviceinfo-android&quot;,
+    &quot;memory.settings.postsync.last.time.stamp&quot;: &quot;1687705580410&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.17&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;show.migrate.to.gradle.popup&quot;: &quot;false&quot;
+  }
+}</component>
+  <component name="PsdUISettings">
+    <option name="MODULE_TAB" value="Default Config" />
+    <option name="LAST_EDITED_SIGNING_CONFIG" value="debug" />
   </component>
-  <component name="RunManager" selected="Gradle.deviceinfo-android [clean]">
-    <configuration default="true" type="Applet" factoryName="Applet">
-      <option name="WIDTH" value="400" />
-      <option name="HEIGHT" value="300" />
-      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
-      <module />
-      <method />
-    </configuration>
-    <configuration name="&lt;template&gt;" type="JUnit" default="true" selected="false">
-      <option name="MAIN_CLASS_NAME" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
-    </configuration>
-    <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
-      <module name="" />
-      <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -XX:MaxPermSize=250m -ea" />
-      <option name="PROGRAM_PARAMETERS" />
-      <predefined_log_file id="idea.log" enabled="true" />
-      <method />
-    </configuration>
+  <component name="RunManager" selected="Gradle.deviceinfo-android [build]">
     <configuration default="true" type="AndroidJUnit" factoryName="Android JUnit">
       <option name="WORKING_DIRECTORY" value="file://$MODULE_DIR$" />
       <method v="2">
         <option name="Make" enabled="false" />
         <option name="Android.Gradle.BeforeRunTask" enabled="true" />
       </method>
+    </configuration>
+    <configuration default="true" type="Applet" factoryName="Applet">
+      <option name="WIDTH" value="400" />
+      <option name="HEIGHT" value="300" />
+      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+      <module />
+      <method />
     </configuration>
     <configuration default="true" type="Application" factoryName="Application">
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
@@ -2659,6 +2622,9 @@
         </option>
         <option name="vmOptions" />
       </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
     </configuration>
     <configuration name="deviceinfo-android [clean]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
@@ -2677,6 +2643,9 @@
         </option>
         <option name="vmOptions" />
       </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
     </configuration>
     <configuration name="deviceinfo-android [clearJar]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
@@ -2695,6 +2664,9 @@
         </option>
         <option name="vmOptions" />
       </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
     </configuration>
     <configuration name="deviceinfo-android [jar]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
@@ -2713,27 +2685,39 @@
         </option>
         <option name="vmOptions" />
       </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
     </configuration>
-    <configuration name="deviceinfo-android:DeviceInfo [clean]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="deviceinfo-android" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$/DeviceInfo" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
         <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" />
+        <option name="scriptParameters" value="--version" />
         <option name="taskDescriptions">
           <list />
         </option>
         <option name="taskNames">
-          <list>
-            <option value="clean" />
-          </list>
+          <list />
         </option>
         <option name="vmOptions" />
       </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
     </configuration>
-    <configuration default="true" type="TestNG" factoryName="TestNG">
+    <configuration default="true" type="JUnit" factoryName="JUnit">
+      <option name="TEST_OBJECT" value="class" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="TestNG">
+      <option name="TEST_OBJECT" value="CLASS" />
       <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
       <properties />
       <listeners />
@@ -2741,8 +2725,17 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType">
+      <module name="" />
+      <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -XX:MaxPermSize=250m -ea" />
+      <option name="PROGRAM_PARAMETERS" />
+      <predefined_log_file enabled="true" id="idea.log" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <list>
-      <item itemvalue="Gradle.deviceinfo-android:DeviceInfo [clean]" />
+      <item itemvalue="Gradle.deviceinfo-android" />
       <item itemvalue="Gradle.deviceinfo-android [build]" />
       <item itemvalue="Gradle.deviceinfo-android [clearJar]" />
       <item itemvalue="Gradle.deviceinfo-android [jar]" />
@@ -2750,14 +2743,15 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Gradle.deviceinfo-android [clean]" />
-        <item itemvalue="Gradle.deviceinfo-android [jar]" />
-        <item itemvalue="Gradle.deviceinfo-android [clearJar]" />
         <item itemvalue="Gradle.deviceinfo-android [build]" />
-        <item itemvalue="Gradle.deviceinfo-android:DeviceInfo [clean]" />
+        <item itemvalue="Gradle.deviceinfo-android" />
+        <item itemvalue="Gradle.deviceinfo-android [jar]" />
+        <item itemvalue="Gradle.deviceinfo-android [clean]" />
+        <item itemvalue="Gradle.deviceinfo-android [clearJar]" />
       </list>
     </recent_temporary>
   </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -2859,8 +2853,16 @@
       <window_info anchor="bottom" id="Android Profiler" order="12" show_stripe_button="false" />
     </layout-to-restore>
   </component>
-  <component name="VcsContentAnnotationSettings">
-    <option name="myLimit" value="2678400000" />
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/DeviceInfo/src/main/res/values/styles.xml">

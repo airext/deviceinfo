@@ -8,7 +8,7 @@
 
      minimumPatchLevel - The minimum patch level of the AIR runtime required to run the application. Optional. -->
 
-<application xmlns="http://ns.adobe.com/air/application/29.0">
+<application xmlns="http://ns.adobe.com/air/application/50.2">
 
     <!-- A universally unique application identifier. Must be unique across all AIR applications.
          Using a reverse DNS-style name as the id is recommended. (Eg. com.example.ExampleApplication.) Required. -->
@@ -188,7 +188,7 @@
                 <string>2</string>
             </array>
             <key>MinimumOSVersion</key>
-            <string>8.0</string>
+            <string>11.0</string>
             <key>UIStatusBarStyle</key>
             <string>UIStatusBarStyleBlackOpaque</string>
             <key>UIViewControllerBasedStatusBarAppearance</key>

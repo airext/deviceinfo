@@ -63,12 +63,18 @@
         [Bindable]
         public var statusBarStyle: String = DeviceInfo.shared.statusBar.getStyle();
 
-        private function setStatusBarStyle_clickHandler(event: MouseEvent): void {
-            if (DeviceInfo.shared.statusBar.getStyle() == StatusBarStyle.DEFAULT)
-                DeviceInfo.shared.statusBar.setStyle(StatusBarStyle.LIGHT);
-            else
-                DeviceInfo.shared.statusBar.setStyle(StatusBarStyle.DEFAULT);
+        private function setStatusBarStyleLight_clickHandler(event: MouseEvent): void {
+            DeviceInfo.shared.statusBar.setStyle(StatusBarStyle.LIGHT);
+            statusBarStyle = DeviceInfo.shared.statusBar.getStyle();
+        }
 
+        private function setStatusBarStyleDark_clickHandler(event: MouseEvent): void {
+            DeviceInfo.shared.statusBar.setStyle(StatusBarStyle.DARK);
+            statusBarStyle = DeviceInfo.shared.statusBar.getStyle();
+        }
+
+        private function setStatusBarStyleDefault_clickHandler(event: MouseEvent): void {
+            DeviceInfo.shared.statusBar.setStyle(StatusBarStyle.DEFAULT);
             statusBarStyle = DeviceInfo.shared.statusBar.getStyle();
         }
 
@@ -84,6 +90,12 @@
 //                DeviceInfo.shared.statusBar.setHidden(true, StatusBarAnimation.SLIDE);
 //
 //            isStatusBarHidden = DeviceInfo.shared.statusBar.isHidden;
+        }
+
+        // Safe Area
+
+        private function getSafeArea_clickHandler(event: Event): void {
+            spark.components.Alert.show(String(DeviceInfo.shared.screen.safeArea));
         }
 
         // Alert
@@ -114,7 +126,8 @@
 
             <s:Label text="GENERAL" />
 
-            <s:Button label="isSupported" click="spark.components.Alert.show(String(DeviceInfo.isSupported()));" />
+            <s:Button label="isSupported" click="spark.components.Alert.show(String(DeviceInfo.isSupported));" />
+            <s:Button label="Version" click="spark.components.Alert.show(String(DeviceInfo.extensionVersion()));" />
 
             <s:Button label="IMEI" click="imei_clickHandler(event)" />
 
@@ -139,10 +152,16 @@
 
             <s:Button label="Crash" click="crash_clickHandler(event)" />
 
-            <s:Label text="STATUS BAR" />
+            <s:Label text="STATUS BAR: ${statusBarStyle}" />
 
             <s:Button label="Show/Hide StatusBar" click="hideStatusBar_clickHandler(event)" />
-            <s:Button label="Shange StatusBar Style" click="setStatusBarStyle_clickHandler(event)" />
+            <s:Button label="Status Bar Light Content" click="setStatusBarStyleLight_clickHandler(event)" />
+            <s:Button label="Status Bar Dark Content" click="setStatusBarStyleDark_clickHandler(event)" />
+            <s:Button label="Status Bar Default" click="setStatusBarStyleDefault_clickHandler(event)" />
+
+            <s:Label text="SAFE AREA:" />
+
+            <s:Button label="Get Safe Area" click="getSafeArea_clickHandler(event)" />
 
             <s:Label text="IOS SPECIFIC" />
 

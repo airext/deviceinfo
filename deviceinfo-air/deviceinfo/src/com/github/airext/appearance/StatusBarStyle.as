@@ -7,5 +7,6 @@ public class StatusBarStyle
 {
     public static const DEFAULT:String = "default";
     public static const LIGHT:String = "light";
+    public static const DARK:String = "dark";
 }
 }

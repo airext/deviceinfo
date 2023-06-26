@@ -2,7 +2,7 @@
 <module type="Flex" version="4">
   <component name="FlexBuildConfigurationManager" active="deviceinfo-debug-feathers">
     <configurations>
-      <configuration name="deviceinfo-debug-feathers" target-platform="Mobile" main-class="DeviceinfoDebugFeathers" output-file="deviceinfo-debug-feathers.swf" output-folder="$MODULE_DIR$/bin-debug">
+      <configuration name="deviceinfo-debug-feathers" target-platform="Mobile" main-class="DeviceInfoDebug" output-file="deviceinfo-debug-feathers.swf" output-folder="$MODULE_DIR$/bin-debug">
         <dependencies>
           <entries>
             <entry library-id="ca9da179-698e-4b29-9945-edd0e8986283">
@@ -11,14 +11,11 @@
             <entry library-id="a1bc99fb-8876-47e7-8303-9aaa9776c715">
               <dependency linkage="Merged" />
             </entry>
-            <entry library-id="ac5c08e7-69a6-4ede-8f97-7b6334793163">
-              <dependency linkage="Merged" />
-            </entry>
-            <entry library-id="2dba3fb1-b91a-46ae-b275-1b9a3f9778c7">
+            <entry library-name="feathers-sdk-mobile-support" library-level="application">
               <dependency linkage="Merged" />
             </entry>
           </entries>
-          <sdk name="4.0.0-air33.0-starling2.5.1" />
+          <sdk name="4.1.1" />
         </dependencies>
         <compiler-options />
         <packaging-air-desktop />
@@ -32,7 +29,54 @@
           <files-to-package>
             <FilePathAndPathInPackage file-path="$MODULE_DIR$/assets" path-in-package="." />
           </files-to-package>
-          <AirSigningOptions keystore-path="$USER_HOME$/cert/rozd/development.p12" provisioning-profile-path="$USER_HOME$/cert/rozd/whateverdev.mobileprovision" />
+          <AirSigningOptions keystore-path="$USER_HOME$/Documents/cert/sleoni/ios_development.p12" provisioning-profile-path="$USER_HOME$/Documents/cert/sleoni/whateverdev.mobileprovision" />
+        </packaging-ios>
+      </configuration>
+      <configuration name="deviceinfo-debug-simple" target-platform="Mobile" pure-as="true" output-file="deviceinfo-debug-simple.swf" output-folder="$MODULE_DIR$/bin-debug">
+        <dependencies>
+          <sdk name="50.2.2" />
+        </dependencies>
+        <compiler-options />
+        <packaging-air-desktop />
+        <packaging-android enabled="true" use-generated-descriptor="false" custom-descriptor-path="$MODULE_DIR$/DeviceInfoDebug-app.xml" package-file-name="deviceinfo-debug-simple">
+          <files-to-package>
+            <FilePathAndPathInPackage file-path="$MODULE_DIR$/assets" path-in-package="." />
+          </files-to-package>
+        </packaging-android>
+        <packaging-ios enabled="true" use-generated-descriptor="false" custom-descriptor-path="$MODULE_DIR$/DeviceInfoDebug-app.xml" package-file-name="deviceinfo-debug-simple">
+          <files-to-package>
+            <FilePathAndPathInPackage file-path="$MODULE_DIR$/assets" path-in-package="." />
+          </files-to-package>
+          <AirSigningOptions keystore-path="$USER_HOME$/Documents/cert/sleoni/ios_development.p12" provisioning-profile-path="$USER_HOME$/Documents/cert/sleoni/whateverdev.mobileprovision" />
+        </packaging-ios>
+      </configuration>
+      <configuration name="deviceinfo-debug-flex" target-platform="Mobile" main-class="DeviceInfoDebug" output-file="deviceinfo-debug-flex.swf" output-folder="$MODULE_DIR$/bin-debug">
+        <dependencies>
+          <entries>
+            <entry library-id="e1653a3d-bd8f-4b91-8a04-d5a95011a5fb">
+              <dependency linkage="Merged" />
+            </entry>
+            <entry library-id="e6d6b07b-ad8b-475f-9f69-9b44c8d73c27">
+              <dependency linkage="Merged" />
+            </entry>
+            <entry library-name="flex-spark-support" library-level="application">
+              <dependency linkage="Merged" />
+            </entry>
+          </entries>
+          <sdk name="4.16.1-air50" />
+        </dependencies>
+        <compiler-options />
+        <packaging-air-desktop />
+        <packaging-android enabled="true" use-generated-descriptor="false" custom-descriptor-path="$MODULE_DIR$/DeviceInfoDebug-app.xml" package-file-name="deviceinfo-debug-flex">
+          <files-to-package>
+            <FilePathAndPathInPackage file-path="$MODULE_DIR$/assets" path-in-package="." />
+          </files-to-package>
+        </packaging-android>
+        <packaging-ios enabled="true" use-generated-descriptor="false" custom-descriptor-path="$MODULE_DIR$/DeviceInfoDebug-app.xml" package-file-name="deviceinfo-debug-flex">
+          <files-to-package>
+            <FilePathAndPathInPackage file-path="$MODULE_DIR$/assets" path-in-package="." />
+          </files-to-package>
+          <AirSigningOptions keystore-path="$USER_HOME$/Documents/cert/sleoni/ios_development.p12" provisioning-profile-path="$USER_HOME$/Documents/cert/sleoni/whateverdev.mobileprovision" />
         </packaging-ios>
       </configuration>
     </configurations>
@@ -43,7 +87,7 @@
     <content url="file://$MODULE_DIR$">
       <sourceFolder url="file://$MODULE_DIR$/src" isTestSource="false" />
     </content>
-    <orderEntry type="jdk" jdkName="4.0.0-air33.0-starling2.5.1" jdkType="Flex SDK Type (new)" />
+    <orderEntry type="jdk" jdkName="4.1.1&#9;50.2.2&#9;4.16.1-air50" jdkType="__CompositeFlexSdk__" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="module-library" exported="">
       <library type="flex">
@@ -67,27 +111,29 @@
         <jarDirectory url="file://$MODULE_DIR$/../../../anx-bridge/bin" recursive="false" />
       </library>
     </orderEntry>
+    <orderEntry type="library" exported="" name="feathers-sdk-mobile-support" level="application" />
     <orderEntry type="module-library" exported="">
       <library type="flex">
-        <properties id="ac5c08e7-69a6-4ede-8f97-7b6334793163" />
+        <properties id="e1653a3d-bd8f-4b91-8a04-d5a95011a5fb" />
         <CLASSES>
-          <root url="file://$USER_HOME$/sdks/feathers/4.0.0-air33.0-starling2.5.1/frameworks/libs" />
+          <root url="file://$MODULE_DIR$/ane" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
-        <jarDirectory url="file://$USER_HOME$/sdks/feathers/4.0.0-air33.0-starling2.5.1/frameworks/libs" recursive="false" />
+        <jarDirectory url="file://$MODULE_DIR$/ane" recursive="false" />
       </library>
     </orderEntry>
     <orderEntry type="module-library" exported="">
       <library type="flex">
-        <properties id="2dba3fb1-b91a-46ae-b275-1b9a3f9778c7" />
+        <properties id="e6d6b07b-ad8b-475f-9f69-9b44c8d73c27" />
         <CLASSES>
-          <root url="file://$USER_HOME$/sdks/feathers/4.0.0-air33.0-starling2.5.1/frameworks/themes/MetalWorksMobileTheme" />
+          <root url="file://$MODULE_DIR$/../../../anx-bridge/bin" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
-        <jarDirectory url="file://$USER_HOME$/sdks/feathers/4.0.0-air33.0-starling2.5.1/frameworks/themes/MetalWorksMobileTheme" recursive="false" />
+        <jarDirectory url="file://$MODULE_DIR$/../../../anx-bridge/bin" recursive="false" />
       </library>
     </orderEntry>
+    <orderEntry type="library" exported="" name="flex-spark-support" level="application" />
   </component>
 </module>
